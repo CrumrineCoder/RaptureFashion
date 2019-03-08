@@ -1,0 +1,32 @@
+{
+  "name": "react-express-example",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "author": "Nicolas Burgess",
+  "scripts": {
+    "start": "node index.js",
+    "heroku-postbuild": "cd client && npm install --only=dev && npm install && npm run build"
+  },
+  "keywords": [],
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "*",
+    "cors": "*",
+    "crypto": "*",
+    "dotenv": "*",
+    "errorhandler": "*",
+    "express": "^4.16.3",
+    "express-jwt": "^5.3.1",
+    "express-session": "*",
+    "jsonwebtoken": "*",
+    "mongoose": "*",
+    "morgan": "*",
+    "node": "*",
+    "passport": "*",
+    "passport-local": "*",
+    "path": "*",
+    "react-scripts": "^2.1.3",
+    "webpack-dev-server": "3.1.14"
+  }
+}

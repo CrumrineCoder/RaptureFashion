@@ -1,0 +1,61 @@
+{
+  "name": "client",
+  "version": "0.1.0",
+  "dependencies": {
+    "webpack-dev-server": "3.1.14",
+    "@babel/core": "*",
+    "axios": "*",
+    "body-parser": "*",
+    "bootstrap": "*",
+    "cors": "*",
+    "dotenv": "*",
+    "draft-js": "*",
+    "draft-js-export-html": "*",
+    "errorhandler": "*",
+    "express": "*",
+    "express-session": "*",
+    "history":"*",
+    "jquery": "*",
+    "moment": "*",
+    "mongoose": "*",
+    "morgan": "*",
+    "node-sass-chokidar": "*",
+    "npm-run-all": "*",
+    "path": "*",
+    "query-string": "*",
+    "react": "*",
+    "react-dom": "*",
+    "react-loadable": "*",
+    "react-redux":"*",
+    "react-router-dom": "*",
+    "react-router-redux": "*",
+    "react-scripts": "*",
+    "react-validation": "*",
+    "reactstrap": "*",
+    "recharts": "*",
+    "redux": "*",
+    "redux-logger": "*",
+    "redux-observable": "*",
+    "redux-thunk": "*",
+    "rxjs": "*",
+    "rxjs-compat": "*",
+    "validator": "*"
+  },
+  "devDependencies": {
+    "redux-devtools": "*",
+    "source-map-explorer": "*"
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  },
+  "proxy": "http://localhost:5000",
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
+}
