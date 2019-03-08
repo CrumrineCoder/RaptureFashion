@@ -6,9 +6,10 @@ https://uxdesign.cc/adisgladis-ux-ui-case-study-for-shopping-ethical-and-sustain
 https://uxdesign.cc/zara-a-usability-case-study-981b7ca93db8 (3)
 https://medium.com/@jenwsm/ux-case-study-main-st-womens-clothing-e-commerce-website-draft-447ef0936e01 (4)
 https://www.sandyuxdesign.com/mirror 
+https://ecommerce-platforms.com/ecommerce-websites/independent-fashion-stores
 
 Websites:
-http://www.societebudapest.com/ (1)
+https://www.societestore.com/ (1)
 https://www.adisgladis.se/ (2)
 https://www.zara.com/us/en/ (3)
 https://bonobos.com/products/blue-jean?color=wallowa%20medium%20wash (4) [Good product page, full length model image that scrolls through images as you scroll]
@@ -18,6 +19,14 @@ https://onsclothing.com/
 https://www.unique-vintage.com/collections/flapper-1920s?uvcampaign=shopbyerapage&uvcontent=1920s
     https://www.unique-vintage.com/products/unique-vintage-black-sequin-black-fringe-flapper-new-years-eve-dress [shop the look and similar dresses, reviews]
 https://www.amazon.com/slp/flapper-dresses/6867e9k57zre5zy[reviews on page]
+
+Online Fashion Boutique Fashion Brands:
+https://theloeil.com/
+thereformation.com
+https://www.rouje.com
+https://www.oliveclothing.com/
+https://www.finerylondon.com/
+https://www.lefties.com/es/#woman
 
 Images:
 https://vintagedancer.com/1900s/edwardian-style-dresses/
