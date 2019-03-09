@@ -7,6 +7,7 @@ import Search from '../components/Search';
 import Form from '../components/Form';
 import { pollActions } from '../../_actions/polls.actions.js';
 import { withRouter } from 'react-router-dom';
+import homepageRapture1 from '../../../assets/homepageRapture1.jpg'; 
 
 // Landing page 
 class Home extends Component {
@@ -97,6 +98,7 @@ class Home extends Component {
 		// Display the Form, header for polls listing, and all poll links
 		return (
 			<div className="pollsContainer">	
+				<img src={homepageRapture1} />
 				<Form></Form>
 				<h1>All Polls Listing</h1>
 				<Search onSearch={this.handleSearchBar} />
