@@ -8,7 +8,8 @@ import Form from '../components/Form';
 import { pollActions } from '../../_actions/polls.actions.js';
 import { withRouter } from 'react-router-dom';
 import homepageRapture1 from '../../../assets/homepageRapture1.png'; 
-import homepageRapture2 from '../../../assets/homepageRapture2.jpg'; 
+import homepageRapture2 from '../../../assets/homepageRapture3.png'; 
+import homepageRapture3 from '../../../assets/homepageRapture5.png'; 
 import Slider from "react-slick";
 
 
@@ -106,6 +107,7 @@ class Home extends Component {
 				<Slider className="homepageCarousel" {...settings}>
 					<img className="homepageCarouselImage" src={homepageRapture1} />
 					<img className="homepageCarouselImage" src={homepageRapture2} />
+					<img className="homepageCarouselImage" src={homepageRapture3} />
 				</Slider>	
 				
 				<Form></Form>
