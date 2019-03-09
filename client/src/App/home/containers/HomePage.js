@@ -133,8 +133,23 @@ class Home extends Component {
 						<img className="homepageCarouselImage" src={brandsHomepage} />
 					</LazyLoad>
 				</Slider>
-				<ClothingBox dress={dress}></ClothingBox>
-
+				<Slider>
+					<div>
+						<ClothingBox dress={dress}></ClothingBox>
+						<ClothingBox dress={dress}></ClothingBox>
+						<ClothingBox dress={dress}></ClothingBox>
+					</div>
+					<div>
+						<ClothingBox dress={dress}></ClothingBox>
+						<ClothingBox dress={dress}></ClothingBox>
+						<ClothingBox dress={dress}></ClothingBox>
+					</div>
+					<div>
+						<ClothingBox dress={dress}></ClothingBox>
+						<ClothingBox dress={dress}></ClothingBox>
+						<ClothingBox dress={dress}></ClothingBox>
+					</div>
+				</Slider>
 				<Form></Form>
 				<h1>All Polls Listing</h1>
 				<Search onSearch={this.handleSearchBar} />

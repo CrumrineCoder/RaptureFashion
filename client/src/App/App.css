@@ -47,6 +47,10 @@
   top: 1px;
 }
 
+.slick-prev:before, .slick-next:before{
+  color: #70A7AD;
+}
+
 .slick-dots li button {
   border: 5px solid #000403;
   border-radius: 25px; 
@@ -71,6 +75,23 @@
 
 .clothingBoxSubTitle{
   font-size: 0.85em;
+}
+
+.clothingBoxPrice{
+  font-size: .7em;
+}
+
+.clothingBoxDesc{
+  margin: 5px;
+}
+
+.clothingBox{
+  width: 33%;
+  display: inline-block;
+}
+
+.clothingBoxImage{
+  width: 100%;
 }
 
 /* */

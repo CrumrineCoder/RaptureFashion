@@ -16,11 +16,11 @@ class ClothingBox extends Component {
 
     render(){
         return(
-            <div>
-                <img src={require("../../../assets/"+this.state.dress.images[0])} />
-                <p className="clothingBoxTitle">{this.state.dress.name}</p>
-                <p className="clothingBoxSubTitle">{this.state.dress.brandName}</p>
-                <p className="clothingBoxIceCream">${this.state.dress.price}</p>
+            <div className="clothingBox">
+                <img className="clothingBoxImage" src={require("../../../assets/"+this.state.dress.images[0])} />
+                <p className="clothingBoxTitle clothingBoxDesc">{this.state.dress.name}</p>
+                <p className="clothingBoxSubTitle clothingBoxDesc">{this.state.dress.brandName}</p>
+                <p className="clothingBoxPrice clothingBoxDesc">${this.state.dress.price}</p>
             </div>
         )
     }
