@@ -157,10 +157,11 @@ class Home extends Component {
 				<CategoriesBox box={{image: "Categories/jewelry.jpg", name: "Jewelry"}}></CategoriesBox>
 				<CategoriesBox box={{image: "Categories/hats.jpg", name: "Hats"}}></CategoriesBox>
 				<CategoriesBox box={{image: "Categories/shoes.jpg", name: "Shoes"}}></CategoriesBox>
-				<Form></Form>
-				<h1>All Polls Listing</h1>
-				<Search onSearch={this.handleSearchBar} />
-				{pageContent}
+				<h4 className="homepageHeader">Brands</h4>
+				<CategoriesBox box={{image: "Brand/gibson girls.png", name: "Gibson Girls"}}></CategoriesBox>
+				<CategoriesBox box={{image: "Brand/andrew ryan.png", name: "Ryan Boutique"}}></CategoriesBox>
+				<CategoriesBox box={{image: "Brand/apollo.png", name: "Apollo"}}></CategoriesBox>
+				<CategoriesBox box={{image: "Brand/aveline.png", name: "ÁVELINE'S"}}></CategoriesBox>
 			</div>
 		);
 
