@@ -7,9 +7,9 @@ import Search from '../components/Search';
 import Form from '../components/Form';
 import { pollActions } from '../../_actions/polls.actions.js';
 import { withRouter } from 'react-router-dom';
-import homepageRapture1 from '../../../assets/homepageRapture1.png';
-import homepageRapture2 from '../../../assets/homepageRapture3.png';
-import homepageRapture3 from '../../../assets/homepageRapture5.png';
+import collectionHomepage from '../../../assets/collectionHomepage.png';
+import raptureHomepage from '../../../assets/raptureHomepage.png';
+import brandsHomepage from '../../../assets/brandsHomepage.png';
 import Slider from "react-slick";
 import LazyLoad from 'react-lazyload';
 
@@ -108,14 +108,14 @@ class Home extends Component {
 		return (
 			<div className="pollsContainer">
 				<Slider className="homepageCarousel" {...settings}>
-					<LazyLoad height={900}>
-						<img className="homepageCarouselImage" src={homepageRapture1} />
+					<LazyLoad height={"100%"}>
+						<img className="homepageCarouselImage" src={collectionHomepage} />
 					</LazyLoad>
-					<LazyLoad height={900}>
-						<img className="homepageCarouselImage" src={homepageRapture2} />
+					<LazyLoad height={"100%"}>
+						<img className="homepageCarouselImage" src={raptureHomepage} />
 					</LazyLoad>
-					<LazyLoad height={900}>
-						<img className="homepageCarouselImage" src={homepageRapture3} />
+					<LazyLoad height={"100%"}>
+						<img className="homepageCarouselImage" src={brandsHomepage} />
 					</LazyLoad>
 				</Slider>
 
