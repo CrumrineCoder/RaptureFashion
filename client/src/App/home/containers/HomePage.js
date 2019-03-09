@@ -7,10 +7,11 @@ import Search from '../components/Search';
 import Form from '../components/Form';
 import { pollActions } from '../../_actions/polls.actions.js';
 import { withRouter } from 'react-router-dom';
-import homepageRapture1 from '../../../assets/homepageRapture1.png'; 
-import homepageRapture2 from '../../../assets/homepageRapture3.png'; 
-import homepageRapture3 from '../../../assets/homepageRapture5.png'; 
+import homepageRapture1 from '../../../assets/homepageRapture1.png';
+import homepageRapture2 from '../../../assets/homepageRapture3.png';
+import homepageRapture3 from '../../../assets/homepageRapture5.png';
 import Slider from "react-slick";
+import LazyLoad from 'react-lazyload';
 
 
 // Landing page 
@@ -24,8 +25,8 @@ class Home extends Component {
 	}
 
 	static propTypes = {
-	//	selectedPoll: PropTypes.string.isRequired,
-	//	polls: PropTypes.array.isRequired,
+		//	selectedPoll: PropTypes.string.isRequired,
+		//	polls: PropTypes.array.isRequired,
 		isFetching: PropTypes.bool.isRequired,
 		lastUpdated: PropTypes.number,
 		dispatch: PropTypes.func.isRequired
@@ -74,7 +75,7 @@ class Home extends Component {
 			});
 		}
 
-	
+
 
 		// If we're fetching polls, tell the user why
 		if (this.props.isFetching) {
@@ -100,16 +101,24 @@ class Home extends Component {
 			speed: 500,
 			slidesToShow: 1,
 			slidesToScroll: 1,
-			adaptiveHeight: true
+			swipeToSlide: true,
+			autoplay: true,
+			autoplaySpeed: 5000
 		};
 		return (
 			<div className="pollsContainer">
 				<Slider className="homepageCarousel" {...settings}>
-					<img className="homepageCarouselImage" src={homepageRapture1} />
-					<img className="homepageCarouselImage" src={homepageRapture2} />
-					<img className="homepageCarouselImage" src={homepageRapture3} />
-				</Slider>	
-				
+					<LazyLoad height={900}>
+						<img className="homepageCarouselImage" src={homepageRapture1} />
+					</LazyLoad>
+					<LazyLoad height={900}>
+						<img className="homepageCarouselImage" src={homepageRapture2} />
+					</LazyLoad>
+					<LazyLoad height={900}>
+						<img className="homepageCarouselImage" src={homepageRapture3} />
+					</LazyLoad>
+				</Slider>
+
 				<Form></Form>
 				<h1>All Polls Listing</h1>
 				<Search onSearch={this.handleSearchBar} />

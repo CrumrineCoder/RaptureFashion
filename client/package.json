@@ -24,6 +24,7 @@
     "query-string": "*",
     "react": "*",
     "react-dom": "*",
+    "react-lazyload": "^2.5.0",
     "react-loadable": "*",
     "react-redux": "*",
     "react-router-dom": "*",

@@ -9,10 +9,32 @@
 }
 
 .homepageCarousel{
-  width: 100%;
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
   height: 80%;
 }
 
+.slick-slider{
+  height: 80%;
+}
+
+.slick-prev:before, .slick-next:before{
+  font-size: 32px;
+}
+
+.slick-prev, .slick-next {
+  z-index: 2; 
+}
+.slick-prev{
+  left: 25px;
+}
+.slick-next{
+  right: 35px;
+}
 
 /* */
 
