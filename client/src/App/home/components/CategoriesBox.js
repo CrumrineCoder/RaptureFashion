@@ -18,7 +18,7 @@ class CategoriesBox extends Component {
         // TO DO: ADD LINK
         return(
             <div className="categoriesBox">
-                <img className="categoriesBoxImage" src={require("../../../assets/"+this.state.box.image)} />
+                <img className="categoriesBoxImage rounded" src={require("../../../assets/"+this.state.box.image)} />
                 <p className="categoriesBoxTag">{this.state.box.name}</p>
             </div>
         )

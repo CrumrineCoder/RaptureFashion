@@ -135,7 +135,7 @@ class Home extends Component {
 					</LazyLoad>
 				</Slider>
 				<h4 className="homepageHeader">Rapture's Favorites</h4>
-				<Slider>
+				<Slider className="homepageBestSellersCarousel">
 					<div>
 						<ClothingBox dress={dress}></ClothingBox>
 						<ClothingBox dress={dress}></ClothingBox>

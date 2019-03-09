@@ -44,7 +44,16 @@
 }
 
 .slick-next{
-  right: 45px;
+  right: 40px;
+}
+
+.homepageBestSellersCarousel .slick-next{
+  right: 60px;
+}
+
+
+.homepageBestSellersCarousel .slick-prev:before, .homepageBestSellersCarousel .slick-next:before{
+  color: #70A7AD;
 }
 
 .slick-dots li button:before {
@@ -54,9 +63,6 @@
   top: 1px;
 }
 
-.slick-prev:before, .slick-next:before{
-  color: #70A7AD;
-}
 
 .slick-dots li button {
   border: 5px solid #000403;
@@ -119,6 +125,10 @@
 
 .categoriesBoxTag{
   text-align: center; 
+}
+
+.rounded{
+  border-radius: 25px;
 }
 
 /* */
