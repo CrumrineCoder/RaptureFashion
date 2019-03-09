@@ -130,3 +130,4 @@ Process:
 *Picked out colors and general feel of website
 *Broke down feature list and started work on lo-fi wireframes
 *After making home and product listing/product details and checkout pages, went through and picked out dresses I would want to display for the test site to figure out the Nav, with only a vague sense of it before hand. 
+*Worked on home page

@@ -1,6 +1,12 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
+/* Helpers */
+
+.rounded{
+  border-radius: 25px;
+}
+
 /* Homepage */
 
 .homepageHeader{
@@ -51,7 +57,6 @@
   right: 60px;
 }
 
-
 .homepageBestSellersCarousel .slick-prev:before, .homepageBestSellersCarousel .slick-next:before{
   color: #70A7AD;
 }
@@ -62,7 +67,6 @@
   opacity: .9;
   top: 1px;
 }
-
 
 .slick-dots li button {
   border: 5px solid #000403;
@@ -127,10 +131,34 @@
   text-align: center; 
 }
 
-.rounded{
-  border-radius: 25px;
+/* Instagram */
+
+.instagramIcon{
+  color: red; 
+  margin-right: 5px;
 }
 
+.instagramBox{
+  width: 33%;
+  display: inline-block;
+}
+
+.instagramBoxImage{
+  object-fit: none; /* Do not scale the image */
+  object-position: center; /* Center the image within the element */
+  height: 600px;
+  width: 100%;
+}
+
+.instagramBoxHandle{
+  margin-top: 10px;
+  margin-bottom: 5px;
+  text-align: center; 
+}
+
+.instagramBoxLikes{
+  text-align: center; 
+}
 /* */
 
 body {
