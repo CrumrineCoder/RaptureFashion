@@ -7,7 +7,7 @@ import Search from '../components/Search';
 import Form from '../components/Form';
 import { pollActions } from '../../_actions/polls.actions.js';
 import { withRouter } from 'react-router-dom';
-import homepageRapture1 from '../../../assets/homepageRapture1.jpg'; 
+import homepageRapture1 from '../../../assets/homepageRapture1.png'; 
 import homepageRapture2 from '../../../assets/homepageRapture2.jpg'; 
 import Slider from "react-slick";
 
@@ -98,18 +98,14 @@ class Home extends Component {
 			infinite: true,
 			speed: 500,
 			slidesToShow: 1,
-			slidesToScroll: 1
-		  };
-		
-		/*
-		<Tags onChangeFilter={this.changeFilter} />
-		*/
-		// Display the Form, header for polls listing, and all poll links
+			slidesToScroll: 1,
+			adaptiveHeight: true
+		};
 		return (
 			<div className="pollsContainer">
-				<Slider {...settings}>
-					<img src={homepageRapture1} />
-					<img src={homepageRapture2} />
+				<Slider className="homepageCarousel" {...settings}>
+					<img className="homepageCarouselImage" src={homepageRapture1} />
+					<img className="homepageCarouselImage" src={homepageRapture2} />
 				</Slider>	
 				
 				<Form></Form>
