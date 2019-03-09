@@ -3,6 +3,8 @@
 
 /* Homepage */
 
+/* Slider */ 
+
 .homepageCarouselImage{
   width: 100%;
   height: 80%;
@@ -58,6 +60,17 @@
 .slick-dots li.slick-active button:before{
   opacity: 1;
   color: #000403;
+}
+
+/* Clothing Box */
+
+.clothingBoxTitle{
+  font-size: 0.85em;
+  font-weight: bold; 
+}
+
+.clothingBoxSubTitle{
+  font-size: 0.85em;
 }
 
 /* */

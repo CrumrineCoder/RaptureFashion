@@ -15,6 +15,8 @@ import Slider from "react-slick";
 import LazyLoad from 'react-lazyload';
 
 
+
+
 // Landing page 
 class Home extends Component {
 
@@ -106,6 +108,18 @@ class Home extends Component {
 			autoplay: true,
 			autoplaySpeed: 5000
 		};
+		var dress = {
+			name: "Unique Vintage Black Iridescent Beaded Zelia Fringe Flapper Dress",
+			brandName: "Aveline's",
+			images: [
+				"Dresses/74683/74683_1_2048x2048.jpg",
+				"Dresses/74683/74683_2_2048x2048.jpg",
+				"Dresses/74683/74683_3_1024x1024.jpg",
+				"Dresses/74683/74683_4_1024x1024.jpg",
+				"Dresses/74683/74683_5_2048x2048.jpg"
+			],
+			price: 98.00
+		}
 		return (
 			<div className="pollsContainer">
 				<Slider className="homepageCarousel" {...settings}>
@@ -119,7 +133,7 @@ class Home extends Component {
 						<img className="homepageCarouselImage" src={brandsHomepage} />
 					</LazyLoad>
 				</Slider>
-				<ClothingBox dress={{name: "Janel"}}></ClothingBox>
+				<ClothingBox dress={dress}></ClothingBox>
 
 				<Form></Form>
 				<h1>All Polls Listing</h1>
