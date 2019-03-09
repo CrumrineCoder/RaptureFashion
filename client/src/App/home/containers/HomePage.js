@@ -5,6 +5,7 @@ import PollLink from '../components/PollLink';
 //import Tags from '../components/Tag';
 import Search from '../components/Search';
 import Form from '../components/Form';
+import ClothingBox from '../components/ClothingBox';
 import { pollActions } from '../../_actions/polls.actions.js';
 import { withRouter } from 'react-router-dom';
 import collectionHomepage from '../../../assets/collectionHomepage.png';
@@ -118,6 +119,7 @@ class Home extends Component {
 						<img className="homepageCarouselImage" src={brandsHomepage} />
 					</LazyLoad>
 				</Slider>
+				<ClothingBox dress={{name: "Janel"}}></ClothingBox>
 
 				<Form></Form>
 				<h1>All Polls Listing</h1>
