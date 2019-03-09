@@ -40,7 +40,7 @@
 
 .slick-dots li button:before {
   font-size: 18px; 
-  color: #70A7AD; 
+  color: rgb(208, 250, 255); 
   opacity: .9;
   top: 1px;
 }
