@@ -29,11 +29,35 @@
 .slick-prev, .slick-next {
   z-index: 2; 
 }
+
 .slick-prev{
   left: 25px;
 }
+
 .slick-next{
   right: 35px;
+}
+
+.slick-dots li button:before {
+  font-size: 18px; 
+  color: #70A7AD; 
+  opacity: .9;
+  top: 1px;
+}
+
+.slick-dots li button {
+  border: 5px solid #000403;
+  border-radius: 25px; 
+}
+
+.slick-dots{
+  bottom: 15px;
+  background: transparent; 
+}
+
+.slick-dots li.slick-active button:before{
+  opacity: 1;
+  color: #000403;
 }
 
 /* */
