@@ -3,6 +3,13 @@
 
 /* Homepage */
 
+.homepageHeader{
+  border-bottom: 2px solid #000403;
+  margin-top: 75px;
+  margin-bottom: 45px;
+  padding-bottom: 5px;
+}
+
 /* Slider */ 
 
 .homepageCarouselImage{
@@ -37,7 +44,7 @@
 }
 
 .slick-next{
-  right: 35px;
+  right: 45px;
 }
 
 .slick-dots li button:before {
@@ -86,7 +93,8 @@
 }
 
 .clothingBox{
-  width: 33%;
+  width: 30%;
+  margin-right: 3%;
   display: inline-block;
 }
 

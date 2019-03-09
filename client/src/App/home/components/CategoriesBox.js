@@ -1,0 +1,28 @@
+import React, { Component } from 'react';
+
+class CategoriesBox extends Component {
+
+    constructor(props) {
+        super(props);
+        // initial state stores the questions, an array of answers the user will input, options the user will make true or false, linked represents if the user will be linked, and submitted checks if the poll has been submitted yet. 
+        this.state = {
+            box: {}
+        }
+    }
+
+    componentWillMount(){
+        this.setState({ box: this.props.box });
+    }
+
+    render(){
+        // TO DO: ADD LINK
+        return(
+            <div className="categoriesBox">
+                <img className="categoriesBoxImage" src={require("../../../assets/Categories/"+this.state.box.image)} />
+                <p className="categoriesBoxImage">{this.state.box.name}</p>
+            </div>
+        )
+    }
+}
+
+export default CategoriesBox;

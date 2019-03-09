@@ -6,11 +6,12 @@ import PollLink from '../components/PollLink';
 import Search from '../components/Search';
 import Form from '../components/Form';
 import ClothingBox from '../components/ClothingBox';
+import CategoriesBox from '../components/CategoriesBox';
 import { pollActions } from '../../_actions/polls.actions.js';
 import { withRouter } from 'react-router-dom';
-import collectionHomepage from '../../../assets/collectionHomepage.png';
-import raptureHomepage from '../../../assets/raptureHomepage.png';
-import brandsHomepage from '../../../assets/brandsHomepage.png';
+import collectionHomepage from '../../../assets/HomepageCarousel/collectionHomepage.png';
+import raptureHomepage from '../../../assets/HomepageCarousel/raptureHomepage.png';
+import brandsHomepage from '../../../assets/HomepageCarousel/brandsHomepage.png';
 import Slider from "react-slick";
 import LazyLoad from 'react-lazyload';
 
@@ -133,6 +134,7 @@ class Home extends Component {
 						<img className="homepageCarouselImage" src={brandsHomepage} />
 					</LazyLoad>
 				</Slider>
+				<h4 className="homepageHeader">Rapture's Favorites</h4>
 				<Slider>
 					<div>
 						<ClothingBox dress={dress}></ClothingBox>
@@ -150,6 +152,10 @@ class Home extends Component {
 						<ClothingBox dress={dress}></ClothingBox>
 					</div>
 				</Slider>
+				<h4 className="homepageHeader">Categories</h4>
+				<CategoriesBox box={{image: "dress.png", name: "Dresses"}}></CategoriesBox>
+				<CategoriesBox box={{image: "jewelry.jpg", name: "Jewelry"}}></CategoriesBox>
+				<CategoriesBox box={{image: "dress.png", name: "Dresses"}}></CategoriesBox>
 				<Form></Form>
 				<h1>All Polls Listing</h1>
 				<Search onSearch={this.handleSearchBar} />

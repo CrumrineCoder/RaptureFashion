@@ -15,6 +15,7 @@ class ClothingBox extends Component {
     }
 
     render(){
+        // TO DO: ADD LINK
         return(
             <div className="clothingBox">
                 <img className="clothingBoxImage" src={require("../../../assets/"+this.state.dress.images[0])} />
