@@ -2,7 +2,6 @@
   "name": "client",
   "version": "0.1.0",
   "dependencies": {
-    "webpack-dev-server": "3.1.14",
     "@babel/core": "*",
     "axios": "*",
     "body-parser": "*",
@@ -30,6 +29,7 @@
     "react-router-dom": "*",
     "react-router-redux": "*",
     "react-scripts": "*",
+    "react-slick": "^0.23.2",
     "react-validation": "*",
     "reactstrap": "*",
     "recharts": "*",
@@ -39,7 +39,9 @@
     "redux-thunk": "*",
     "rxjs": "*",
     "rxjs-compat": "*",
-    "validator": "*"
+    "slick-carousel": "^1.8.1",
+    "validator": "*",
+    "webpack-dev-server": "3.1.14"
   },
   "devDependencies": {
     "redux-devtools": "*",

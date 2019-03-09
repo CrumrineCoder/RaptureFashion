@@ -8,6 +8,9 @@ import Form from '../components/Form';
 import { pollActions } from '../../_actions/polls.actions.js';
 import { withRouter } from 'react-router-dom';
 import homepageRapture1 from '../../../assets/homepageRapture1.jpg'; 
+import homepageRapture2 from '../../../assets/homepageRapture2.jpg'; 
+import Slider from "react-slick";
+
 
 // Landing page 
 class Home extends Component {
@@ -90,15 +93,25 @@ class Home extends Component {
 				</ul>
 			)
 		}
-		
+		var settings = {
+			dots: true,
+			infinite: true,
+			speed: 500,
+			slidesToShow: 1,
+			slidesToScroll: 1
+		  };
 		
 		/*
 		<Tags onChangeFilter={this.changeFilter} />
 		*/
 		// Display the Form, header for polls listing, and all poll links
 		return (
-			<div className="pollsContainer">	
-				<img src={homepageRapture1} />
+			<div className="pollsContainer">
+				<Slider {...settings}>
+					<img src={homepageRapture1} />
+					<img src={homepageRapture2} />
+				</Slider>	
+				
 				<Form></Form>
 				<h1>All Polls Listing</h1>
 				<Search onSearch={this.handleSearchBar} />
