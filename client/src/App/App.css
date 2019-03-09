@@ -102,6 +102,25 @@
   width: 100%;
 }
 
+/* Categories Box */
+
+.categoriesBox{
+  display: inline-block; 
+  width: 50%;
+}
+
+.categoriesBoxImage{
+  width: 80%;
+  height: 200px;
+  margin: 0 auto; 
+  display: block; 
+  overflow: hidden;
+}
+
+.categoriesBoxTag{
+  text-align: center; 
+}
+
 /* */
 
 body {

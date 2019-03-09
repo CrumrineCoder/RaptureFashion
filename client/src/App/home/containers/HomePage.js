@@ -153,9 +153,10 @@ class Home extends Component {
 					</div>
 				</Slider>
 				<h4 className="homepageHeader">Categories</h4>
-				<CategoriesBox box={{image: "dress.png", name: "Dresses"}}></CategoriesBox>
-				<CategoriesBox box={{image: "jewelry.jpg", name: "Jewelry"}}></CategoriesBox>
-				<CategoriesBox box={{image: "dress.png", name: "Dresses"}}></CategoriesBox>
+				<CategoriesBox box={{image: "Categories/dresses.jpg", name: "Dresses"}}></CategoriesBox>
+				<CategoriesBox box={{image: "Categories/jewelry.jpg", name: "Jewelry"}}></CategoriesBox>
+				<CategoriesBox box={{image: "Categories/hats.jpg", name: "Hats"}}></CategoriesBox>
+				<CategoriesBox box={{image: "Categories/shoes.jpg", name: "Shoes"}}></CategoriesBox>
 				<Form></Form>
 				<h1>All Polls Listing</h1>
 				<Search onSearch={this.handleSearchBar} />
