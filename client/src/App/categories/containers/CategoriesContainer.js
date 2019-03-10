@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ClothingBox from '../../home/components/ClothingBox';
+import Filter from "../components/Filter";
 /*
 import ClothingBox from '../components/ClothingBox';
 import CategoriesBox from '../components/CategoriesBox';
@@ -19,14 +20,6 @@ class CategoriesContainer extends Component {
 		// Used for when searching and tagging functionality whenever that comes
 		this.state = { };
 	}
-
-	static propTypes = {
-		//	selectedPoll: PropTypes.string.isRequired,
-		//	polls: PropTypes.array.isRequired,
-		isFetching: PropTypes.bool.isRequired,
-		lastUpdated: PropTypes.number,
-		dispatch: PropTypes.func.isRequired
-    }
     
     componentDidMount() {
         console.log(this.props);
@@ -101,6 +94,7 @@ class CategoriesContainer extends Component {
 
 		return (
 			<div className="categoriesContainer">
+                <Filter></Filter>
 				<ClothingBox dress={gibsonDress}></ClothingBox>
                 <ClothingBox dress={ryanDress}></ClothingBox>
                 <ClothingBox dress={apolloDress}></ClothingBox>
@@ -109,14 +103,6 @@ class CategoriesContainer extends Component {
 		);
 
 	}
-}
-
-CategoriesContainer.propTypes = {
-	//selectedPoll: PropTypes.string.isRequired,
-	//polls: PropTypes.array.isRequired,
-	isFetching: PropTypes.bool.isRequired,
-	lastUpdated: PropTypes.number,
-	dispatch: PropTypes.func.isRequired
 }
 
 function mapStateToProps(state) {
