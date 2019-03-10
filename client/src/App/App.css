@@ -9,8 +9,8 @@
 
 body, html{
   font-family: "Century Gothic" !important;
-  background: #E7ECEF;
-  color: #000403;
+  background: #E7ECEF !important;
+  color: #000403 !important;
   word-wrap: break-word;
   height: 100%;
   margin: 0;

@@ -66,6 +66,9 @@ class Header extends Component {
 								<NavItem>
 									<NavLink href="#/">Home</NavLink>
 								</NavItem>
+								<NavItem>
+									<NavLink href="#/categories/dress">Dress</NavLink>
+								</NavItem>
 								{userLinks}
 							</Nav>
 						</Collapse>
