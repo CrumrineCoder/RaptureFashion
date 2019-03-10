@@ -7,8 +7,15 @@
   border-radius: 25px;
 }
 
-body{
+body, html{
   font-family: "Century Gothic" !important;
+  background: #E7ECEF;
+  color: #000403;
+  word-wrap: break-word;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100%;
 }
 
 /* Homepage */
@@ -187,12 +194,6 @@ body{
   color: white;
 }
 /* */
-
-body {
-  color: #333;
-  word-wrap: break-word;
-  background: #EBEBEB !important;
-}
 
 body, html, #root, .App, .wrap, #pollIndex, .container, .poll, .polls{
   height: 100%; 
