@@ -26,7 +26,11 @@ class CategoriesContainer extends Component {
 		isFetching: PropTypes.bool.isRequired,
 		lastUpdated: PropTypes.number,
 		dispatch: PropTypes.func.isRequired
-	}
+    }
+    
+    componentDidMount() {
+        console.log(this.props);
+    }
 
 	// Upon first render,  tell the back end to get all polls
 /*	componentDidMount() {
@@ -118,4 +122,4 @@ CategoriesContainer.propTypes = {
 function mapStateToProps(state) {
 }
 
-export default (CategoriesContainer);
+export default connect(mapStateToProps)(CategoriesContainer);

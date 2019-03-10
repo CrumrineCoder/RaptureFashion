@@ -8,7 +8,7 @@ class categoriesIndex extends Component {
 		return (
 			<div id="pollIndex">
 				<Container>
-					<CategoriesContainer />
+					<CategoriesContainer clothing={this.props.clothing} />
 				</Container>
 			</div>
 		);
