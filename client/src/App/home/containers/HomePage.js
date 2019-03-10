@@ -154,28 +154,36 @@ class Home extends Component {
 					</div>
 				</Slider>
 				<h4 className="homepageHeader">Categories</h4>
-				<CategoriesBox box={{image: "Categories/dresses.jpg", name: "Dresses"}}></CategoriesBox>
-				<CategoriesBox box={{image: "Categories/jewelry.jpg", name: "Jewelry"}}></CategoriesBox>
-				<CategoriesBox box={{image: "Categories/hats.jpg", name: "Hats"}}></CategoriesBox>
-				<CategoriesBox box={{image: "Categories/shoes.jpg", name: "Shoes"}}></CategoriesBox>
+				<CategoriesBox box={{ image: "Categories/dresses.jpg", name: "Dresses" }}></CategoriesBox>
+				<CategoriesBox box={{ image: "Categories/jewelry.jpg", name: "Jewelry" }}></CategoriesBox>
+				<CategoriesBox box={{ image: "Categories/hats.jpg", name: "Hats" }}></CategoriesBox>
+				<CategoriesBox box={{ image: "Categories/shoes.jpg", name: "Shoes" }}></CategoriesBox>
 				<h4 className="homepageHeader">Brands</h4>
-				<CategoriesBox box={{image: "Brand/gibson girls.png", name: "Gibson Girls"}}></CategoriesBox>
-				<CategoriesBox box={{image: "Brand/andrew ryan.png", name: "Ryan Boutique"}}></CategoriesBox>
-				<CategoriesBox box={{image: "Brand/apollo.png", name: "Apollo"}}></CategoriesBox>
-				<CategoriesBox box={{image: "Brand/aveline.png", name: "ÁVELINE'S"}}></CategoriesBox>
+				<CategoriesBox box={{ image: "Brand/gibson girls.png", name: "Gibson Girls" }}></CategoriesBox>
+				<CategoriesBox box={{ image: "Brand/andrew ryan.png", name: "Ryan Boutique" }}></CategoriesBox>
+				<CategoriesBox box={{ image: "Brand/apollo.png", name: "Apollo" }}></CategoriesBox>
+				<CategoriesBox box={{ image: "Brand/aveline.png", name: "ÁVELINE'S" }}></CategoriesBox>
 				<h4 className="homepageHeader">#WelcomeToRapture</h4>
 				<h5>Join the Rapture Community</h5>
-				<Slider className="homepageBestSellersCarousel">
+				<Slider className="homepageBestSellersCarousel" {...{
+					infinite: true,
+					speed: 500,
+					slidesToShow: 1,
+					slidesToScroll: 1,
+					autoplay: true,
+					swipeToSlide: false,
+					autoplaySpeed: 5000
+				}}>
 					<div>
-						<InstagramBox user={{image: "t0231laura1.jpg", handle: "ThedevilAbove", likes: 5511}}></InstagramBox>
-						<InstagramBox user={{image: "t6573caroline.jpg", handle: "KiwiWillow", likes: 2554}}></InstagramBox>
-						<InstagramBox user={{image: "z5941web1.jpg", handle: "Mementos", likes: 7999}}></InstagramBox>
-		
+						<InstagramBox user={{ image: "t0231laura1.jpg", handle: "ThedevilAbove", likes: 5511 }}></InstagramBox>
+						<InstagramBox user={{ image: "t6573caroline.jpg", handle: "KiwiWillow", likes: 2554 }}></InstagramBox>
+						<InstagramBox user={{ image: "z5941web1.jpg", handle: "Mementos", likes: 7999 }}></InstagramBox>
+
 					</div>
 					<div>
-						<InstagramBox user={{image: "z4090chloe1.jpg", handle: "GottaTao", likes: 1015}}></InstagramBox>
-						<InstagramBox user={{image: "z4090chloe2.jpg", handle: "VintageCrawler", likes: 14356}}></InstagramBox>
-						<InstagramBox user={{image: "t9037jennifer1.jpg", handle: "Avertermo", likes: 2287}}></InstagramBox>
+						<InstagramBox user={{ image: "z4090chloe1.jpg", handle: "GottaTao", likes: 1015 }}></InstagramBox>
+						<InstagramBox user={{ image: "z4090chloe2.jpg", handle: "VintageCrawler", likes: 14356 }}></InstagramBox>
+						<InstagramBox user={{ image: "t9037jennifer1.jpg", handle: "Avertermo", likes: 2287 }}></InstagramBox>
 					</div>
 				</Slider>
 			</div>

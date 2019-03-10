@@ -7,6 +7,10 @@
   border-radius: 25px;
 }
 
+body{
+  font-family: "Century Gothic" !important;
+}
+
 /* Homepage */
 
 .homepageHeader{
@@ -129,6 +133,9 @@
 
 .categoriesBoxTag{
   text-align: center; 
+  font-size: 1.8em;
+  margin-top: 10px;
+  margin-bottom: 30px;
 }
 
 /* Instagram */
@@ -141,6 +148,7 @@
 .instagramBox{
   width: 33%;
   display: inline-block;
+  position: relative; 
 }
 
 .instagramBoxImage{
@@ -154,15 +162,33 @@
   margin-top: 10px;
   margin-bottom: 5px;
   text-align: center; 
+  z-index: 3;
 }
 
 .instagramBoxLikes{
   text-align: center; 
+  z-index: 3;
+}
+
+.instagramBoxPopup{
+ position:absolute;
+  top:50%;
+  left:50%; 
+  text-align:center;
+  transform: translateX(-50%) translateY(-50%);
+  background: rgba(15, 43, 54, 0.625); 
+  color: white; 
+  padding: 10px;
+  border-radius: 25px; 
+  z-index: 2;
+}
+
+.instagramBoxLink, .instagramBoxLink:hover{
+  color: white;
 }
 /* */
 
 body {
-  font-family: "Aller",sans-serif;
   color: #333;
   word-wrap: break-word;
   background: #EBEBEB !important;

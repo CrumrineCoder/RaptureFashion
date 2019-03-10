@@ -39,6 +39,10 @@ https://www.pinterest.com/bonjourmiaou/edwardian-fashion-photos/
 https://vpll.org/gallery/ [in the street wearing the dresses as opposed to models]
 https://www.google.com/search?rlz=1C1CHBF_enUS730US730&biw=1366&bih=657&tbm=isch&sa=1&ei=x_SAXOWGDu2Z_QbcypTgDA&q=Gibson+Girl+fashion&oq=Gibson+Girl+fashion&gs_l=img.3..0j0i24.295.1198..1393...0.0..0.316.596.2-1j1......0....1..gws-wiz-img.UT2zD06Ul6o
 
+Fonts: 
+
+https://imgur.com/fop2DnJ
+
 Color Scheme: 
 
 Purple (dark):
