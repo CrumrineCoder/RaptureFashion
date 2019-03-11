@@ -22,6 +22,7 @@ class CategoriesContainer extends Component {
             filter: {}
         };
         this.handleFilter = this.handleFilter.bind(this);
+        this.getFilteredArray = this.getFilteredArray.bind(this);
     }
 
     componentDidMount() {
@@ -40,6 +41,12 @@ class CategoriesContainer extends Component {
             this.props.dispatch(pollActions.selectPoll("All"));
             this.props.dispatch(pollActions.fetchVotesIfNeeded("All"));
         } */
+
+    getFilteredArray(array, key, value) {
+        return array.filter(function (e) {
+            return e[key] == value;
+        });
+    }
 
     render() {
         var filters = {
@@ -97,22 +104,25 @@ class CategoriesContainer extends Component {
                 price: 294.00
             }
         ]
+
+
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
-            console.log(this.state.filter.brandName);
-            let filteredDresses = dresses.filter((i) => i.brandName === this.state.filter.brandName);
-            console.log(filteredDresses);
+            let filteredDresses = dresses;
+            for (var filter in this.state.filter) {
+                filteredDresses = this.getFilteredArray(filteredDresses, filter, this.state.filter[filter])
+            }
             pageContent = (
-				<ul className="polls">
-					{filteredDresses.map((dress, i) => <ClothingBox key={i} dress={dress} />)}
-				</ul>
-			)
-        } else{
+                <ul className="polls">
+                    {filteredDresses.map((dress, i) => <ClothingBox key={i} dress={dress} />)}
+                </ul>
+            )
+        } else {
             console.log("jive");
             pageContent = (
-				<ul className="polls">
-					{dresses.map((dress, i) => <ClothingBox key={i} dress={dress} />)}
-				</ul>
-			)
+                <ul className="polls">
+                    {dresses.map((dress, i) => <ClothingBox key={i} dress={dress} />)}
+                </ul>
+            )
         }
 
         console.log(pageContent);
@@ -120,7 +130,7 @@ class CategoriesContainer extends Component {
         return (
             <div className="categoriesContainer">
                 <Filter onChange={this.handleFilter}></Filter>
-                  {pageContent}
+                {pageContent}
             </div>
         );
 
