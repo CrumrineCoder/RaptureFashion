@@ -15,94 +15,116 @@ import { withRouter } from 'react-router-dom';
 // Landing page 
 class CategoriesContainer extends Component {
 
-	constructor(props) {
-		super(props);
-		// Used for when searching and tagging functionality whenever that comes
-		this.state = { };
-	}
-    
+    constructor(props) {
+        super(props);
+        // Used for when searching and tagging functionality whenever that comes
+        this.state = {
+            filter: {}
+        };
+        this.handleFilter = this.handleFilter.bind(this);
+    }
+
     componentDidMount() {
         console.log(this.props);
     }
 
-	// Upon first render,  tell the back end to get all polls
-/*	componentDidMount() {
-		this.props.dispatch(pollActions.selectPoll("All"));
-		this.props.dispatch(pollActions.fetchVotesIfNeeded("All"));
-	} */
+    handleFilter(filter) {
+        this.setState({
+            filter: filter
+        })
+        console.log(filter);
+    }
 
-	render() {
+    // Upon first render,  tell the back end to get all polls
+    /*	componentDidMount() {
+            this.props.dispatch(pollActions.selectPoll("All"));
+            this.props.dispatch(pollActions.fetchVotesIfNeeded("All"));
+        } */
+
+    render() {
         var filters = {
 
         }
+        let pageContent = '';
 
-        var dresses = {
-
+        var dresses = [
+            {
+                name: "Unique Vintage Black Iridescent Beaded Zelia Fringe Flapper Dress",
+                brandName: "Gibson Girl",
+                images: [
+                    "Dresses/74683/74683_1_2048x2048.jpg",
+                    "Dresses/74683/74683_2_2048x2048.jpg",
+                    "Dresses/74683/74683_3_1024x1024.jpg",
+                    "Dresses/74683/74683_4_1024x1024.jpg",
+                    "Dresses/74683/74683_5_2048x2048.jpg"
+                ],
+                price: 98.00
+            },
+            {
+                name: "Unique Vintage Black Iridescent Beaded Zelia Fringe Flapper Dress",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Dresses/74683/74683_1_2048x2048.jpg",
+                    "Dresses/74683/74683_2_2048x2048.jpg",
+                    "Dresses/74683/74683_3_1024x1024.jpg",
+                    "Dresses/74683/74683_4_1024x1024.jpg",
+                    "Dresses/74683/74683_5_2048x2048.jpg"
+                ],
+                price: 103.00
+            },
+            {
+                name: "Unique Vintage Black Iridescent Beaded Zelia Fringe Flapper Dress",
+                brandName: "Apollo",
+                images: [
+                    "Dresses/74683/74683_1_2048x2048.jpg",
+                    "Dresses/74683/74683_2_2048x2048.jpg",
+                    "Dresses/74683/74683_3_1024x1024.jpg",
+                    "Dresses/74683/74683_4_1024x1024.jpg",
+                    "Dresses/74683/74683_5_2048x2048.jpg"
+                ],
+                price: 23.00
+            },
+            {
+                name: "Unique Vintage Black Iridescent Beaded Zelia Fringe Flapper Dress",
+                brandName: "ÁVELINE'S",
+                images: [
+                    "Dresses/74683/74683_1_2048x2048.jpg",
+                    "Dresses/74683/74683_2_2048x2048.jpg",
+                    "Dresses/74683/74683_3_1024x1024.jpg",
+                    "Dresses/74683/74683_4_1024x1024.jpg",
+                    "Dresses/74683/74683_5_2048x2048.jpg"
+                ],
+                price: 294.00
+            }
+        ]
+        if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
+            console.log(this.state.filter.brandName);
+            let filteredDresses = dresses.filter((i) => i.brandName === this.state.filter.brandName);
+            console.log(filteredDresses);
+            pageContent = (
+				<ul className="polls">
+					{filteredDresses.map((dress, i) => <ClothingBox key={i} dress={dress} />)}
+				</ul>
+			)
+        } else{
+            console.log("jive");
+            pageContent = (
+				<ul className="polls">
+					{dresses.map((dress, i) => <ClothingBox key={i} dress={dress} />)}
+				</ul>
+			)
         }
 
-        var gibsonDress = {
-			name: "Unique Vintage Black Iridescent Beaded Zelia Fringe Flapper Dress",
-			brandName: "Gibson Girl",
-			images: [
-				"Dresses/74683/74683_1_2048x2048.jpg",
-				"Dresses/74683/74683_2_2048x2048.jpg",
-				"Dresses/74683/74683_3_1024x1024.jpg",
-				"Dresses/74683/74683_4_1024x1024.jpg",
-				"Dresses/74683/74683_5_2048x2048.jpg"
-			],
-			price: 98.00
-        }
-        
-        var ryanDress = {
-			name: "Unique Vintage Black Iridescent Beaded Zelia Fringe Flapper Dress",
-			brandName: "Ryan Boutique",
-			images: [
-				"Dresses/74683/74683_1_2048x2048.jpg",
-				"Dresses/74683/74683_2_2048x2048.jpg",
-				"Dresses/74683/74683_3_1024x1024.jpg",
-				"Dresses/74683/74683_4_1024x1024.jpg",
-				"Dresses/74683/74683_5_2048x2048.jpg"
-			],
-			price: 103.00
-        }
-        
-        var apolloDress = {
-			name: "Unique Vintage Black Iridescent Beaded Zelia Fringe Flapper Dress",
-			brandName: "Apollo",
-			images: [
-				"Dresses/74683/74683_1_2048x2048.jpg",
-				"Dresses/74683/74683_2_2048x2048.jpg",
-				"Dresses/74683/74683_3_1024x1024.jpg",
-				"Dresses/74683/74683_4_1024x1024.jpg",
-				"Dresses/74683/74683_5_2048x2048.jpg"
-			],
-			price: 23.00
-        }
-        
-        var avelineDress = {
-			name: "Unique Vintage Black Iridescent Beaded Zelia Fringe Flapper Dress",
-			brandName: "ÁVELINE'S",
-			images: [
-				"Dresses/74683/74683_1_2048x2048.jpg",
-				"Dresses/74683/74683_2_2048x2048.jpg",
-				"Dresses/74683/74683_3_1024x1024.jpg",
-				"Dresses/74683/74683_4_1024x1024.jpg",
-				"Dresses/74683/74683_5_2048x2048.jpg"
-			],
-			price: 294.00
-        }
+        console.log(pageContent);
 
-		return (
-			<div className="categoriesContainer">
-                <Filter></Filter>
-				<ClothingBox dress={gibsonDress}></ClothingBox>
-                <ClothingBox dress={ryanDress}></ClothingBox>
-                <ClothingBox dress={apolloDress}></ClothingBox>
-                <ClothingBox dress={avelineDress}></ClothingBox>
-			</div>
-		);
+        return (
+            <div className="categoriesContainer">
+                <Filter onChange={this.handleFilter}></Filter>
+                  {pageContent}
+            </div>
+        );
 
-	}
+    }
 }
 
 function mapStateToProps(state) {

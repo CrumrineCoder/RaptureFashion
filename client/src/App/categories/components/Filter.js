@@ -7,14 +7,16 @@ class Filter extends Component {
         super(props);
         // Used for when searching and tagging functionality whenever that comes
         this.state = {
-            brand: ""
+            brandName: ""
         };
         this.changeBrand = this.changeBrand.bind(this);
     }
 
     changeBrand(e) {
         this.setState({
-            brand: e.target.value
+            brandName: e.target.value
+        }, function () {
+            this.props.onChange(this.state);
         });
     }
 
@@ -23,19 +25,19 @@ class Filter extends Component {
         return (
             <div className="filter">
                 <label>
-                    <input type="radio" name="brand" value="Gibson Girls" checked={this.state.brand === "Gibson Girls"} onChange={this.changeBrand} />
-                    Gibson Girls
+                    <input type="radio" name="brandName" value="Gibson Girl" checked={this.state.brandName === "Gibson Girl"} onChange={this.changeBrand} />
+                    Gibson Girl
                 </label>
                 <label>
-                    <input type="radio" name="brand" value="Ryan Boutique" checked={this.state.brand === "Ryan Boutique"} onChange={this.changeBrand} />
+                    <input type="radio" name="brandName" value="Ryan Boutique" checked={this.state.brandName === "Ryan Boutique"} onChange={this.changeBrand} />
                     Ryan Boutique
                 </label>
                 <label>
-                    <input type="radio" name="brand" value="Apollo" checked={this.state.brand === "Apollo"} onChange={this.changeBrand} />
+                    <input type="radio" name="brandName" value="Apollo" checked={this.state.brandName === "Apollo"} onChange={this.changeBrand} />
                     Apollo
                 </label>
                 <label>
-                    <input type="radio" name="brand" value="ÁVELINE'S" checked={this.state.brand === "ÁVELINE'S"} onChange={this.changeBrand} />
+                    <input type="radio" name="brandName" value="ÁVELINE'S" checked={this.state.brandName === "ÁVELINE'S"} onChange={this.changeBrand} />
                     ÁVELINE'S
                 </label>
             </div>

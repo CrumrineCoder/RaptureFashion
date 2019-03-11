@@ -14,6 +14,10 @@ class ClothingBox extends Component {
         this.setState({ dress: this.props.dress });
     }
 
+    componentWillReceiveProps(nextProps){
+        this.setState({ dress: nextProps.dress});
+    }
+    
     render(){
         // TO DO: ADD LINK
         return(
