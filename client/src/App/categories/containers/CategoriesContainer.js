@@ -23,6 +23,7 @@ class CategoriesContainer extends Component {
         };
         this.handleFilter = this.handleFilter.bind(this);
         this.getFilteredArray = this.getFilteredArray.bind(this);
+        this.arrayContainsAnotherArray = this.arrayContainsAnotherArray.bind(this);
     }
 
     componentDidMount() {
@@ -44,9 +45,24 @@ class CategoriesContainer extends Component {
 
     getFilteredArray(array, key, value) {
         return array.filter(function (e) {
-            return e[key] == value;
+            console.log(key);
+            switch(key){
+                case "color":
+                    console.log("test");
+                    break
+                default:
+                    return e[key] == value;
+            }
         });
     }
+
+    arrayContainsAnotherArray(needle, haystack){
+        for(var i = 0; i < needle.length; i++){
+          if(haystack.indexOf(needle[i]) === -1)
+             return false;
+        }
+        return true;
+      }
 
     render() {
         var filters = {
@@ -65,7 +81,8 @@ class CategoriesContainer extends Component {
                     "Dresses/61626/61626-4_2048x2048.jpg",
                     "Dresses/61626/61626-5_2048x2048.jpg"
                 ],
-                price: 14.00
+                price: 14.00,
+                color: ["Purple", "Black"]
             },
             {
                 name: "Navy Hemingway Flapper Dress",
@@ -77,7 +94,8 @@ class CategoriesContainer extends Component {
                     "Dresses/1606/Unique_Vintage_Navy_Hemingway_Flapper_Dress_2048x2048.jpg",
                     "Dresses/1606/Unique_Vintage_Navy_Hemingway_Flapper_Dress_3_1024x1024.jpg"
                 ],
-                price: 74.00
+                price: 74.00,
+                color: ["Blue"]
             },
             {
                 name: "Black & Green Beaded Antoinette Peacock Flapper",
@@ -89,7 +107,8 @@ class CategoriesContainer extends Component {
                     "Dresses/53556/Unique_Vintage_1920s_Black_Green_Beaded_Antoinette_Peacock_Flapper_c6a4d060-a7a5-4825-9e4b-4bbe641b95e4_2048x2048.jpg",
                     "Dresses/53556/53556_L_2048x2048.jpg"
                 ],
-                price: 98.00
+                price: 98.00,
+                color: ["Green", "Black"]
             },
             {
                 name: "Black Iridescent Beaded Zelia Fringe Flapper Dress",
@@ -101,7 +120,8 @@ class CategoriesContainer extends Component {
                     "Dresses/74683/74683_4_1024x1024.jpg",
                     "Dresses/74683/74683_5_2048x2048.jpg"
                 ],
-                price: 300.00
+                price: 300.00,
+                color: ["Black"]
             },
             {
                 name: "Style Champagne Beaded Fringe Aurore Flapper Dress",
@@ -113,7 +133,8 @@ class CategoriesContainer extends Component {
                     "Dresses/43915/s191854_4_658e7f58-948d-418a-a9bd-3e44f4a1a245_1024x1024.jpg",
                     "Dresses/43915/s191854_5_a86de98f-f546-4480-bc11-a20d3ecd1a31_2048x2048.jpg"
                 ],
-                price: 205.00
+                price: 205.00,
+                color: ["White"]
             }
         ]
 

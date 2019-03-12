@@ -201,6 +201,18 @@ body, html{
 .instagramBoxLink, .instagramBoxLink:hover{
   color: white;
 }
+
+/* Product Listing */
+
+/* Filters */
+
+.filterRow *{
+  display: inline-block; 
+}
+
+.filterRow{
+  display: block; 
+}
 /* */
 
 body, html, #root, .App, .wrap, #pollIndex, .container, .poll, .polls{
