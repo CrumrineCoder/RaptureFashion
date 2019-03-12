@@ -18,6 +18,10 @@ body, html{
   min-height: 100%;
 }
 
+.wrap{
+  margin-bottom: 50px;
+}
+
 /* Homepage */
 
 .homepageHeader{
@@ -121,6 +125,10 @@ body, html{
 
 .clothingBoxImage{
   width: 100%;
+}
+
+.clothingBox{
+  vertical-align: top; 
 }
 
 /* Categories Box */
