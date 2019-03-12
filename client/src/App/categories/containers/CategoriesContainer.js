@@ -24,6 +24,7 @@ class CategoriesContainer extends Component {
         this.handleFilter = this.handleFilter.bind(this);
         this.getFilteredArray = this.getFilteredArray.bind(this);
         this.arrayContainsAnotherArray = this.arrayContainsAnotherArray.bind(this);
+        this.clean = this.clean.bind(this);
     }
 
     componentDidMount() {
@@ -46,22 +47,30 @@ class CategoriesContainer extends Component {
     getFilteredArray(array, key, value) {
         return array.filter(function (e) {
             console.log(key);
-            switch(key){
+            switch (key) {
                 case "color":
-                    console.log("test");
-                    break
+                    return e["color"].includes(value)
                 default:
                     return e[key] == value;
             }
         });
     }
 
-    arrayContainsAnotherArray(needle, haystack){
-        for(var i = 0; i < needle.length; i++){
-          if(haystack.indexOf(needle[i]) === -1)
-             return false;
+    arrayContainsAnotherArray(needle, haystack) {
+        for (var i = 0; i < needle.length; i++) {
+            if (haystack.indexOf(needle[i]) === -1)
+                return false;
         }
         return true;
+    }
+
+     clean(obj) {
+        for (var propName in obj) { 
+          if (obj[propName] === null || obj[propName] === undefined || obj[propName] === "") {
+            delete obj[propName];
+          }
+        }
+        return obj;
       }
 
     render() {
@@ -141,9 +150,15 @@ class CategoriesContainer extends Component {
 
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
             let filteredDresses = dresses;
-            for (var filter in this.state.filter) {
+            var filteredFilter = this.clean(this.state.filter);
+            console.log(filteredFilter);
+            for (var filter in filteredFilter) {
+                console.log(filteredDresses);
+                console.log(filter);
+                console.log(this.state.filter[filter]);
                 filteredDresses = this.getFilteredArray(filteredDresses, filter, this.state.filter[filter])
             }
+            console.log(filteredDresses);
             pageContent = (
                 <ul className="polls">
                     {filteredDresses.map((dress, i) => <ClothingBox key={i} dress={dress} />)}
