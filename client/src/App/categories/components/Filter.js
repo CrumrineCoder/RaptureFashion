@@ -13,25 +13,15 @@ class Filter extends Component {
                 color: null
             }
         };
-        this.changeBrand = this.changeBrand.bind(this);
-        this.changeColor = this.changeColor.bind(this);
     }
 
-    changeBrand(e) {
-        let filters = Object.assign({}, this.state.filters); 
-        filters.brandName = e.target.value;
-        this.setState({
-            filters,
-            amountOfFilters: this.state.amountOfFilters+1
-        }, function () {
-            this.props.onChange(this.state.filters);
-        });
+    delete(v){
+        console.log(v);
     }
 
-    changeColor(e) {
+    changeFilter(key, value){
         let filters = Object.assign({}, this.state.filters); 
-        console.log(filters);
-        filters.color = e.target.value;
+        filters[key] = value;
         this.setState({
             filters,
             amountOfFilters: this.state.amountOfFilters+1
@@ -51,7 +41,7 @@ class Filter extends Component {
         if(this.state.filters.brandName != undefined){
             activeFilter.push(
                 <div>
-                   <i class="fas fa-times activeFilterDelete"></i> Brand Name: {this.state.filters.brandName}
+                   <i onClick={() => this.delete("brandName")} class="fas fa-times activeFilterDelete"></i> Brand Name: {this.state.filters.brandName}
                 </div>      
             )
         }
@@ -67,41 +57,41 @@ class Filter extends Component {
                 {activeFilter}
                 <div className="filterRow">
                     <label>
-                        <input type="radio" name="brandName" value="Gibson Girl" checked={this.state.filters.brandName === "Gibson Girl"} filter="brandName" onChange={this.changeBrand} />
+                        <input type="radio" name="brandName" value="Gibson Girl" checked={this.state.filters.brandName === "Gibson Girl"} filter="brandName" onChange={() => this.changeFilter("brandName", "Gibson Girl")}  />
                         Gibson Girl
                     </label>
                     <label>
-                        <input type="radio" name="brandName" value="Ryan Boutique" checked={this.state.filters.brandName === "Ryan Boutique"} filter="brandName" onChange={this.changeBrand} />
+                        <input type="radio" name="brandName" value="Ryan Boutique" checked={this.state.filters.brandName === "Ryan Boutique"} filter="brandName"  onChange={() => this.changeFilter("brandName", "Ryan Boutique")} />
                         Ryan Boutique
                     </label>
                     <label>
-                        <input type="radio" name="brandName" value="Apollo" checked={this.state.filters.brandName === "Apollo"} filter="brandName" onChange={this.changeBrand} />
+                        <input type="radio" name="brandName" value="Apollo" checked={this.state.filters.brandName === "Apollo"} filter="brandName" onChange={() => this.changeFilter("brandName", "Apollo")}  />
                         Apollo
                     </label>
                     <label>
-                        <input type="radio" name="brandName" value="ÁVELINE'S" checked={this.state.filters.brandName === "ÁVELINE'S"} filter="brandName" onChange={this.changeBrand} />
+                        <input type="radio" name="brandName" value="ÁVELINE'S" checked={this.state.filters.brandName === "ÁVELINE'S"} filter="brandName"  onChange={() => this.changeFilter("brandName", "ÁVELINE'S")}  />
                         ÁVELINE'S
                     </label>
                 </div>
                 <div className="filterRow">
                     <label>
-                        <input type="radio" name="color" value="Purple" checked={this.state.filters.color === "Purple"} filter="color" onChange={this.changeColor} />
+                        <input type="radio" name="color" value="Purple" checked={this.state.filters.color === "Purple"} filter="color" onChange={() => this.changeFilter("color", "Purple")}  />
                         Purple
                     </label>
                     <label>
-                        <input type="radio" name="color" value="Black" checked={this.state.filters.color === "Black"} filter="color" onChange={this.changeColor} />
+                        <input type="radio" name="color" value="Black" checked={this.state.filters.color === "Black"} filter="color" onChange={() => this.changeFilter("color", "Black")} />
                         Black
                     </label>
                     <label>
-                        <input type="radio" name="color" value="Blue" checked={this.state.filters.color === "Blue"} filter="color" onChange={this.changeColor} />
+                        <input type="radio" name="color" value="Blue" checked={this.state.filters.color === "Blue"} filter="color" onChange={() => this.changeFilter("color", "Blue")}/>
                         Blue
                     </label>
                     <label>
-                        <input type="radio" name="color" value="Green" checked={this.state.filters.color === "Green"} filter="color" onChange={this.changeColor} />
+                        <input type="radio" name="color" value="Green" checked={this.state.filters.color === "Green"} filter="color" onChange={() => this.changeFilter("color", "Green")} />
                         Green
                     </label>
                     <label>
-                        <input type="radio" name="color" value="White" checked={this.state.filters.color === "White"} filter="color" onChange={this.changeColor} />
+                        <input type="radio" name="color" value="White" checked={this.state.filters.color === "White"} filter="color" onChange={() => this.changeFilter("color", "White")} />
                         White
                     </label>
                 </div>
