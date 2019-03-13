@@ -213,6 +213,11 @@ body, html{
 .filterRow{
   display: block; 
 }
+
+.activeFilterDelete:hover{
+  color: red; 
+  cursor: pointer; 
+}
 /* */
 
 body, html, #root, .App, .wrap, #pollIndex, .container, .poll, .polls{

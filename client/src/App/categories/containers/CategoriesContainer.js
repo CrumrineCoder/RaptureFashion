@@ -151,14 +151,9 @@ class CategoriesContainer extends Component {
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
             let filteredDresses = dresses;
             var filteredFilter = this.clean(this.state.filter);
-            console.log(filteredFilter);
             for (var filter in filteredFilter) {
-                console.log(filteredDresses);
-                console.log(filter);
-                console.log(this.state.filter[filter]);
                 filteredDresses = this.getFilteredArray(filteredDresses, filter, this.state.filter[filter])
             }
-            console.log(filteredDresses);
             pageContent = (
                 <ul className="polls">
                     {filteredDresses.map((dress, i) => <ClothingBox key={i} dress={dress} />)}
