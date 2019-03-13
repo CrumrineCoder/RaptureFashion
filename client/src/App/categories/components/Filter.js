@@ -15,8 +15,15 @@ class Filter extends Component {
         };
     }
 
-    delete(v){
-        console.log(v);
+    delete(filterToDelete){
+        let filters = Object.assign({}, this.state.filters); 
+        filters[filterToDelete] = null;
+        this.setState({
+            filters,
+            amountOfFilters: this.state.amountOfFilters-1
+        }, function () {
+            this.props.onChange(this.state.filters);
+        });
     }
 
     changeFilter(key, value){
@@ -41,14 +48,14 @@ class Filter extends Component {
         if(this.state.filters.brandName != undefined){
             activeFilter.push(
                 <div>
-                   <i onClick={() => this.delete("brandName")} class="fas fa-times activeFilterDelete"></i> Brand Name: {this.state.filters.brandName}
+                   <i onClick={() => this.delete("brandName")} class="fas fa-times activeFilterDelete"></i> Brand: {this.state.filters.brandName}
                 </div>      
             )
         }
         if(this.state.filters.color != undefined){
             activeFilter.push(
                 <div>
-                  <i class="fas fa-times activeFilterDelete"></i> Color: {this.state.filters.color}
+                  <i onClick={() => this.delete("color")} class="fas fa-times activeFilterDelete"></i> Color: {this.state.filters.color}
                 </div>      
             )
         }
