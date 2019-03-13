@@ -28,10 +28,14 @@ class Filter extends Component {
 
     changeFilter(key, value){
         let filters = Object.assign({}, this.state.filters); 
+        let change = 0;
+        if(filters[key] === null || filters[key] === undefined || filters[key] === ""){
+            change = 1;
+        }
         filters[key] = value;
         this.setState({
             filters,
-            amountOfFilters: this.state.amountOfFilters+1
+            amountOfFilters: this.state.amountOfFilters+change
         }, function () {
             this.props.onChange(this.state.filters);
         });
