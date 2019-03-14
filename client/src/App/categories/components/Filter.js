@@ -52,14 +52,14 @@ class Filter extends Component {
         if(this.state.filters.brandName != undefined){
             activeFilter.push(
                 <div>
-                   <i onClick={() => this.delete("brandName")} class="fas fa-times activeFilterDelete"></i> Brand: {this.state.filters.brandName}
+                   <i onClick={() => this.delete("brandName")} className="fas fa-times activeFilterDelete"></i> Brand: {this.state.filters.brandName}
                 </div>      
             )
         }
         if(this.state.filters.color != undefined){
             activeFilter.push(
                 <div>
-                  <i onClick={() => this.delete("color")} class="fas fa-times activeFilterDelete"></i> Color: {this.state.filters.color}
+                  <i onClick={() => this.delete("color")} className="fas fa-times activeFilterDelete"></i> Color: {this.state.filters.color}
                 </div>      
             )
         }

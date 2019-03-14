@@ -198,6 +198,78 @@ class CategoriesContainer extends Component {
                     "Model Pictured Wearing Size S; S Length 44",
                     "Model Info: Height: 5’8\” | Waist: 26 | Hips: 36 | Bust: 34B"
                 ]
+            },
+            {
+                name: "Black Beaded Deco Angelina Maxi Flapper Dress",
+                brandName: "Apollo",
+                images: [
+                    "Dresses/4002/1920s_Black_Beaded_Deco_Angelina_Maxi_Flapper_Dress_4_2048x2048.jpg",
+                    "Dresses/4002/1920s_Black_Beaded_Deco_Angelina_Maxi_Flapper_Dress_2_1024x1024.jpg",
+                    "Dresses/4002/1920s_Black_Beaded_Deco_Angelina_Maxi_Flapper_Dress_1024x1024.jpg",
+                    "Dresses/4002/1920s_Black_Beaded_Deco_Angelina_Maxi_Flapper_Dress_1_1024x1024.jpg",
+                    "Dresses/4002/1920s_Black_Beaded_Deco_Angelina_Maxi_Flapper_Dress_5_1024x1024.jpg"
+                ],
+                price: 458.00,
+                color: ["Black"],
+                desc: "Let us know when you’ve popped your eyes back in, dear. This gorgeous black flapper dress exudes 1920s and 30s charm, crafted in intricately beaded mesh layered over an included matching slip. With impressive swaths of deco bursts and teardrops, a classic v-neckline and open cap sleeve design, this vintage maxi dress is a bona fide head turner. Prepare for flapper fabulousness! \n Available in sizes 4-12 while supplies last.",
+                details: [
+                    "Imported",
+                    "Polyester 100%",
+                    "Hand Wash Only",
+                    "Pull On",
+                    "Underslip Included",
+                    "Material Has Little Stretch",
+                    "Model Pictured Wearing Size 6",
+                    "Model Info: Height: 5’8\” | Waist: 24 | Hips: 36 | Bust: 34B"
+                ]
+            },
+            {
+                name: "Green & Cream Wilshire Flapper Day Dress",
+                brandName: "Gibson Girl",
+                images: [
+                    "Dresses/64867/64867_1_e2db6a63-d7ff-4f6c-8c93-5da28d85f1e6_2048x2048.jpg",
+                    "Dresses/64867/64867_2_21d97191-6e80-4786-97fa-a3a8a4cc81df_2048x2048.jpg",
+                    "Dresses/64867/64867_3_234936cb-df56-4a99-8d11-44a57affb898_1024x1024.jpg",
+                    "Dresses/64867/64867_L_2048x2048.jpg",
+                    "Dresses/64867/64867_5_8a201854-b3e4-4f63-b247-966f4d57fe21_2048x2048.jpg"
+                ],
+                price: 32.00,
+                color: ["White", "Green"],
+                desc: "We found a reason to smile, dears! Enchanting and elegant, The Wilshire is a graceful 1920s style day dress crafted in an gorgeous green woven blend with stunning ivory cream details. Simplistic short sleeves flutter around the bodice as it makes way for a wide V-neck with lovely ivory flounce and draped faux collar tie. The pointed empire waist tops a courtly seamed and paneled center that descends to a graceful banded drop waist, styled in ivory with horizontal pleats. With an airy asymmetrical hemline, back zipper and hook, the Wilshire is a slice of retro radiance you can't pass up! \n Shown with slip, sold separately. \n Available in sizes XS-4X while supplies last.",
+                details: [
+                    "Imported",
+                    "Polyester 100%",
+                    "Dry Clean Only",
+                    "Back Zipper/Hook",
+                    "Unlined",
+                    "Material Is Semi-Sheer, Slip Sold Separately",
+                    "Model Pictured Wearing Size S; S Length 44",
+                    "Model Info: Height: 5’9\” | Waist: 26 | Hips: 36.5 | Bust: 34C"
+                ]
+            },
+            {
+                name: "Antique Ivory & Black Chiffon Cherie Flapper Day Dress",
+                brandName: "Gibson Girl",
+                images: [
+                    "Dresses/43983/s190355_1_db33a2e9-ed68-43ff-9d77-848c19f6e2d4_2048x2048.jpg",
+                    "Dresses/43983/s190355_2_24d18fbb-8d23-45e5-a659-08e008e7807e_2048x2048.jpg",
+                    "Dresses/43983/s190355_3_526eefb2-a66c-4171-bef6-9c9187f97891_1024x1024.jpg",
+                    "Dresses/43983/s190355_4_2dc6fdee-905d-4c17-9d0a-a7520abebb9c_1024x1024.jpg",
+                    "Dresses/43983/43983_1_2048x2048.jpg"
+                ],
+                price: 26.00,
+                color: ["White", "Black"],
+                desc: "Lovely as a summer day, darling! The Cherie Day Flapper from Unique Vintage is cast in a marvelously soft antique ivory chiffon with black contest details throughout. The sweet V-neck is outlined in black and features a beautiful self tie bow in the center while adorable cap sleeves frame your visage. Faux black buttons dot down the center to a striking black banded drop waist with a sweet side bow while seamed darting lends a flirty flair for a trumpet skirt. Faux pockets sit on the hip and the skirt is highlighted by a black banded hem that sways past your knees. Outfitted a side zipper and lined in gorgeous ivory, we’ve fallen in love with Cherie! \n Available in sizes XS-XL while supplies last.",
+                details: [
+                    "Imported",
+                    "Side Zipper, Lined",
+                    "Faux Buttons",
+                    "Faux Pockets",
+                    "Attached Tie",
+                    "Material Has No Stretch",
+                    "Model Pictured Wearing Size S",
+                    "Model Info: Height: 5’8\” | Waist: 24 | Hips: 36 | Bust: 34B"
+                ]
             }
         ]
 
