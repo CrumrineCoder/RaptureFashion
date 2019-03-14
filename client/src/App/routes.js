@@ -9,6 +9,7 @@ import { connect } from 'react-redux';
 import Home from "./home";
 //import Login from "./login";
 import Profile from "./profile";
+import ProductDetails from "./details";
 import PollShow from "./poll";
 import Dress from "./categories";
 import Edit from "./profile/edit";
@@ -89,6 +90,7 @@ export default (
     <Route path="/categories/dresses"   render={(props) => <Dress {...props} clothing={"Dress"} />}/>
     <Route path="/register" component={Register} />
     <Route path="/login" component={Login} />
+    <Route path="/products/:id/" component={ProductDetails} />
     <Route path="/:id/vote/" component={PollShow} />
     <PrivateRoute path="/:id/results/" component={Result} />
     <PrivateRoute path="/profile" component={Profile} />

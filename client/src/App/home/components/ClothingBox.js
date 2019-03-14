@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class ClothingBox extends Component {
 
@@ -10,26 +11,28 @@ class ClothingBox extends Component {
         }
     }
 
-    componentWillMount(){
+    componentWillMount() {
         this.setState({ dress: this.props.dress });
     }
 
-    componentWillReceiveProps(nextProps){
-        this.setState({ dress: nextProps.dress});
+    componentWillReceiveProps(nextProps) {
+        this.setState({ dress: nextProps.dress });
     }
 
-    render(){
+    render() {
         // TO DO: ADD LINK
-        return(
+        return (
             <div className="clothingBox">
-                <img className="clothingBoxImage rounded" 
-                    src={require("../../../assets/"+this.state.dress.images[0])} 
-                    onMouseOver={e => (e.currentTarget.src = require("../../../assets/"+this.state.dress.images[1]))}
-                    onMouseOut={e => (e.currentTarget.src = require("../../../assets/"+this.state.dress.images[0]))}
-                />
-                <p className="clothingBoxTitle clothingBoxDesc">{this.state.dress.name}</p>
-                <p className="clothingBoxSubTitle clothingBoxDesc">{this.state.dress.brandName}</p>
-                <p className="clothingBoxPrice clothingBoxDesc">${this.state.dress.price}</p>
+                <Link to={"/products/" + this.props._id}>
+                    <img className="clothingBoxImage rounded"
+                        src={require("../../../assets/" + this.state.dress.images[0])}
+                        onMouseOver={e => (e.currentTarget.src = require("../../../assets/" + this.state.dress.images[1]))}
+                        onMouseOut={e => (e.currentTarget.src = require("../../../assets/" + this.state.dress.images[0]))}
+                    />
+                    <p className="clothingBoxTitle clothingBoxDesc">{this.state.dress.name}</p>
+                    <p className="clothingBoxSubTitle clothingBoxDesc">{this.state.dress.brandName}</p>
+                    <p className="clothingBoxPrice clothingBoxDesc">${this.state.dress.price}</p>
+                </Link>
             </div>
         )
     }
