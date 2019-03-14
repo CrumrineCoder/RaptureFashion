@@ -17,12 +17,16 @@ class ClothingBox extends Component {
     componentWillReceiveProps(nextProps){
         this.setState({ dress: nextProps.dress});
     }
-    
+
     render(){
         // TO DO: ADD LINK
         return(
             <div className="clothingBox">
-                <img className="clothingBoxImage rounded" src={require("../../../assets/"+this.state.dress.images[0])} />
+                <img className="clothingBoxImage rounded" 
+                    src={require("../../../assets/"+this.state.dress.images[0])} 
+                    onMouseOver={e => (e.currentTarget.src = require("../../../assets/"+this.state.dress.images[1]))}
+                    onMouseOut={e => (e.currentTarget.src = require("../../../assets/"+this.state.dress.images[0]))}
+                />
                 <p className="clothingBoxTitle clothingBoxDesc">{this.state.dress.name}</p>
                 <p className="clothingBoxSubTitle clothingBoxDesc">{this.state.dress.brandName}</p>
                 <p className="clothingBoxPrice clothingBoxDesc">${this.state.dress.price}</p>
