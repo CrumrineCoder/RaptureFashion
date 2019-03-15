@@ -218,6 +218,59 @@ body, html{
   color: red; 
   cursor: pointer; 
 }
+
+/* Details */
+
+.detailsContainer{
+  margin-top: 75px; 
+}
+
+.detailsImage{
+  width: 80%;
+  display: block;
+  margin: 0 auto; 
+}
+
+.detailsBrand{
+ color: #0F2B36; 
+}
+
+.detailsRightHandInfo{
+  float: right; 
+  width: 50%;
+  overflow:hidden;
+}
+
+.detailsImageScrollContainer{
+  float: left; 
+  width: 50%;
+  overflow: auto; 
+}
+
+.detailsSizeBoxTitle{
+  float: left; 
+}
+
+.detailsSizeBoxLink{
+  float: right;
+}
+
+.detailsSizeBoxList{
+  clear: both; 
+}
+
+.detailsSizeBoxListButton{
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: 2px solid #000403;
+  border-radius: 25px;
+}
+
+.detailsSizeBoxListButton:focus{
+  outline: none;
+  box-shadow: 0 0 0 3px #E7ECEF, 0 0 0 6px #000403;
+}
 /* */
 
 body, html, #root, .App, .wrap, #pollIndex, .container, .poll, .polls{
