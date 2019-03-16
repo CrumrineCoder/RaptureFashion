@@ -257,6 +257,7 @@ body, html{
   position: sticky; 
   width: 40%;
   top: 20px;
+  margin-top: 30px;
 }
 
 .detailsSizeBoxTitle{
@@ -300,6 +301,10 @@ body, html{
   border: none; 
 }
 
+.detailsDescriptionText{
+  font-size: 14px;
+}
+
 .detailsDescContainer{
   display: flex;
   flex-direction: row;
@@ -309,6 +314,10 @@ body, html{
 .detailsDescImage{
   width: 23px;
   height: 20px;
+}
+
+#hangerImage{
+  height: 16px;
 }
 
 .detailsDescUL{
@@ -328,7 +337,7 @@ body, html{
   flex-direction: column;
   justify-content: center;
   margin-left: 10px;
-  margin-top: -10px;
+  margin-top: -5px;
 }
 /* */
 

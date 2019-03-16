@@ -106,6 +106,7 @@ class Filter extends Component {
                         White
                     </label>
                 </div>
+                Sort:
             </div>
         );
 

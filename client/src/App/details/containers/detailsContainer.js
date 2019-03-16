@@ -18,6 +18,21 @@ class DetailsContainer extends Component {
         // Used for when searching and tagging functionality whenever that comes
         this.state = {
         };
+        this.addZeroes = this.addZeroes.bind(this);
+    }
+
+    addZeroes(num) {
+        // Convert input string to a number and store as a variable.
+        var value = Number(num);
+        // Split the input string into two arrays containing integers/decimals
+        var res = num.split(".");
+        // If there is no decimal point or only one decimal place found.
+        if (res.length == 1 || res[1].length < 3) {
+            // Set the number to two decimal places
+            value = value.toFixed(2);
+        }
+        // Return updated or original number.
+        return value;
     }
 
     render() {
@@ -31,7 +46,7 @@ class DetailsContainer extends Component {
                 "Dresses/61626/61626-4_1024x1024.jpg",
                 "Dresses/61626/61626-5_2048x2048.jpg"
             ],
-            price: 14.00,
+            price: "14",
             color: ["Purple", "Black"],
             desc: "With a bit of royalty and aristocratic detail, the Veronique Flapper dress is fresh from Unique Vintage in stunning 1920s design. Intricately deco beaded black mesh boasts black iridescent sequins and small black beads wrought in flourishing deco swirls and spirals, while a deep eggplant purple knit lining creates a radiant effect. The sleeveless, v-neck design shows you off with a modest touch, while the curve hugging fit and jagged edge dripping with fringe will turn every head!  \n Available in sizes S-3X while supplies last.",
             wash: "Made from authentic indigo dyes, so color transfer may occur. Wash inside out cold with like colors. Tumble dry low.",
@@ -50,45 +65,51 @@ class DetailsContainer extends Component {
                 {dress.details.map((detail, i) => <li className="detailsDescLI" key={i}> {detail} </li>)}
             </ul>
         )
+
+        dress.price = this.addZeroes(dress.price);
         return (
-            <div className="detailsContainer">
-                <div className="detailsImageScrollContainer">
-                    <img className="detailsImage" src={require("../../../assets/" + dress.images[0])} />
-                    <img className="detailsImage" src={require("../../../assets/" + dress.images[1])} />
-                    <img className="detailsImage" src={require("../../../assets/" + dress.images[2])} />
-                    <img className="detailsImage" src={require("../../../assets/" + dress.images[3])} />
-                    <img className="detailsImage" src={require("../../../assets/" + dress.images[4])} />
-                </div>
-                <div className="detailsRightHandInfo">
-                    <h4 className="detailsName">{dress.name}</h4>
-                    <p className="detailsBrand">{dress.brandName}</p>
-                    <h4 className="detailsPrice">{dress.price} USD</h4>
-                    <div className="detailsSizeBox">
-                        <p className="detailsSizeBoxTitle">Size</p>
-                        <p className="detailsSizeBoxLink">Size Chart</p>
-                        <div className="detailsSizeBoxList">
-                            <button className="detailsSizeBoxListButton">2</button>
-                            <button className="detailsSizeBoxListButton">4</button>
-                            <button className="detailsSizeBoxListButton">6</button>
-                            <button className="detailsSizeBoxListButton">8</button>
-                            <button className="detailsSizeBoxListButton">10</button>
-                            <button className="detailsSizeBoxListButton">12</button>
+            <div>
+                <div className="detailsContainer">
+                    <div className="detailsImageScrollContainer">
+                        <img className="detailsImage" src={require("../../../assets/" + dress.images[0])} />
+                        <img className="detailsImage" src={require("../../../assets/" + dress.images[1])} />
+                        <img className="detailsImage" src={require("../../../assets/" + dress.images[2])} />
+                        <img className="detailsImage" src={require("../../../assets/" + dress.images[3])} />
+                        <img className="detailsImage" src={require("../../../assets/" + dress.images[4])} />
+                    </div>
+                    <div className="detailsRightHandInfo">
+                        <h4 className="detailsName">{dress.name}</h4>
+                        <p className="detailsBrand">{dress.brandName}</p>
+                        <h4 className="detailsPrice">{dress.price} USD</h4>
+                        <div className="detailsSizeBox">
+                            <p className="detailsSizeBoxTitle">Size</p>
+                            <p className="detailsSizeBoxLink">Size Chart</p>
+                            <div className="detailsSizeBoxList">
+                                <button className="detailsSizeBoxListButton">2</button>
+                                <button className="detailsSizeBoxListButton">4</button>
+                                <button className="detailsSizeBoxListButton">6</button>
+                                <button className="detailsSizeBoxListButton">8</button>
+                                <button className="detailsSizeBoxListButton">10</button>
+                                <button className="detailsSizeBoxListButton">12</button>
+                            </div>
+                        </div>
+                        <button className="detailsCartButton">Add to Cart</button>
+                        <p className="detailsDescriptionText">{dress.desc}</p>
+                        <div className="detailsDescContainer">
+                            <img className="detailsDescImage" id="hangerImage" src={require("../../../assets/Icons/hanger.png")} />
+                            <p className="detailsDescText">{dress.wash}</p>
+                        </div>
+                        <div className="detailsDescContainer">
+                            <img className="detailsDescImage" src={require("../../../assets/Icons/fabric.png")} />
+                            <p className="detailsDescText">{dress.fabric}</p>
+                        </div>
+                        <div className="detailsDescContainer">
+                            <i className="fas fa-pencil-ruler detailsDescImage"></i>
+                            <p className="detailsDescText">{details}</p>
                         </div>
                     </div>
-                    <button className="detailsCartButton">Add to Cart</button>
-                    <div className="detailsDescContainer">
-                       <img className="detailsDescImage" src={require("../../../assets/Icons/hanger.png")} />  
-                       <p className="detailsDescText">{dress.wash}</p>
-                    </div>
-                    <div className="detailsDescContainer">
-                        <img className="detailsDescImage"src={require("../../../assets/Icons/fabric.png")} />
-                        <p className="detailsDescText">{dress.fabric}</p>
-                    </div>
-                    <div className="detailsDescContainer">
-                        <i className="fas fa-pencil-ruler detailsDescImage"></i>
-                        <p className="detailsDescText">{details}</p>
-                    </div>
                 </div>
+                <h1>Wear With</h1>
             </div>
         );
 
