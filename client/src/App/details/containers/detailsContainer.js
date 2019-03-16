@@ -56,7 +56,7 @@ class DetailsContainer extends Component {
                 <div className="detailsRightHandInfo">
                     <h4 className="detailsName">{dress.name}</h4>
                     <p className="detailsBrand">{dress.brandName}</p>
-                    <h4 className="detailsPrice">${dress.price}</h4>
+                    <h4 className="detailsPrice">{dress.price} USD</h4>
                     <div className="detailsSizeBox">
                         <p className="detailsSizeBoxTitle">Size</p>
                         <p className="detailsSizeBoxLink">Size Chart</p>
@@ -70,7 +70,9 @@ class DetailsContainer extends Component {
                         </div>
                     </div>
                     <button className="detailsCartButton">Add to Cart</button>
-
+                    <img src={require("../../../assets/Icons/hanger.png")} />
+                    <img src={require("../../../assets/Icons/fabric.png")} />
+                    <i class="fas fa-pencil-ruler"></i>
                 </div>
             </div>
         );
