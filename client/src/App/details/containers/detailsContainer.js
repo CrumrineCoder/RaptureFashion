@@ -66,6 +66,16 @@ class DetailsContainer extends Component {
             </ul>
         )
 
+        let returns = (
+            <ul className="detailsDescUL">
+                <li className="detailsDescLI">Delivery in Rapture within 1 to 3 business days</li>
+                <li className="detailsDescLI">Delivery in North America and Europe within 4 to 7 business days </li>
+                <li className="detailsDescLI">Up to 15 days to make return</li>
+            </ul>
+        )
+
+
+
         dress.price = this.addZeroes(dress.price);
         return (
             <div>
@@ -106,6 +116,10 @@ class DetailsContainer extends Component {
                         <div className="detailsDescContainer">
                             <i className="fas fa-pencil-ruler detailsDescImage"></i>
                             <p className="detailsDescText">{details}</p>
+                        </div>
+                        <div className="detailsDescContainer">
+                            <i className="fas fa-box-open detailsDescImage"></i>
+                            <p className="detailsDescText">{returns}</p>
                         </div>
                     </div>
                 </div>
