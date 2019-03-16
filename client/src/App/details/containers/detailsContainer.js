@@ -34,16 +34,22 @@ class DetailsContainer extends Component {
             price: 14.00,
             color: ["Purple", "Black"],
             desc: "With a bit of royalty and aristocratic detail, the Veronique Flapper dress is fresh from Unique Vintage in stunning 1920s design. Intricately deco beaded black mesh boasts black iridescent sequins and small black beads wrought in flourishing deco swirls and spirals, while a deep eggplant purple knit lining creates a radiant effect. The sleeveless, v-neck design shows you off with a modest touch, while the curve hugging fit and jagged edge dripping with fringe will turn every head!  \n Available in sizes S-3X while supplies last.",
+            wash: "Made from authentic indigo dyes, so color transfer may occur. Wash inside out cold with like colors. Tumble dry low.",
+            fabric: "Sheer beaded mesh over knit lining | 99% Polyester",
             details: [
-                "Imported",
                 "Side Zipper",
-                "Sheer Beaded Mesh Over Knit Lining",
                 "Some Stretch",
                 "Length Includes Fringe",
                 "Model Pictured Wearing Size M; Medium Length 43",
                 "Model Info: Height: 5’9\” | Waist: 26 | Hips: 36.5 | Bust: 34C"
             ]
         }
+        let details = ""
+        details = (
+            <ul className="detailsDescUL">
+                {dress.details.map((detail, i) => <li className="detailsDescLI" key={i}> {detail} </li>)}
+            </ul>
+        )
         return (
             <div className="detailsContainer">
                 <div className="detailsImageScrollContainer">
@@ -70,9 +76,18 @@ class DetailsContainer extends Component {
                         </div>
                     </div>
                     <button className="detailsCartButton">Add to Cart</button>
-                    <img src={require("../../../assets/Icons/hanger.png")} />
-                    <img src={require("../../../assets/Icons/fabric.png")} />
-                    <i class="fas fa-pencil-ruler"></i>
+                    <div className="detailsDescContainer">
+                       <img className="detailsDescImage" src={require("../../../assets/Icons/hanger.png")} />  
+                       <p className="detailsDescText">{dress.wash}</p>
+                    </div>
+                    <div className="detailsDescContainer">
+                        <img className="detailsDescImage"src={require("../../../assets/Icons/fabric.png")} />
+                        <p className="detailsDescText">{dress.fabric}</p>
+                    </div>
+                    <div className="detailsDescContainer">
+                        <i className="fas fa-pencil-ruler detailsDescImage"></i>
+                        <p className="detailsDescText">{details}</p>
+                    </div>
                 </div>
             </div>
         );
