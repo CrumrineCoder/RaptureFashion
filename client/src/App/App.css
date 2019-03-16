@@ -223,12 +223,29 @@ body, html{
 
 .detailsContainer{
   margin-top: 75px; 
+  padding-bottom: 20px;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 1400px;
+  display: flex;
+  flex-shrink: 2;
+  flex-grow: 2;
+  min-height: 100vh;
+  flex: 1;
+  flex-direction: row;
+  align-items: flex-start;
 }
 
 .detailsImage{
   width: 80%;
   display: block;
   margin: 0 auto; 
+}
+
+.detailsImageScrollContainer{
+  top: 60px;
+  width: 60%;
+  margin: 32px 0 32px 32px;
 }
 
 .detailsBrand{
@@ -238,14 +255,8 @@ body, html{
 .detailsRightHandInfo{
   right: 32px;
   position: sticky; 
-  width: 50%;
-  overflow:hidden;
-}
-
-.detailsImageScrollContainer{
-  float: left; 
-  width: 50%;
-  overflow: auto; 
+  width: 40%;
+  top: 20px;
 }
 
 .detailsSizeBoxTitle{
