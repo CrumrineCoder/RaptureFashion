@@ -69,7 +69,7 @@ class DetailsContainer extends Component {
                             <button className="detailsSizeBoxListButton">12</button>
                         </div>
                     </div>
-                    <button>Add to Cart</button>
+                    <button className="detailsCartButton">Add to Cart</button>
 
                 </div>
             </div>

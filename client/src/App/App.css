@@ -236,7 +236,8 @@ body, html{
 }
 
 .detailsRightHandInfo{
-  float: right; 
+  right: 32px;
+  position: fixed; 
   width: 50%;
   overflow:hidden;
 }
@@ -257,6 +258,10 @@ body, html{
 
 .detailsSizeBoxList{
   clear: both; 
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  margin: 0 auto; 
 }
 
 .detailsSizeBoxListButton{
@@ -270,6 +275,18 @@ body, html{
 .detailsSizeBoxListButton:focus{
   outline: none;
   box-shadow: 0 0 0 3px #E7ECEF, 0 0 0 6px #000403;
+}
+
+.detailsCartButton{
+  margin: 30px auto;
+  padding: 10px; 
+  width: 100%;
+  background: #0F2B36;
+  color: white; 
+  text-transform: uppercase;
+  font-weight: bold; 
+  letter-spacing: 1px;
+  border: none; 
 }
 /* */
 
