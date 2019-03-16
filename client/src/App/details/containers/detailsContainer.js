@@ -49,6 +49,7 @@ class DetailsContainer extends Component {
             price: "14",
             color: ["Purple", "Black"],
             desc: "With a bit of royalty and aristocratic detail, the Veronique Flapper dress is fresh from Unique Vintage in stunning 1920s design. Intricately deco beaded black mesh boasts black iridescent sequins and small black beads wrought in flourishing deco swirls and spirals, while a deep eggplant purple knit lining creates a radiant effect. The sleeveless, v-neck design shows you off with a modest touch, while the curve hugging fit and jagged edge dripping with fringe will turn every head!  \n Available in sizes S-3X while supplies last.",
+            tip: "Pair with studded ankle boots for a simple yet rebellious look.",
             wash: "Made from authentic indigo dyes, so color transfer may occur. Wash inside out cold with like colors. Tumble dry low.",
             fabric: "Sheer beaded mesh over knit lining | 99% Polyester",
             details: [
@@ -105,6 +106,7 @@ class DetailsContainer extends Component {
                         </div>
                         <button className="detailsCartButton">Add to Cart</button>
                         <p className="detailsDescriptionText">{dress.desc}</p>
+                        <p className="detailsDescriptionText"><b>Style Tip:</b> {dress.tip}</p>
                         <div className="detailsDescContainer">
                             <img className="detailsDescImage" id="hangerImage" src={require("../../../assets/Icons/hanger.png")} />
                             <p className="detailsDescText">{dress.wash}</p>
@@ -123,7 +125,7 @@ class DetailsContainer extends Component {
                         </div>
                     </div>
                 </div>
-                <h1>Wear With</h1>
+                <h1>Get the Look</h1>
             </div>
         );
 
