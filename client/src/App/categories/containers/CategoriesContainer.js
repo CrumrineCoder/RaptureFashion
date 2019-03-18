@@ -370,7 +370,81 @@ class CategoriesContainer extends Component {
                 ]
             }
         ]
-
+        let hats = [
+            {
+                name: "Womens Mini Straw Boater Hat Fedora Panama Flat Top Ribbon Summer",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Hats/A456/71UlGCn43VL._UX679_.jpg",
+                    "Hats/A456/71jbzOt3qEL._UX569_.jpg"
+                ],
+                price: "10.99",
+                color: ["Black"],
+                desc: "For your inner gilded flapper girl! A sparkling accessory for your jazz era ensemble, this glitzy piece from Unique Vintage sparkles with gold sequins and black beads through the lightweight black mesh. With scalloped hem and deco designs, you’re the center of attention! ",
+                wash: "Spot Wash",
+                fabric: "100% Straw",
+                details: [
+                    "Circumference: Approx.56 cm-58 cm/22.05-22.84\"",
+                    "Hat brim: Approx. 6 cm /2.36\"",
+                    "Height: Approx.10 cm/3.93\""
+                ]
+            },
+            {
+                name: "Bow Trim Hat",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Hats/704284143/704284143_1.jpg",
+                    "Hats/704284143/704284143_2.jpg",
+                    "Hats/704284143/704284143_3.jpg"
+                ],
+                price: "110",
+                color: ["White"],
+                desc: "Finish off your occasion style with this stunning hat, complete with an eye-catching large feathered bow detail, and designed in 100% abaca.",
+                wash: "Do not wash",
+                fabric: "100% Abaca",
+                details: [
+                    "Length: 58cm circumference"
+                ]
+            },
+            {
+                name: "Women Race Hats Organza Hat with Ruffles Feathers",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Hats/UX522/6168K6fY6ML._UX522_.jpg",
+                    "Hats/UX522/61+iPR9siTL._UX522_.jpg",
+                    "Hats/UX522/61jc3f+eV8L._UX522_.jpg",
+                    "Hats/UX522/616+iF33u-L._UX522_.jpg",
+                    "Hats/UX522/61JMacYt3NL._UX522_.jpg",
+                    "Hats/UX522/6158MYzoJ6L._UX522_.jpg"
+                ],
+                price: "29.99",
+                color: ["Black", "White"],
+                desc: "For your inner gilded flapper girl! A sparkling accessory for your jazz era ensemble, this glitzy piece from Unique Vintage sparkles with gold sequins and black beads through the lightweight black mesh. With scalloped hem and deco designs, you’re the center of attention! ",
+                wash: "Dry clean only",
+                fabric: "100% organza",
+                details: [
+                    "Hat circumference:56-58cm"
+                ]
+            },
+            {
+                name: "Women Race Hats Organza Hat with Ruffles Feathers",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Hats/UX385/81+2hBIf4dL._UX522_.jpg",
+                    "Hats/UX385/81sskVHwjtL._UX385_.jpg",
+                    "Hats/UX385/71C7Uhb98iL._UX385_.jpg",
+                    "Hats/UX385/81RztQFgOUL._UX385_.jpg"
+                ],
+                price: "29.99",
+                color: ["Black", "White"],
+                desc: "For your inner gilded flapper girl! A sparkling accessory for your jazz era ensemble, this glitzy piece from Unique Vintage sparkles with gold sequins and black beads through the lightweight black mesh. With scalloped hem and deco designs, you’re the center of attention! ",
+                wash: "Dry clean only",
+                fabric: "100% organza",
+                details: [
+                    "Hat circumference:56-58cm"
+                ]
+            }
+        ]
         let accessories = [
             {
                 name: "Black Mesh & Gold Sequin Flapper Capelet",
