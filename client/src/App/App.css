@@ -339,6 +339,10 @@ body, html{
   margin-left: 10px;
   margin-top: -5px;
 }
+
+.detailsRecommendation{
+  margin-bottom: 30px;
+}
 /* */
 
 body, html, #root, .App, .wrap, #pollIndex, .container, .poll, .polls{

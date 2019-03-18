@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
+import ClothingBox from '../../home/components/ClothingBox';
 /*
 import ClothingBox from '../components/ClothingBox';
 import CategoriesBox from '../components/CategoriesBox';
@@ -76,7 +77,7 @@ class DetailsContainer extends Component {
         )
 
 
-
+        /* Wishlist? */
         dress.price = this.addZeroes(dress.price);
         return (
             <div>
@@ -125,7 +126,12 @@ class DetailsContainer extends Component {
                         </div>
                     </div>
                 </div>
-                <h1>Get the Look</h1>
+                <div className="detailsRecommendation">
+                    <h1>Get the Look</h1>
+                    <ClothingBox dress={dress}></ClothingBox>
+                    <ClothingBox dress={dress}></ClothingBox>
+                    <ClothingBox dress={dress}></ClothingBox>
+                </div>
             </div>
         );
 
