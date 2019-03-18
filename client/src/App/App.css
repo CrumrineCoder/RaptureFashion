@@ -340,8 +340,8 @@ body, html{
   margin-top: -5px;
 }
 
-.detailsRecommendation{
-  margin-bottom: 30px;
+.detailsRecommendation, .categoriesContainer{
+  margin-bottom: 80px;
 }
 /* */
 

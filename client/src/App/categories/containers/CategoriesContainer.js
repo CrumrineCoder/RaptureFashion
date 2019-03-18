@@ -270,25 +270,370 @@ class CategoriesContainer extends Component {
                     "Model Pictured Wearing Size S",
                     "Model Info: Height: 5’8\” | Waist: 24 | Hips: 36 | Bust: 34B"
                 ]
+            },
+            {
+                name: "Burgundy Red Delores Swing Dress with Sleeves",
+                brandName: "Gibson Girl",
+                images: [
+                    "Dresses/1277/Unique_Vintage_1950s_Style_Burgundy_Red_Delores_Swing_Dress_5_2048x2048.jpg",
+                    "Dresses/1277/Unique_Vintage_1950s_Style_Burgundy_Red_Delores_Swing_Dress_6_1024x1024.jpg",
+                    "Dresses/1277/Unique_Vintage_1950s_Style_Burgundy_Red_Delores_Swing_Dress_4_2048x2048.jpg",
+                    "Dresses/1277/Unique_Vintage_1950s_Style_Burgundy_Red_Delores_Swing_Dress_1024x1024.jpg",
+                    "Dresses/1277/Unique_Vintage_1950s_Style_Burgundy_Red_Delores_Swing_Dress_2_2048x2048.jpg"
+                ],
+                price: "88",
+                color: ["Red"],
+                desc: "Let Delores get domestic with you, darling. A bewitching burgundy dress rich in 1950s vintage appeal fresh from Unique Vintage, Delores is unparalleled! Boasting a gathered surplice V-neckline, trim and tailored half sleeves with darling button detail and a thick banded natural waistline that creates a minimized silhouette, the Delores vintage dress is to die for. An ample A-line swing skirt billows to knee length in soft pleats, zipping slyly up the back. Crafted in a supremely soft stretch blend in stunning retro structure, forming an understated yet flattering design, this swing dress will leave you fabulously floored!",
+                tip: "Pair with studded ankle boots for a simple yet rebellious look.",
+                wash: "Hand Wash/Dry Flat",
+                fabric: "59% Cotton 35% Polyamide 6% Spandex",
+                details: [
+                    "Back Zipper",
+                    "Unlined, Stretch Blend",
+                    "Length Includes Fringe",
+                    "Model Pictured Wearing Size S; S Length 40\"",
+                    "Model Info: Height: 5'10\" | Bust: 32 | Waist: 26 | Hip: 38.5"
+                ]
+            },
+            {
+                name: "Yellow Sunshine Deena Swing Dress",
+                brandName: "Gibson Girl",
+                images: [
+                    "Dresses/79209/79209_1_2048x2048.jpg",
+                    "Dresses/79209/79209_2_1024x1024.jpg",
+                    "Dresses/79209/79209_3_1024x1024.jpg",
+                    "Dresses/79209/79209_4_1024x1024.jpg",
+                    "Dresses/79209/79209_5_2048x2048.jpg"
+                ],
+                price: "128",
+                color: ["Yellow"],
+                desc: "A ray of sunshine, darling! A vintage-inspired spectacle for a maven on the move, this lovely yellow dress from Bettie Page is a brilliant swing crafted in a lightweight cotton with a dash of stretch. A beautiful print of yellow and pastel checkers wrap throughout this 1950s silhouette. The sweetheart bodice is secured with adjustable spaghetti straps and centered by subtle gathers, complete with a dainty pop of padding. The banded waist slims and elongates as the gathered swing skirt provides a vintage hourglass shape. Outfitted with side pockets and a back zipper, romance is a hop, skip, and jump away! ",
+                tip: "Pair with studded ankle boots for a simple yet rebellious look.",
+                wash: "Hand Wash, Line Dry",
+                fabric: "97% Cotton 3% Spandex",
+                details: [
+                    "unlined, Back Zipper",
+                    "Adjustable Spaghetti Straps",
+                    "Side pockets",
+                    "Material Has Little Stretch",
+                    "Length Measured From Side",
+                    "Model Pictured Wearing Size S; S Length 33“",
+                    "Model Info: Height: 5’8” | Waist: 26” | Hips: 36” | Bust: 34B"
+                ]
+            },
+            {
+                name: "Multicolor Floral Print Sleeveless Swing Dress",
+                brandName: "Gibson Girl",
+                images: [
+                    "Dresses/87000/87000_1_54f0b098-fc21-4cb5-8e9f-28ab2275cbc2_2048x2048.jpg",
+                    "Dresses/87000/87000_2_c60552e1-2017-44ea-ae11-f8f3657fe018_1024x1024.jpg",
+                    "Dresses/87000/87000_3_e6d818ba-6a23-4d98-b303-568fc5196c1d_2048x2048.jpg",
+                    "Dresses/87000/87000_4_6330795b-a0db-4a63-b613-8b41ccd1d988_1024x1024.jpg",
+                    "Dresses/87000/87000_5_9275dc0b-c54e-4b09-bef6-f68999ea0665_1024x1024.jpg"
+                ],
+                price: "68",
+                color: ["Multi"],
+                desc: "The perfect accessory is lots of flowers! Cast in a fabulous cotton stretch and boasting a bountiful array of blooming florals in ivory, orange, and pink set against a green backdrop, this vintage style swing dress is made to wonderfully accentuate your form. With a ravishing sleeveless design, the darted bodice features an iconic V-neckline for flirtatious form while the seamed waist centers your hourglass shape. The mid-century swing skirt cascades beautifully around your curves to a straight hem at your knees while side pockets keep your essentials close at hand. Outfitted with a back zipper to nip in your figure, it’s a darling essential for vintage divas!",
+                tip: "Pair with studded ankle boots for a simple yet rebellious look.",
+                wash: "Dry clean only",
+                fabric: "97% Cotton 3% Spandex",
+                details: [
+                    "Back Zipper, unlined",
+                    "Side pockets",
+                    "Material has little stretch",
+                    "Model Pictured Wearing Size S; S Length 40\"",
+                    "Model Info: Height: 5'10\" | Bust: 32 | Waist: 26 | Hip: 38.5"
+                ]
+            },
+            {
+                name: "Emerald Green Delores Swing Dress with Sleeves",
+                brandName: "Gibson Girl",
+                images: [
+                    "Dresses/1280/Unique_Vintage_1950s_Style_Emerald_Green_Delores_Swing_Dress_3_2048x2048.jpg",
+                    "Dresses/1280/Unique_Vintage_1950s_Emerald_Green_Delores_Swing_Dress_with_Sleeves_1024x1024.jpg",
+                    "Dresses/1280/Unique_Vintage_1950s_Style_Emerald_Green_Delores_Swing_Dress_1_1024x1024.jpg",
+                    "Dresses/1280/Unique_Vintage_1950s_Style_Emerald_Green_Delores_Swing_Dress_4_1024x1024.jpg",
+                    "Dresses/1280/Unique_Vintage_1950s_Style_Emerald_Green_Delores_Swing_Dress_5_2048x2048.jpg"
+                ],
+                price: "88",
+                color: ["Green"],
+                desc: "Let Delores get domestic with you, darling. A bewitching emerald green swing dress rich in 1950s vintage appeal fresh from Unique Vintage, Delores is unparalleled! Boasting a gathered surplice V-neckline, trim and tailored half sleeves with darling button detail and a thick banded natural waistline that creates a minimized silhouette, this vintage green dress is sure to flatter your figure. An ample A-line swing skirt billows to knee length in soft pleats, zipping slyly up the back. Crafted in a supremely soft stretch blend in stunning retro structure, forming an understated yet flattering design. You’ll be fabulously floored by the authentic look of this nice-girl-next-door vintage reproduction dress! ",
+                tip: "Pair with studded ankle boots for a simple yet rebellious look.",
+                wash: "Hand Wash/Dry Flat",
+                fabric: "59% Cotton 35% Polyamide 6% Spandex",
+                details: [
+                    "Back Zipper",
+                    "Unlined, Stretch Blend",
+                    "Length Includes Fringe",
+                    "Model Pictured Wearing Size S; S Length 40\"",
+                    "Model Info: Height: 5'8\" | Bust: 33 | Waist: 25.5 | Hip: 36 | Dress Size: 2/4"
+                ]
             }
         ]
 
+        let accessories = [
+            {
+                name: "Black Mesh & Gold Sequin Flapper Capelet",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Accessories/67636/67636_1_2048x2048.jpg",
+                    "Accessories/67636/67636_2_1024x1024.jpg",
+                    "Accessories/67636/67636_3_2048x2048.jpg",
+                    "Accessories/67636/67636_4_1024x1024.jpg",
+                    "Accessories/67636/67636_5_2048x2048.jpg"
+                ],
+                price: "36",
+                color: ["Black", "Gold"],
+                desc: "For your inner gilded flapper girl! A sparkling accessory for your jazz era ensemble, this glitzy piece from Unique Vintage sparkles with gold sequins and black beads through the lightweight black mesh. With scalloped hem and deco designs, you’re the center of attention! ",
+                wash: "Spot Wash",
+                fabric: "100% Sequin",
+                details: [
+                    "45”W x 12”L"
+                ]
+            },
+            {
+                name: "Ivory Faux Fur Capelet",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Accessories/65201/65201_1_2048x2048.jpg",
+                    "Accessories/65201/65201_2_1024x1024.jpg",
+                    "Accessories/65201/65201_3_2048x2048.jpg"
+                ],
+                price: "48",
+                color: ["White"],
+                desc: "It's the final detail that always gets a dame noticed! A dreamy ivory faux fur capelet, elegantly sleek with white lining and embellished with a dainty collar, this stunning accessory features elegant ivory ribbon ties for ladylike styling. You’re unforgettable, dears!",
+                wash: "Spot Wash",
+                fabric: "Faux Fur",
+                details: [
+                    "11” Length",
+                    "Self tie ribbon"
+                ]
+            },
+            {
+                name: "Emerald & Silver Crystal Drop Post Earrings",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Accessories/2928/Deco_Style_Emerald_Silver_Crystal_Drop_Post_Earrings_1_2048x2048.jpg"
+                ],
+                price: "20",
+                color: ["Emerald", "Silver"],
+                desc: "A dramatic drop of vintage elegance! Two gorgeously long silver drop earrings in a stunning deco design. Brimming with emerald green rhinestone and silver crystal detail, securing by gem adorned post backs. ",
+                wash: "N/A",
+                fabric: "N/A",
+                details: [
+                    "3.25” L x 5/8” W",
+                    "Rhinestone/Gem Detail",
+                    "Lead & Safety Compliant",
+                    "Post Backs"
+                ]
+            },
+            {
+                name: "Black Feather & Gold Beaded Fringe Flapper Headband",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Accessories/78896/78896_1_2048x2048.jpg",
+                    "Accessories/78896/78896_2_1024x1024.jpg",
+                    "Accessories/78896/78896_3_2048x2048.jpg"
+                ],
+                price: "32",
+                color: ["Black", "Gold"],
+                desc: "Dramatic and refined for a flapper queen! This stunning crown from Unique Vintage is a dazzling 1920s style headband full of royal deco divinity. The gleaming yellow, red, and silver gems are embellished with golden and black beads throughout the black suede backed headband while darling beaded fringe dances at the temples. A dynamic plume of black feathers flares out from the center while twin elastic cords keep this accessory secure. Ingenue incredible! ",
+                wash: "N/A",
+                fabric: "N/A",
+                details: [
+                    "Elastic Cords",
+                    "Faux Suede Backing"
+                ]
+            },
+            {
+                name: "Gold & Silver Crystal Pave Drop Earrings",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Accessories/81890/81890_1cc_2048x2048.jpg",
+                    "Accessories/81890/81890_2cc_1024x1024.jpg",
+                    "Accessories/81890/81890_3cc_1024x1024.jpg"
+                ],
+                price: "26",
+                color: ["Gold", "Silver"],
+                desc: "A dash of deco flash! These gleaming golden drop earrings sparkle with silver rhinestone embellishment and are secured to post backs.",
+                wash: "N/A",
+                fabric: "N/A",
+                details: [
+                    "2.25”L x 1”W",
+                    "Post Backs"
+                ]
+            },
+            {
+                name: "Silver Crystal Statement Necklace",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Accessories/80802/80802_1_2048x2048.jpg",
+                    "Accessories/80802/80802_3_1024x1024.jpg"
+                ],
+                price: "24",
+                color: ["Silver"],
+                desc: "This sleek and luminous crystal statement necklace is a deco dab of glamour that will instantly up the ante on your vintage ensemble. This crystal adorned deco design is set on a thick golden linked chain that secures by an adjustable lobster clasp.",
+                wash: "N/A",
+                fabric: "N/A",
+                details: [
+                    "Pendant 1.5”W",
+                    "Adjustable Lobster Clasp"
+                ]
+            },
+            {
+                name: "Metallic Black Sheen Deco Rose Beaded Fringe Shawl",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Accessories/9495/1920s_Style_Metallic_Black_Sheen_Deco_Rose_Beaded_Fringe_Shawl_1_2048x2048.jpg",
+                    "Accessories/9495/1920s_Style_Metallic_Black_Sheen_Deco_Rose_Beaded_Fringe_Shawl_2_2048x2048.jpg",
+                    "Accessories/9495/1920s_Style_Metallic_Black_Sheen_Deco_Rose_Beaded_Fringe_Shawl_3_1024x1024.jpg",
+                    "Accessories/9495/1920s_Style_Metallic_Black_Sheen_Deco_Rose_Beaded_Fringe_Shawl_4_1024x1024.jpg",
+                    "Accessories/9495/1920s_Style_Metallic_Black_Sheen_Deco_Rose_Beaded_Fringe_Shawl_5_1024x1024.jpg"
+                ],
+                price: "58",
+                color: ["Silver"],
+                desc: "This sleek and luminous crystal statement necklace is a deco dab of glamour that will instantly up the ante on your vintage ensemble. This crystal adorned deco design is set on a thick golden linked chain that secures by an adjustable lobster clasp.",
+                wash: "N/A",
+                fabric: "N/A",
+                details: [
+                    "Pendant 1.5”W",
+                    "Adjustable Lobster Clasp"
+                ]
+            }
+        ]
 
+        let shoes = [
+            {
+                name: "Red T-Strap Heels",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Shoes/13258/1920s_Style_Red_T-Strap_Heels_1_2048x2048.jpg",
+                    "Shoes/13258/1920s_Style_Red_T-Strap_Heels_2_1024x1024.jpg",
+                    "Shoes/13258/1920s_Style_Red_T-Strap_Heels_3_2048x2048.jpg",
+                    "Shoes/13258/1920s_Style_Red_T-Strap_Heels_4_2048x2048.jpg",
+                    "Shoes/13258/1920s_Style_Red_T-Strap_Heels_5_1024x1024.jpg"
+                ],
+                price: "68",
+                color: ["Red"],
+                desc: "Even if you donâ at wear a vintage dress to your upcoming formal occasion, you can still add a hint of retro flair with these vintage-inspired T-strap heels from Unique Vintage. These patent leather beauties feature 4-inch heels with tapered bottoms, a pointed toe and the signature T-strap upper that gives them a true 1920s appeal. Create a ladylike look that perfectly matches the rest of your retro-inspired formal ensemble.",
+                tip: "Pair with studded ankle boots for a simple yet rebellious look.",
+                wash: "N/A",
+                fabric: "100% Leather",
+                details: [
+                    "Side Zipper",
+                    "Some Stretch",
+                    "Length Includes Fringe",
+                    "Model Pictured Wearing Size M; Medium Length 43",
+                    "Model Info: Height: 5’9\” | Waist: 26 | Hips: 36.5 | Bust: 34C"
+                ]
+            },
+            {
+                name: "Red & White Two-Tone Leather T-Strap Heels",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Shoes/56685/56685-8_1_2048x2048.jpg",
+                    "Shoes/56685/56685-8_3_2048x2048.jpg",
+                    "Shoes/56685/56685-8_4_2048x2048.jpg",
+                    "Shoes/56685/56685-8_5_1024x1024.jpg"
+                ],
+                price: "150",
+                color: ["Red", "White"],
+                desc: "Nothingâ as more classic than a pair of red and white t-straps, gals! Crafted in a fabulous red and white leather, the Gatsby heels are the iconic silhouette of our favorite vintage kicks. Styled from original 1920s shoes, these retro pumps boast matte white leather and red patent leather with spectator styling, a comfortable Spanish heel, and an adjustable buckle strap. With a 2.5âin. lift and comfortable leather insole, Gatsby will keep you gorgeous, day or night.",
+                tip: "Pair with studded ankle boots for a simple yet rebellious look.",
+                wash: "N/A",
+                fabric: "100% Leather",
+                details: [
+                    "2.5” Heel",
+                    "Cushion insole",
+                    "Minimal tread",
+                    "Gored & Buckle Ankle Strap"
+                ]
+            },
+            {
+                name: "Taupe Leatherette Cambridge T-Strap Wedges",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Shoes/83038/83038_1_2048x2048.jpg",
+                    "Shoes/83038/83038_3_1024x1024.jpg",
+                    "Shoes/83038/83038_4_2048x2048.jpg",
+                    "Shoes/83038/83038_5_2048x2048.jpg"
+                ],
+                price: "44",
+                color: ["Brown"],
+                desc: "Vintage with a lift! A pair of sweet taupe brown t-straps in a soft leatherette, these adorable kicks boast a keyhole cutout vamp and 2” wedge heels. A gored T-strap with an adjustable buckle closure allows for toe tapping dancing while the cushioned insole gives a sophisticated strut!",
+                tip: "Pair with studded ankle boots for a simple yet rebellious look.",
+                wash: "N/A",
+                fabric: "Man-Made Materials",
+                details: [
+                    "2” Wedge Heel",
+                    "Cushion insole",
+                    "Minimal tread",
+                    "Gored Ankle Strap"
+                ]
+            },
+            {
+                name: "Black T-Strap Mary Jane Kitten Heels",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Shoes/13239/Black_T-Strap_Mary_Jane_Kitten_Heels__5_2048x2048.jpg",
+                    "Shoes/13239/Black_T-Strap_Mary_Jane_Kitten_Heels__3_1024x1024.jpg",
+                    "Shoes/13239/Black_T-Strap_Mary_Jane_Kitten_Heels__7_1024x1024.jpg",
+                    "Shoes/13239/Black_T-Strap_Mary_Jane_Kitten_Heels__4_1024x1024.jpg",
+                    "Shoes/13239/Black_T-Strap_Mary_Jane_Kitten_Heels__6_1024x1024.jpg"
+                ],
+                price: "58",
+                color: ["Black"],
+                desc: "Combining the charming look of classic Mary Janes with the subtly sexy nature of kitten heels, these black T-strap Mary Jane kitten heels from Unique Vintage are the perfect footwear for your fun formal occasions. These retro-inspired shoes feature low, 3-inch kitten heels that give you a bit of a boost without the discomfort of stilettos or pumps, while their perforated details and stitched panels offer the beloved Mary Jane look. The T-strap on top secures these ladylike shoes against your feet while also adding even more vintage style. Wear them with a favorite little black dress for any special occasion or slip them on to complete a retro-inspired Halloween costume.",
+                tip: "Pair with studded ankle boots for a simple yet rebellious look.",
+                wash: "N/A",
+                fabric: "Man-Made Materials",
+                details: [
+                    "3” Heel"
+                ]
+            },
+            {
+                name: "Black T-Strap Heels",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Shoes/13225/1920s_Style_Black_T-Strap_Heels_11_2048x2048.jpg",
+                    "Shoes/13225/1920s_Style_Black_T-Strap_Heels_10_1024x1024.jpg",
+                    "Shoes/13225/1920s_Style_Black_T-Strap_Heels_9_2048x2048.jpg",
+                    "Shoes/13225/1920s_Style_Black_T-Strap_Heels_13_2048x2048.jpg",
+                    "Shoes/13225/1920s_Style_Black_T-Strap_Heels_8_1024x1024.jpg"
+                ],
+                price: "68",
+                color: ["Black"],
+                desc: "Even if you don’t wear a vintage dress to your upcoming formal occasion, you can still add a hint of retro flair with these vintage-inspired T-strap heels from Unique Vintage. These patent leather beauties feature 4-inch heels with tapered bottoms, a pointed toe and the signature T-strap upper that gives them a true 1920s appeal. Set aside your pumps and slip into these stylish shoes instead to create a ladylike look that perfectly matches the rest of your retro-inspired formal ensemble. ",
+                tip: "Pair with studded ankle boots for a simple yet rebellious look.",
+                wash: "N/A",
+                fabric: "Man-Made Materials",
+                details: [
+                    "3” Heel"
+                ]
+            }
+        ]
+
+        console.log(this.props);
+        let clothing;
+        if(this.props.clothing == "Dress"){
+            clothing = dresses;
+        }
+        
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
-            let filteredDresses = dresses;
+            let filteredClothing = clothing;
             var filteredFilter = this.clean(this.state.filter);
             for (var filter in filteredFilter) {
-                filteredDresses = this.getFilteredArray(filteredDresses, filter, this.state.filter[filter])
+                filteredClothing = this.getFilteredArray(filteredClothing, filter, this.state.filter[filter])
             }
             pageContent = (
                 <ul className="polls">
-                    {filteredDresses.map((dress, i) => <ClothingBox key={i} dress={dress} />)}
+                    {filteredClothing.map((article, i) => <ClothingBox key={i} dress={article} />)}
                 </ul>
             )
         } else {
             pageContent = (
                 <ul className="polls">
-                    {dresses.map((dress, i) => <ClothingBox key={i} dress={dress} />)}
+                    {clothing.map((article, i) => <ClothingBox key={i} dress={article} />)}
                 </ul>
             )
         }
