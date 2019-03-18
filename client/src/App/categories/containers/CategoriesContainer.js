@@ -372,6 +372,24 @@ class CategoriesContainer extends Component {
         ]
         let hats = [
             {
+                name: "Black Feather & Gold Beaded Fringe Flapper Headband",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Accessories/78896/78896_1_2048x2048.jpg",
+                    "Accessories/78896/78896_2_1024x1024.jpg",
+                    "Accessories/78896/78896_3_2048x2048.jpg"
+                ],
+                price: "32",
+                color: ["Black", "Gold"],
+                desc: "Dramatic and refined for a flapper queen! This stunning crown from Unique Vintage is a dazzling 1920s style headband full of royal deco divinity. The gleaming yellow, red, and silver gems are embellished with golden and black beads throughout the black suede backed headband while darling beaded fringe dances at the temples. A dynamic plume of black feathers flares out from the center while twin elastic cords keep this accessory secure. Ingenue incredible! ",
+                wash: "N/A",
+                fabric: "N/A",
+                details: [
+                    "Elastic Cords",
+                    "Faux Suede Backing"
+                ]
+            },
+            {
                 name: "Womens Mini Straw Boater Hat Fedora Panama Flat Top Ribbon Summer",
                 brandName: "Ryan Boutique",
                 images: [
@@ -427,7 +445,7 @@ class CategoriesContainer extends Component {
                 ]
             },
             {
-                name: "Women Race Hats Organza Hat with Ruffles Feathers",
+                name: "Kentucky Derby Racing Horse Hat Church Wedding Dress Party Occasion Cap",
                 brandName: "Ryan Boutique",
                 images: [
                     "Hats/UX385/81+2hBIf4dL._UX522_.jpg",
@@ -436,12 +454,51 @@ class CategoriesContainer extends Component {
                     "Hats/UX385/81RztQFgOUL._UX385_.jpg"
                 ],
                 price: "29.99",
-                color: ["Black", "White"],
+                color: ["Black"],
                 desc: "For your inner gilded flapper girl! A sparkling accessory for your jazz era ensemble, this glitzy piece from Unique Vintage sparkles with gold sequins and black beads through the lightweight black mesh. With scalloped hem and deco designs, you’re the center of attention! ",
                 wash: "Dry clean only",
-                fabric: "100% organza",
+                fabric: "100% polyester",
                 details: [
-                    "Hat circumference:56-58cm"
+                    "head circumference between 21.5 inches~23.5 inches",
+                    "brim wide 5.8 inches",
+                    "cap crown tall 3.9 inches"
+                ]
+            },
+            {
+                name: "Ruffle Turban Hat Knit Turban Headwraps with Detachable Crystal Brooch",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Hats/SX679/91x7Vuz7J7L._SX679._SX._UX._SY._UY_.jpg",
+                    "Hats/SX679/915ySFSvMEL._SX569._SX._UX._SY._UY_.jpg",
+                    "Hats/SX679/91UC5iM5ucL._SX569._SX._UX._SY._UY_.jpg"
+                ],
+                price: "11.99",
+                color: ["Green"],
+                desc: "For your inner gilded flapper girl! A sparkling accessory for your jazz era ensemble, this glitzy piece from Unique Vintage sparkles with gold sequins and black beads through the lightweight black mesh. With scalloped hem and deco designs, you’re the center of attention!",
+                wash: "Dry clean only",
+                fabric: "Polyester fabric and shinning crystal",
+                details: [
+                    "Head circumference 58 cm/22.8 inch."
+                ]
+            },
+            {
+                name: "Winter Hat 100% Wool Cloche Bucket with Bow Accent",
+                brandName: "Ryan Boutique",
+                images: [
+                    "Hats/UX679/61LbpdWmMuL._UX679_.jpg",
+                    "Hats/UX679/71m-Bxgu7iL._UY500_.jpg",
+                    "Hats/UX679/61fK7tdqJ4L._UX425_.jpg",
+                    "Hats/UX679/717nHDWE9BL._UX569_.jpg"
+                ],
+                price: "21.99",
+                color: ["Blue"],
+                desc: "For your inner gilded flapper girl! A sparkling accessory for your jazz era ensemble, this glitzy piece from Unique Vintage sparkles with gold sequins and black beads through the lightweight black mesh. With scalloped hem and deco designs, you’re the center of attention! ",
+                wash: "Dry clean only",
+                fabric: "100% wool",
+                details: [
+                    "Hat circumference 22\"- 23.6\"",
+                    "height 6\"",
+                    "cap crown tall 3.9 inches"
                 ]
             }
         ]
@@ -499,24 +556,6 @@ class CategoriesContainer extends Component {
                     "Rhinestone/Gem Detail",
                     "Lead & Safety Compliant",
                     "Post Backs"
-                ]
-            },
-            {
-                name: "Black Feather & Gold Beaded Fringe Flapper Headband",
-                brandName: "Ryan Boutique",
-                images: [
-                    "Accessories/78896/78896_1_2048x2048.jpg",
-                    "Accessories/78896/78896_2_1024x1024.jpg",
-                    "Accessories/78896/78896_3_2048x2048.jpg"
-                ],
-                price: "32",
-                color: ["Black", "Gold"],
-                desc: "Dramatic and refined for a flapper queen! This stunning crown from Unique Vintage is a dazzling 1920s style headband full of royal deco divinity. The gleaming yellow, red, and silver gems are embellished with golden and black beads throughout the black suede backed headband while darling beaded fringe dances at the temples. A dynamic plume of black feathers flares out from the center while twin elastic cords keep this accessory secure. Ingenue incredible! ",
-                wash: "N/A",
-                fabric: "N/A",
-                details: [
-                    "Elastic Cords",
-                    "Faux Suede Backing"
                 ]
             },
             {
@@ -690,7 +729,6 @@ class CategoriesContainer extends Component {
             }
         ]
 
-        console.log(this.props);
         let clothing;
         if(this.props.clothing == "dresses"){
             clothing = dresses;
@@ -698,6 +736,8 @@ class CategoriesContainer extends Component {
             clothing = accessories;
         } else if(this.props.clothing == "shoes"){
             clothing = shoes; 
+        } else if(this.props.clothing == "hats"){
+            clothing = hats; 
         }
         
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {

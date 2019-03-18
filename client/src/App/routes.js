@@ -90,6 +90,7 @@ export default (
     <Route path="/categories/dresses"   render={(props) => <Dress {...props} clothing={"dresses"} />}/>
     <Route path="/categories/accessories"   render={(props) => <Dress {...props} clothing={"accessories"} />}/>
     <Route path="/categories/shoes"   render={(props) => <Dress {...props} clothing={"shoes"} />}/>
+    <Route path="/categories/hats"   render={(props) => <Dress {...props} clothing={"hats"} />}/>
     <Route path="/register" component={Register} />
     <Route path="/login" component={Login} />
     <Route path="/products/:id/" component={ProductDetails} />
