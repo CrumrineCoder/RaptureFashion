@@ -20,15 +20,30 @@ class ClothingBox extends Component {
     }
 
     render() {
+
+        //    console.log(require("../../../assets/" + this.state.dress.images[1]));
         // TO DO: ADD LINK
+
+        let img;
+        if (this.state.dress.images.length == 1) {
+            img = (
+                <img className="clothingBoxImage rounded"
+                    src={require("../../../assets/" + this.state.dress.images[0])}
+                />
+            )
+        } else {
+            img = (
+                <img className="clothingBoxImage rounded"
+                    src={require("../../../assets/" + this.state.dress.images[0])}
+                    onMouseOver={e => (e.currentTarget.src = require("../../../assets/" + this.state.dress.images[1]))}
+                    onMouseOut={e => (e.currentTarget.src = require("../../../assets/" + this.state.dress.images[0]))}
+                />
+            )
+        }
         return (
             <div className="clothingBox">
                 <Link to={"/products/" + this.props._id}>
-                    <img className="clothingBoxImage rounded"
-                        src={require("../../../assets/" + this.state.dress.images[0])}
-                        onMouseOver={e => (e.currentTarget.src = require("../../../assets/" + this.state.dress.images[1]))}
-                        onMouseOut={e => (e.currentTarget.src = require("../../../assets/" + this.state.dress.images[0]))}
-                    />
+                    {img}
                     <p className="clothingBoxTitle clothingBoxDesc">{this.state.dress.name}</p>
                     <p className="clothingBoxSubTitle clothingBoxDesc">{this.state.dress.brandName}</p>
                     <p className="clothingBoxPrice clothingBoxDesc">${this.state.dress.price}</p>

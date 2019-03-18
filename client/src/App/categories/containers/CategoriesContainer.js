@@ -491,13 +491,16 @@ class CategoriesContainer extends Component {
                     "Accessories/9495/1920s_Style_Metallic_Black_Sheen_Deco_Rose_Beaded_Fringe_Shawl_5_1024x1024.jpg"
                 ],
                 price: "58",
-                color: ["Silver"],
-                desc: "This sleek and luminous crystal statement necklace is a deco dab of glamour that will instantly up the ante on your vintage ensemble. This crystal adorned deco design is set on a thick golden linked chain that secures by an adjustable lobster clasp.",
-                wash: "N/A",
-                fabric: "N/A",
+                color: ["Black"],
+                desc: "Elegance to remember! Steeped in deco divinity in a 1920s inspired open silhouette, this stunning shawl is elaborately beaded and sequined with black accents that give off a metallic sheen on a delicate sheer black mesh. With a beaded scalloped edging, dripping with beaded fringe, and gorgeous rose details, it's beaded va-va-voom!",
+                wash: "Hand wash only",
+                fabric: "100% Rayon",
                 details: [
-                    "Pendant 1.5”W",
-                    "Adjustable Lobster Clasp"
+                    "Beading Detail Throughout",
+                    "Fringe Hem",
+                    "Hook/clasp", 
+                    "No Stretch/Sheer Material",
+                    "48\" W / 18\" H (Includes Fringe)"
                 ]
             }
         ]
@@ -616,7 +619,7 @@ class CategoriesContainer extends Component {
         console.log(this.props);
         let clothing;
         if(this.props.clothing == "Dress"){
-            clothing = dresses;
+            clothing = accessories;
         }
         
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
