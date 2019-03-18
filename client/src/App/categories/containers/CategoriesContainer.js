@@ -618,8 +618,12 @@ class CategoriesContainer extends Component {
 
         console.log(this.props);
         let clothing;
-        if(this.props.clothing == "Dress"){
+        if(this.props.clothing == "dresses"){
+            clothing = dresses;
+        } else if(this.props.clothing == "accessories"){
             clothing = accessories;
+        } else if(this.props.clothing == "shoes"){
+            clothing = shoes; 
         }
         
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
