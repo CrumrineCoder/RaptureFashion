@@ -18,6 +18,7 @@ class DetailsContainer extends Component {
         super(props);
         // Used for when searching and tagging functionality whenever that comes
         this.state = {
+            sizeSelected: false
         };
         this.addZeroes = this.addZeroes.bind(this);
     }
@@ -86,9 +87,21 @@ class DetailsContainer extends Component {
 
         let sizes = (
             <div className="detailsSizeBoxList">
-                {dress.sizes.map((size, i => <button className="detailsSizeBoxListButton" key={i}>{size}</button>))}
+                {dress.sizes.map((size, i) => <button className="detailsSizeBoxListButton" key={i}> {size}</button>)}
             </div>
         )
+
+        let cart = "";
+
+        if(this.state.sizeSelected){
+            cart = (
+                <button className="detailsCartButton">Add to Cart</button>
+            )
+        } else{
+            cart = (
+                <button className="detailsCartButton disabledCartButton">Select a Size</button>
+            )
+        }
 
 
         /* Wishlist? */
@@ -112,7 +125,7 @@ class DetailsContainer extends Component {
                             <p className="detailsSizeBoxLink">Size Chart</p>
                             {sizes}
                         </div>
-                        <button className="detailsCartButton">Add to Cart</button>
+                        {cart}
                         <p className="detailsDescriptionText">{dress.desc}</p>
                         <p className="detailsDescriptionText"><b>Style Tip:</b> {dress.tip}</p>
                         <div className="detailsDescContainer">

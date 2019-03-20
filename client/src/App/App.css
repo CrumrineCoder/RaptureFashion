@@ -237,14 +237,14 @@ body, html{
 }
 
 .detailsImage{
-  width: 80%;
+  width: 90%;
   display: block;
   margin: 0 auto; 
 }
 
 .detailsImageScrollContainer{
   top: 60px;
-  width: 60%;
+  width: 40%;
   margin: 32px 0 32px 32px;
 }
 
@@ -255,7 +255,7 @@ body, html{
 .detailsRightHandInfo{
   right: 32px;
   position: sticky; 
-  width: 40%;
+  width: 60%;
   top: 20px;
   margin-top: 30px;
 }
@@ -271,17 +271,18 @@ body, html{
 .detailsSizeBoxList{
   clear: both; 
   display: flex;
-  justify-content: space-between;
-  width: 80%;
-  margin: 0 auto; 
+  justify-content: center;
+  width: 100%;
+  margin: 10px; 
 }
 
 .detailsSizeBoxListButton{
   width: 50px;
   height: 50px;
   background: none;
-  border: 2px solid #000403;
+  border: 1px solid #000403;
   border-radius: 25px;
+  margin-right: 5px;
 }
 
 .detailsSizeBoxListButton:focus{
@@ -305,6 +306,12 @@ body, html{
   font-weight: bold; 
   letter-spacing: 1px;
   border: none; 
+}
+
+.disabledCartButton{
+  cursor: not-allowed;
+  background: rgb(143, 166, 168);
+  color: rgb(61, 81, 83);
 }
 
 .detailsDescriptionText{
