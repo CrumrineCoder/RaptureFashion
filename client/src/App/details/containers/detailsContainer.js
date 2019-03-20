@@ -59,6 +59,14 @@ class DetailsContainer extends Component {
                 "Length Includes Fringe",
                 "Model Pictured Wearing Size M; Medium Length 43",
                 "Model Info: Height: 5’9\” | Waist: 26 | Hips: 36.5 | Bust: 34C"
+            ],
+            sizes: [
+                "2",
+                "4",
+                "6",
+                "8",
+                "10",
+                "12"
             ]
         }
         let details = ""
@@ -74,6 +82,12 @@ class DetailsContainer extends Component {
                 <li className="detailsDescLI">Delivery in North America and Europe within 4 to 7 business days </li>
                 <li className="detailsDescLI">Up to 15 days to make return</li>
             </ul>
+        )
+
+        let sizes = (
+            <div className="detailsSizeBoxList">
+                {dress.sizes.map((size, i => <button className="detailsSizeBoxListButton" key={i}>{size}</button>))}
+            </div>
         )
 
 
@@ -96,14 +110,7 @@ class DetailsContainer extends Component {
                         <div className="detailsSizeBox">
                             <p className="detailsSizeBoxTitle">Size</p>
                             <p className="detailsSizeBoxLink">Size Chart</p>
-                            <div className="detailsSizeBoxList">
-                                <button className="detailsSizeBoxListButton">2</button>
-                                <button className="detailsSizeBoxListButton">4</button>
-                                <button className="detailsSizeBoxListButton">6</button>
-                                <button className="detailsSizeBoxListButton">8</button>
-                                <button className="detailsSizeBoxListButton">10</button>
-                                <button className="detailsSizeBoxListButton">12</button>
-                            </div>
+                            {sizes}
                         </div>
                         <button className="detailsCartButton">Add to Cart</button>
                         <p className="detailsDescriptionText">{dress.desc}</p>
