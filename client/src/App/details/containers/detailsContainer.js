@@ -37,6 +37,13 @@ class DetailsContainer extends Component {
         return value;
     }
 
+    changeSize(size){
+        this.setState({
+            size: size,
+            sizeSelected: true
+        })
+    }
+
     render() {
         let dress = {
             name: "Deco Purple & Black Sequin Veronique Fringe Flapper Dress",
@@ -87,7 +94,7 @@ class DetailsContainer extends Component {
 
         let sizes = (
             <div className="detailsSizeBoxList">
-                {dress.sizes.map((size, i) => <button className="detailsSizeBoxListButton" key={i}> {size}</button>)}
+                {dress.sizes.map((size, i) => <button onClick={() => this.changeSize({size})} className="detailsSizeBoxListButton" key={i}> {size}</button>)}
             </div>
         )
 
