@@ -18,7 +18,8 @@ class DetailsContainer extends Component {
         super(props);
         // Used for when searching and tagging functionality whenever that comes
         this.state = {
-            sizeSelected: false
+            sizeSelected: false,
+            size: ""
         };
         this.addZeroes = this.addZeroes.bind(this);
     }
@@ -38,10 +39,13 @@ class DetailsContainer extends Component {
     }
 
     changeSize(size){
+        console.log(size);
+        this.setState(
+            size
+        );
         this.setState({
-            size: size,
-            sizeSelected: true
-        })
+            sizeSelected: true 
+        });
     }
 
     render() {
@@ -92,9 +96,12 @@ class DetailsContainer extends Component {
             </ul>
         )
 
+        console.log(this.state.size);
+        console.log(this.state);
+
         let sizes = (
             <div className="detailsSizeBoxList">
-                {dress.sizes.map((size, i) => <button onClick={() => this.changeSize({size})} className="detailsSizeBoxListButton" key={i}> {size}</button>)}
+                {dress.sizes.map((size, i) => <button onClick={() => this.changeSize({size})} className={this.state.size === size ? 'detailsSizeBoxListButton detailsSizeBoxListButtonActive': 'detailsSizeBoxListButton'} key={i}> {size}</button>)}
             </div>
         )
 

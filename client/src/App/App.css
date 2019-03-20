@@ -287,13 +287,18 @@ body, html{
 
 .detailsSizeBoxListButton:focus{
   outline: none;
-  box-shadow: 0 0 0 3px #E7ECEF, 0 0 0 6px #000403;
+  box-shadow: 0 0 10px 3px #000403;
 }
 
 .detailsSizeBoxListButton:hover{
   color: white;
   background: #000403; 
   cursor: pointer; 
+}
+
+.detailsSizeBoxListButtonActive{
+  color: white;
+  background: #000403; 
 }
 
 .detailsCartButton{
