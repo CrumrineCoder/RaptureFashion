@@ -13,8 +13,12 @@ import checkUsers from "./checkUsers.reducer.js";
 import editPoll from "./editPoll.reducer.js";
 import deletePoll from "./deletePoll.reducer.js";
 
+import cart from "./cart.reducer.js";
+
 const home = combineReducers({
-	votesByPoll, selectedPoll, createPoll, votePoll, register, authenticate, users, checkPolls, checkUsers, editPoll, deletePoll
+	votesByPoll, selectedPoll, createPoll, votePoll, register, authenticate, users, checkPolls, checkUsers, editPoll, deletePoll,
+
+	cart
 });
 
 export default home;

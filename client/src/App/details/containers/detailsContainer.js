@@ -173,6 +173,7 @@ class DetailsContainer extends Component {
 }
 
 function mapStateToProps(state) {
+    console.log(state.home);
 }
 
 export default connect(mapStateToProps)(DetailsContainer);
