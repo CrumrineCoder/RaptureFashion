@@ -79,12 +79,12 @@ class Header extends Component {
 								<NavLink href="#/categories/hats">Hats</NavLink>
 							</NavItem>
 							<NavItem>
-								<div id="mini-shop-cart" class="_mini-shop-cart-wrapper">
-									<a class="mini-shop-cart-link _mini-shop-cart-link" href="https://www.zara.com/us/en/shop/cart" aria-label="Products in cart: 1. Go to cart">
+								<div class="cartWrapper">
+									<a class="cartLink" href="">
 										<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
 											<path fill="#000" fill-rule="nonzero" d="M12 7V6c0-1 1-2 2-2h4c1 0 2 1 2 2v1h7v19H5V7h7zm14 1H6v17h20V8zM13 6v1h6V6c0-.5-.5-1-1-1h-4c-.5 0-1 .5-1 1z"></path>
 										</svg>
-										<span class="mini-shop-cart-quantity _mini-shop-cart-quantity">1</span>
+										<span class="cartQuantity">1</span>
 									</a>
 								</div>
 							</NavItem>

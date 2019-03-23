@@ -24,27 +24,28 @@ body, html{
 
 /* Nav */
 
-#mini-shop-cart, .mini-shop-cart-link {
+.cartWrapper{
+  position: relative;
+  width: 32px;
+}
+
+.cartLink{
   height: 32px;
   width: 32px;
   display: block;
   text-align: center;
 }
 
-#mini-shop-cart, .mini-shop-cart-link>svg {
+.cartLink>svg {
   position: absolute;
   top: 0;
   right: 0;
 }
 
-._mini-shop-cart-quantity{
-  margin: 0;
-  padding: 0;
-  border: 0;
-  font: inherit;
-  font-size: 100%;
-  vertical-align: baseline;
+.cartQuantity{
+  font-size: 16px;
 }
+
 /* Homepage */
 
 .homepageHeader{
