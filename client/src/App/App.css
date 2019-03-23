@@ -31,6 +31,11 @@ body, html{
   position: absolute;
 }
 
+.cartRelativeItemWrapper{
+  position: relative;
+  width: 52px;
+}
+
 .cartLink{
   width: 30px !important;
   height: 30px !important;

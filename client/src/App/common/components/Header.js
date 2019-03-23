@@ -78,7 +78,7 @@ class Header extends Component {
 							<NavItem>
 								<NavLink href="#/categories/hats">Hats</NavLink>
 							</NavItem>
-							<NavItem>
+							<NavItem className="cartRelativeItemWrapper">
 								<div class="cartWrapper">
 									<a class="cartLink" href="">
 										<span class="cartQuantity">1</span>
