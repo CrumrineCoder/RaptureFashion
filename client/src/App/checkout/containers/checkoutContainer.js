@@ -26,7 +26,9 @@ class CheckoutContainer extends Component {
     render() {
 
         return (
- 
+            <div>
+                <h2>Shopping Cart</h2>
+            </div>
         );
 
     }
