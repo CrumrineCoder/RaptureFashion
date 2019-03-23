@@ -22,6 +22,29 @@ body, html{
   margin-bottom: 50px;
 }
 
+/* Nav */
+
+#mini-shop-cart, .mini-shop-cart-link {
+  height: 32px;
+  width: 32px;
+  display: block;
+  text-align: center;
+}
+
+#mini-shop-cart, .mini-shop-cart-link>svg {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+._mini-shop-cart-quantity{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
 /* Homepage */
 
 .homepageHeader{
