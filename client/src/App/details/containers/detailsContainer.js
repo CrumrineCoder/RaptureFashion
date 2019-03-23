@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ClothingBox from '../../home/components/ClothingBox';
+import { cartActions } from '../../_actions/cart.actions.js';
 /*
 import ClothingBox from '../components/ClothingBox';
 import CategoriesBox from '../components/CategoriesBox';
@@ -19,9 +20,47 @@ class DetailsContainer extends Component {
         // Used for when searching and tagging functionality whenever that comes
         this.state = {
             sizeSelected: false,
-            size: ""
+            size: "",
+            dress: {
+                name: "Deco Purple & Black Sequin Veronique Fringe Flapper Dress",
+                brandName: "Gibson Girl",
+                images: [
+                    "Dresses/61626/61626-1_2048x2048.jpg",
+                    "Dresses/61626/61626-2_2048x2048.jpg",
+                    "Dresses/61626/61626-3_2048x2048.jpg",
+                    "Dresses/61626/61626-4_1024x1024.jpg",
+                    "Dresses/61626/61626-5_2048x2048.jpg"
+                ],
+                price: "14",
+                color: ["Purple", "Black"],
+                desc: "With a bit of royalty and aristocratic detail, the Veronique Flapper dress is fresh from Unique Vintage in stunning 1920s design. Intricately deco beaded black mesh boasts black iridescent sequins and small black beads wrought in flourishing deco swirls and spirals, while a deep eggplant purple knit lining creates a radiant effect. The sleeveless, v-neck design shows you off with a modest touch, while the curve hugging fit and jagged edge dripping with fringe will turn every head!  \n Available in sizes S-3X while supplies last.",
+                tip: "Pair with studded ankle boots for a simple yet rebellious look.",
+                wash: "Made from authentic indigo dyes, so color transfer may occur. Wash inside out cold with like colors. Tumble dry low.",
+                fabric: "Sheer beaded mesh over knit lining | 99% Polyester",
+                details: [
+                    "Side Zipper",
+                    "Some Stretch",
+                    "Length Includes Fringe",
+                    "Model Pictured Wearing Size M; Medium Length 43",
+                    "Model Info: Height: 5’9\” | Waist: 26 | Hips: 36.5 | Bust: 34C"
+                ],
+                sizes: [
+                    "2",
+                    "4",
+                    "6",
+                    "8",
+                    "10",
+                    "12"
+                ]
+            }
         };
         this.addZeroes = this.addZeroes.bind(this);
+        this.addCart = this.addCart.bind(this);
+    }
+
+    addCart(){
+        console.log("haha ow");
+        this.props.dispatch(cartActions.addToCart(this.state.dress));
     }
 
     addZeroes(num) {
@@ -38,13 +77,12 @@ class DetailsContainer extends Component {
         return value;
     }
 
-    changeSize(size){
-        console.log(size);
+    changeSize(size) {
         this.setState(
             size
         );
         this.setState({
-            sizeSelected: true 
+            sizeSelected: true
         });
     }
 
@@ -101,17 +139,17 @@ class DetailsContainer extends Component {
 
         let sizes = (
             <div className="detailsSizeBoxList">
-                {dress.sizes.map((size, i) => <button onClick={() => this.changeSize({size})} className={this.state.size === size ? 'detailsSizeBoxListButton detailsSizeBoxListButtonActive': 'detailsSizeBoxListButton'} key={i}> {size}</button>)}
+                {dress.sizes.map((size, i) => <button onClick={() => this.changeSize({ size })} className={this.state.size === size ? 'detailsSizeBoxListButton detailsSizeBoxListButtonActive' : 'detailsSizeBoxListButton'} key={i}> {size}</button>)}
             </div>
         )
 
         let cart = "";
 
-        if(this.state.sizeSelected){
+        if (this.state.sizeSelected) {
             cart = (
-                <button className="detailsCartButton">Add to Cart</button>
+                <button className="detailsCartButton enabledCartButton" onClick={this.addCart}>Add to Cart</button>
             )
-        } else{
+        } else {
             cart = (
                 <button className="detailsCartButton disabledCartButton">Select a Size</button>
             )

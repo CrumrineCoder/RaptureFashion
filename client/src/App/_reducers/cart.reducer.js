@@ -10,9 +10,7 @@ export default function cart(state = initialState, action) {
             return Object.assign({}, state, {
                 cart: [
                     ...state.cart,
-                    {
-                        clothing: action.clothing
-                    }
+                    action.clothing
                 ]
             })
         default:

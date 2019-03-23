@@ -319,6 +319,11 @@ body, html{
   color: rgb(61, 81, 83);
 }
 
+.enabledCartButton:hover{
+  cursor: pointer;
+  background: rgb(7, 20, 26);
+}
+
 .detailsDescriptionText{
   font-size: 14px;
 }
