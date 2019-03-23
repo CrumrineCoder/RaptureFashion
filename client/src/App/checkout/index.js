@@ -5,12 +5,7 @@ import CheckoutContainer from './containers/checkoutContainer';
 // Needed for router.js
 class checkoutIndex extends Component {
 	render() {
-        let pageContent = '';
-        pageContent = (
-            <ul className="polls">
-                {dresses.map((dress, i) => <PollLink update={this.update} key={i} {...poll} />)}
-            </ul>
-        )
+      
 		return (
 			<div id="checkoutIndex">
 				<Container>

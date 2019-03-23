@@ -11,15 +11,14 @@ class checkoutBox extends Component {
     }
 
     componentWillMount(){
-        this.setState({ box: this.props.box });
+        console.log("You can hardly breathe")
     }
 
     render(){
         // TO DO: ADD LINK
         return(
-            <div className="categoriesBox">
-                <img className="categoriesBoxImage rounded" src={require("../../../assets/"+this.state.box.image)} />
-                <p className="categoriesBoxTag">{this.state.box.name}</p>
+            <div className="honk">
+              yo
             </div>
         )
     }
