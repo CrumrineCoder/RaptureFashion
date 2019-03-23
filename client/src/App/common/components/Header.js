@@ -81,7 +81,7 @@ class Header extends Component {
 							<NavItem className="cartRelativeItemWrapper">
 								<div class="cartWrapper">
 									<a class="cartLink" href="">
-										<span class="cartQuantity">1</span>
+										<span class="cartQuantity">{this.props.cartAmount}</span>
 									</a>
 								</div>
 							</NavItem>
@@ -99,8 +99,11 @@ Header.propTypes = {
 }
 
 function mapStateToProps(state) {
+	console.log(state.home);
 	const isLoggedIn = state.home.authenticate.loggedIn;
-	return { isLoggedIn };
+	const cartAmount = state.home.cart.cart.length; 
+	
+	return { isLoggedIn, cartAmount };
 }
 
 export default connect(mapStateToProps)(Header);
