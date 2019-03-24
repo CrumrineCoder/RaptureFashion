@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class checkoutBox extends Component {
+class CheckoutBox extends Component {
 
     constructor(props) {
         super(props);
@@ -16,12 +16,13 @@ class checkoutBox extends Component {
 
     render(){
         // TO DO: ADD LINK
+        console.log(this.props);
         return(
             <div className="honk">
-              yo
+              Mess
             </div>
         )
     }
 }
 
-export default checkoutBox;
+export default CheckoutBox;

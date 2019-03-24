@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ClothingBox from '../../home/components/ClothingBox';
 import { cartActions } from '../../_actions/cart.actions.js';
-import checkoutBox from "../components/checkoutBox"
+import CheckoutBox from "../components/checkoutBox.js"
 /*
 import ClothingBox from '../components/ClothingBox';
 import CategoriesBox from '../components/CategoriesBox';
@@ -25,6 +25,7 @@ class CheckoutContainer extends Component {
 
 
     render() {
+
         let pageContent = 'lol';
         var dresses = [
             {
@@ -76,16 +77,17 @@ class CheckoutContainer extends Component {
                     "Model Info: Height: 5’8\” | Bust: 34B | Waist: 24 | Hip: 36"
                 ]
             }];
+
+            console.log(this.props);
         pageContent = (
             <ul className="help">
-                {dresses.map((dress, i) => <div key={i} >yo </div>)}
+                {this.props.cart.map((dress, i) => <CheckoutBox key={i} {...dress}> </CheckoutBox>)}
             </ul>
         )
         return (
             <div>
                 <h2>Shopping Cart</h2>
                 {pageContent}
-                Test
             </div>
         );
 
@@ -94,6 +96,9 @@ class CheckoutContainer extends Component {
 
 function mapStateToProps(state) {
     console.log(state.home);
+    const cart = state.home.cart.cart; 
+	
+	return { cart };
 }
 
 export default connect(mapStateToProps)(CheckoutContainer);
