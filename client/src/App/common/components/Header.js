@@ -80,7 +80,7 @@ class Header extends Component {
 							</NavItem>
 							<NavItem className="cartRelativeItemWrapper">
 								<div class="cartWrapper">
-									<a class="cartLink" href="#/checkout">
+									<a class="cartLink" href="#/bag">
 										<span class="cartQuantity">{this.props.cartAmount}</span>
 									</a>
 								</div>

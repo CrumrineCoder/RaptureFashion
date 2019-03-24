@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ClothingBox from '../../home/components/ClothingBox';
 import { cartActions } from '../../_actions/cart.actions.js';
-import CheckoutBox from "../components/checkoutBox.js"
+import BagRow from "../components/bagRow.js"
 /*
 import ClothingBox from '../components/ClothingBox';
 import CategoriesBox from '../components/CategoriesBox';
@@ -14,7 +14,7 @@ import { withRouter } from 'react-router-dom';
 
 
 // Landing page 
-class CheckoutContainer extends Component {
+class BagContainer extends Component {
 
     constructor(props) {
         super(props);
@@ -80,7 +80,7 @@ class CheckoutContainer extends Component {
         // this.props.cart
         pageContent = (
             <ul className="help">
-                {dresses.map((dress, i) => <CheckoutBox key={i} {...dress}> </CheckoutBox>)}
+                {dresses.map((dress, i) => <BagRow key={i} {...dress}> </BagRow>)}
             </ul>
         )
         return (
@@ -99,4 +99,4 @@ function mapStateToProps(state) {
     return { cart };
 }
 
-export default connect(mapStateToProps)(CheckoutContainer);
+export default connect(mapStateToProps)(BagContainer);

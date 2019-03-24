@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class CheckoutBox extends Component {
+class BagRow extends Component {
 
     constructor(props) {
         super(props);
@@ -37,4 +37,4 @@ class CheckoutBox extends Component {
     }
 }
 
-export default CheckoutBox;
+export default BagRow;
