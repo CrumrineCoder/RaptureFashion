@@ -401,6 +401,26 @@ body, html{
 .detailsRecommendation, .categoriesContainer{
   margin-bottom: 80px;
 }
+
+/* Cart */
+
+.checkout{
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.checkoutCell{
+  box-sizing: border-box;
+  flex-grow: 1;
+  width: 100%; 
+  padding: 0.8em 1.2em;
+  overflow: hidden; 
+  list-style: none;
+  width: 5.8%;
+  height: auto;
+  align-self: center
+}
+
 /* */
 
 body, html, #root, .App, .wrap, #pollIndex, .container, .poll, .polls{
