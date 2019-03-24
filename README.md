@@ -9,7 +9,7 @@ https://www.sandyuxdesign.com/mirror
 https://ecommerce-platforms.com/ecommerce-websites/independent-fashion-stores
 
 Websites:
-https://www.societestore.com/ (1)
+https://www.societestore.com/ (1) <X has been added to your cart, green alert>
 https://www.adisgladis.se/ (2)
 https://www.zara.com/us/en/ (3)
 https://bonobos.com/products/blue-jean?color=wallowa%20medium%20wash (4) [Good product page, full length model image that scrolls through images as you scroll]

@@ -26,8 +26,8 @@ body, html{
 
 .cartWrapper{
   display: inline-block;
-  top: 7px;
-  right: 12px;
+  top: 14px;
+  right: 14px;
   position: absolute;
 }
 
@@ -37,11 +37,11 @@ body, html{
 }
 
 .cartLink{
-  width: 30px !important;
-  height: 30px !important;
+  width: 24px !important;
+  height: 24px !important;
   background-image: url("https://cdn.shopify.com/s/files/1/2640/7518/t/3/assets/uv-bag.png?6511260562977628196");
   background-position: center center;
-  background-size: 30px;
+  background-size: 24px;
   background-repeat: no-repeat;
   text-align: center;
   display: block;
@@ -50,10 +50,16 @@ body, html{
 
 .cartQuantity{
   position: relative;
-  top: 2px;
-  font-size: 0.66em;
-  line-height: 1;
+  top: -14px;
+  right: -14px;
+  /* font-size: 0.66em; */
+  /* line-height: 1; */
   font-weight: bold;
+  background: red;
+  font-size: 12px;
+  border-radius: 3px;
+  color: white;
+  padding: 3px;
 }
 
 /* Homepage */
