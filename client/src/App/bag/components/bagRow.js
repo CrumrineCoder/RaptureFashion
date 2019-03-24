@@ -42,7 +42,7 @@ class BagRow extends Component {
             </ul>
         )
         let price = this.addZeroes(this.props.price);
-        let calculatedPrice = parseInt(this.props.price)*this.state.quantity;
+        let calculatedPrice = this.addZeroes((parseInt(this.props.price)*this.state.quantity).toString());
         return (
             <div className="checkout">
                 <img className="checkoutCell mediumCell" src={require("../../../assets/" + this.props.images[0])} />
@@ -53,10 +53,10 @@ class BagRow extends Component {
                     <p className="bagSmallText"><b>Size:</b> S</p>
                 </div>
                 <h3 className="checkoutCell littleCell">{price}</h3>
-                <div className="checkoutCell littleCell">
-                    <button className={this.state.quantity>0 ? 'Blue' : 'Purple'} onClick={() => this.changeQuantity(-1)}>-</button>
-                    <div>{this.state.quantity}</div>
-                    <button onClick={() => this.changeQuantity(1)}>+</button>
+                <div className="checkoutCell littleCell bagQuantity">
+                    <button className={this.state.quantity>0 ? 'bagQuantityButton' : 'bagQuantityButton bagQuantityButtonDisabled'} onClick={() => this.changeQuantity(-1)}>-</button>
+                    <input readonly="" type="numeric" className="bagQuantityAmount" value={this.state.quantity}></input>
+                    <button className="bagQuantityButton" onClick={() => this.changeQuantity(1)}>+</button>
                 </div>
                 <h3 className="checkoutCell littleCell">{calculatedPrice}</h3>
                 <h3 className="checkoutCell littleCell">X</h3>

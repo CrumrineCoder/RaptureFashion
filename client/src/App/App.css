@@ -451,6 +451,35 @@ body, html{
   font-size: .8em;
 }
 
+.bagQuantity{
+  display: flex; 
+  justify-content: center; 
+}
+
+.bagQuantityAmount{
+  width: 36px;
+  height: 36px;
+  text-align: center;
+  border: 0;
+  border-top: 1px solid #cfcfcf;
+  border-bottom: 1px solid #cfcfcf;
+  background-color: transparent;
+  cursor: not-allowed;
+}
+
+.bagQuantityButton{
+  width: 36px;
+  height: 36px;
+  background-color: transparent;
+  border: 1px solid #cfcfcf;
+  cursor: pointer;
+}
+
+.bagQuantityButtonDisabled{
+  cursor: not-allowed;
+  opacity: .5;
+}
+
 /* Color Buttons */
 
 .ColorBox{
