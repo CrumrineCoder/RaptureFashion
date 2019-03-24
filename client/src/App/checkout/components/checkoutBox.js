@@ -19,19 +19,19 @@ class CheckoutBox extends Component {
         console.log(this.props);
         let pageContent = '';
         pageContent = (
-            <ul className="checkoutCell">
+            <ul className="checkoutCell mediumCell">
                 {this.props.color.map((color, i) => <li key={i}>{color}</li>)}
             </ul>
         )
         return(
             <div className="checkout">
-              <img className="checkoutCell" src={require("../../../assets/" + this.props.images[0])} />
-              <h3 className="checkoutCell">{this.props.name}</h3>
+              <img className="checkoutCell mediumCell" src={require("../../../assets/" + this.props.images[0])} />
+              <h3 className="checkoutCell bigCell">{this.props.name}</h3>
               {pageContent}
-              <h3 className="checkoutCell">S</h3>
-              <h3 className="checkoutCell">1</h3>
-              <h3 className="checkoutCell">{this.props.price}</h3>
-              <h3 className="checkoutCell">X</h3>
+              <h3 className="checkoutCell littleCell">S</h3>
+              <h3 className="checkoutCell littleCell">1</h3>
+              <h3 className="checkoutCell littleCell">{this.props.price}</h3>
+              <h3 className="checkoutCell littleCell">X</h3>
             </div>
         )
     }

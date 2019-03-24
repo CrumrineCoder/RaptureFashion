@@ -413,12 +413,25 @@ body, html{
   box-sizing: border-box;
   flex-grow: 1;
   width: 100%; 
-  padding: 0.8em 1.2em;
+  padding: 5px;
   overflow: hidden; 
   list-style: none;
-  width: 5.8%;
   height: auto;
-  align-self: center
+  align-self: center;
+  font-size: 16px;
+  text-align: center; 
+}
+
+.bigCell{
+  width: 25%;
+}
+
+.mediumCell{
+  width: 10%;
+}
+
+.littleCell{
+  width: 5%;
 }
 
 /* */
