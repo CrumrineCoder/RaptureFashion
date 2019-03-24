@@ -442,11 +442,18 @@ body, html{
   width: 5%;
 }
 
+.bagColors{
+  display: inline; 
+  padding: 0px;
+}
+
 /* Color Buttons */
 
 .ColorBox{
   width: 25px;
   height: 25px; 
+  display: inline-block;
+  margin-right: 5px;
 }
 
 .ColorBoxFill{

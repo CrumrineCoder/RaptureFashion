@@ -20,7 +20,7 @@ class BagRow extends Component {
         console.log(this.props);
         let colorBoxes = "";
         colorBoxes = (
-            <ul className="checkoutCell">
+            <ul className="bagColors">
                 {this.props.color.map((color, i) =>  <ColorBox readOnly={true} key={i} Color={color}></ColorBox>)}
             </ul>
         )
@@ -30,7 +30,7 @@ class BagRow extends Component {
                 <div className="bigCell">
                     <h3 className="checkoutCell">{this.props.name}</h3>
                     <h3 className="checkoutCell">{this.props.brandName}</h3>
-                    <p><b>Color:</b> {colorBoxes}</p>
+                    {colorBoxes}
                     <p><b>Size:</b> S</p>
                 </div>
                 <h3 className="checkoutCell littleCell">{this.props.price}</h3>
