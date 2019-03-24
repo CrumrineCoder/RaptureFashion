@@ -7,7 +7,7 @@ class BagRow extends Component {
         super(props);
         // initial state stores the questions, an array of answers the user will input, options the user will make true or false, linked represents if the user will be linked, and submitted checks if the poll has been submitted yet. 
         this.state = {
-            box: {}
+            quantity: 1
         }
         this.addZeroes = this.addZeroes.bind(this);
     }
@@ -26,6 +26,12 @@ class BagRow extends Component {
         return value;
     }
 
+    changeQuantity(num){
+        this.setState({
+            quantity: this.state.quantity+num
+        })
+    }
+
     render() {
         // TO DO: ADD LINK
         console.log(this.props);
@@ -36,6 +42,7 @@ class BagRow extends Component {
             </ul>
         )
         let price = this.addZeroes(this.props.price);
+        let calculatedPrice = parseInt(this.props.price)*this.state.quantity;
         return (
             <div className="checkout">
                 <img className="checkoutCell mediumCell" src={require("../../../assets/" + this.props.images[0])} />
@@ -46,8 +53,12 @@ class BagRow extends Component {
                     <p className="bagSmallText"><b>Size:</b> S</p>
                 </div>
                 <h3 className="checkoutCell littleCell">{price}</h3>
-                <h3 className="checkoutCell littleCell">1</h3>
-                <h3 className="checkoutCell littleCell">new price: {this.props.price}</h3>
+                <div className="checkoutCell littleCell">
+                    <button className={this.state.quantity>0 ? 'Blue' : 'Purple'} onClick={() => this.changeQuantity(-1)}>-</button>
+                    <div>{this.state.quantity}</div>
+                    <button onClick={() => this.changeQuantity(1)}>+</button>
+                </div>
+                <h3 className="checkoutCell littleCell">{calculatedPrice}</h3>
                 <h3 className="checkoutCell littleCell">X</h3>
             </div>
         )
