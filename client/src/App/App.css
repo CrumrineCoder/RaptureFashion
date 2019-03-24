@@ -442,6 +442,30 @@ body, html{
   width: 5%;
 }
 
+/* Color Buttons */
+
+.ColorBox{
+  width: 25px;
+  height: 25px; 
+}
+
+.ColorBoxFill{
+  width: 100%;
+  height: 100%;
+}
+
+.Blue{
+  background: #0071bc; 
+}
+
+.Black{
+  background: #000000;
+}
+
+.Purple{
+  background: purple;
+}
+
 /* */
 
 body, html, #root, .App, .wrap, #pollIndex, .container, .poll, .polls{

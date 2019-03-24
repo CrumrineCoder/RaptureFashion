@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import ColorBox from '../../common/components/ColorBox';
 
 class BagRow extends Component {
 
@@ -17,10 +18,10 @@ class BagRow extends Component {
     render() {
         // TO DO: ADD LINK
         console.log(this.props);
-        let pageContent = '';
-        pageContent = (
+        let colorBoxes = "";
+        colorBoxes = (
             <ul className="checkoutCell">
-                {this.props.color.map((color, i) => <li key={i}>{color}</li>)}
+                {this.props.color.map((color, i) =>  <ColorBox readOnly={true} key={i} Color={color}></ColorBox>)}
             </ul>
         )
         return (
@@ -29,7 +30,7 @@ class BagRow extends Component {
                 <div className="bigCell">
                     <h3 className="checkoutCell">{this.props.name}</h3>
                     <h3 className="checkoutCell">{this.props.brandName}</h3>
-                    <p><b>Color:</b> {pageContent}</p>
+                    <p><b>Color:</b> {colorBoxes}</p>
                     <p><b>Size:</b> S</p>
                 </div>
                 <h3 className="checkoutCell littleCell">{this.props.price}</h3>

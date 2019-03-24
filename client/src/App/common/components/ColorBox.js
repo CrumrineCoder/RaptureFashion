@@ -10,10 +10,20 @@ class ColorBox extends Component {
     }
 
     render(){
+        console.log(this.props);
+        let pageContent = "nerd";
+        let Class = "ColorBoxFill " + this.props.Color;
+        console.log(Class);
+        if(this.props.readOnly){
+            pageContent = (
+                <div className={Class}></div>
+            )
+        }
+
         // TO DO: ADD LINK
         return(
             <div className="ColorBox">
-               
+                {pageContent}
             </div>
         )
     }
