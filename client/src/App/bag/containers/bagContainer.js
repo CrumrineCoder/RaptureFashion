@@ -38,7 +38,7 @@ class BagContainer extends Component {
                     "Dresses/61626/61626-4_2048x2048.jpg",
                     "Dresses/61626/61626-5_2048x2048.jpg"
                 ],
-                price: 14.00,
+                price: "14",
                 color: ["Purple", "Black"],
                 desc: "With a bit of royalty and aristocratic detail, the Veronique Flapper dress is fresh from Unique Vintage in stunning 1920s design. Intricately deco beaded black mesh boasts black iridescent sequins and small black beads wrought in flourishing deco swirls and spirals, while a deep eggplant purple knit lining creates a radiant effect. The sleeveless, v-neck design shows you off with a modest touch, while the curve hugging fit and jagged edge dripping with fringe will turn every head!  \n Available in sizes S-3X while supplies last.",
                 details: [
@@ -61,7 +61,7 @@ class BagContainer extends Component {
                     "Dresses/1606/Unique_Vintage_Navy_Hemingway_Flapper_Dress_2048x2048.jpg",
                     "Dresses/1606/Unique_Vintage_Navy_Hemingway_Flapper_Dress_3_1024x1024.jpg"
                 ],
-                price: 74.00,
+                price: "74",
                 color: ["Blue"],
                 desc: "It’s time to go totally Gatsby, darling! With this navy Hemingway flapper dress, you can achieve that perfect 1920s look without all of the effort. This fabulous frock features a slightly fitted shape with a narrow waist, V-neck and loose, knee-length skirt. A slight cowl neck with draping across the neckline and back adds an extra feminine touch to this flapper dress. Panels of matching navy-blue lace are situated between the pleats of the skirt and underneath the draped back, while art deco sequined details line the drop waist and décolletage. There’s even a bit of lace detailing in the center of the neckline to show a bit of skin without revealing too much. \n Create a completely retro look that pairs perfectly with sky-high pumps, a perfectly matte red lip and a matching feather headband with this navy Hemingway flapper dress from Unique Vintage. You’ll look absolutely lovely wearing this stylish flapper dress for all kinds of occasions, whether it’s for a 1920s theme party, a holiday bash or even a very special date night. With just the right hint of sparkle, you’re sure to shine in this art deco stunner. Order yours from Unique Vintage and enjoy free shipping on orders of $150 or more. \n Available in sizes XS-4X while supplies last.",
                 details: [
@@ -86,7 +86,10 @@ class BagContainer extends Component {
         return (
             <div>
                 <h2>Shopping Cart</h2>
-                
+                <p>Item</p>
+                <p>Price</p>
+                <p>Quantitiy</p>
+                <p>Subtotal</p>
                 {pageContent}
             </div>
         );

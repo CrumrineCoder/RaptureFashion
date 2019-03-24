@@ -447,6 +447,10 @@ body, html{
   padding: 0px;
 }
 
+.bagSmallText{
+  font-size: .8em;
+}
+
 /* Color Buttons */
 
 .ColorBox{
