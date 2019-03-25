@@ -79,11 +79,11 @@ class BagContainer extends Component {
         this.changeQuantity = this.changeQuantity.bind(this);
     }
 
-    removeItem(index){
-  /*      let filteredClothes = this.state.dresses.filter(function( obj ) {
+    removeItem(itemName){
+        let filteredClothes = this.state.dresses.filter(function( obj ) {
             return obj.name !== itemName;
-        }); */
-        let filteredClothes = this.state.dresses.splice(index-1, 1)
+        }); 
+     //   let filteredClothes = this.state.dresses.splice(index-1, 1)
         this.setState({
             dresses: filteredClothes
         })

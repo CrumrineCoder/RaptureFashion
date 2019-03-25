@@ -62,7 +62,7 @@ class BagRow extends Component {
                     <input readonly="" type="numeric" className="bagQuantityAmount" value={this.props.quantity}></input>
                     <button className="bagQuantityButton" onClick={() => this.props.changeQuantity(this.props.index, 1)}>+</button>
                     <h3 className="checkoutCell">{calculatedPrice}</h3>
-                    <i onClick={() => this.props.removeItem(this.props.index)} class="fas fa-trash checkoutCell"></i>
+                    <i onClick={() => this.props.removeItem(this.props.name)} class="fas fa-trash checkoutCell"></i>
                 </div>
 
 
