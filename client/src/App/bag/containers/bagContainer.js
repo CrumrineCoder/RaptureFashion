@@ -84,7 +84,7 @@ class BagContainer extends Component {
     }
 
     render() {
-
+        console.log("Bag Container Render");
         let pageContent = 'lol';
         // this.props.cart
         pageContent = (

@@ -60,7 +60,10 @@ class DetailsContainer extends Component {
 
     addCart(){
         console.log("haha ow");
-        this.props.dispatch(cartActions.addToCart(this.state.dress));
+        let clothing = this.state.dress;
+        clothing.size = this.state.size;
+        clothing.quantity = 1; 
+        this.props.dispatch(cartActions.addToCart(clothing));
     }
 
     addZeroes(num) {
