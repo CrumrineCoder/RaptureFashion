@@ -33,9 +33,7 @@ class BagRow extends Component {
     }
 
     render() {
-        console.log("Bag Row Render");
         // TO DO: ADD LINK
-        console.log(this.props);
         let colorBoxes = "";
         colorBoxes = (
             <ul className="bagColors">

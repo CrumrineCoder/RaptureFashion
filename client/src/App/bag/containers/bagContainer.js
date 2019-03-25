@@ -98,8 +98,7 @@ class BagContainer extends Component {
     }
 
     render() {
-        console.log("Bag Container Render");
-        let pageContent = 'lol';
+        let pageContent = '';
         // this.props.cart
         pageContent = (
             <ul className="help">
@@ -113,7 +112,6 @@ class BagContainer extends Component {
                 <p>Price</p>
                 <p>Quantitiy</p>
                 <p>Subtotal</p>
-                {this.state.dresses[0].quantity}
                 {pageContent}
             </div>
         );
