@@ -42,7 +42,9 @@ class BagContainer extends Component {
                         "Length Includes Fringe",
                         "Model Pictured Wearing Size M; Medium Length 43",
                         "Model Info: Height: 5’9\” | Waist: 26 | Hips: 36.5 | Bust: 34C"
-                    ]
+                    ],
+                    size: "S",
+                    quantity: 1
                 },
                 {
                     name: "Navy Hemingway Flapper Dress",
@@ -68,18 +70,30 @@ class BagContainer extends Component {
                         "Moderately lined",
                         "Material does not provide stretch",
                         "Model Info: Height: 5’8\” | Bust: 34B | Waist: 24 | Hip: 36"
-                    ]
+                    ],
+                    size: "XL",
+                    quantity: 1
                 }]
         }
         this.removeItem = this.removeItem.bind(this);
+        this.changeQuantity = this.changeQuantity.bind(this);
     }
 
-    removeItem(itemName){
-        let filteredClothes = this.state.dresses.filter(function( obj ) {
+    removeItem(index){
+  /*      let filteredClothes = this.state.dresses.filter(function( obj ) {
             return obj.name !== itemName;
-        });
+        }); */
+        let filteredClothes = this.state.dresses.splice(index-1, 1)
         this.setState({
             dresses: filteredClothes
+        })
+    }
+
+    changeQuantity(index, num){
+        let clonedItems = this.state.dresses;
+        clonedItems[index].quantity += num; 
+        this.setState({
+            dresses: clonedItems
         })
     }
 
@@ -89,7 +103,7 @@ class BagContainer extends Component {
         // this.props.cart
         pageContent = (
             <ul className="help">
-                {this.state.dresses.map((dress, i) => <BagRow removeItem={this.removeItem} key={i} {...dress}> </BagRow>)}
+                {this.state.dresses.map((dress, i) => <BagRow changeQuantity={this.changeQuantity} removeItem={this.removeItem} key={i} index={i} {...dress}> </BagRow>)}
             </ul>
         )
         return (
@@ -99,6 +113,7 @@ class BagContainer extends Component {
                 <p>Price</p>
                 <p>Quantitiy</p>
                 <p>Subtotal</p>
+                {this.state.dresses[0].quantity}
                 {pageContent}
             </div>
         );

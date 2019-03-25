@@ -43,7 +43,7 @@ class BagRow extends Component {
             </ul>
         )
         let price = this.addZeroes(this.props.price);
-        let calculatedPrice = this.addZeroes((parseInt(this.props.price) * this.state.quantity).toString());
+        let calculatedPrice = this.addZeroes((parseInt(this.props.price) * this.props.quantity).toString());
         return (
             <div className="checkout">
 
@@ -53,16 +53,16 @@ class BagRow extends Component {
                     <h3 className="checkoutCell">{this.props.name}</h3>
                     <h3 className="checkoutCell">{this.props.brandName}</h3>
                     {colorBoxes}
-                    <p className="bagSmallText"><b>Size:</b> S</p>
+                    <p className="bagSmallText"><b>Size:</b>{this.props.size}</p>
                 </div>
 
                 <div className="checkoutCell bagQuantity">
                     <h3 className="checkoutCell">{price}</h3>
-                    <button className={this.state.quantity > 1 ? 'bagQuantityButton' : 'bagQuantityButton bagQuantityButtonDisabled'} disabled={this.state.quantity <= 1} onClick={() => this.changeQuantity(-1)}>-</button>
-                    <input readonly="" type="numeric" className="bagQuantityAmount" value={this.state.quantity}></input>
-                    <button className="bagQuantityButton" onClick={() => this.changeQuantity(1)}>+</button>
+                    <button className={this.props.quantity > 1 ? 'bagQuantityButton' : 'bagQuantityButton bagQuantityButtonDisabled'} disabled={this.props.quantity <= 1} onClick={() => this.props.changeQuantity(this.props.index, -1)}>-</button>
+                    <input readonly="" type="numeric" className="bagQuantityAmount" value={this.props.quantity}></input>
+                    <button className="bagQuantityButton" onClick={() => this.props.changeQuantity(this.props.index, 1)}>+</button>
                     <h3 className="checkoutCell">{calculatedPrice}</h3>
-                    <i onClick={() => this.props.removeItem(this.props.name)} class="fas fa-trash checkoutCell"></i>
+                    <i onClick={() => this.props.removeItem(this.props.index)} class="fas fa-trash checkoutCell"></i>
                 </div>
 
 
