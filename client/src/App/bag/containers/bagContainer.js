@@ -71,8 +71,17 @@ class BagContainer extends Component {
                     ]
                 }]
         }
+        this.removeItem = this.removeItem.bind(this);
     }
 
+    removeItem(itemName){
+        let filteredClothes = this.state.dresses.filter(function( obj ) {
+            return obj.name !== itemName;
+        });
+        this.setState({
+            dresses: filteredClothes
+        })
+    }
 
     render() {
 
@@ -80,7 +89,7 @@ class BagContainer extends Component {
         // this.props.cart
         pageContent = (
             <ul className="help">
-                {this.state.dresses.map((dress, i) => <BagRow key={i} {...dress}> </BagRow>)}
+                {this.state.dresses.map((dress, i) => <BagRow removeItem={this.removeItem} key={i} {...dress}> </BagRow>)}
             </ul>
         )
         return (
