@@ -456,6 +456,7 @@ body, html{
   justify-content: center; 
   width: 45%;
   position: relative;
+  min-width: 310px;
 }
 
 .bagQuantityAmount{
