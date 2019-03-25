@@ -430,16 +430,12 @@ body, html{
   text-align: center; 
 }
 
-.bigCell{
-  width: 25%;
+.bagImg{
+  width: 15%;
 }
 
-.mediumCell{
-  width: 10%;
-}
-
-.littleCell{
-  width: 5%;
+.bagItem{
+  width: 45%;
 }
 
 .bagColors{
@@ -454,6 +450,7 @@ body, html{
 .bagQuantity{
   display: flex; 
   justify-content: center; 
+  width: 30%;
 }
 
 .bagQuantityAmount{
@@ -473,6 +470,9 @@ body, html{
   background-color: transparent;
   border: 1px solid #cfcfcf;
   cursor: pointer;
+  flex-basis: 36px;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
 
 .bagQuantityButtonDisabled{

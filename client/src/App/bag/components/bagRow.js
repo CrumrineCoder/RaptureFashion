@@ -45,21 +45,26 @@ class BagRow extends Component {
         let calculatedPrice = this.addZeroes((parseInt(this.props.price) * this.state.quantity).toString());
         return (
             <div className="checkout">
-                <img className="checkoutCell mediumCell" src={require("../../../assets/" + this.props.images[0])} />
-                <div className="bigCell">
+
+                <img className="checkoutCell bagImg" src={require("../../../assets/" + this.props.images[0])} />
+
+                <div className="bagItem">
                     <h3 className="checkoutCell">{this.props.name}</h3>
                     <h3 className="checkoutCell">{this.props.brandName}</h3>
                     {colorBoxes}
                     <p className="bagSmallText"><b>Size:</b> S</p>
                 </div>
-                <h3 className="checkoutCell littleCell">{price}</h3>
-                <div className="checkoutCell littleCell bagQuantity">
+
+                <div className="checkoutCell bagQuantity">
+                    <h3 className="checkoutCell">{price}</h3>
                     <button className={this.state.quantity > 1 ? 'bagQuantityButton' : 'bagQuantityButton bagQuantityButtonDisabled'} disabled={this.state.quantity <= 1} onClick={() => this.changeQuantity(-1)}>-</button>
                     <input readonly="" type="numeric" className="bagQuantityAmount" value={this.state.quantity}></input>
                     <button className="bagQuantityButton" onClick={() => this.changeQuantity(1)}>+</button>
+                    <h3 className="checkoutCell">{calculatedPrice}</h3>
+                    <i class="fas fa-trash checkoutCell"></i>
                 </div>
-                <h3 className="checkoutCell littleCell">{calculatedPrice}</h3>
-                <h3 className="checkoutCell littleCell">X</h3>
+
+
             </div>
         )
     }
