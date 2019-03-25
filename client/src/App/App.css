@@ -435,7 +435,7 @@ body, html{
 }
 
 .bagImg{
-  width: 15%;
+  width: 10%;
 }
 
 .bagItem{
@@ -454,7 +454,8 @@ body, html{
 .bagQuantity{
   display: flex; 
   justify-content: center; 
-  width: 30%;
+  width: 45%;
+  position: relative;
 }
 
 .bagQuantityAmount{
@@ -492,11 +493,19 @@ body, html{
 }
 
 .bagItemHeader{
-  width: 60%;
+  width: 55%;
 }
 
 .bagPriceHeader{
-  width: 40%;
+  width: 45%;
+}
+
+.bagTrashIcon{
+  width: auto;
+  margin-left: auto;
+  position: absolute;
+  right: 0;
+  bottom: 15px;
 }
 
 /* Color Buttons */
