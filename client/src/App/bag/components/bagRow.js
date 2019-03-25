@@ -26,9 +26,9 @@ class BagRow extends Component {
         return value;
     }
 
-    changeQuantity(num){
+    changeQuantity(num) {
         this.setState({
-            quantity: this.state.quantity+num
+            quantity: this.state.quantity + num
         })
     }
 
@@ -38,11 +38,11 @@ class BagRow extends Component {
         let colorBoxes = "";
         colorBoxes = (
             <ul className="bagColors">
-                {this.props.color.map((color, i) =>  <ColorBox readOnly={true} key={i} Color={color}></ColorBox>)}
+                {this.props.color.map((color, i) => <ColorBox readOnly={true} key={i} Color={color}></ColorBox>)}
             </ul>
         )
         let price = this.addZeroes(this.props.price);
-        let calculatedPrice = this.addZeroes((parseInt(this.props.price)*this.state.quantity).toString());
+        let calculatedPrice = this.addZeroes((parseInt(this.props.price) * this.state.quantity).toString());
         return (
             <div className="checkout">
                 <img className="checkoutCell mediumCell" src={require("../../../assets/" + this.props.images[0])} />
@@ -54,7 +54,7 @@ class BagRow extends Component {
                 </div>
                 <h3 className="checkoutCell littleCell">{price}</h3>
                 <div className="checkoutCell littleCell bagQuantity">
-                    <button className={this.state.quantity>0 ? 'bagQuantityButton' : 'bagQuantityButton bagQuantityButtonDisabled'} onClick={() => this.changeQuantity(-1)}>-</button>
+                    <button className={this.state.quantity > 1 ? 'bagQuantityButton' : 'bagQuantityButton bagQuantityButtonDisabled'} disabled={this.state.quantity <= 1} onClick={() => this.changeQuantity(-1)}>-</button>
                     <input readonly="" type="numeric" className="bagQuantityAmount" value={this.state.quantity}></input>
                     <button className="bagQuantityButton" onClick={() => this.changeQuantity(1)}>+</button>
                 </div>
