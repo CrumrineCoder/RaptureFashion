@@ -51,15 +51,15 @@ class BagRow extends Component {
                     <h3 className="checkoutCell">{this.props.name}</h3>
                     <h3 className="checkoutCell">{this.props.brandName}</h3>
                     {colorBoxes}
-                    <p className="bagSmallText"><b>Size:</b>{this.props.size}</p>
+                    <p className="bagSmallText"><b>Size:</b> {this.props.size}</p>
                 </div>
 
                 <div className="checkoutCell bagQuantity">
-                    <h3 className="checkoutCell">{price}</h3>
+                    <h3 className="checkoutCell">${price}</h3>
                     <button className={this.props.quantity > 1 ? 'bagQuantityButton' : 'bagQuantityButton bagQuantityButtonDisabled'} disabled={this.props.quantity <= 1} onClick={() => this.props.changeQuantity(this.props.index, -1)}>-</button>
                     <input readonly="" type="numeric" className="bagQuantityAmount" value={this.props.quantity}></input>
                     <button className="bagQuantityButton" onClick={() => this.props.changeQuantity(this.props.index, 1)}>+</button>
-                    <h3 className="checkoutCell">{calculatedPrice}</h3>
+                    <h3 className="checkoutCell">${calculatedPrice}</h3>
                     <i onClick={() => this.props.removeItem(this.props.name)} class="fas fa-trash checkoutCell"></i>
                 </div>
 

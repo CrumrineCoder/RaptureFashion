@@ -20,7 +20,7 @@ class BagContainer extends Component {
         super(props);
         // Used for when searching and tagging functionality whenever that comes
         this.state = {
-            dresses : [
+            dresses: [
                 {
                     name: "Deco Purple & Black Sequin Veronique Fringe Flapper Dress",
                     brandName: "Gibson Girl",
@@ -79,19 +79,19 @@ class BagContainer extends Component {
         this.changeQuantity = this.changeQuantity.bind(this);
     }
 
-    removeItem(itemName){
-        let filteredClothes = this.state.dresses.filter(function( obj ) {
+    removeItem(itemName) {
+        let filteredClothes = this.state.dresses.filter(function (obj) {
             return obj.name !== itemName;
-        }); 
-     //   let filteredClothes = this.state.dresses.splice(index-1, 1)
+        });
+        //   let filteredClothes = this.state.dresses.splice(index-1, 1)
         this.setState({
             dresses: filteredClothes
         })
     }
 
-    changeQuantity(index, num){
+    changeQuantity(index, num) {
         let clonedItems = this.state.dresses;
-        clonedItems[index].quantity += num; 
+        clonedItems[index].quantity += num;
         this.setState({
             dresses: clonedItems
         })
@@ -101,17 +101,17 @@ class BagContainer extends Component {
         let pageContent = '';
         // this.props.cart
         pageContent = (
-            <ul className="help">
+            <ul className="bagRows">
                 {this.state.dresses.map((dress, i) => <BagRow changeQuantity={this.changeQuantity} removeItem={this.removeItem} key={i} index={i} {...dress}> </BagRow>)}
             </ul>
         )
         return (
             <div>
                 <h2>Shopping Cart</h2>
-                <p>Item</p>
-                <p>Price</p>
-                <p>Quantitiy</p>
-                <p>Subtotal</p>
+                <div className="bagContHead">
+                    <p className="bagItemHeader bagContHeader">Item</p>
+                    <p className="bagPriceHeader bagContHeader">Price / Quantity / Subtotal</p>
+                </div>
                 {pageContent}
             </div>
         );

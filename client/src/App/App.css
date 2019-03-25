@@ -430,6 +430,10 @@ body, html{
   text-align: center; 
 }
 
+.bagRows{
+  padding: 0px;
+}
+
 .bagImg{
   width: 15%;
 }
@@ -478,6 +482,21 @@ body, html{
 .bagQuantityButtonDisabled{
   cursor: not-allowed;
   opacity: .5;
+}
+
+/* Bag Headers */
+
+.bagContHeader{
+  text-align: center; 
+  display: inline-block;
+}
+
+.bagItemHeader{
+  width: 60%;
+}
+
+.bagPriceHeader{
+  width: 40%;
 }
 
 /* Color Buttons */
