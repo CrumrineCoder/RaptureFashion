@@ -7,25 +7,24 @@ class BagSubtotal extends Component {
         super(props);
         // initial state stores the questions, an array of answers the user will input, options the user will make true or false, linked represents if the user will be linked, and submitted checks if the poll has been submitted yet. 
         this.state = {
-            price: "0"
+            subTotal: "0",
+            estimatedShipping: "6.00"
         }
         this.addZeroes = this.addZeroes.bind(this);
     }
 
-    componentWillMount(){
-        console.log(this.props.clothing);
+    componentWillMount() {
         let sum = "0";
-        for(var i=0; i<this.props.clothing.length; i++){
+        for (var i = 0; i < this.props.clothing.length; i++) {
             let calculatedPrice = (parseInt(this.props.clothing[i].price) * this.props.clothing[i].quantity);
-            console.log("Calculated price", calculatedPrice);
-            console.log("Price", sum);
             calculatedPrice += parseInt(sum);
             calculatedPrice = this.addZeroes(calculatedPrice.toString());
-            console.log("Calculated price 2", calculatedPrice)
-           sum = calculatedPrice;
+            sum = calculatedPrice;
         }
+        let total = this.addZeroes((parseInt(sum) + parseInt(this.state.estimatedShipping)).toString());
         this.setState({
-            price: sum
+            subTotal: sum,
+            total: total
         })
     }
 
@@ -50,11 +49,12 @@ class BagSubtotal extends Component {
     }
 
     render() {
-        console.log(this.props);
         return (
             <div className="checkout">
                 <p>Order Summary</p>
-                <p>Subtotal: {this.state.price}</p>
+                <p>Subtotal: ${this.state.subTotal}</p>
+                <p>Estimated Shipping: ${this.state.estimatedShipping}</p>
+                <p>Total: ${this.state.total}</p>
             </div>
         )
     }
