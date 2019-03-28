@@ -43,26 +43,26 @@ class BagRow extends Component {
         let price = this.addZeroes(this.props.price);
         let calculatedPrice = this.addZeroes((parseInt(this.props.price) * this.props.quantity).toString());
         return (
-            <div className="checkout">
+            <div className="bagRow">
 
-                <img className="checkoutCell bagImg" src={require("../../../assets/" + this.props.images[0])} />
+                <img className="bagCell bagImg" src={require("../../../assets/" + this.props.images[0])} />
 
                 <div className="bagItem">
-                    <h3 className="checkoutCell">{this.props.name}</h3>
-                    <h3 className="checkoutCell">{this.props.brandName}</h3>
+                    <h3 className="bagCell">{this.props.name}</h3>
+                    <h3 className="bagCell">{this.props.brandName}</h3>
                     {colorBoxes}
                     <p className="bagSmallText"><b>Size:</b> {this.props.size}</p>
                 </div>
 
-                <div className="checkoutCell bagQuantity">
-                    <h3 className="checkoutCell">${price}</h3>
+                <div className="bagCell bagQuantity">
+                    <h3 className="bagCell">${price}</h3>
                     <button className={this.props.quantity > 1 ? 'bagQuantityButton' : 'bagQuantityButton bagQuantityButtonDisabled'} disabled={this.props.quantity <= 1} onClick={() => this.props.changeQuantity(this.props.index, -1)}>-</button>
                     <input readonly="" type="numeric" className="bagQuantityAmount" value={this.props.quantity}></input>
                     <button className="bagQuantityButton" onClick={() => this.props.changeQuantity(this.props.index, 1)}>+</button>
-                    <h3 className="checkoutCell">${calculatedPrice}</h3>
-                    <i onClick={() => this.props.removeItem(this.props.name)} class="fas fa-trash checkoutCell bagTrashIcon"></i>
+                    <h3 className="bagCell">${calculatedPrice}</h3>
+                    <i onClick={() => this.props.removeItem(this.props.name)} class="fas fa-trash bagCell bagRowDelete"></i>
                 </div>
-               
+
 
             </div>
         )

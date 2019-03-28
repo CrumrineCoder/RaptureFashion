@@ -109,13 +109,17 @@ class BagContainer extends Component {
         )
         return (
             <div>
-                <Link className="continueReading" to={"/"}>Continue Shopping</Link>
-                <h2>Your Shopping Bag </h2>
-                <div className="bagContHead">
-                    <p className="bagItemHeader bagContHeader">Item</p>
-                    <p className="bagPriceHeader bagContHeader">Price / Quantity / Subtotal</p>
+                <div className="bagHeader">
+                    <Link className="bagHeaderLink" to={"/"}><i class="fas fa-arrow-left"></i> Continue Shopping</Link>
+                    <h2 className="bagHeaderTitle">Your Shopping Bag </h2>
                 </div>
-                {pageContent}
+                <div className="bagBody">
+                    <div className="bagContHead">
+                        <p className="bagItemHeader bagContHeader">Item</p>
+                        <p className="bagPriceHeader bagContHeader">Price / Quantity / Subtotal</p>
+                    </div>
+                    {pageContent}
+                </div>
                 <BagSubtotal clothing={this.state.dresses}></BagSubtotal>
             </div>
         );
