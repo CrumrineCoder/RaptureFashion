@@ -107,7 +107,8 @@ class BagContainer extends Component {
         )
         return (
             <div>
-                <h2>Shopping Cart</h2>
+                Continue Shopping
+                <h2>Your Shopping Bag </h2>
                 <div className="bagContHead">
                     <p className="bagItemHeader bagContHeader">Item</p>
                     <p className="bagPriceHeader bagContHeader">Price / Quantity / Subtotal</p>
