@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ColorBox from '../../common/components/ColorBox';
+import { Link } from 'react-router-dom';
 
 class BagSubtotal extends Component {
 
@@ -55,6 +56,7 @@ class BagSubtotal extends Component {
                 <p>Subtotal: ${this.state.subTotal}</p>
                 <p>Estimated Shipping: ${this.state.estimatedShipping}</p>
                 <p>Total: ${this.state.total}</p>
+                <Link to={"/checkout"}><button>Secure Checkout</button></Link>
             </div>
         )
     }

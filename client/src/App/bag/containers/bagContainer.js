@@ -5,6 +5,7 @@ import ClothingBox from '../../home/components/ClothingBox';
 import { cartActions } from '../../_actions/cart.actions.js';
 import BagRow from "../components/bagRow.js";
 import BagSubtotal from "../components/bagSubtotal.js"
+import { Link } from 'react-router-dom';
 /*
 import ClothingBox from '../components/ClothingBox';
 import CategoriesBox from '../components/CategoriesBox';
@@ -108,7 +109,7 @@ class BagContainer extends Component {
         )
         return (
             <div>
-                Continue Shopping
+                <Link className="continueReading" to={"/"}>Continue Shopping</Link>
                 <h2>Your Shopping Bag </h2>
                 <div className="bagContHead">
                     <p className="bagItemHeader bagContHeader">Item</p>
