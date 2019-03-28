@@ -3,7 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ClothingBox from '../../home/components/ClothingBox';
 import { cartActions } from '../../_actions/cart.actions.js';
-import BagRow from "../components/bagRow.js"
+import BagRow from "../components/bagRow.js";
+import BagSubtotal from "../components/bagSubtotal.js"
 /*
 import ClothingBox from '../components/ClothingBox';
 import CategoriesBox from '../components/CategoriesBox';
@@ -114,6 +115,7 @@ class BagContainer extends Component {
                     <p className="bagPriceHeader bagContHeader">Price / Quantity / Subtotal</p>
                 </div>
                 {pageContent}
+                <BagSubtotal clothing={this.state.dresses}></BagSubtotal>
             </div>
         );
 
