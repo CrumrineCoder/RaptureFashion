@@ -108,7 +108,7 @@ class BagContainer extends Component {
             </ul>
         )
         return (
-            <div>
+            <div className="">
                 <div className="bagHeader">
                     <Link className="bagHeaderLink" to={"/"}><i class="fas fa-arrow-left"></i> Continue Shopping</Link>
                     <h2 className="bagHeaderTitle">Your Shopping Bag </h2>

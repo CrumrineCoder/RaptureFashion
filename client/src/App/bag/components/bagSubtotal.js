@@ -51,12 +51,16 @@ class BagSubtotal extends Component {
 
     render() {
         return (
-            <div className="checkout">
-                <p>Order Summary</p>
-                <p>Subtotal: ${this.state.subTotal}</p>
-                <p>Estimated Shipping: ${this.state.estimatedShipping}</p>
-                <p>Total: ${this.state.total}</p>
-                <Link to={"/checkout"}><button>Secure Checkout</button></Link>
+            <div className="bagSubtotalContainer">
+                <div className="bagHeader">
+                    <h2 className="bagHeaderTitle">Order Summary</h2>
+                </div>
+                <div className="bagBody">
+                    <p>Subtotal: ${this.state.subTotal}</p>
+                    <p>Estimated Shipping: ${this.state.estimatedShipping}</p>
+                    <p>Total: ${this.state.total}</p>
+                    <Link to={"/checkout"}><button>Secure Checkout</button></Link>
+                </div>
             </div>
         )
     }
