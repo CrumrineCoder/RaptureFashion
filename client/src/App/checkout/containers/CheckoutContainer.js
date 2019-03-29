@@ -21,14 +21,16 @@ class CheckoutContainer extends Component {
         super(props);
         // Used for when searching and tagging functionality whenever that comes
         this.state = {
-            address: {}
+            address: {},
+            formattedAddress: ""
         }
         this.handleAddress = this.handleAddress.bind(this);
     }
 
     handleAddress(address) {
         this.setState({
-            address
+            address,
+            formattedAddress: address.address + ", " +  address.city + " " +  address.zip + ", " +  address.country
         })
     }
 
@@ -38,7 +40,7 @@ class CheckoutContainer extends Component {
         return (
             <div className="">
                 <Address onChange={this.handleAddress}></Address>
-                {this.state.address.fName}
+                {this.state.formattedAddress}
             </div>
         );
 

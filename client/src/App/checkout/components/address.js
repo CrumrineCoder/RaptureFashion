@@ -13,6 +13,7 @@ class Address extends Component {
             apartment: "",
             city: "",
             country: "",
+            zip: "", 
             phone: ""
         }
         this.handleInputChange = this.handleInputChange.bind(this);
@@ -51,6 +52,7 @@ class Address extends Component {
                     <option value="United Kingdom">United Kingdom</option>
                     <option value="United States">United States</option>
                 </select>
+                <input type="text" placeholder="ZIP code" name="zip" onChange={this.handleInputChange} value={this.state.zip}></input>
                 <input type="text" placeholder="Phone" name="phone" onChange={this.handleInputChange} value={this.state.phone}></input>
                 <button>Continue to Shipping</button>
             </div>
