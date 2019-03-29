@@ -20,7 +20,19 @@ class CheckoutContainer extends Component {
         super(props);
         // Used for when searching and tagging functionality whenever that comes
         this.state = {
+            email: ""
         }
+        this.handleInputChange = this.handleInputChange.bind(this);
+    }
+
+    handleInputChange(event) {
+        const target = event.target;
+        const value =  target.value;
+        const name = target.name;
+    
+        this.setState({
+          [name]: value
+        });
     }
 
 
@@ -30,7 +42,8 @@ class CheckoutContainer extends Component {
             <div className="">
                 <p>Already have an account? Log In</p>
                 <h3>Contact Information</h3>
-                <input type="text" placeholder="Email"></input>
+                {this.state.email}
+                <input type="text" placeholder="Email" name="email" onChange={this.handleInputChange} value={this.state.email}></input>
                 <h3>Shipping Address</h3>
                 <input type="text" placeholder="First name"></input>
                 <input type="text" placeholder="Last name"></input>
@@ -41,6 +54,7 @@ class CheckoutContainer extends Component {
                 <input list="countries" id="country" name="country" />
                 <datalist id="countries">
                     <option value="Canada" />
+                    <option value="Rapture" />
                     <option value="United Kingdom" />
                     <option value="United States" />
                 </datalist>
