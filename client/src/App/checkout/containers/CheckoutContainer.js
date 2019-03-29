@@ -28,8 +28,23 @@ class CheckoutContainer extends Component {
 
         return (
             <div className="">
-               
-            
+                <p>Already have an account? Log In</p>
+                <h3>Contact Information</h3>
+                <input type="text" placeholder="Email"></input>
+                <h3>Shipping Address</h3>
+                <input type="text" placeholder="First name"></input>
+                <input type="text" placeholder="Last name"></input>
+                <input type="text" placeholder="Address"></input>
+                <input type="text" placeholder="Apartment, suite, etc. (optional)"></input>
+                <input type="text" placeholder="City"></input>
+                <label for="country">Country:</label>
+                <input list="countries" id="country" name="country" />
+                <datalist id="countries">
+                    <option value="Canada" />
+                    <option value="United Kingdom" />
+                    <option value="United States" />
+                </datalist>
+                <input type="text" placeholder="Phone"></input>
             </div>
         );
 
