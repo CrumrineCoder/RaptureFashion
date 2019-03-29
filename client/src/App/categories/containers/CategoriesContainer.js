@@ -617,7 +617,6 @@ class CategoriesContainer extends Component {
                 ]
             }
         ]
-
         let shoes = [
             {
                 name: "Red T-Strap Heels",

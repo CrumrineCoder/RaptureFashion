@@ -25,6 +25,8 @@ class Address extends Component {
 
         this.setState({
             [name]: value
+        }, function () {
+            this.props.onChange(this.state);
         });
     }
 

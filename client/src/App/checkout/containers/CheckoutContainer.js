@@ -23,16 +23,22 @@ class CheckoutContainer extends Component {
         this.state = {
             address: {}
         }
+        this.handleAddress = this.handleAddress.bind(this);
     }
 
-
+    handleAddress(address) {
+        this.setState({
+            address
+        })
+    }
 
 
     render() {
 
         return (
             <div className="">
-                <Address></Address>
+                <Address onChange={this.handleAddress}></Address>
+                {this.state.address.fName}
             </div>
         );
 
