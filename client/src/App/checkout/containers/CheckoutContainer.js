@@ -5,6 +5,7 @@ import ClothingBox from '../../home/components/ClothingBox';
 import { cartActions } from '../../_actions/cart.actions.js';
 import { Link } from 'react-router-dom';
 import Address from "../components/address.js";
+import Shipping from "../components/shipping.js";
 /*
 import ClothingBox from '../components/ClothingBox';
 import CategoriesBox from '../components/CategoriesBox';
@@ -38,9 +39,9 @@ class CheckoutContainer extends Component {
     render() {
 
         return (
-            <div className="">
+            <div className="checkout">
                 <Address onChange={this.handleAddress}></Address>
-                {this.state.formattedAddress}
+                <Shipping></Shipping>
             </div>
         );
 

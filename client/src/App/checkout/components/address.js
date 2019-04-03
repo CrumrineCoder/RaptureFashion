@@ -37,7 +37,6 @@ class Address extends Component {
             <div className="checkoutAddress">
                 <p>Already have an account? Log In</p>
                 <h3>Contact Information</h3>
-                {this.state.country}
                 <input type="text" placeholder="Email" name="email" onChange={this.handleInputChange} value={this.state.email}></input>
                 <h3>Shipping Address</h3>
                 <input type="text" placeholder="First name" name="fName" onChange={this.handleInputChange} value={this.state.fName}></input>
