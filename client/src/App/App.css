@@ -585,6 +585,20 @@ body, html{
   background: purple;
 }
 
+/* Checkout */
+
+.checkoutShipping{
+  width: 50%; 
+}
+
+.checkoutShippingLabel{
+  width: 100%;
+}
+
+.checkoutShippingPrice{
+  float: right; 
+}
+
 /* */
 
 html, body, #root, .App, .wrap, #pollIndex, .container, .poll, .polls{

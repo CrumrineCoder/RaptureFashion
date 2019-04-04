@@ -31,17 +31,20 @@ class CheckoutContainer extends Component {
     handleAddress(address) {
         this.setState({
             address,
-            formattedAddress: address.address + ", " +  address.city + " " +  address.zip + ", " +  address.country
+            formattedAddress: address.address + ", " +  address.city + " " +  address.zip + ", " +  address.country,
+            emailAddress: address.email
         })
     }
 
 
     render() {
 
+        
+
         return (
             <div className="checkout">
                 <Address onChange={this.handleAddress}></Address>
-                <Shipping></Shipping>
+                <Shipping contact={this.state.emailAddress} address={this.state.formattedAddress}></Shipping>
             </div>
         );
 
