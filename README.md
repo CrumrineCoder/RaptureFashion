@@ -1,6 +1,8 @@
 # RaptureFashion
 
 ngrok: ngrok http 5000 in root
+local host 5000 for dev
+3000 for server
 
 UX:
 https://uxstudioteam.com/ux-blog/e-commerce-ux/ (1)
