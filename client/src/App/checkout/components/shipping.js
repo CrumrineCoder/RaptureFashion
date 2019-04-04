@@ -14,7 +14,9 @@ class Shipping extends Component {
     changeShipping(e){
         this.setState({
             shipping: e.target.value
-        })
+        }, function () {
+            this.props.onChange(this.state);
+        });
     }
 
     render() {
@@ -25,6 +27,7 @@ class Shipping extends Component {
         // Express International
         // Free Domestic Standard
 
+        // Need to conditionally render these based on the store. 
         return (
             <div className="checkoutShipping">
                 <p>Contact {this.props.contact}</p>
