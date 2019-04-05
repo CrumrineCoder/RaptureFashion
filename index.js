@@ -76,6 +76,46 @@ const port = process.env.PORT || 5000;
 app.listen(port);
 
 console.log('App is listening on port ' + port);*/
+/*
+require('isomorphic-fetch');
+
+const Koa = require('koa');
+const session = require('koa-session');
+const {default: shopifyAuth, verifyRequest} = require('@shopify/koa-shopify-auth');
+
+const {SHOPIFY_API_KEY, SHOPIFY_SECRET} = process.env;
+
+const app = new Koa();
+app.keys = [SHOPIFY_SECRET];
+
+app
+  // sets up secure session data on each request
+  .use(session(app))
+
+  // sets up shopify auth
+  .use(
+    shopifyAuth({
+      apiKey: SHOPIFY_API_KEY,
+      secret: SHOPIFY_SECRET,
+      scopes: ['write_orders, write_products'],
+      afterAuth(ctx) {
+        const {shop, accessToken} = ctx.session;
+
+        console.log('We did it!', accessToken);
+
+        ctx.redirect('/');
+      },
+    }),
+  )
+
+  // everything after this point will require authentication
+  .use(verifyRequest())
+
+  // application code
+  .use(ctx => {
+    ctx.body = '🎉';
+  });
+  */
 require('isomorphic-fetch');
 const Koa = require('koa');
 const next = require('next');
@@ -93,6 +133,7 @@ const handle = app.getRequestHandler();
 const { SHOPIFY_API_SECRET_KEY, SHOPIFY_API_KEY } = process.env;
 
 app.prepare().then(() => {
+
   const server = new Koa();
   server.use(session(server));
   server.keys = [SHOPIFY_API_SECRET_KEY];
@@ -104,7 +145,7 @@ app.prepare().then(() => {
       scopes: ['read_products'],
       afterAuth(ctx) {
         const { shop, accessToken } = ctx.session;
-
+        ctx.cookies.set('shopOrigin', shop, { httpOnly: false })
         ctx.redirect('/');
       },
     }),
@@ -120,5 +161,6 @@ app.prepare().then(() => {
 
   server.listen(port, () => {
     console.log(`> Ready on http://localhost:${port}`);
+
   });
 });
