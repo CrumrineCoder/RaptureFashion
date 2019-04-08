@@ -133,7 +133,6 @@ const handle = app.getRequestHandler();
 const { SHOPIFY_API_SECRET_KEY, SHOPIFY_API_KEY } = process.env;
 
 app.prepare().then(() => {
-
   const server = new Koa();
   server.use(session(server));
   server.keys = [SHOPIFY_API_SECRET_KEY];
@@ -161,6 +160,5 @@ app.prepare().then(() => {
 
   server.listen(port, () => {
     console.log(`> Ready on http://localhost:${port}`);
-
   });
 });
