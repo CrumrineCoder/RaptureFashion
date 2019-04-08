@@ -1,24 +1,43 @@
-import { Layout, Page, EmptyState } from '@shopify/polaris';
-const img = 'https://cdn.shopify.com/s/files/1/0757/9955/files/empty-state.svg'
-const Index = () => (
-    <Page
-        primaryAction={{
-            content: 'Select products',
-        }}
-    >
-        <Layout>
-            <EmptyState
-                heading="Discount your products temporarily"
-                action={{
-                    content: 'Select products',
-                    onAction: () => console.log('clicked'),
-                }}
-                image={img}
-            >
-                <p>Select products to change their price temporarily.</p>
-            </EmptyState>
-        </Layout>
-    </Page>
-);
+ import { EmptyState, Layout, Page, ResourcePicker } from '@shopify/polaris';
+
+const img = 'https://cdn.shopify.com/s/files/1/0757/9955/files/empty-state.svg';
+
+class Index extends React.Component {
+   state = { open: false };
+
+    render() {
+        return (
+                <Page
+                    primaryAction={{
+                        content: 'Select products',
+                    }}
+                >
+                   <ResourcePicker
+                       resourceType="Product"
+                       showVariants={false}
+                       open={this.state.open}
+                       onSelection={(resources) => this.handleSelection(resources)}
+                       onCancel={() => this.setState({ open: false })}
+                    />
+                    <Layout>
+                        <EmptyState
+                            heading="Select products to start"
+                            action={{
+                                content: 'Select products',
+                               onAction: () => this.setState({ open: true }),
+                            }}
+                            image={img}
+                        >
+                            <p>Select products and change their price temporarily</p>
+                        </EmptyState>
+                    </Layout>
+                </Page >
+        );
+    }
+    handleSelection = (resources) => {
+      this.setState({ open: false })
+      console.log(resources)
+    };
+}
 
 export default Index;
