@@ -13,8 +13,10 @@
   "license": "ISC",
   "dependencies": {
     "@shopify/koa-shopify-auth": "^3.1.20",
+    "@shopify/koa-shopify-graphql-proxy": "^2.1.5",
     "@shopify/polaris": "^3.12.0",
     "@zeit/next-css": "^1.0.1",
+    "apollo-boost": "^0.3.1",
     "body-parser": "*",
     "cors": "*",
     "crypto": "*",
@@ -23,6 +25,7 @@
     "express": "^4.16.3",
     "express-jwt": "^5.3.1",
     "express-session": "*",
+    "graphql": "^14.2.1",
     "isomorphic-fetch": "^2.2.1",
     "js-cookie": "^2.2.0",
     "jsonwebtoken": "*",
@@ -36,8 +39,10 @@
     "passport-local": "*",
     "path": "*",
     "react": "^16.8.6",
+    "react-apollo": "^2.5.4",
     "react-dom": "^16.8.6",
     "react-scripts": "^2.1.8",
+    "store-js": "^2.0.4",
     "webpack-dev-server": "3.1.14"
   }
 }
