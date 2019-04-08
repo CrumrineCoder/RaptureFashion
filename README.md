@@ -4,6 +4,8 @@ ngrok: ngrok http 5000 in root
 local host 5000 for dev
 3000 for server
 
+https://help.shopify.com/en/api/tutorials/build-a-shopify-app-with-node-and-react/build-your-user-interface-with-polaris
+
 UX:
 https://uxstudioteam.com/ux-blog/e-commerce-ux/ (1)
 https://uxdesign.cc/adisgladis-ux-ui-case-study-for-shopping-ethical-and-sustainable-products-online-d4fc1ffccf84 (2)
