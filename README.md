@@ -5,6 +5,10 @@ local host 5000 for dev
 3000 for server
 
 https://help.shopify.com/en/api/tutorials/build-a-shopify-app-with-node-and-react/build-your-user-interface-with-polaris
+https://help.shopify.com/en/api/tutorials/build-a-shopify-app-with-node-and-react/listen-for-store-events-with-webhooks
+https://github.com/Shopify/shopify-node-app
+https://github.com/Shopify/unite-react-node-app-workshop/blob/master/workshop.md
+https://polaris.shopify.com/components/get-started
 
 UX:
 https://uxstudioteam.com/ux-blog/e-commerce-ux/ (1)
