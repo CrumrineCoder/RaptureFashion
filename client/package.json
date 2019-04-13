@@ -4,6 +4,7 @@
   "dependencies": {
     "@babel/core": "*",
     "axios": "*",
+    "babel-loader": "8.0.4",
     "body-parser": "*",
     "bootstrap": "*",
     "cors": "*",
@@ -40,6 +41,7 @@
     "redux-thunk": "*",
     "rxjs": "*",
     "rxjs-compat": "*",
+    "shopify-buy": "^2.2.1",
     "slick-carousel": "^1.8.1",
     "validator": "*",
     "webpack-dev-server": "3.1.14"
