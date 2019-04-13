@@ -4,6 +4,10 @@ ngrok: ngrok http 5000 in root
 local host 5000 for dev
 3000 for server
 
+Instead of localstorage, I might want to try to add a database. 
+
+https://medium.com/@sirenapparel/adding-shopifys-storefront-api-to-an-existing-react-app-with-react-redux-ea442bd7543
+
 https://help.shopify.com/en/api/tutorials/build-a-shopify-app-with-node-and-react/build-your-user-interface-with-polaris
 https://help.shopify.com/en/api/tutorials/build-a-shopify-app-with-node-and-react/listen-for-store-events-with-webhooks
 https://github.com/Shopify/shopify-node-app
