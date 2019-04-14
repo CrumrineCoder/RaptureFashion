@@ -7,6 +7,7 @@ local host 5000 for dev
 Instead of localstorage, I might want to try to add a database. 
 
 https://medium.com/@sirenapparel/adding-shopifys-storefront-api-to-an-existing-react-app-with-react-redux-ea442bd7543
+https://github.com/frewinchristopher/react-redux-shopify-storefront-api-example
 
 https://help.shopify.com/en/api/tutorials/build-a-shopify-app-with-node-and-react/build-your-user-interface-with-polaris
 https://help.shopify.com/en/api/tutorials/build-a-shopify-app-with-node-and-react/listen-for-store-events-with-webhooks

@@ -15,6 +15,28 @@ class App extends Component {
     this.updateQuantityInCart = this.updateQuantityInCart.bind(this);
     this.removeLineItemInCart = this.removeLineItemInCart.bind(this);
     this.handleCartClose = this.handleCartClose.bind(this);
+    this.handleCartOpen = this.handleCartOpen.bind(this);
+  }
+  updateQuantityInCart(lineItemId, quantity) {
+    const state = store.getState(); // state from redux store
+    const checkoutId = state.checkout.id
+    const lineItemsToUpdate = [{id: lineItemId, quantity: parseInt(quantity, 10)}]
+    state.client.checkout.updateLineItems(checkoutId, lineItemsToUpdate).then(res => {
+      store.dispatch({type: 'UPDATE_QUANTITY_IN_CART', payload: {checkout: res}});
+    });
+  }
+  removeLineItemInCart(lineItemId) {
+    const state = store.getState(); // state from redux store
+    const checkoutId = state.checkout.id
+    state.client.checkout.removeLineItems(checkoutId, [lineItemId]).then(res => {
+      store.dispatch({type: 'REMOVE_LINE_ITEM_IN_CART', payload: {checkout: res}});
+    });
+  }
+  handleCartClose() {
+    store.dispatch({type: 'CLOSE_CART'});
+  }
+  handleCartOpen() {
+    store.dispatch({type: 'OPEN_CART'});
   }
   // Provider is for redux store
   // connectedrouter is for history & router
@@ -22,6 +44,7 @@ class App extends Component {
   // routes is whatever routes.js brings back
   // footer is always on the bottom of the page
   render() {
+    const state = store.getState(); // state from redux store
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
@@ -31,8 +54,8 @@ class App extends Component {
               {routes}
             </div>
             <Cart
-              checkout={this.state.checkout}
-              isCartOpen={this.state.isCartOpen}
+              checkout={state.checkout}
+              isCartOpen={state.isCartOpen}
               handleCartClose={this.handleCartClose}
               updateQuantityInCart={this.updateQuantityInCart}
               removeLineItemInCart={this.removeLineItemInCart}
