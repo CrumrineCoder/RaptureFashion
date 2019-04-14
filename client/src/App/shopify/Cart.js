@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+/*import React, {Component} from 'react';
 import LineItem from './LineItem';
 
 class Cart extends Component {
@@ -63,4 +63,4 @@ class Cart extends Component {
   }
 }
 
-export default Cart;
+export default Cart;*/

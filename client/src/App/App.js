@@ -7,10 +7,10 @@ import store, { history } from './store';
 import routes from './routes';
 import Header from './common/components/Header'
 import Footer from './common/components/Footer'
-import Cart from './shopify/Cart';
+// import Cart from './shopify/Cart';
 
 class App extends Component {
-  constructor() {
+ /* constructor() {
     super();
     this.updateQuantityInCart = this.updateQuantityInCart.bind(this);
     this.removeLineItemInCart = this.removeLineItemInCart.bind(this);
@@ -43,8 +43,22 @@ class App extends Component {
   // header is always on top of hte page
   // routes is whatever routes.js brings back
   // footer is always on the bottom of the page
+  */
   render() {
-    const state = store.getState(); // state from redux store
+   // const state = store.getState().home.cart; // state from redux store
+
+    //console.log(state);
+    //console.log(state.isCartOpen);
+    //console.log(state.checkout);
+    /*
+        <Cart
+              checkout={state.checkout}
+              isCartOpen={state.isCartOpen}
+              handleCartClose={this.handleCartClose}
+              updateQuantityInCart={this.updateQuantityInCart}
+              removeLineItemInCart={this.removeLineItemInCart}
+            />
+            */
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
@@ -53,13 +67,6 @@ class App extends Component {
             <div className="wrap">
               {routes}
             </div>
-            <Cart
-              checkout={state.checkout}
-              isCartOpen={state.isCartOpen}
-              handleCartClose={this.handleCartClose}
-              updateQuantityInCart={this.updateQuantityInCart}
-              removeLineItemInCart={this.removeLineItemInCart}
-            />
             <Footer />
           </div>
         </ConnectedRouter>

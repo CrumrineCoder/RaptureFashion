@@ -40,7 +40,7 @@ const OPEN_CART = 'OPEN_CART'
 const CLOSE_CART = 'CLOSE_CART'
 
 // reducer
-export default (state = initState, action) => {
+export default function cart(state = initState, action){
   switch (action.type) {
     case CLIENT_CREATED:
       return {...state, client: action.payload}

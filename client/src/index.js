@@ -4,7 +4,7 @@ import { BrowserRouter } from 'react-router-dom';
 //import './index.css';
 import App from './App/App';
 import registerServiceWorker from './registerServiceWorker';
-import Client from 'shopify-buy';
+/*import Client from 'shopify-buy';
 import store from "./App/store";
 
 // build shopify client
@@ -23,11 +23,11 @@ client.checkout.create().then((res) => {
 });
 client.shop.fetchInfo().then((res) => {
   store.dispatch({type: 'SHOP_FOUND', payload: res});
-});
+});*/
 
 ReactDOM.render((
     <BrowserRouter>
-        <App />
+        <App/>
     </BrowserRouter>
 ), document.getElementById('root'));
 registerServiceWorker();
