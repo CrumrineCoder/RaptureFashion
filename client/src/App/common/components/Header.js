@@ -101,8 +101,8 @@ Header.propTypes = {
 function mapStateToProps(state) {
 	console.log(state.home);
 	const isLoggedIn = state.home.authenticate.loggedIn;
-	const cartAmount = state.home.cart.cart.length; 
-	
+//	const cartAmount = state.home.cart.cart.length; 
+    const cartAmount = 3; 	
 	return { isLoggedIn, cartAmount };
 }
 
