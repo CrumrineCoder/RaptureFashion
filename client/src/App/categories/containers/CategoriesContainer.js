@@ -28,14 +28,13 @@ class CategoriesContainer extends Component {
     }
 
     componentDidMount() {
-        console.log(this.props);
+   //     console.log(this.props);
     }
 
     handleFilter(filter) {
         this.setState({
             filter: filter
         })
-        console.log(filter);
     }
 
     // Upon first render,  tell the back end to get all polls
@@ -46,7 +45,6 @@ class CategoriesContainer extends Component {
 
     getFilteredArray(array, key, value) {
         return array.filter(function (e) {
-            console.log(key);
             switch (key) {
                 case "color":
                     return e["color"].includes(value)

@@ -5,7 +5,7 @@ class Products extends Component {
 
   render() {
     let products;
-    console.log(this.props.products);
+    console.log("Products!!", this.props.products);
     if (this.props.products) {
       products = this.props.products.map((product) => {
         return (

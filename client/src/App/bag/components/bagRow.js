@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import ColorBox from '../../common/components/ColorBox';
+import { connect } from 'react-redux';
 
 class BagRow extends Component {
 
@@ -69,4 +70,4 @@ class BagRow extends Component {
     }
 }
 
-export default BagRow;
+export default connect((state) => state)(BagRow);

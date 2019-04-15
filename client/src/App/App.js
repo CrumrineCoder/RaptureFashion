@@ -8,7 +8,7 @@ import routes from './routes';
 import Header from './common/components/Header'
 import Footer from './common/components/Footer'
 import Cart from './shopify/Cart';
-import { connect } from 'react-redux'
+import { connect } from 'react-redux';
 
 class App extends Component {
   constructor() {
@@ -73,14 +73,4 @@ class App extends Component {
 }
 
 
-function mapStateToProps(state) {
-	console.log(state.home);
-	const isLoggedIn = state.home.authenticate.loggedIn;
-//	const cartAmount = state.home.cart.cart.length; 
-    const cartAmount = 3; 	
-	return { isLoggedIn, cartAmount };
-}
-
-export default connect(mapStateToProps)(App);
-
-//export default connect((state) => state)(App);
+export default connect((state) => state)(App);

@@ -20,7 +20,6 @@ store.dispatch({ type: 'CLIENT_CREATED', payload: client });
 
 // buildClient() is synchronous, so we can call all these after!
 client.product.fetchAll().then((res) => {
-  console.log(res);
   store.dispatch({ type: 'PRODUCTS_FOUND', payload: res });
 });
 client.checkout.create().then((res) => {

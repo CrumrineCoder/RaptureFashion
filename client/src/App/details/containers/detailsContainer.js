@@ -59,7 +59,6 @@ class DetailsContainer extends Component {
     }
 
     addCart(){
-        console.log("haha ow");
         let clothing = this.state.dress;
         clothing.size = this.state.size;
         clothing.quantity = 1; 
