@@ -21,6 +21,7 @@ const initState = {
       case CLIENT_CREATED:
         return {...state, client: action.payload}
       case PRODUCTS_FOUND:
+        console.log("TEST"); 
         return {...state, products: action.payload}
       case CHECKOUT_FOUND:
         return {...state, checkout: action.payload}

@@ -1,13 +1,14 @@
 import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Provider } from 'react-redux'
+import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
 import store, { history } from './store';
 import routes from './routes';
 import Header from './common/components/Header'
 import Footer from './common/components/Footer'
 import Cart from './shopify/Cart';
+import { connect } from 'react-redux'
 
 class App extends Component {
   constructor() {
@@ -46,8 +47,9 @@ class App extends Component {
   // footer is always on the bottom of the page
   render() {
     const state = store.getState().home.cart; // state from redux store
+    console.log("state!!!", state);
     return (
-      <Provider store={store}>
+  
         <ConnectedRouter history={history}>
           <div className="App">
             <Header />
@@ -65,9 +67,20 @@ class App extends Component {
             <Footer />
           </div>
         </ConnectedRouter>
-      </Provider>
+  
     );
   }
 }
 
-export default App;
+
+function mapStateToProps(state) {
+	console.log(state.home);
+	const isLoggedIn = state.home.authenticate.loggedIn;
+//	const cartAmount = state.home.cart.cart.length; 
+    const cartAmount = 3; 	
+	return { isLoggedIn, cartAmount };
+}
+
+export default connect(mapStateToProps)(App);
+
+//export default connect((state) => state)(App);
