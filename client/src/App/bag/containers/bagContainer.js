@@ -103,7 +103,7 @@ class BagContainer extends Component {
     }
 
     addVariantToCart(variantId, quantity) {
-        const state = store.getState(); // state from redux store
+        const state = store.getState().home.cart; // state from redux store
         const lineItemsToAdd = [{ variantId, quantity: parseInt(quantity, 10) }]
         const checkoutId = state.checkout.id
         state.client.checkout.addLineItems(checkoutId, lineItemsToAdd).then(res => {

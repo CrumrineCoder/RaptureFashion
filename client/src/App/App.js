@@ -19,7 +19,7 @@ class App extends Component {
     this.handleCartOpen = this.handleCartOpen.bind(this);
   }
   updateQuantityInCart(lineItemId, quantity) {
-    const state = store.getState(); // state from redux store
+    const state = store.getState().home.cart; // state from redux store
     const checkoutId = state.checkout.id
     const lineItemsToUpdate = [{ id: lineItemId, quantity: parseInt(quantity, 10) }]
     state.client.checkout.updateLineItems(checkoutId, lineItemsToUpdate).then(res => {
@@ -27,7 +27,7 @@ class App extends Component {
     });
   }
   removeLineItemInCart(lineItemId) {
-    const state = store.getState(); // state from redux store
+    const state = store.getState().home.cart; // state from redux store
     const checkoutId = state.checkout.id
     state.client.checkout.removeLineItems(checkoutId, [lineItemId]).then(res => {
       store.dispatch({ type: 'REMOVE_LINE_ITEM_IN_CART', payload: { checkout: res } });
