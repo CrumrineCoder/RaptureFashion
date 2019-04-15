@@ -10,8 +10,8 @@ import store from './App/store';
 
 // build shopify client
 const client = Client.buildClient({
-    storefrontAccessToken: 'YOUR_SHOPIFY_STOREFRONT_ACCESS_TOKEN',
-    domain: 'YOUR_MYSHOPIFY_STORE_URL'
+    storefrontAccessToken: '5fd6cd012cd352b266b122e10f7e6ce0',
+    domain: 'rapturefashion.myshopify.com'
 });
 store.dispatch({type: 'CLIENT_CREATED', payload: client});
 

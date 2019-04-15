@@ -45,21 +45,22 @@ class App extends Component {
   // routes is whatever routes.js brings back
   // footer is always on the bottom of the page
   render() {
-    const state = store.getState(); // state from redux store
+    const state = store.getState().home.cart; // state from redux store
     return (
       <Provider store={store}>
         <ConnectedRouter history={history}>
           <div className="App">
             <Header />
             <div className="wrap">
-              {routes}
-              <Cart
+            <Cart
                 checkout={state.checkout}
                 isCartOpen={state.isCartOpen}
                 handleCartClose={this.handleCartClose}
                 updateQuantityInCart={this.updateQuantityInCart}
                 removeLineItemInCart={this.removeLineItemInCart}
               />
+            
+              {routes}
             </div>
             <Footer />
           </div>
