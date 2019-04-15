@@ -1,20 +1,5 @@
 # RaptureFashion
 
-ngrok: ngrok http 5000 in root
-local host 5000 for dev
-3000 for server
-
-Instead of localstorage, I might want to try to add a database. 
-
-https://medium.com/@sirenapparel/adding-shopifys-storefront-api-to-an-existing-react-app-with-react-redux-ea442bd7543
-https://github.com/frewinchristopher/react-redux-shopify-storefront-api-example
-
-https://help.shopify.com/en/api/tutorials/build-a-shopify-app-with-node-and-react/build-your-user-interface-with-polaris
-https://help.shopify.com/en/api/tutorials/build-a-shopify-app-with-node-and-react/listen-for-store-events-with-webhooks
-https://github.com/Shopify/shopify-node-app
-https://github.com/Shopify/unite-react-node-app-workshop/blob/master/workshop.md
-https://polaris.shopify.com/components/get-started
-
 UX:
 https://uxstudioteam.com/ux-blog/e-commerce-ux/ (1)
 https://uxdesign.cc/adisgladis-ux-ui-case-study-for-shopping-ethical-and-sustainable-products-online-d4fc1ffccf84 (2)

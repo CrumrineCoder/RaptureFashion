@@ -85,18 +85,12 @@ class Header extends Component {
 									</a>
 								</div>
 							</NavItem>
-							
 							{userLinks}
 						</Nav>
 					</Collapse>
 				</Navbar>
 			</header>
 		)
-		/*
-		<NavItem>
-								<NavLink href="#/categories/hats"><button onClick={this.props.handleCartOpen}>Shopify Cart (I work! CLICK ME!)</button></NavLink>
-							</NavItem>
-							*/
 	}
 }
 

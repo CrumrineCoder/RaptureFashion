@@ -10,7 +10,6 @@ import InstagramBox from '../components/InstagramBox';
 import { pollActions } from '../../_actions/polls.actions.js';
 import { withRouter } from 'react-router-dom';
 */
-//import store from "../../store";
 
 
 // Landing page 
@@ -57,18 +56,8 @@ class DetailsContainer extends Component {
         };
         this.addZeroes = this.addZeroes.bind(this);
         this.addCart = this.addCart.bind(this);
-  //      this.addVariantToCart = this.addVariantToCart.bind(this);
     }
-/*
-    addVariantToCart(variantId, quantity) {
-        const state = store.getState(); // state from redux store
-        const lineItemsToAdd = [{variantId, quantity: parseInt(quantity, 10)}]
-        const checkoutId = state.checkout.id
-        state.client.checkout.addLineItems(checkoutId, lineItemsToAdd).then(res => {
-          store.dispatch({type: 'ADD_VARIANT_TO_CART', payload: {isCartOpen: true, checkout: res}});
-        });
-    }
-*/
+
     addCart(){
         console.log("haha ow");
         let clothing = this.state.dress;
