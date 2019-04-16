@@ -364,7 +364,7 @@ body, html{
   background: rgb(7, 20, 26);
 }
 
-.detailsDescriptionText{
+.detailsDescriptionText, .detailsTipText{
   font-size: 14px;
 }
 

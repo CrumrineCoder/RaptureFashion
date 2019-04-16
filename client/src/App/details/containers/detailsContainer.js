@@ -180,12 +180,6 @@ class DetailsContainer extends Component {
             </ul>
         )
 
-        let sizes = (
-            <div className="detailsSizeBoxList">
-                {dress.sizes.map((size, i) => <button onClick={() => this.changeSize({ size })} className={this.state.size === size ? 'detailsSizeBoxListButton detailsSizeBoxListButtonActive' : 'detailsSizeBoxListButton'} key={i}> {size}</button>)}
-            </div>
-        )
-
         let cart = "";
 
         if (this.state.sizeSelected) {
@@ -231,20 +225,20 @@ class DetailsContainer extends Component {
             });
             // If there's no variant selectors, then just use one size fits most
             let bShowOneSizeFitsMost = (variantSelectors.length === 1 && aOptionNames[0] === "Title");
+            console.log(this.state.product); 
             rightHand = (
                 <div className="detailsRightHandInfo">
                     <h4 className="detailsName">{this.state.product.title}</h4>
                     <p className="detailsBrand">{this.state.product.vendor}</p>
                     <h4 className="detailsPrice">{variant.price} USD</h4>
-                    {bShowOneSizeFitsMost ? <h5 className="Product__title">{ONE_SIZE_FITS_MOST}</h5> : variantSelectors}
                     <div className="detailsSizeBox">
                         <p className="detailsSizeBoxTitle">Size</p>
                         <p className="detailsSizeBoxLink">Size Chart</p>
-                        {sizes}
+                        {bShowOneSizeFitsMost ? <h5 className="Product__title">{ONE_SIZE_FITS_MOST}</h5> : variantSelectors}
                     </div>
                     {cart}
-                    <p className="detailsDescriptionText">{dress.desc}</p>
-                    <p className="detailsDescriptionText"><b>Style Tip:</b> {dress.tip}</p>
+                    <p className="detailsDescriptionText">{this.state.product.description}</p>
+                    <p className=""><b>Style Tip:</b> {dress.tip}</p>
                     <div className="detailsDescContainer">
                         <img className="detailsDescImage" id="hangerImage" src={require("../../../assets/Icons/hanger.png")} />
                         <p className="detailsDescText">{dress.wash}</p>
