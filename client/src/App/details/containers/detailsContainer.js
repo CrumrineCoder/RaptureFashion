@@ -3,6 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ClothingBox from '../../home/components/ClothingBox';
 import { cartActions } from '../../_actions/cart.actions.js';
+import store from '../../store';
 /*
 import ClothingBox from '../components/ClothingBox';
 import CategoriesBox from '../components/CategoriesBox';
@@ -58,10 +59,10 @@ class DetailsContainer extends Component {
         this.addCart = this.addCart.bind(this);
     }
 
-    addCart(){
+    addCart() {
         let clothing = this.state.dress;
         clothing.size = this.state.size;
-        clothing.quantity = 1; 
+        clothing.quantity = 1;
         this.props.dispatch(cartActions.addToCart(clothing));
     }
 
@@ -157,6 +158,13 @@ class DetailsContainer extends Component {
             )
         }
 
+        const state = store.getState().home.cart; // state from redux store
+        const products = state.products;
+        console.log(this.props.id);
+        var result = products.find(obj => {
+            return obj.id === this.props.id
+          })
+        console.log('result', result);
 
         /* Wishlist? */
         dress.price = this.addZeroes(dress.price);
@@ -202,18 +210,16 @@ class DetailsContainer extends Component {
                 </div>
                 <div className="detailsRecommendation">
                     <h1>Get the Look</h1>
-                    <ClothingBox dress={dress}></ClothingBox>
-                    <ClothingBox dress={dress}></ClothingBox>
-                    <ClothingBox dress={dress}></ClothingBox>
+           
                 </div>
             </div>
         );
-
+/*
+         <ClothingBox dress={dress}></ClothingBox>
+                    <ClothingBox dress={dress}></ClothingBox>
+                    <ClothingBox dress={dress}></ClothingBox>
+                    */
     }
 }
 
-function mapStateToProps(state) {
-    console.log(state.home);
-}
-
-export default connect(mapStateToProps)(DetailsContainer);
+export default connect((state) => state)(DetailsContainer);

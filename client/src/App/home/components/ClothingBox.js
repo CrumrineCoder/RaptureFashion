@@ -29,6 +29,7 @@ class ClothingBox extends Component {
         // Name
         // Brand Name
         // ID
+        // Size
 
         let variant = this.state.selectedVariant || this.state.dress.variants[0];
         console.log("Dress", this.state.dress.images[0]);
