@@ -60,6 +60,7 @@ class DetailsContainer extends Component {
         this.addZeroes = this.addZeroes.bind(this);
         this.addCart = this.addCart.bind(this);
         this.handleOptionChange = this.handleOptionChange.bind(this);
+        this.changeSize = this.changeSize.bind(this);
     }
 
     componentWillMount() {
@@ -206,7 +207,6 @@ class DetailsContainer extends Component {
                     <img className="detailsImage" src={this.state.product.images[4].src} />
                 </div>
             )
-            console.log(this.state.product);
             let aOptionNames = [];
             variant = this.state.selectedVariant || this.state.product.variants[0];
             let variantSelectors = this.state.product.options.map((option) => {
@@ -216,6 +216,8 @@ class DetailsContainer extends Component {
                         handleOptionChange={this.handleOptionChange}
                         key={option.id.toString()}
                         option={option}
+                        changeSize={this.changeSize}
+                        currentSize={this.state.size}
                     />
                 );
             });
