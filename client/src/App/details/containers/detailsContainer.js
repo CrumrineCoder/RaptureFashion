@@ -63,20 +63,28 @@ class DetailsContainer extends Component {
         this.changeSize = this.changeSize.bind(this);
     }
 
+    componentWillReceiveProps(nextProps) {
+        const state = store.getState().home.cart; // state from redux store
+        console.log(state);
+        const products = state.products;
+        let product = products.find(obj => {
+            return obj.id === nextProps.id
+        })
+
+        let defaultOptionValues = {};
+        // Default title
+     
+        product.options.forEach((selector) => {
+          defaultOptionValues[selector.name] = selector.values[0].value;
+        });
+
+        this.setState({ product, state, selectedOptions: defaultOptionValues });
+    }
     componentWillMount() {
         const state = store.getState().home.cart; // state from redux store
         const products = state.products;
         let product = products.find(obj => {
             return obj.id === this.props.id
-        })
-        this.setState({ product, state });
-    }
-
-    componentWillReceiveProps(nextProps) {
-        const state = store.getState().home.cart; // state from redux store
-        const products = state.products;
-        let product = products.find(obj => {
-            return obj.id === nextProps.id
         })
         this.setState({ product, state });
     }
@@ -109,20 +117,24 @@ class DetailsContainer extends Component {
         this.setState({
             sizeSelected: true
         });
+        this.handleOptionChange(size);
     }
 
-    handleOptionChange(event) {
-        const target = event.target
+    handleOptionChange(target) {
+        // Maybe pass this as a props
+        const state = store.getState().home.cart; // state from redux store
+        console.log(state);
+      //  const target = event.target
         let selectedOptions = this.state.selectedOptions;
         selectedOptions[target.name] = target.value;
-    
-        const selectedVariant = this.props.client.product.helpers.variantForOptions(this.props.product, selectedOptions)
-    
+
+        const selectedVariant = state.client.product.helpers.variantForOptions(this.props.product, selectedOptions)
+
         this.setState({
-          selectedVariant: selectedVariant,
-          selectedVariantImage: selectedVariant.attrs.image
+            selectedVariant: selectedVariant,
+            selectedVariantImage: selectedVariant.attrs.image
         });
-      }
+    }
 
     render() {
         let dress = {
