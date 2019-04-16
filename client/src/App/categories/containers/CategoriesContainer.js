@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ClothingBox from '../../home/components/ClothingBox';
 import Filter from "../components/Filter";
+import store from '../../store';
+import Products from '../../shopify/Products'
 /*
 import ClothingBox from '../components/ClothingBox';
 import CategoriesBox from '../components/CategoriesBox';
@@ -25,6 +27,7 @@ class CategoriesContainer extends Component {
         this.getFilteredArray = this.getFilteredArray.bind(this);
         this.arrayContainsAnotherArray = this.arrayContainsAnotherArray.bind(this);
         this.clean = this.clean.bind(this);
+        this.addVariantToCart = this.addVariantToCart.bind(this);
     }
 
     componentDidMount() {
@@ -70,6 +73,16 @@ class CategoriesContainer extends Component {
         }
         return obj;
     }
+
+    addVariantToCart(variantId, quantity) {
+        const state = store.getState().home.cart; // state from redux store
+        const lineItemsToAdd = [{ variantId, quantity: parseInt(quantity, 10) }]
+        const checkoutId = state.checkout.id
+        state.client.checkout.addLineItems(checkoutId, lineItemsToAdd).then(res => {
+            store.dispatch({ type: 'ADD_VARIANT_TO_CART', payload: { isCartOpen: true, checkout: res } });
+        });
+    }
+
 
     render() {
         var filters = {
@@ -756,10 +769,17 @@ class CategoriesContainer extends Component {
             )
         }
 
+        const state = store.getState().home.cart; // state from redux store
+        console.log(state.products);
+        let oProducts = <Products
+          products={state.products}
+          client={state.client}
+          addVariantToCart={this.addVariantToCart}
+        />;
         return (
             <div className="categoriesContainer">
                 <Filter onChange={this.handleFilter}></Filter>
-                {pageContent}
+                {oProducts}
             </div>
         );
 

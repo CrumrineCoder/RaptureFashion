@@ -9,6 +9,7 @@ class Product extends Component {
     super(props);
 
     let defaultOptionValues = {};
+    // Default title
     this.props.product.options.forEach((selector) => {
       defaultOptionValues[selector.name] = selector.values[0].value;
     });
@@ -50,7 +51,9 @@ class Product extends Component {
 
   render() {
     let aOptionNames = [];
+    // Get the first image or selected one if there  is one
     let variantImage = this.state.selectedVariantImage || this.props.product.images[0]
+    // Get the first variant or selected one if there is one
     let variant = this.state.selectedVariant || this.props.product.variants[0]
     let variantQuantity = this.state.selectedVariantQuantity || 1
     let variantSelectors = this.props.product.options.map((option) => {

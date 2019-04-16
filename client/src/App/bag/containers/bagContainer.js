@@ -6,8 +6,7 @@ import { cartActions } from '../../_actions/cart.actions.js';
 import BagRow from "../components/bagRow.js";
 import BagSubtotal from "../components/bagSubtotal.js"
 import { Link } from 'react-router-dom';
-import Products from '../../shopify/Products';
-import store from '../../store';
+
 /*
 import ClothingBox from '../components/ClothingBox';
 import CategoriesBox from '../components/CategoriesBox';
@@ -81,7 +80,6 @@ class BagContainer extends Component {
         }
         this.removeItem = this.removeItem.bind(this);
         this.changeQuantity = this.changeQuantity.bind(this);
-        this.addVariantToCart = this.addVariantToCart.bind(this);
     }
 
     removeItem(itemName) {
@@ -102,15 +100,6 @@ class BagContainer extends Component {
         })
     }
 
-    addVariantToCart(variantId, quantity) {
-        const state = store.getState().home.cart; // state from redux store
-        const lineItemsToAdd = [{ variantId, quantity: parseInt(quantity, 10) }]
-        const checkoutId = state.checkout.id
-        state.client.checkout.addLineItems(checkoutId, lineItemsToAdd).then(res => {
-            store.dispatch({ type: 'ADD_VARIANT_TO_CART', payload: { isCartOpen: true, checkout: res } });
-        });
-    }
-
     render() {
         let pageContent = '';
         // this.props.cart
@@ -120,12 +109,7 @@ class BagContainer extends Component {
             </ul>
         )
 
-        const state = store.getState().home.cart; // state from redux store
-        let oProducts = <Products
-          products={state.products}
-          client={state.client}
-          addVariantToCart={this.addVariantToCart}
-        />;
+      
         return (
             <div className="">
                 <div className="bagHeader">
@@ -137,7 +121,7 @@ class BagContainer extends Component {
                         <p className="bagItemHeader bagContHeader">Item</p>
                         <p className="bagPriceHeader bagContHeader">Price / Quantity / Subtotal</p>
                     </div>
-                    {oProducts}
+                    {pageContent}
                 </div>
                 <BagSubtotal clothing={this.state.dresses}></BagSubtotal>
             </div>
