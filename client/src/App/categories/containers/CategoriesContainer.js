@@ -31,7 +31,7 @@ class CategoriesContainer extends Component {
     }
 
     componentDidMount() {
-   //     console.log(this.props);
+        //     console.log(this.props);
     }
 
     handleFilter(filter) {
@@ -622,7 +622,7 @@ class CategoriesContainer extends Component {
                 details: [
                     "Beading Detail Throughout",
                     "Fringe Hem",
-                    "Hook/clasp", 
+                    "Hook/clasp",
                     "No Stretch/Sheer Material",
                     "48\" W / 18\" H (Includes Fringe)"
                 ]
@@ -739,47 +739,54 @@ class CategoriesContainer extends Component {
             }
         ]
 
-        let clothing;
-        if(this.props.clothing == "dresses"){
-            clothing = dresses;
-        } else if(this.props.clothing == "accessories"){
-            clothing = accessories;
-        } else if(this.props.clothing == "shoes"){
-            clothing = shoes; 
-        } else if(this.props.clothing == "hats"){
-            clothing = hats; 
-        }
-        
-        if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
-            let filteredClothing = clothing;
-            var filteredFilter = this.clean(this.state.filter);
-            for (var filter in filteredFilter) {
-                filteredClothing = this.getFilteredArray(filteredClothing, filter, this.state.filter[filter])
-            }
-            pageContent = (
-                <ul className="polls">
-                    {filteredClothing.map((article, i) => <ClothingBox key={i} dress={article} />)}
-                </ul>
-            )
-        } else {
-            pageContent = (
-                <ul className="polls">
-                    {clothing.map((article, i) => <ClothingBox key={i} dress={article} />)}
-                </ul>
-            )
-        }
-
         const state = store.getState().home.cart; // state from redux store
+
+        let clothing;
+        if (this.props.clothing == "dresses") {
+            clothing = dresses;
+        } else if (this.props.clothing == "accessories") {
+            clothing = accessories;
+        } else if (this.props.clothing == "shoes") {
+            clothing = shoes;
+        } else if (this.props.clothing == "hats") {
+            clothing = hats;
+        }
+        /*   
+           if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
+               let filteredClothing = clothing;
+               var filteredFilter = this.clean(this.state.filter);
+               for (var filter in filteredFilter) {
+                   filteredClothing = this.getFilteredArray(filteredClothing, filter, this.state.filter[filter])
+               }
+               pageContent = (
+                   <ul className="polls">
+                       {filteredClothing.map((article, i) => <ClothingBox key={i} dress={article} />)}
+                   </ul>
+               )
+           } else {
+               pageContent = (
+                   <ul className="polls">
+                       {clothing.map((article, i) => <ClothingBox key={i} dress={article} />)}
+                   </ul>
+               )
+           }
+   */
+        pageContent = (
+            <ul className="polls">
+                {state.products.map((article, i) => <ClothingBox key={i} dress={article} />)}
+            </ul>
+        )
+
         console.log(state.products);
         let oProducts = <Products
-          products={state.products}
-          client={state.client}
-          addVariantToCart={this.addVariantToCart}
+            products={state.products}
+            client={state.client}
+            addVariantToCart={this.addVariantToCart}
         />;
         return (
             <div className="categoriesContainer">
                 <Filter onChange={this.handleFilter}></Filter>
-                {oProducts}
+                {pageContent}
             </div>
         );
 

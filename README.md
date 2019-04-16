@@ -1,5 +1,7 @@
 # RaptureFashion
 
+Check if in stock
+
 UX:
 https://uxstudioteam.com/ux-blog/e-commerce-ux/ (1)
 https://uxdesign.cc/adisgladis-ux-ui-case-study-for-shopping-ethical-and-sustainable-products-online-d4fc1ffccf84 (2)

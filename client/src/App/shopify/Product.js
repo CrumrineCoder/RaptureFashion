@@ -54,8 +54,10 @@ class Product extends Component {
     // Get the first image or selected one if there  is one
     let variantImage = this.state.selectedVariantImage || this.props.product.images[0]
     // Get the first variant or selected one if there is one
-    let variant = this.state.selectedVariant || this.props.product.variants[0]
+    let variant = this.state.selectedVariant || this.props.product.variants[0];
+    // Variant the user will be buying is default to 1, else it's the state number
     let variantQuantity = this.state.selectedVariantQuantity || 1
+    // For each option we allow the user, create a variant selector for them
     let variantSelectors = this.props.product.options.map((option) => {
       aOptionNames.push(option.name);
       return (
@@ -66,6 +68,7 @@ class Product extends Component {
         />
       );
     });
+    // If there's no variant selectors, then just use one size fits most
     let bShowOneSizeFitsMost = (variantSelectors.length === 1 && aOptionNames[0] === "Title");
     return (
       <div className="Product">
