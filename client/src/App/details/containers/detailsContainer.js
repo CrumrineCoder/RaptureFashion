@@ -226,6 +226,11 @@ class DetailsContainer extends Component {
             // If there's no variant selectors, then just use one size fits most
             let bShowOneSizeFitsMost = (variantSelectors.length === 1 && aOptionNames[0] === "Title");
             console.log(this.state.product); 
+            let desc = new DOMParser().parseFromString(this.state.product.descriptionHtml, "text/xml").getElementById("horn").children; 
+            console.log(desc); 
+            desc = Array.prototype.slice.call( desc );
+            desc = desc.map(a => a.innerHTML);
+            console.log(desc); 
             rightHand = (
                 <div className="detailsRightHandInfo">
                     <h4 className="detailsName">{this.state.product.title}</h4>
@@ -237,23 +242,23 @@ class DetailsContainer extends Component {
                         {bShowOneSizeFitsMost ? <h5 className="Product__title">{ONE_SIZE_FITS_MOST}</h5> : variantSelectors}
                     </div>
                     {cart}
-                    <p className="detailsDescriptionText">{this.state.product.description}</p>
-                    <p className=""><b>Style Tip:</b> {dress.tip}</p>
+                    <p className="detailsDescriptionText">{desc[0]}</p>
+                    <p className="detailsTipText"><b>Style Tip:</b> {desc[1]}</p>
                     <div className="detailsDescContainer">
                         <img className="detailsDescImage" id="hangerImage" src={require("../../../assets/Icons/hanger.png")} />
-                        <p className="detailsDescText">{dress.wash}</p>
+                        <p className="detailsDescText">{desc[2]}</p>
                     </div>
                     <div className="detailsDescContainer">
                         <img className="detailsDescImage" src={require("../../../assets/Icons/fabric.png")} />
-                        <p className="detailsDescText">{dress.fabric}</p>
+                        <p className="detailsDescText">{desc[3]}</p>
                     </div>
                     <div className="detailsDescContainer">
                         <i className="fas fa-pencil-ruler detailsDescImage"></i>
-                        <p className="detailsDescText">{details}</p>
+                        <p className="detailsDescText" dangerouslySetInnerHTML={{__html: desc[4]}}></p>
                     </div>
                     <div className="detailsDescContainer">
                         <i className="fas fa-box-open detailsDescImage"></i>
-                        <p className="detailsDescText">{returns}</p>
+                        <p className="detailsDescText" dangerouslySetInnerHTML={{__html: desc[5]}}></p>
                     </div>
                 </div>
             )
