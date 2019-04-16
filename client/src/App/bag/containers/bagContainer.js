@@ -6,6 +6,7 @@ import { cartActions } from '../../_actions/cart.actions.js';
 import BagRow from "../components/bagRow.js";
 import BagSubtotal from "../components/bagSubtotal.js"
 import { Link } from 'react-router-dom';
+import store from '../../store';
 
 /*
 import ClothingBox from '../components/ClothingBox';
@@ -80,6 +81,31 @@ class BagContainer extends Component {
         }
         this.removeItem = this.removeItem.bind(this);
         this.changeQuantity = this.changeQuantity.bind(this);
+        this.updateQuantityInCart = this.updateQuantityInCart.bind(this);
+        this.removeLineItemInCart = this.removeLineItemInCart.bind(this);
+        this.handleCartClose = this.handleCartClose.bind(this);
+        this.handleCartOpen = this.handleCartOpen.bind(this);
+    }
+    updateQuantityInCart(lineItemId, quantity) {
+        const state = store.getState().home.cart; // state from redux store
+        const checkoutId = state.checkout.id
+        const lineItemsToUpdate = [{ id: lineItemId, quantity: parseInt(quantity, 10) }]
+        state.client.checkout.updateLineItems(checkoutId, lineItemsToUpdate).then(res => {
+            store.dispatch({ type: 'UPDATE_QUANTITY_IN_CART', payload: { checkout: res } });
+        });
+    }
+    removeLineItemInCart(lineItemId) {
+        const state = store.getState().home.cart; // state from redux store
+        const checkoutId = state.checkout.id
+        state.client.checkout.removeLineItems(checkoutId, [lineItemId]).then(res => {
+            store.dispatch({ type: 'REMOVE_LINE_ITEM_IN_CART', payload: { checkout: res } });
+        });
+    }
+    handleCartClose() {
+        store.dispatch({ type: 'CLOSE_CART' });
+    }
+    handleCartOpen() {
+        store.dispatch({ type: 'OPEN_CART' });
     }
 
     removeItem(itemName) {
@@ -102,14 +128,16 @@ class BagContainer extends Component {
 
     render() {
         let pageContent = '';
+
         // this.props.cart
         pageContent = (
             <ul className="bagRows">
                 {this.state.dresses.map((dress, i) => <BagRow changeQuantity={this.changeQuantity} removeItem={this.removeItem} key={i} index={i} {...dress}> </BagRow>)}
             </ul>
         )
-
-      
+        const state = store.getState().home.cart; // state from redux store
+        let checkout = state.checkout
+        let isCartOpen = state.isCartOpen
         return (
             <div className="">
                 <div className="bagHeader">

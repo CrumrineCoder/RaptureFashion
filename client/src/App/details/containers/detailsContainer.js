@@ -86,7 +86,16 @@ class DetailsContainer extends Component {
         let product = products.find(obj => {
             return obj.id === this.props.id
         })
-        this.setState({ product, state });
+
+        let defaultOptionValues = {};
+        // Default title
+        if (product) {
+            product.options.forEach((selector) => {
+                defaultOptionValues[selector.name] = selector.values[0].value;
+            });
+        }
+
+        this.setState({ product, state, selectedOptions: defaultOptionValues });
     }
 
     addCart(variantId) {
@@ -118,16 +127,19 @@ class DetailsContainer extends Component {
     }
 
     changeSize(size) {
+        console.log("Size", size); 
         this.setState(
             size
         );
         this.setState({
             sizeSelected: true
         });
+        console.log("SIZE!", size); 
         this.handleOptionChange(size);
     }
 
     handleOptionChange(target) {
+        console.log("Target", target);
         // Maybe pass this as a props
         const state = store.getState().home.cart; // state from redux store
         let selectedOptions = this.state.selectedOptions;
