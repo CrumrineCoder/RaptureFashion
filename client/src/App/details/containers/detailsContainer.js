@@ -73,10 +73,11 @@ class DetailsContainer extends Component {
 
         let defaultOptionValues = {};
         // Default title
-     
-        product.options.forEach((selector) => {
-          defaultOptionValues[selector.name] = selector.values[0].value;
-        });
+        if (product) {
+            product.options.forEach((selector) => {
+                defaultOptionValues[selector.name] = selector.values[0].value;
+            });
+        }
 
         this.setState({ product, state, selectedOptions: defaultOptionValues });
     }
@@ -123,12 +124,11 @@ class DetailsContainer extends Component {
     handleOptionChange(target) {
         // Maybe pass this as a props
         const state = store.getState().home.cart; // state from redux store
-        console.log(state);
-      //  const target = event.target
+
         let selectedOptions = this.state.selectedOptions;
         selectedOptions[target.name] = target.value;
 
-        const selectedVariant = state.client.product.helpers.variantForOptions(this.props.product, selectedOptions)
+        const selectedVariant = state.client.product.helpers.variantForOptions(state.products[0], selectedOptions)
 
         this.setState({
             selectedVariant: selectedVariant,
