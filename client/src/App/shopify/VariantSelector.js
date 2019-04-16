@@ -1,20 +1,20 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class VariantSelector extends Component {
   render() {
+    console.log("PRANK!", this.props.option.values)
+    let filter = this.props.option.values.map(a => a.value);
+    console.log(filter);
+    var del = (
+      <div className="detailsSizeBoxList">
+        {filter.map((size, i) => <button onClick={() => this.changeSize({ size })} className={size === size ? 'detailsSizeBoxListButton detailsSizeBoxListButtonActive' : 'detailsSizeBoxListButton'} key={i}> {size}</button>)}
+      </div>
+    )
+    //onClick={() => this.changeSize({ size })} className={this.state.size === size ? 'detailsSizeBoxListButton detailsSizeBoxListButtonActive' : 'detailsSizeBoxListButton'} key={i}
     return (
-      <select
-        className="Product__option"
-        name={this.props.option.name}
-        key={this.props.option.name}
-        onChange={this.props.handleOptionChange}
-      >
-        {this.props.option.values.map((value) => {
-          return (
-            <option value={value} key={`${this.props.option.name}-${value}`}>{`${value}`}</option>
-          )
-        })}
-      </select>
+      <div>
+      { del }
+      </div>
     );
   }
 }

@@ -4,6 +4,8 @@ import { connect } from 'react-redux';
 import ClothingBox from '../../home/components/ClothingBox';
 import { cartActions } from '../../_actions/cart.actions.js';
 import store from '../../store';
+import VariantSelector from '../../shopify/VariantSelector';
+const ONE_SIZE_FITS_MOST = "One Size Fits Most";
 /*
 import ClothingBox from '../components/ClothingBox';
 import CategoriesBox from '../components/CategoriesBox';
@@ -57,6 +59,7 @@ class DetailsContainer extends Component {
         };
         this.addZeroes = this.addZeroes.bind(this);
         this.addCart = this.addCart.bind(this);
+        this.handleOptionChange = this.handleOptionChange.bind(this);
     }
 
     componentWillMount() {
@@ -106,6 +109,19 @@ class DetailsContainer extends Component {
             sizeSelected: true
         });
     }
+
+    handleOptionChange(event) {
+        const target = event.target
+        let selectedOptions = this.state.selectedOptions;
+        selectedOptions[target.name] = target.value;
+    
+        const selectedVariant = this.props.client.product.helpers.variantForOptions(this.props.product, selectedOptions)
+    
+        this.setState({
+          selectedVariant: selectedVariant,
+          selectedVariantImage: selectedVariant.attrs.image
+        });
+      }
 
     render() {
         let dress = {
@@ -177,13 +193,6 @@ class DetailsContainer extends Component {
 
         /* Wishlist? */
         dress.price = this.addZeroes(dress.price);
-        /*
-           <img className="detailsImage" src={product.images[0].src} />
-                        <img className="detailsImage" src={product.images[1].src} />
-                        <img className="detailsImage" src={product.images[2].src} />
-                        <img className="detailsImage" src={product.images[3].src} />
-                        <img className="detailsImage" src={product.images[4].src} />
-                        */
         let img;
         let rightHand;
         let variant = "Loading price..."
@@ -197,12 +206,27 @@ class DetailsContainer extends Component {
                     <img className="detailsImage" src={this.state.product.images[4].src} />
                 </div>
             )
-            console.log(this.state.product); 
+            console.log(this.state.product);
+            let aOptionNames = [];
+            variant = this.state.selectedVariant || this.state.product.variants[0];
+            let variantSelectors = this.state.product.options.map((option) => {
+                aOptionNames.push(option.name);
+                return (
+                    <VariantSelector
+                        handleOptionChange={this.handleOptionChange}
+                        key={option.id.toString()}
+                        option={option}
+                    />
+                );
+            });
+            // If there's no variant selectors, then just use one size fits most
+            let bShowOneSizeFitsMost = (variantSelectors.length === 1 && aOptionNames[0] === "Title");
             rightHand = (
                 <div className="detailsRightHandInfo">
                     <h4 className="detailsName">{this.state.product.title}</h4>
-                    <p className="detailsBrand">{this.state.product.title.vendor}</p>
+                    <p className="detailsBrand">{this.state.product.vendor}</p>
                     <h4 className="detailsPrice">{variant.price} USD</h4>
+                    {bShowOneSizeFitsMost ? <h5 className="Product__title">{ONE_SIZE_FITS_MOST}</h5> : variantSelectors}
                     <div className="detailsSizeBox">
                         <p className="detailsSizeBoxTitle">Size</p>
                         <p className="detailsSizeBoxLink">Size Chart</p>
@@ -229,7 +253,6 @@ class DetailsContainer extends Component {
                     </div>
                 </div>
             )
-            variant = this.state.selectedVariant || this.state.product.variants[0];
         } else {
             img = (
                 <div className="detailsImageScrollContainer">Loading images..</div>
