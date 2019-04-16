@@ -56,7 +56,7 @@ class BagSubtotal extends Component {
                     <h2 className="bagHeaderTitle">Order Summary</h2>
                 </div>
                 <div className="bagBody">
-                    <p>Subtotal: ${this.state.subTotal}</p>
+                    <p>Subtotal: ${this.props.checkout.subtotalPrice}</p>
                     <p>Estimated Shipping: ${this.state.estimatedShipping}</p>
                     <p>Total: ${this.state.total}</p>
                     <Link to={"/checkout"}><button>Secure Checkout</button></Link>

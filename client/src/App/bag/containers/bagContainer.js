@@ -128,16 +128,16 @@ class BagContainer extends Component {
 
     render() {
         let pageContent = '';
-
-        // this.props.cart
-        pageContent = (
-            <ul className="bagRows">
-                {this.state.dresses.map((dress, i) => <BagRow changeQuantity={this.changeQuantity} removeItem={this.removeItem} key={i} index={i} {...dress}> </BagRow>)}
-            </ul>
-        )
         const state = store.getState().home.cart; // state from redux store
         let checkout = state.checkout
         let isCartOpen = state.isCartOpen
+        // this.props.cart
+        pageContent = (
+            <ul className="bagRows">
+                {this.state.dresses.map((dress, i) => <BagRow changeQuantity={this.changeQuantity} checkout isCartOpen removeItem={this.removeItem} key={i} index={i} {...dress}> </BagRow>)}
+            </ul>
+        )
+
         return (
             <div className="">
                 <div className="bagHeader">
@@ -151,16 +151,11 @@ class BagContainer extends Component {
                     </div>
                     {pageContent}
                 </div>
-                <BagSubtotal clothing={this.state.dresses}></BagSubtotal>
+                <BagSubtotal checkout clothing={this.state.dresses}></BagSubtotal>
             </div>
         );
 
     }
-}
-
-function mapStateToProps(state) {
-    const cart = state.home.cart.cart;
-    return { cart };
 }
 
 export default connect((state) => state)(BagContainer);
