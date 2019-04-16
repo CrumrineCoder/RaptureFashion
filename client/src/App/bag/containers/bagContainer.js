@@ -121,7 +121,6 @@ class BagContainer extends Component {
         )
 
         const state = store.getState().home.cart; // state from redux store
-        console.log("STATE!!!", state); 
         let oProducts = <Products
           products={state.products}
           client={state.client}

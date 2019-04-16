@@ -47,7 +47,6 @@ class App extends Component {
   // footer is always on the bottom of the page
   render() {
     const state = store.getState().home.cart; // state from redux store
-    console.log("state!!!", state);
     return (
   
         <ConnectedRouter history={history}>

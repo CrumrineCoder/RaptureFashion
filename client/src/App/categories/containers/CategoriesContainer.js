@@ -766,7 +766,5 @@ class CategoriesContainer extends Component {
     }
 }
 
-function mapStateToProps(state) {
-}
+export default connect((state) => state)(CategoriesContainer);
 
-export default connect(mapStateToProps)(CategoriesContainer);

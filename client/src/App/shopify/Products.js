@@ -5,7 +5,6 @@ class Products extends Component {
 
   render() {
     let products;
-    console.log("Products!!", this.props.products);
     if (this.props.products) {
       products = this.props.products.map((product) => {
         return (
@@ -20,7 +19,6 @@ class Products extends Component {
     } else {
       products = <p>Loading...</p>
     }
-    console.log(products);
     //products.reverse(); // CHFE 2018.10.15 - this makes it so the products are shown newest to oldest on first load
     return (
       <div className="Product-wrapper">
