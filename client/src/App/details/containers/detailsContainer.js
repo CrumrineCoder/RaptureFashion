@@ -65,7 +65,6 @@ class DetailsContainer extends Component {
 
     componentWillReceiveProps(nextProps) {
         const state = store.getState().home.cart; // state from redux store
-        console.log(state);
         const products = state.products;
         let product = products.find(obj => {
             return obj.id === nextProps.id
@@ -124,12 +123,9 @@ class DetailsContainer extends Component {
     handleOptionChange(target) {
         // Maybe pass this as a props
         const state = store.getState().home.cart; // state from redux store
-
         let selectedOptions = this.state.selectedOptions;
-        selectedOptions[target.name] = target.value;
-
+        selectedOptions.Size = target.size;
         const selectedVariant = state.client.product.helpers.variantForOptions(state.products[0], selectedOptions)
-
         this.setState({
             selectedVariant: selectedVariant,
             selectedVariantImage: selectedVariant.attrs.image
