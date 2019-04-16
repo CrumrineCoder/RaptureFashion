@@ -59,6 +59,24 @@ class DetailsContainer extends Component {
         this.addCart = this.addCart.bind(this);
     }
 
+    componentWillMount() {
+        const state = store.getState().home.cart; // state from redux store
+        const products = state.products;
+        let product = products.find(obj => {
+            return obj.id === this.props.id
+        })
+        this.setState({ product, state });
+    }
+
+    componentWillReceiveProps(nextProps) {
+        const state = store.getState().home.cart; // state from redux store
+        const products = state.products;
+        let product = products.find(obj => {
+            return obj.id === nextProps.id
+        })
+        this.setState({ product, state });
+    }
+
     addCart() {
         let clothing = this.state.dress;
         clothing.size = this.state.size;
@@ -137,9 +155,6 @@ class DetailsContainer extends Component {
             </ul>
         )
 
-        console.log(this.state.size);
-        console.log(this.state);
-
         let sizes = (
             <div className="detailsSizeBoxList">
                 {dress.sizes.map((size, i) => <button onClick={() => this.changeSize({ size })} className={this.state.size === size ? 'detailsSizeBoxListButton detailsSizeBoxListButtonActive' : 'detailsSizeBoxListButton'} key={i}> {size}</button>)}
@@ -158,67 +173,91 @@ class DetailsContainer extends Component {
             )
         }
 
-        const state = store.getState().home.cart; // state from redux store
-        const products = state.products;
-        console.log(this.props.id);
-        var result = products.find(obj => {
-            return obj.id === this.props.id
-          })
-        console.log('result', result);
+
 
         /* Wishlist? */
         dress.price = this.addZeroes(dress.price);
+        /*
+           <img className="detailsImage" src={product.images[0].src} />
+                        <img className="detailsImage" src={product.images[1].src} />
+                        <img className="detailsImage" src={product.images[2].src} />
+                        <img className="detailsImage" src={product.images[3].src} />
+                        <img className="detailsImage" src={product.images[4].src} />
+                        */
+        let img;
+        let rightHand;
+        let variant = "Loading price..."
+        if (this.state.product) {
+            img = (
+                <div className="detailsImageScrollContainer">
+                    <img className="detailsImage" src={this.state.product.images[0].src} />
+                    <img className="detailsImage" src={this.state.product.images[1].src} />
+                    <img className="detailsImage" src={this.state.product.images[2].src} />
+                    <img className="detailsImage" src={this.state.product.images[3].src} />
+                    <img className="detailsImage" src={this.state.product.images[4].src} />
+                </div>
+            )
+            console.log(this.state.product); 
+            rightHand = (
+                <div className="detailsRightHandInfo">
+                    <h4 className="detailsName">{this.state.product.title}</h4>
+                    <p className="detailsBrand">{this.state.product.title.vendor}</p>
+                    <h4 className="detailsPrice">{variant.price} USD</h4>
+                    <div className="detailsSizeBox">
+                        <p className="detailsSizeBoxTitle">Size</p>
+                        <p className="detailsSizeBoxLink">Size Chart</p>
+                        {sizes}
+                    </div>
+                    {cart}
+                    <p className="detailsDescriptionText">{dress.desc}</p>
+                    <p className="detailsDescriptionText"><b>Style Tip:</b> {dress.tip}</p>
+                    <div className="detailsDescContainer">
+                        <img className="detailsDescImage" id="hangerImage" src={require("../../../assets/Icons/hanger.png")} />
+                        <p className="detailsDescText">{dress.wash}</p>
+                    </div>
+                    <div className="detailsDescContainer">
+                        <img className="detailsDescImage" src={require("../../../assets/Icons/fabric.png")} />
+                        <p className="detailsDescText">{dress.fabric}</p>
+                    </div>
+                    <div className="detailsDescContainer">
+                        <i className="fas fa-pencil-ruler detailsDescImage"></i>
+                        <p className="detailsDescText">{details}</p>
+                    </div>
+                    <div className="detailsDescContainer">
+                        <i className="fas fa-box-open detailsDescImage"></i>
+                        <p className="detailsDescText">{returns}</p>
+                    </div>
+                </div>
+            )
+            variant = this.state.selectedVariant || this.state.product.variants[0];
+        } else {
+            img = (
+                <div className="detailsImageScrollContainer">Loading images..</div>
+            )
+            rightHand = (
+                <div className="detailsRightHandInfo">Loading content..</div>
+            )
+        }
+
+
+
         return (
             <div>
                 <div className="detailsContainer">
-                    <div className="detailsImageScrollContainer">
-                        <img className="detailsImage" src={require("../../../assets/" + dress.images[0])} />
-                        <img className="detailsImage" src={require("../../../assets/" + dress.images[1])} />
-                        <img className="detailsImage" src={require("../../../assets/" + dress.images[2])} />
-                        <img className="detailsImage" src={require("../../../assets/" + dress.images[3])} />
-                        <img className="detailsImage" src={require("../../../assets/" + dress.images[4])} />
-                    </div>
-                    <div className="detailsRightHandInfo">
-                        <h4 className="detailsName">{dress.name}</h4>
-                        <p className="detailsBrand">{dress.brandName}</p>
-                        <h4 className="detailsPrice">{dress.price} USD</h4>
-                        <div className="detailsSizeBox">
-                            <p className="detailsSizeBoxTitle">Size</p>
-                            <p className="detailsSizeBoxLink">Size Chart</p>
-                            {sizes}
-                        </div>
-                        {cart}
-                        <p className="detailsDescriptionText">{dress.desc}</p>
-                        <p className="detailsDescriptionText"><b>Style Tip:</b> {dress.tip}</p>
-                        <div className="detailsDescContainer">
-                            <img className="detailsDescImage" id="hangerImage" src={require("../../../assets/Icons/hanger.png")} />
-                            <p className="detailsDescText">{dress.wash}</p>
-                        </div>
-                        <div className="detailsDescContainer">
-                            <img className="detailsDescImage" src={require("../../../assets/Icons/fabric.png")} />
-                            <p className="detailsDescText">{dress.fabric}</p>
-                        </div>
-                        <div className="detailsDescContainer">
-                            <i className="fas fa-pencil-ruler detailsDescImage"></i>
-                            <p className="detailsDescText">{details}</p>
-                        </div>
-                        <div className="detailsDescContainer">
-                            <i className="fas fa-box-open detailsDescImage"></i>
-                            <p className="detailsDescText">{returns}</p>
-                        </div>
-                    </div>
+                    {img}
+                    {rightHand}
                 </div>
                 <div className="detailsRecommendation">
                     <h1>Get the Look</h1>
-           
+
                 </div>
             </div>
         );
-/*
-         <ClothingBox dress={dress}></ClothingBox>
-                    <ClothingBox dress={dress}></ClothingBox>
-                    <ClothingBox dress={dress}></ClothingBox>
-                    */
+        /*
+                 <ClothingBox dress={dress}></ClothingBox>
+                            <ClothingBox dress={dress}></ClothingBox>
+                            <ClothingBox dress={dress}></ClothingBox>
+                            */
     }
 }
 
