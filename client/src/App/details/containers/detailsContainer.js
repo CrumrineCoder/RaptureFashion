@@ -89,11 +89,18 @@ class DetailsContainer extends Component {
         this.setState({ product, state });
     }
 
-    addCart() {
-        let clothing = this.state.dress;
+    addCart(variantId) {
+        console.log(variantId);
+   /*     let clothing = this.state.dress;
         clothing.size = this.state.size;
         clothing.quantity = 1;
-        this.props.dispatch(cartActions.addToCart(clothing));
+        this.props.dispatch(cartActions.addToCart(clothing)); */
+        const state = store.getState().home.cart; // state from redux store
+        const lineItemsToAdd = [{ variantId, quantity: 1 }]
+        const checkoutId = state.checkout.id;
+        state.client.checkout.addLineItems(checkoutId, lineItemsToAdd).then(res => {
+            store.dispatch({ type: 'ADD_VARIANT_TO_CART', payload: { isCartOpen: true, checkout: res } });
+        });
     }
 
     addZeroes(num) {
@@ -184,7 +191,7 @@ class DetailsContainer extends Component {
 
         if (this.state.sizeSelected) {
             cart = (
-                <button className="detailsCartButton enabledCartButton" onClick={this.addCart}>Add to Cart</button>
+                <button className="detailsCartButton enabledCartButton" onClick={() => this.addCart(variant.id)}>Add to Cart</button>
             )
         } else {
             cart = (
