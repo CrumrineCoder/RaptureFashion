@@ -13,6 +13,29 @@ class BagRow extends Component {
         this.addZeroes = this.addZeroes.bind(this);
     }
 
+    componentWillReceiveProps(nextProps) {
+        const state = nextProps.state; // state from redux store
+        const products = state.products;
+        let product = products.find(obj => {
+            return obj.id === nextProps.line_item.id
+        })
+        this.setState({ product, state });
+    }
+    componentWillMount() {
+        const state = this.props.state; // state from redux store
+        console.log("sTATE!!!", state); 
+        const products = state.products[0].variants;
+        let product = products.find(obj => {
+            return obj.id === this.props.line_item.id
+        });
+        console.log(product); 
+        console.log("Line ID!!", this.props.line_item.id); 
+        console.log(state.products[0].id);
+            console.log(this.props.line_item.id); 
+
+        this.setState({ product, state });
+    }
+
     addZeroes(num) {
         // Convert input string to a number and store as a variable.
         var value = Number(num);
@@ -35,18 +58,29 @@ class BagRow extends Component {
 
     render() {
         // TO DO: ADD LINK
-        let colorBoxes = "";
-        colorBoxes = (
-            <ul className="bagColors">
-                {this.props.color.map((color, i) => <ColorBox readOnly={true} key={i} Color={color}></ColorBox>)}
-            </ul>
-        )
-        let price = this.addZeroes(this.props.price);
-        let calculatedPrice = this.addZeroes((parseInt(this.props.price) * this.props.quantity).toString());
+        /*   let colorBoxes = "";
+           colorBoxes = (
+               <ul className="bagColors">
+                   {this.props.color.map((color, i) => <ColorBox readOnly={true} key={i} Color={color}></ColorBox>)}
+               </ul>
+           ) */
+        //     let price = this.addZeroes(this.props.price);
+        //     let calculatedPrice = this.addZeroes((parseInt(this.props.price) * this.props.quantity).toString());
+        console.log("Props", this.props);
         return (
             <div className="bagRow">
+                {this.props.line_item.variant.image ? <img className="bagCell bagImg" src={this.props.line_item.variant.image.src} alt={`${this.props.line_item.title} product shot`} /> : null}
+                <div className="bagItem">
+                    <h3 className="bagCell">{this.props.line_item.title}</h3>
+                    <h3 className="bagCell">{this.props.line_item.variant.title}</h3>
 
-                <img className="bagCell bagImg" src={require("../../../assets/" + this.props.images[0])} />
+
+                </div>
+
+
+            </div>
+        )
+        /* 
 
                 <div className="bagItem">
                     <h3 className="bagCell">{this.props.name}</h3>
@@ -63,10 +97,7 @@ class BagRow extends Component {
                     <h3 className="bagCell">${calculatedPrice}</h3>
                     <i onClick={() => this.props.removeItem(this.props.name)} class="fas fa-trash bagCell bagRowDelete"></i>
                 </div>
-
-
-            </div>
-        )
+                */
     }
 }
 

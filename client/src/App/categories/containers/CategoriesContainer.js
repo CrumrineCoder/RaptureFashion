@@ -777,7 +777,6 @@ class CategoriesContainer extends Component {
             </ul>
         )
 
-        console.log(state.products);
         let oProducts = <Products
             products={state.products}
             client={state.client}

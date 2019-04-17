@@ -129,12 +129,14 @@ class BagContainer extends Component {
     render() {
         let pageContent = '';
         const state = store.getState().home.cart; // state from redux store
-        let checkout = state.checkout
+        let checkout = state.checkout;
+        console.log("Checkout", checkout); 
+        console.log("PROPS IN THE CONTAINER", this.props); 
         let isCartOpen = state.isCartOpen
         // this.props.cart
         pageContent = (
             <ul className="bagRows">
-                {this.state.dresses.map((dress, i) => <BagRow changeQuantity={this.changeQuantity} checkout isCartOpen removeItem={this.removeItem} key={i} index={i} {...dress}> </BagRow>)}
+                {checkout.lineItems.map((line_item, i) => <BagRow changeQuantity={this.changeQuantity} product={state.products[i]} checkout={checkout} isCartOpen={isCartOpen} state={state} removeItem={this.removeItem} key={i} index={i} line_item={line_item}> </BagRow>)}
             </ul>
         )
 

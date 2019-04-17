@@ -99,16 +99,21 @@ class DetailsContainer extends Component {
     }
 
     addCart(variantId) {
-        console.log(variantId);
+        console.log("VariantID", variantId);
    /*     let clothing = this.state.dress;
         clothing.size = this.state.size;
         clothing.quantity = 1;
         this.props.dispatch(cartActions.addToCart(clothing)); */
         const state = store.getState().home.cart; // state from redux store
-        const lineItemsToAdd = [{ variantId, quantity: 1 }]
+        const lineItemsToAdd = [{ variantId, quantity: 1}]
         const checkoutId = state.checkout.id;
+        console.log('GIMME THE STATE', state); 
+        const additionalData = {
+            vendor: "test"
+        }
         state.client.checkout.addLineItems(checkoutId, lineItemsToAdd).then(res => {
-            store.dispatch({ type: 'ADD_VARIANT_TO_CART', payload: { isCartOpen: true, checkout: res } });
+            console.log("REST", res); 
+            store.dispatch({ type: 'ADD_VARIANT_TO_CART', payload: { isCartOpen: true, checkout: res, additionalData } });
         });
     }
 
@@ -127,19 +132,16 @@ class DetailsContainer extends Component {
     }
 
     changeSize(size) {
-        console.log("Size", size); 
         this.setState(
             size
         );
         this.setState({
             sizeSelected: true
         });
-        console.log("SIZE!", size); 
         this.handleOptionChange(size);
     }
 
     handleOptionChange(target) {
-        console.log("Target", target);
         // Maybe pass this as a props
         const state = store.getState().home.cart; // state from redux store
         let selectedOptions = this.state.selectedOptions;
@@ -244,12 +246,9 @@ class DetailsContainer extends Component {
             });
             // If there's no variant selectors, then just use one size fits most
             let bShowOneSizeFitsMost = (variantSelectors.length === 1 && aOptionNames[0] === "Title");
-            console.log(this.state.product); 
             let desc = new DOMParser().parseFromString(this.state.product.descriptionHtml, "text/xml").getElementById("horn").children; 
-            console.log(desc); 
             desc = Array.prototype.slice.call( desc );
             desc = desc.map(a => a.innerHTML);
-            console.log(desc); 
             rightHand = (
                 <div className="detailsRightHandInfo">
                     <h4 className="detailsName">{this.state.product.title}</h4>
