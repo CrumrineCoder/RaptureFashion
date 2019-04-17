@@ -46,7 +46,7 @@ class BagRow extends Component {
 
     changeQuantity(num) {
         this.setState({
-            quantity: this.state.quantity + num
+            quantity: this.props.line_item.quantity + num
         })
     }
 
@@ -66,6 +66,10 @@ class BagRow extends Component {
                     <p className="bagSmallText"><b>Size:</b> {this.props.line_item.variant.selectedOptions["0"].value}</p>
                 </div>
                 <div className="bagCell bagQuantity">
+                    <h3 className="bagCell">$ {parseInt(this.props.line_item.variant.price).toFixed(2)}</h3>
+                    <button className={ this.props.line_item.quantity > 1 ? 'bagQuantityButton' : 'bagQuantityButton bagQuantityButtonDisabled'} disabled={ this.props.line_item.quantity  <= 1} onClick={() => this.props.updateQuantityInCart(this.props.line_item.id, this.props.line_item.quantity -1 )}>-</button>
+                    <input readonly="" type="numeric" className="bagQuantityAmount" value={this.props.line_item.quantity }></input>
+                    <button className="bagQuantityButton" onClick={() => this.props.updateQuantityInCart(this.props.line_item.id, this.props.line_item.quantity + 1)}>+</button>
                     <h3 className="bagCell">$ {(this.props.line_item.quantity * this.props.line_item.variant.price).toFixed(2)}</h3>
                 </div>
             </div>

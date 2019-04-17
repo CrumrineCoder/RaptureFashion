@@ -4,6 +4,7 @@ Check if in stock
 
 https://medium.com/@sirenapparel/adding-shopifys-storefront-api-to-an-existing-react-app-with-react-redux-ea442bd7543
 https://github.com/frewinchristopher/react-redux-shopify-storefront-api-example/tree/master/src
+Quantity shouldn't be able to go above the amount left in stock. 
 
 UX:
 https://uxstudioteam.com/ux-blog/e-commerce-ux/ (1)
