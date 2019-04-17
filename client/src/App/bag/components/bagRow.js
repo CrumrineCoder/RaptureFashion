@@ -72,9 +72,9 @@ class BagRow extends Component {
                 {this.props.line_item.variant.image ? <img className="bagCell bagImg" src={this.props.line_item.variant.image.src} alt={`${this.props.line_item.title} product shot`} /> : null}
                 <div className="bagItem">
                     <h3 className="bagCell">{this.props.line_item.title}</h3>
-                    <h3 className="bagCell">{this.props.line_item.variant.title}</h3>
+                    <h3 className="bagCell">{this.props.home.cart.additionalData.vendor}</h3>
 
-
+                    <p className="bagSmallText"><b>Size:</b> {this.props.line_item.variant.title}</p>
                 </div>
 
 
