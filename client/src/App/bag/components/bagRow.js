@@ -62,23 +62,15 @@ class BagRow extends Component {
                 <div className="bagItem">
                     <h3 className="bagCell">{this.props.line_item.title}</h3>
                     <h3 className="bagCell">{this.props.home.cart.additionalData.vendor}</h3>
-                    <ColorBox readOnly={true} Color={Color}></ColorBox>
-                    <p className="bagSmallText"><b>Color:</b> {this.props.line_item.variant.selectedOptions["1"].value}</p>
+                    <p className="bagSmallText"><b>Color:</b> <ColorBox readOnly={true} Color={Color}></ColorBox></p>
                     <p className="bagSmallText"><b>Size:</b> {this.props.line_item.variant.selectedOptions["0"].value}</p>
                 </div>
-
-
+                <div className="bagCell bagQuantity">
+                    <h3 className="bagCell">$ {(this.props.line_item.quantity * this.props.line_item.variant.price).toFixed(2)}</h3>
+                </div>
             </div>
         )
         /* 
-
-                <div className="bagItem">
-                    <h3 className="bagCell">{this.props.name}</h3>
-                    <h3 className="bagCell">{this.props.brandName}</h3>
-                    {colorBoxes}
-                    <p className="bagSmallText"><b>Size:</b> {this.props.size}</p>
-                </div>
-
                 <div className="bagCell bagQuantity">
                     <h3 className="bagCell">${price}</h3>
                     <button className={this.props.quantity > 1 ? 'bagQuantityButton' : 'bagQuantityButton bagQuantityButtonDisabled'} disabled={this.props.quantity <= 1} onClick={() => this.props.changeQuantity(this.props.index, -1)}>-</button>
