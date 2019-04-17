@@ -2,6 +2,9 @@
 
 Check if in stock
 
+https://medium.com/@sirenapparel/adding-shopifys-storefront-api-to-an-existing-react-app-with-react-redux-ea442bd7543
+https://github.com/frewinchristopher/react-redux-shopify-storefront-api-example/tree/master/src
+
 UX:
 https://uxstudioteam.com/ux-blog/e-commerce-ux/ (1)
 https://uxdesign.cc/adisgladis-ux-ui-case-study-for-shopping-ethical-and-sustainable-products-online-d4fc1ffccf84 (2)

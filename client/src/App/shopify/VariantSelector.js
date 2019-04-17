@@ -5,7 +5,7 @@ class VariantSelector extends Component {
     let filter = this.props.option.values.map(a => a.value);
     let buttons = (
       <div className="detailsSizeBoxList">
-        {filter.map((size, i) => <button onClick={() => this.props.changeSize({ size })} className={this.props.currentSize === size ? 'detailsSizeBoxListButton detailsSizeBoxListButtonActive' : 'detailsSizeBoxListButton'} key={i}> {size}</button>)}
+        {filter.map((property, i) => <button onClick={() => this.props.changeProperty({ property })} className={this.props.currentProperty === property ? 'detailsSizeBoxListButton detailsSizeBoxListButtonActive' : 'detailsSizeBoxListButton'} key={i}> {property}</button>)}
       </div>
     )
     return (

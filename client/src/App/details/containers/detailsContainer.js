@@ -232,6 +232,8 @@ class DetailsContainer extends Component {
             )
             let aOptionNames = [];
             variant = this.state.selectedVariant || this.state.product.variants[0];
+            console.log(this.state.product.options);
+       
             let variantSelectors = this.state.product.options.map((option) => {
                 aOptionNames.push(option.name);
                 return (
@@ -239,8 +241,8 @@ class DetailsContainer extends Component {
                         handleOptionChange={this.handleOptionChange}
                         key={option.id.toString()}
                         option={option}
-                        changeSize={this.changeSize}
-                        currentSize={this.state.size}
+                        changeProperty={this.changeSize}
+                        currentProperty={this.state.size}
                     />
                 );
             });
