@@ -153,7 +153,7 @@ class BagContainer extends Component {
                     </div>
                     {pageContent}
                 </div>
-                <BagSubtotal checkout clothing={this.state.dresses}></BagSubtotal>
+                <BagSubtotal checkout={checkout} clothing={this.state.dresses}></BagSubtotal>
             </div>
         );
 
