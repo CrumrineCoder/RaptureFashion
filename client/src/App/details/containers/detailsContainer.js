@@ -105,6 +105,7 @@ class DetailsContainer extends Component {
         clothing.quantity = 1;
         this.props.dispatch(cartActions.addToCart(clothing)); */
         const state = store.getState().home.cart; // state from redux store
+        console.log("STATE!!!", state); 
         const lineItemsToAdd = [{ variantId, quantity: 1}]
         const checkoutId = state.checkout.id;
         const additionalData = {
