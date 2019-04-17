@@ -87,8 +87,6 @@ class BagContainer extends Component {
         this.handleCartOpen = this.handleCartOpen.bind(this);
     }
     updateQuantityInCart(lineItemId, quantity) {
-        console.log(lineItemId);
-        console.log(quantity);
         const state = store.getState().home.cart; // state from redux store
         const checkoutId = state.checkout.id
         const lineItemsToUpdate = [{ id: lineItemId, quantity: parseInt(quantity, 10) }]
@@ -138,7 +136,7 @@ class BagContainer extends Component {
         // this.props.cart
         pageContent = (
             <ul className="bagRows">
-                {checkout.lineItems.map((line_item, i) => <BagRow changeQuantity={this.changeQuantity} product={state.products[i]} checkout={checkout} isCartOpen={isCartOpen} state={state} removeItem={this.removeItem} key={i} index={i} line_item={line_item} updateQuantityInCart={this.updateQuantityInCart}> </BagRow>)}
+                {checkout.lineItems.map((line_item, i) => <BagRow changeQuantity={this.changeQuantity} product={state.products[i]} checkout={checkout} isCartOpen={isCartOpen} state={state} removeItem={this.removeItem} key={i} index={i} line_item={line_item} updateQuantityInCart={this.updateQuantityInCart} removeLineItemInCart={this.removeLineItemInCart}> </BagRow>)}
             </ul>
         )
 

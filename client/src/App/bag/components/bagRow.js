@@ -71,6 +71,7 @@ class BagRow extends Component {
                     <input readonly="" type="numeric" className="bagQuantityAmount" value={this.props.line_item.quantity }></input>
                     <button className="bagQuantityButton" onClick={() => this.props.updateQuantityInCart(this.props.line_item.id, this.props.line_item.quantity + 1)}>+</button>
                     <h3 className="bagCell">$ {(this.props.line_item.quantity * this.props.line_item.variant.price).toFixed(2)}</h3>
+                    <i onClick={()=> this.props.removeLineItemInCart(this.props.line_item.id)} class="fas fa-trash bagCell bagRowDelete"></i>
                 </div>
             </div>
         )
@@ -81,7 +82,7 @@ class BagRow extends Component {
                     <input readonly="" type="numeric" className="bagQuantityAmount" value={this.props.quantity}></input>
                     <button className="bagQuantityButton" onClick={() => this.props.changeQuantity(this.props.index, 1)}>+</button>
                     <h3 className="bagCell">${calculatedPrice}</h3>
-                    <i onClick={() => this.props.removeItem(this.props.name)} class="fas fa-trash bagCell bagRowDelete"></i>
+             
                 </div>
                 */
     }
