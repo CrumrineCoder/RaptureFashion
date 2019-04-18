@@ -19,6 +19,7 @@ import Login from "./home/login/LoginForm";
 import Register from "./home/login/RegisterForm";
 import Bag from "./bag";
 import Checkout from "./checkout";
+import About from "./about";
 
 import { userActions } from '../App/_actions/users.actions.js';
 
@@ -100,6 +101,7 @@ export default (
     <Route path="/categories/shoes"   render={(props) => <Dress {...props} clothing={"shoes"} />}/>
     <Route path="/categories/hats"   render={(props) => <Dress {...props} clothing={"hats"} />}/>
     <Route path="/bag" component={Bag} />
+    <Route path="/about" component={About} />
     <Route path="/checkout" component={Checkout} />
     <Route path="/register" component={Register} />
     <Route path="/login" component={Login} />

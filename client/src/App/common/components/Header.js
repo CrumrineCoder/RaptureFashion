@@ -80,10 +80,13 @@ class Header extends Component {
 								<NavLink href="#/">Home</NavLink>
 							</NavItem>
 							<NavItem>
+								<NavLink href="#/about">About</NavLink>
+							</NavItem>
+							<NavItem>
 								<Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
 									<DropdownToggle caret>
 										Brands
-       							 </DropdownToggle>
+       								</DropdownToggle>
 									<DropdownMenu>
 										<NavLink href="#/categories/brands/gibson">Gibson Girl</NavLink>
 										<NavLink href="#/categories/brands/ryan">Ryan Boutique</NavLink>
