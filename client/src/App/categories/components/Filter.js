@@ -9,7 +9,7 @@ class Filter extends Component {
         this.state = {
             amountOfFilters: 0, 
             filters: {
-                brandName: null,
+                vendor: null,
                 color: null
             }
         };
@@ -49,10 +49,10 @@ class Filter extends Component {
                 <h3>Active Filters</h3> 
             )
         }
-        if(this.state.filters.brandName != undefined){
+        if(this.state.filters.vendor != undefined){
             activeFilter.push(
                 <div>
-                   <i onClick={() => this.delete("brandName")} className="fas fa-times activeFilterDelete"></i> Brand: {this.state.filters.brandName}
+                   <i onClick={() => this.delete("vendor")} className="fas fa-times activeFilterDelete"></i> Brand: {this.state.filters.vendor}
                 </div>      
             )
         }
@@ -68,19 +68,19 @@ class Filter extends Component {
                 {activeFilter}
                 <div className="filterRow">
                     <label>
-                        <input type="radio" name="brandName" value="Gibson Girl" checked={this.state.filters.brandName === "Gibson Girl"} filter="brandName" onChange={() => this.changeFilter("brandName", "Gibson Girl")}  />
+                        <input type="radio" name="vendor" value="Gibson Girl" checked={this.state.filters.vendor === "Gibson Girl"} filter="vendor" onChange={() => this.changeFilter("vendor", "Gibson Girl")}  />
                         Gibson Girl
                     </label>
                     <label>
-                        <input type="radio" name="brandName" value="Ryan Boutique" checked={this.state.filters.brandName === "Ryan Boutique"} filter="brandName"  onChange={() => this.changeFilter("brandName", "Ryan Boutique")} />
+                        <input type="radio" name="vendor" value="Ryan Boutique" checked={this.state.filters.vendor === "Ryan Boutique"} filter="vendor"  onChange={() => this.changeFilter("vendor", "Ryan Boutique")} />
                         Ryan Boutique
                     </label>
                     <label>
-                        <input type="radio" name="brandName" value="Apollo" checked={this.state.filters.brandName === "Apollo"} filter="brandName" onChange={() => this.changeFilter("brandName", "Apollo")}  />
+                        <input type="radio" name="vendor" value="Apollo" checked={this.state.filters.vendor === "Apollo"} filter="vendor" onChange={() => this.changeFilter("vendor", "Apollo")}  />
                         Apollo
                     </label>
                     <label>
-                        <input type="radio" name="brandName" value="ÁVELINE'S" checked={this.state.filters.brandName === "ÁVELINE'S"} filter="brandName"  onChange={() => this.changeFilter("brandName", "ÁVELINE'S")}  />
+                        <input type="radio" name="vendor" value="ÁVELINE'S" checked={this.state.filters.vendor === "ÁVELINE'S"} filter="vendor"  onChange={() => this.changeFilter("vendor", "ÁVELINE'S")}  />
                         ÁVELINE'S
                     </label>
                 </div>

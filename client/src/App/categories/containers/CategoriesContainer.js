@@ -53,6 +53,8 @@ class CategoriesContainer extends Component {
             switch (key) {
                 case "color":
                     return splitColor.includes(value)
+                case "vendor":
+                    return e.vendor == value
                 default:
                     return e[key] == value;
             }
