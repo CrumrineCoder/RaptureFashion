@@ -744,6 +744,7 @@ class CategoriesContainer extends Component {
             }
         ]
 
+        let vendorHeader; 
         const state = store.getState().home.cart; // state from redux store
         let clothing = state.products;
         if (this.props.clothing != "all") {
@@ -767,23 +768,33 @@ class CategoriesContainer extends Component {
                         });
                     }
                 } else if (this.props.vendor) {
+                    let vendorImage;
                     if (this.props.vendor == "Gibson Girls") {
                         clothing = state.products.filter(function (a) {
                             return a.vendor == "Gibson Girls"
                         });
+                        vendorImage = "Brand/gibson girls.png";
                     } else if (this.props.vendor == "Ryan Boutique") {
                         clothing = state.products.filter(function (a) {
                             return a.vendor == "Ryan Boutique"
                         });
+                        vendorImage = "Brand/andrew ryan.png";
                     } else if (this.props.vendor == "Apollo") {
                         clothing = state.products.filter(function (a) {
                             return a.vendor == "Apollo"
                         });
+                        vendorImage = "Brand/apollo.png";
                     } else if (this.props.vendor == "ÁVELINE'S") {
                         clothing = state.products.filter(function (a) {
                             return a.vendor == "ÁVELINE'S"
                         });
+                        vendorImage = "Brand/aveline.png";
                     }
+                    vendorHeader = (
+                    <div className="vendorHeader">
+                        <h3>{this.props.vendor}</h3>
+                        {<img src={require("../../../assets/" + vendorImage)} />}
+                    </div>)
                 }
             }
         }
@@ -818,11 +829,10 @@ class CategoriesContainer extends Component {
             client={state.client}
             addVariantToCart={this.addVariantToCart}
         />;
+        console.log("HELP", this.state);
         return (
             <div className="categoriesContainer">
-                {this.props.vendor && <div className="vendorHeader">
-                    <h3>{this.props.vendor}</h3>
-                </div>}
+                {vendorHeader}
                 <Filter clothing={this.props.clothing} onChange={this.handleFilter}></Filter>
                 {pageContent}
             </div>
