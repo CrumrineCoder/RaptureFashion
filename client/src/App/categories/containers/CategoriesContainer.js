@@ -745,24 +745,46 @@ class CategoriesContainer extends Component {
 
         const state = store.getState().home.cart; // state from redux store
         let clothing = state.products;
+        console.log(this.props);
         if (this.props.clothing != "all") {
+            console.log("I want it!");
             if (state.products["0"]) {
-                if (this.props.clothing == "dresses") {
-                    clothing = state.products.filter(function (a) {
-                        return a.options[2].values["0"].value == "Dress"
-                    });
-                } else if (this.props.clothing == "accessories") {
-                    clothing = state.products.filter(function (a) {
-                        return a.options[2].values["0"].value == "Accessory"
-                    });
-                } else if (this.props.clothing == "shoes") {
-                    clothing = state.products.filter(function (a) {
-                        return a.options[2].values["0"].value == "Shoe"
-                    });
-                } else if (this.props.clothing == "hats") {
-                    clothing = state.products.filter(function (a) {
-                        return a.options[2].values["0"].value == "Hat"
-                    });
+                if (this.props.clothing) {
+                    if (this.props.clothing == "dresses") {
+                        clothing = state.products.filter(function (a) {
+                            return a.options[2].values["0"].value == "Dress"
+                        });
+                    } else if (this.props.clothing == "accessories") {
+                        clothing = state.products.filter(function (a) {
+                            return a.options[2].values["0"].value == "Accessory"
+                        });
+                    } else if (this.props.clothing == "shoes") {
+                        clothing = state.products.filter(function (a) {
+                            return a.options[2].values["0"].value == "Shoe"
+                        });
+                    } else if (this.props.clothing == "hats") {
+                        clothing = state.products.filter(function (a) {
+                            return a.options[2].values["0"].value == "Hat"
+                        });
+                    }
+                } else if (this.props.vendor) {
+                    if (this.props.vendor == "gibson") {
+                        clothing = state.products.filter(function (a) {
+                            return a.vendor == "Gibson Girls"
+                        });
+                    } else if (this.props.vendor == "ryan") {
+                        clothing = state.products.filter(function (a) {
+                            return a.vendor == "Ryan Boutique"
+                        });
+                    } else if (this.props.vendor == "apollo") {
+                        clothing = state.products.filter(function (a) {
+                            return a.vendor == "Apollo"
+                        });
+                    } else if (this.props.vendor == "áveline") {
+                        clothing = state.products.filter(function (a) {
+                            return a.vendor == "ÁVELINE'S"
+                        });
+                    }
                 }
             }
         }

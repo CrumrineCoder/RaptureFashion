@@ -160,7 +160,7 @@ class Home extends Component {
 				<CategoriesBox category="brands/apollo" box={{ image: "Brand/apollo.png", name: "Apollo" }}></CategoriesBox>
 				<CategoriesBox category="brands/áveline" box={{ image: "Brand/aveline.png", name: "ÁVELINE'S" }}></CategoriesBox>
 				<h4 className="homepageHeader">#WelcomeToRapture</h4>
-				<h5>Join the Rapture Community</h5>
+				<h5>Join the Rapture Community by tweeting #WelcomeToRapture to @RaptureFashion</h5>
 				<Slider className="homepageBestSellersCarousel" {...{
 					infinite: true,
 					speed: 500,
