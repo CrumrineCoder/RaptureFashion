@@ -740,17 +740,32 @@ class CategoriesContainer extends Component {
         ]
 
         const state = store.getState().home.cart; // state from redux store
-
-        let clothing;
-        if (this.props.clothing == "dresses") {
-            clothing = dresses;
-        } else if (this.props.clothing == "accessories") {
-            clothing = accessories;
-        } else if (this.props.clothing == "shoes") {
-            clothing = shoes;
-        } else if (this.props.clothing == "hats") {
-            clothing = hats;
+        let clothing = state.products;
+        if (this.props.clothing != "all") {
+            console.log("pass 1")
+            if (state.products["0"]) {
+                console.log("pass 2");
+                if (this.props.clothing == "dresses") {
+                    clothing = state.products.filter(function (a) {
+                        return a.options[2].values["0"].value == "Dress"
+                    });
+                } else if (this.props.clothing == "accessories") {
+                    clothing = state.products.filter(function (a) {
+                        return a.options[2].values["0"].value == "Accessory"
+                    });
+                } else if (this.props.clothing == "shoes") {
+                    clothing = state.products.filter(function (a) {
+                        return a.options[2].values["0"].value == "Shoe"
+                    });
+                } else if (this.props.clothing == "hats") {
+                    clothing = state.products.filter(function (a) {
+                        return a.options[2].values["0"].value == "Hat"
+                    });
+                }
+            }
         }
+        console.log(clothing); 
+
         /*   
            if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
                let filteredClothing = clothing;
@@ -773,7 +788,7 @@ class CategoriesContainer extends Component {
    */
         pageContent = (
             <ul className="polls">
-                {state.products.map((article, i) => <ClothingBox key={i} dress={article} />)}
+                {clothing.map((article, i) => <ClothingBox key={i} dress={article} />)}
             </ul>
         )
 
