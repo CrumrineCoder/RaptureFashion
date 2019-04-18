@@ -15,7 +15,7 @@ import raptureHomepage from '../../../assets/HomepageCarousel/raptureHomepage.pn
 import brandsHomepage from '../../../assets/HomepageCarousel/brandsHomepage.png';
 import Slider from "react-slick";
 import LazyLoad from 'react-lazyload';
-
+import store from '../../store';
 
 
 
@@ -39,8 +39,8 @@ class Home extends Component {
 
 	// Upon first render,  tell the back end to get all polls
 	componentDidMount() {
-//		this.props.dispatch(pollActions.selectPoll("All"));
-//		this.props.dispatch(pollActions.fetchVotesIfNeeded("All"));
+		//		this.props.dispatch(pollActions.selectPoll("All"));
+		//		this.props.dispatch(pollActions.fetchVotesIfNeeded("All"));
 	}
 
 	// Upon updating, tell the back end to get all polls (if there's been any change)
@@ -81,25 +81,6 @@ class Home extends Component {
 		}
 
 
-
-		// If we're fetching polls, tell the user why
-		if (this.props.isFetching) {
-			pageContent = (
-				<div className="pollsLoader">
-					The content is loading, but because this site uses a free Heroku server it has to warm up before it can get the data. This will take only 10 seconds to a minute, so please be patient! Once the servers are warmed up, the site will load content like normal.
-      		    </div>
-			)
-		} // Show all polls as poll links 
-		else {
-			if (this.state.query !== "") {
-				polls = find(polls, this.state.query);
-			}
-			pageContent = (
-				<ul className="polls">
-					{polls.map((poll, i) => <PollLink update={this.update} key={i} {...poll} />)}
-				</ul>
-			)
-		}
 		var settings = {
 			dots: true,
 			infinite: true,
@@ -122,6 +103,34 @@ class Home extends Component {
 			],
 			price: 98.00
 		}
+		const state = store.getState().home.cart;
+		let slider = (
+			<div>Images are loading</div>
+		)
+		if (state.products["0"]) {
+			slider = (<Slider className="homepageBestSellersCarousel">
+				<div>
+					<ClothingBox dress={state.products['0']}></ClothingBox>
+					<ClothingBox dress={state.products['0']}></ClothingBox>
+					<ClothingBox dress={state.products['0']}></ClothingBox>
+				</div>
+				<div>
+					<ClothingBox dress={state.products['0']}></ClothingBox>
+					<ClothingBox dress={state.products['0']}></ClothingBox>
+					<ClothingBox dress={state.products['0']}></ClothingBox>
+				</div>
+				<div>
+					<ClothingBox dress={state.products['0']}></ClothingBox>
+					<ClothingBox dress={state.products['0']}></ClothingBox>
+					<ClothingBox dress={state.products['0']}></ClothingBox>
+				</div>
+			</Slider>)
+		}
+		/*<ul className="polls">
+			{state.products.map((article, i) => <ClothingBox key={i} dress={article} />)}
+		</ul>
+		*/
+
 		return (
 			<div className="pollsContainer">
 				<Slider className="homepageCarousel" {...settings}>
@@ -136,23 +145,7 @@ class Home extends Component {
 					</LazyLoad>
 				</Slider>
 				<h4 className="homepageHeader">Rapture's Favorites</h4>
-				<Slider className="homepageBestSellersCarousel">
-					<div>
-						<ClothingBox dress={dress}></ClothingBox>
-						<ClothingBox dress={dress}></ClothingBox>
-						<ClothingBox dress={dress}></ClothingBox>
-					</div>
-					<div>
-						<ClothingBox dress={dress}></ClothingBox>
-						<ClothingBox dress={dress}></ClothingBox>
-						<ClothingBox dress={dress}></ClothingBox>
-					</div>
-					<div>
-						<ClothingBox dress={dress}></ClothingBox>
-						<ClothingBox dress={dress}></ClothingBox>
-						<ClothingBox dress={dress}></ClothingBox>
-					</div>
-				</Slider>
+				{slider}
 				<h4 className="homepageHeader">Categories</h4>
 				<CategoriesBox box={{ image: "Categories/dresses.jpg", name: "Dresses" }}></CategoriesBox>
 				<CategoriesBox box={{ image: "Categories/jewelry.jpg", name: "Jewelry" }}></CategoriesBox>
@@ -200,22 +193,6 @@ Home.propTypes = {
 	dispatch: PropTypes.func.isRequired
 }
 
-function mapStateToProps(state) {
-	const { selectedPoll, votesByPoll } = state.home
-	// If we're still fetching polls, then let isFetching be true and polls be empty, else get information from the backend and put it in Redux state
-	const { isFetching, lastUpdated, votes: polls } = votesByPoll[
-		selectedPoll
-	] || {
-			isFetching: true,
-			polls: []
-		}
-	return {
-		selectedPoll,
-		polls,
-		isFetching,
-		lastUpdated
-	}
 
-}
 
-export default withRouter(connect(mapStateToProps)(Home));
+export default connect((state) => state)(Home);
