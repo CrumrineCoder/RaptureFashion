@@ -745,9 +745,7 @@ class CategoriesContainer extends Component {
 
         const state = store.getState().home.cart; // state from redux store
         let clothing = state.products;
-        console.log(this.props);
         if (this.props.clothing != "all") {
-            console.log("I want it!");
             if (state.products["0"]) {
                 if (this.props.clothing) {
                     if (this.props.clothing == "dresses") {
@@ -788,9 +786,7 @@ class CategoriesContainer extends Component {
                 }
             }
         }
-        console.log(clothing);
-
-
+     
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
             let filteredClothing = clothing;
             var filteredFilter = this.clean(this.state.filter);
@@ -823,7 +819,7 @@ class CategoriesContainer extends Component {
         />;
         return (
             <div className="categoriesContainer">
-                <Filter onChange={this.handleFilter}></Filter>
+                <Filter clothing={this.props.clothing} onChange={this.handleFilter}></Filter>
                 {pageContent}
             </div>
         );
