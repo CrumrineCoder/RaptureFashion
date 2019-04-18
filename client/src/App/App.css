@@ -78,6 +78,20 @@ body, html{
   height: 80%;
 }
 
+.homepageCarouselTitle{
+  position: absolute;
+   top: 50%;
+   left: 50%; 
+   right: 0;
+    bottom: 0;
+   justify-content: 'center'; 
+   align-items: 'center'
+}
+
+.slick-slide{
+  position: relative; 
+}
+
 .homepageCarousel{
   width: 100vw;
   position: relative;
