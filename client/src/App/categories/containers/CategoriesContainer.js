@@ -47,8 +47,9 @@ class CategoriesContainer extends Component {
         } */
 
     getFilteredArray(array, key, value) {
-        var splitColor = array[0].options[1].values[0].value.split('/');
-
+        if (array[0]) {
+            var splitColor = array[0].options[1].values[0].value.split('/');
+        }
         return array.filter(function (e) {
             switch (key) {
                 case "color":
@@ -766,19 +767,19 @@ class CategoriesContainer extends Component {
                         });
                     }
                 } else if (this.props.vendor) {
-                    if (this.props.vendor == "gibson") {
+                    if (this.props.vendor == "Gibson Girls") {
                         clothing = state.products.filter(function (a) {
                             return a.vendor == "Gibson Girls"
                         });
-                    } else if (this.props.vendor == "ryan") {
+                    } else if (this.props.vendor == "Ryan Boutique") {
                         clothing = state.products.filter(function (a) {
                             return a.vendor == "Ryan Boutique"
                         });
-                    } else if (this.props.vendor == "apollo") {
+                    } else if (this.props.vendor == "Apollo") {
                         clothing = state.products.filter(function (a) {
                             return a.vendor == "Apollo"
                         });
-                    } else if (this.props.vendor == "áveline") {
+                    } else if (this.props.vendor == "ÁVELINE'S") {
                         clothing = state.products.filter(function (a) {
                             return a.vendor == "ÁVELINE'S"
                         });
@@ -786,7 +787,7 @@ class CategoriesContainer extends Component {
                 }
             }
         }
-     
+
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
             let filteredClothing = clothing;
             var filteredFilter = this.clean(this.state.filter);
@@ -819,6 +820,9 @@ class CategoriesContainer extends Component {
         />;
         return (
             <div className="categoriesContainer">
+                {this.props.vendor && <div className="vendorHeader">
+                    <h3>{this.props.vendor}</h3>
+                </div>}
                 <Filter clothing={this.props.clothing} onChange={this.handleFilter}></Filter>
                 {pageContent}
             </div>
