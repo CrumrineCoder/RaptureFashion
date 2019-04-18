@@ -7,6 +7,7 @@ import registerServiceWorker from './registerServiceWorker';
 import Client from 'shopify-buy';
 import store from './App/store';
 import { Provider } from 'react-redux';
+import './index.css';
 //import './styles/shopify.css';
 
 // build shopify client

@@ -80,12 +80,17 @@ body, html{
 
 .homepageCarouselTitle{
   position: absolute;
-   top: 50%;
-   left: 50%; 
-   right: 0;
-    bottom: 0;
-   justify-content: 'center'; 
-   align-items: 'center'
+  bottom: 50%;
+  text-align: center;
+  width: 100%;
+  font-size: 45px; 
+  font-family: Broadway;
+  color: white;
+  text-shadow:
+   -1px -1px 0 #000,  
+    1px -1px 0 #000,
+    -1px 1px 0 #000,
+     1px 1px 0 #000;
 }
 
 .slick-slide{
