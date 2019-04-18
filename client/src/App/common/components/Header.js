@@ -79,20 +79,20 @@ class Header extends Component {
 							<NavItem>
 								<NavLink href="#/">Home</NavLink>
 							</NavItem>
-							<Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
-								<DropdownToggle caret>
-									Dropdown
+							<NavItem>
+								<Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
+									<DropdownToggle caret>
+										Brands
        							 </DropdownToggle>
-								<DropdownMenu>
-									<DropdownItem header>Header</DropdownItem>
-									<DropdownItem>Some Action</DropdownItem>
-									<DropdownItem disabled>Action (disabled)</DropdownItem>
-									<DropdownItem divider />
-									<DropdownItem>Foo Action</DropdownItem>
-									<DropdownItem>Bar Action</DropdownItem>
-									<DropdownItem>Quo Action</DropdownItem>
-								</DropdownMenu>
-							</Dropdown>
+									<DropdownMenu>
+										<NavLink href="#/categories/brands/gibson">Gibson Girl</NavLink>
+										<NavLink href="#/categories/brands/ryan">Ryan Boutique</NavLink>
+										<NavLink href="#/categories/brands/apollo">Apollo</NavLink>
+										<NavLink href="#/categories/brands/áveline">ÁVELINE'S</NavLink>
+									</DropdownMenu>
+								</Dropdown>
+							</NavItem>
+
 							<NavItem>
 								<NavLink href="#/categories/all">All</NavLink>
 							</NavItem>
