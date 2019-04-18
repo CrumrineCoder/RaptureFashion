@@ -114,7 +114,6 @@ class DetailsContainer extends Component {
     }
 
     changeSize(size) {
-        console.log(size);
         this.setState(
             size
         );
@@ -139,7 +138,6 @@ class DetailsContainer extends Component {
     }
 
     render() {
-        console.log("DETAILS STATE", this.state);
         let cart = "";
 
         if (this.state.sizeSelected) {

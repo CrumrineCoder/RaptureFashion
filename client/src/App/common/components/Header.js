@@ -6,7 +6,11 @@ import {
 	NavbarBrand,
 	Nav,
 	NavItem,
-	NavLink
+	NavLink,
+	Dropdown,
+	DropdownToggle,
+	DropdownMenu,
+	DropdownItem
 } from 'reactstrap';
 import { connect } from 'react-redux';
 
@@ -19,8 +23,10 @@ class Header extends Component {
 	constructor(props) {
 		super(props);
 		this.toggle = this.toggle.bind(this);
+		this.toggleDropdown = this.toggleDropdown.bind(this);
 		this.state = {
-			isOpen: false
+			isOpen: false,
+			dropdownOpen: false
 			//		isLoggedIn: typeof localStorage["user"] !== 'undefined'
 		};
 	}
@@ -30,6 +36,12 @@ class Header extends Component {
 		this.setState({
 			isOpen: !this.state.isOpen
 		});
+	}
+
+	toggleDropdown() {
+		this.setState(prevState => ({
+			dropdownOpen: !prevState.dropdownOpen
+		}));
 	}
 
 	render() {
@@ -67,6 +79,20 @@ class Header extends Component {
 							<NavItem>
 								<NavLink href="#/">Home</NavLink>
 							</NavItem>
+							<Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
+								<DropdownToggle caret>
+									Dropdown
+       							 </DropdownToggle>
+								<DropdownMenu>
+									<DropdownItem header>Header</DropdownItem>
+									<DropdownItem>Some Action</DropdownItem>
+									<DropdownItem disabled>Action (disabled)</DropdownItem>
+									<DropdownItem divider />
+									<DropdownItem>Foo Action</DropdownItem>
+									<DropdownItem>Bar Action</DropdownItem>
+									<DropdownItem>Quo Action</DropdownItem>
+								</DropdownMenu>
+							</Dropdown>
 							<NavItem>
 								<NavLink href="#/categories/all">All</NavLink>
 							</NavItem>
@@ -104,7 +130,7 @@ Header.propTypes = {
 
 function mapStateToProps(state) {
 	const isLoggedIn = state.home.authenticate.loggedIn;
-    const cartAmount = state.home.cart.checkout.lineItems.length; 	
+	const cartAmount = state.home.cart.checkout.lineItems.length;
 	return { isLoggedIn, cartAmount };
 }
 
