@@ -10,9 +10,9 @@ import CategoriesBox from '../components/CategoriesBox';
 import InstagramBox from '../components/InstagramBox';
 import { pollActions } from '../../_actions/polls.actions.js';
 import { withRouter } from 'react-router-dom';
-import collectionHomepage from '../../../assets/base/homepageRapture1.jpg';
-import raptureHomepage from '../../../assets/base/homepageRapture4.jpg';
-import brandsHomepage from '../../../assets/base/homepageRapture5.png';
+import collectionHomepage from '../../../assets/HomepageCarousel/collectionHomepage.jpg';
+import raptureHomepage from '../../../assets/HomepageCarousel/raptureHomepage.jpg';
+import brandsHomepage from '../../../assets/HomepageCarousel/brandHomepage.png';
 import Slider from "react-slick";
 import LazyLoad from 'react-lazyload';
 import store from '../../store';
@@ -135,11 +135,11 @@ class Home extends Component {
 			<div className="pollsContainer">
 				<Slider className="homepageCarousel" {...settings}>
 					<LazyLoad height={"100%"}>
-						<img className="homepageCarouselImage" src={collectionHomepage} />
+						<img className="homepageCarouselImage" src={raptureHomepage} />
 						<h2 className="homepageCarouselTitle">You've never been to Rapture?</h2>
 					</LazyLoad>
 					<LazyLoad height={"100%"}>
-						<img className="homepageCarouselImage" src={raptureHomepage} />
+						<img className="homepageCarouselImage" src={collectionHomepage} />
 						<h2 className="homepageCarouselTitle">Become the Belle of the Ball</h2>
 					</LazyLoad>
 					<LazyLoad height={"100%"}>
