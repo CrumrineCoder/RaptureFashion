@@ -790,6 +790,7 @@ class CategoriesContainer extends Component {
                         });
                         vendorImage = "Brand/aveline.png";
                     }
+                    // Probably add the history text here too. 
                     vendorHeader = (
                     <div className="vendorHeader">
                         <h3>{this.props.vendor}</h3>
@@ -829,7 +830,6 @@ class CategoriesContainer extends Component {
             client={state.client}
             addVariantToCart={this.addVariantToCart}
         />;
-        console.log("HELP", this.state);
         return (
             <div className="categoriesContainer">
                 {vendorHeader}

@@ -139,7 +139,7 @@ class DetailsContainer extends Component {
     }
 
     render() {
-        console.log("DETAILS STATE", this.state); 
+        console.log("DETAILS STATE", this.state);
         let cart = "";
 
         if (this.state.sizeSelected) {
@@ -238,15 +238,19 @@ class DetailsContainer extends Component {
                 </div>
                 <div className="detailsRecommendation">
                     <h1>Get the Look</h1>
-
+                    {this.state.product &&
+                         <div>  
+                            <ClothingBox dress={this.state.product}></ClothingBox>
+                            <ClothingBox dress={this.state.product}></ClothingBox>
+                            <ClothingBox dress={this.state.product}></ClothingBox> 
+                        </div>
+                    }
                 </div>
             </div>
         );
-        /*
-                 <ClothingBox dress={dress}></ClothingBox>
-                            <ClothingBox dress={dress}></ClothingBox>
-                            <ClothingBox dress={dress}></ClothingBox>
-                            */
+
+
+
     }
 }
 
