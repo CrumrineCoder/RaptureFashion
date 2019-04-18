@@ -47,10 +47,12 @@ class CategoriesContainer extends Component {
         } */
 
     getFilteredArray(array, key, value) {
+        var splitColor = array[0].options[1].values[0].value.split('/');
+
         return array.filter(function (e) {
             switch (key) {
                 case "color":
-                    return e["color"].includes(value)
+                    return splitColor.includes(value)
                 default:
                     return e[key] == value;
             }
@@ -742,9 +744,7 @@ class CategoriesContainer extends Component {
         const state = store.getState().home.cart; // state from redux store
         let clothing = state.products;
         if (this.props.clothing != "all") {
-            console.log("pass 1")
             if (state.products["0"]) {
-                console.log("pass 2");
                 if (this.props.clothing == "dresses") {
                     clothing = state.products.filter(function (a) {
                         return a.options[2].values["0"].value == "Dress"
@@ -764,34 +764,34 @@ class CategoriesContainer extends Component {
                 }
             }
         }
-        console.log(clothing); 
+        console.log(clothing);
 
-        /*   
-           if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
-               let filteredClothing = clothing;
-               var filteredFilter = this.clean(this.state.filter);
-               for (var filter in filteredFilter) {
-                   filteredClothing = this.getFilteredArray(filteredClothing, filter, this.state.filter[filter])
-               }
-               pageContent = (
-                   <ul className="polls">
-                       {filteredClothing.map((article, i) => <ClothingBox key={i} dress={article} />)}
-                   </ul>
-               )
-           } else {
-               pageContent = (
-                   <ul className="polls">
-                       {clothing.map((article, i) => <ClothingBox key={i} dress={article} />)}
-                   </ul>
-               )
-           }
-   */
-        pageContent = (
-            <ul className="polls">
-                {clothing.map((article, i) => <ClothingBox key={i} dress={article} />)}
-            </ul>
-        )
 
+        if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
+            let filteredClothing = clothing;
+            var filteredFilter = this.clean(this.state.filter);
+            for (var filter in filteredFilter) {
+                filteredClothing = this.getFilteredArray(filteredClothing, filter, this.state.filter[filter])
+            }
+            pageContent = (
+                <ul className="polls">
+                    {filteredClothing.map((article, i) => <ClothingBox key={i} dress={article} />)}
+                </ul>
+            )
+        } else {
+            pageContent = (
+                <ul className="polls">
+                    {clothing.map((article, i) => <ClothingBox key={i} dress={article} />)}
+                </ul>
+            )
+        }
+        /*
+                pageContent = (
+                    <ul className="polls">
+                        {clothing.map((article, i) => <ClothingBox key={i} dress={article} />)}
+                    </ul>
+                )
+        */
         let oProducts = <Products
             products={state.products}
             client={state.client}
