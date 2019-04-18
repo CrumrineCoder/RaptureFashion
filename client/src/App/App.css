@@ -101,15 +101,15 @@ body, html{
 }
 
 .slick-prev{
-  left: 25px;
+  left: -40px;
 }
 
 .slick-next{
-  right: 40px;
+  right: -20px;
 }
 
-.homepageBestSellersCarousel .slick-next{
-  right: 60px;
+.differentRightSlick .slick-next{
+  right: 10px;
 }
 
 .homepageBestSellersCarousel .slick-prev:before, .homepageBestSellersCarousel .slick-next:before{

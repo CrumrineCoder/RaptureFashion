@@ -108,7 +108,7 @@ class Home extends Component {
 			<div>Images are loading</div>
 		)
 		if (state.products["0"]) {
-			slider = (<Slider className="homepageBestSellersCarousel">
+			slider = (<Slider className="homepageBestSellersCarousel differentRightSlick">
 				<div>
 					<ClothingBox dress={state.products['0']}></ClothingBox>
 					<ClothingBox dress={state.products['0']}></ClothingBox>
