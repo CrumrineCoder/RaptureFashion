@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { Link } from 'react-router-dom';
 
 class CategoriesBox extends Component {
 
@@ -10,17 +11,19 @@ class CategoriesBox extends Component {
         }
     }
 
-    componentWillMount(){
+    componentWillMount() {
         this.setState({ box: this.props.box });
     }
 
-    render(){
+    render() {
         // TO DO: ADD LINK
-        return(
-            <div className="categoriesBox">
-                <img className="categoriesBoxImage rounded" src={require("../../../assets/"+this.state.box.image)} />
-                <p className="categoriesBoxTag">{this.state.box.name}</p>
-            </div>
+        return (
+            <Link className="categoriesBox" to={"/categories/"+this.props.category} >
+                <div>
+                    <img className="categoriesBoxImage rounded" src={require("../../../assets/" + this.state.box.image)} />
+                    <p className="categoriesBoxTag">{this.state.box.name}</p>
+                </div>
+            </Link>
         )
     }
 }

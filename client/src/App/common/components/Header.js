@@ -9,6 +9,7 @@ import {
 	NavLink
 } from 'reactstrap';
 import { connect } from 'react-redux';
+
 //import PropTypes from 'prop-types';
 
 // Header hosts navigation info at the top of the screen. It appears on all pages.

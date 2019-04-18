@@ -150,15 +150,15 @@ class Home extends Component {
 				<h4 className="homepageHeader">Rapture's Favorites</h4>
 				{slider}
 				<h4 className="homepageHeader">Categories</h4>
-				<CategoriesBox box={{ image: "Categories/dresses.jpg", name: "Dresses" }}></CategoriesBox>
-				<CategoriesBox box={{ image: "Categories/jewelry.jpg", name: "Jewelry" }}></CategoriesBox>
-				<CategoriesBox box={{ image: "Categories/hats.jpg", name: "Hats" }}></CategoriesBox>
-				<CategoriesBox box={{ image: "Categories/shoes.jpg", name: "Shoes" }}></CategoriesBox>
+				<CategoriesBox category="dresses" box={{ image: "Categories/dresses.jpg", name: "Dresses" }}></CategoriesBox>
+				<CategoriesBox category="shoes"box={{ image: "Categories/shoes.jpg", name: "Shoes" }}></CategoriesBox>
+				<CategoriesBox category="accessories" box={{ image: "Categories/jewelry.jpg", name: "Accessories" }}></CategoriesBox>
+				<CategoriesBox category="hats" box={{ image: "Categories/hats.jpg", name: "Hats" }}></CategoriesBox>
 				<h4 className="homepageHeader">Brands</h4>
-				<CategoriesBox box={{ image: "Brand/gibson girls.png", name: "Gibson Girls" }}></CategoriesBox>
-				<CategoriesBox box={{ image: "Brand/andrew ryan.png", name: "Ryan Boutique" }}></CategoriesBox>
-				<CategoriesBox box={{ image: "Brand/apollo.png", name: "Apollo" }}></CategoriesBox>
-				<CategoriesBox box={{ image: "Brand/aveline.png", name: "ÁVELINE'S" }}></CategoriesBox>
+				<CategoriesBox category="brands/gibson" box={{ image: "Brand/gibson girls.png", name: "Gibson Girls" }}></CategoriesBox>
+				<CategoriesBox category="brands/ryan" box={{ image: "Brand/andrew ryan.png", name: "Ryan Boutique" }}></CategoriesBox>
+				<CategoriesBox category="brands/apollo" box={{ image: "Brand/apollo.png", name: "Apollo" }}></CategoriesBox>
+				<CategoriesBox category="brands/áveline" box={{ image: "Brand/aveline.png", name: "ÁVELINE'S" }}></CategoriesBox>
 				<h4 className="homepageHeader">#WelcomeToRapture</h4>
 				<h5>Join the Rapture Community</h5>
 				<Slider className="homepageBestSellersCarousel" {...{

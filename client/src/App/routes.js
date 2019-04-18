@@ -90,6 +90,10 @@ PrivateRoute = withRouter(connect(mapStateToProps)(PrivateRoute));
 export default (
   <Switch>
     <Route exact path="/" component={Home} />
+    <Route path="/categories/brands/gibson"   render={(props) => <Dress {...props} vendor={"gibson"} />}/>
+    <Route path="/categories/brands/ryan"   render={(props) => <Dress {...props} vendor={"ryan"} />}/>
+    <Route path="/categories/brands/apollo"   render={(props) => <Dress {...props} vendor={"apollo"} />}/>
+    <Route path="/categories/brands/áveline"   render={(props) => <Dress {...props} vendor={"áveline"} />}/>
     <Route path="/categories/all"  render={(props) => <Dress {...props} clothing={"all"} />}/>
     <Route path="/categories/dresses"   render={(props) => <Dress {...props} clothing={"dresses"} />}/>
     <Route path="/categories/accessories"   render={(props) => <Dress {...props} clothing={"accessories"} />}/>
