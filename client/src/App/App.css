@@ -623,6 +623,14 @@ body, html{
   float: right; 
 }
 
+/* About */
+
+.aboutHeaderImage{
+  width: 75%;
+  margin: 20px auto;
+  display: block;
+  border-radius: 10px;
+}
 
 
 /* Footer */
