@@ -7,12 +7,10 @@ class About extends Component {
         super(props)
     }
 
-
     render() {
-
         return (
-          <div>
-              dog
+            <div>
+                dog
             </div>
         );
 

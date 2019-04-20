@@ -1,5 +1,19 @@
 # RaptureFashion
 
+About Us:
+
+Who We Are
+
+Our Background  
+
+Retail Experience
+
+The Creative Lab
+
+The Brief
+
+
+
 Check if in stock
 
 https://medium.com/@sirenapparel/adding-shopifys-storefront-api-to-an-existing-react-app-with-react-redux-ea442bd7543
