@@ -247,8 +247,13 @@ body, html{
   clear: both; 
 }
 
-.brandBoxDesc{
+.brandBoxButton{
+  margin: 5px;  
   width: 100%; 
+}
+
+.brandBoxDesc{
+  padding: 10px; 
 }
 /* Instagram */
 
@@ -670,6 +675,7 @@ body, html{
   border-radius: 10px;
 }
 
+/*
 .vendorBrandContainer {
   display: flex;
 }
@@ -688,7 +694,19 @@ body, html{
   flex: 1;
   margin: 10px;
 }
+*/
 
+.vendorBrandContainer{
+  text-align: center;
+}
+
+.vendorBrandImage img{
+  width: 100px; 
+}
+
+.vendorHeader{
+  clear: both; 
+}
 
 /* Footer */
 

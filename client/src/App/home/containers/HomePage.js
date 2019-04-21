@@ -99,9 +99,7 @@ class Home extends Component {
 		brandText = brandText.split('\n').map((item, i) => {
 			return <p key={i}>{item}</p>;
 		});
-		let link = (<Link to={"/categories/" + this.props.category} >
-		<button>Go to Collection</button>
-	</Link>)
+	
 
 		var settings = {
 			dots: true,
@@ -183,7 +181,9 @@ class Home extends Component {
 					<BrandBox category="brands/apollo" learnMore={this.showText} box={{ image: "Brand/apollo.png", name: "Apollo" }}></BrandBox>
 					<BrandBox category="brands/áveline" learnMore={this.showText} box={{ image: "Brand/aveline.png", name: "ÁVELINE'S" }}></BrandBox>
 				</div>
-				{brandText}
+				<div className="brandBoxDesc">
+					{brandText}
+				</div>
 				<h4 className="homepageHeader">#WelcomeToRapture</h4>
 				<h5>Join the Rapture Community by tweeting #WelcomeToRapture to @RaptureFashion</h5>
 				<Slider className="homepageBestSellersCarousel" {...{

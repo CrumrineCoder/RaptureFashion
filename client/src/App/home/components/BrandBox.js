@@ -37,9 +37,9 @@ class BrandBox extends Component {
                     {this.state.hover && 
                         <div>    
                             <p className="brandBoxTag">{this.state.box.name}</p>
-                            <button value={this.props.box.name} onClick={this.props.learnMore}>Learn More</button>
+                            <button className="btn btn-info brandBoxButton" value={this.props.box.name} onClick={this.props.learnMore}>Learn More</button>
                             <Link to={"/categories/" + this.props.category} >
-                                <button>Go to Collection</button>
+                                <button className="btn btn-outline-primary brandBoxButton">Go to Collection</button>
                             </Link>
                         </div>
                     }
