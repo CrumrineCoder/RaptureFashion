@@ -192,24 +192,14 @@ body, html{
 
 /* Categories Box */
 
-.categoriesBoxContainer{
-  display: flex;
-}
 
 .categoriesBox{
   display: inline-block; 
-  width: 25%; 
-}
-
-.categoriesBoxInside{
-  margin: 5px; 
-  padding: 20px; 
-  background: rgb(189, 197, 202);
-  border-radius: 15px; 
+  width: 50%;
 }
 
 .categoriesBoxImage{
-  width: 100%;
+  width: 60%;
   height: 50%;
   margin: 0 auto; 
   display: block; 
@@ -221,10 +211,43 @@ body, html{
   font-size: 1.8em;
   margin-top: 10px;
   margin-bottom: 30px;
+}
+
+/* Brand  Box */
+
+.brandBoxContainer{
+  display: flex;
+}
+
+.brandBox{
+  display: inline-block; 
+  width: 25%; 
+}
+
+.brandBoxInside{
+  margin: 5px; 
+  padding: 20px; 
+  background: rgb(189, 197, 202);
+  border-radius: 15px; 
+}
+
+.brandBoxImage{
+  width: 100%;
+  height: 50%;
+  margin: 0 auto; 
+  display: block; 
+  overflow: hidden;
+}
+
+.brandBoxTag{
+  text-align: center; 
+  font-size: 1.8em;
+  margin-top: 10px;
+  margin-bottom: 30px;
   clear: both; 
 }
 
-.categoriesBoxDesc{
+.brandBoxDesc{
   width: 100%; 
 }
 /* Instagram */

@@ -16,8 +16,8 @@ import brandsHomepage from '../../../assets/HomepageCarousel/brandHomepage.png';
 import Slider from "react-slick";
 import LazyLoad from 'react-lazyload';
 import store from '../../store';
-
-
+import { Link } from 'react-router-dom';
+import BrandBox from '../components/BrandBox';
 
 // Landing page 
 class Home extends Component {
@@ -99,7 +99,9 @@ class Home extends Component {
 		brandText = brandText.split('\n').map((item, i) => {
 			return <p key={i}>{item}</p>;
 		});
-
+		let link = (<Link to={"/categories/" + this.props.category} >
+		<button>Go to Collection</button>
+	</Link>)
 
 		var settings = {
 			dots: true,
@@ -175,11 +177,11 @@ class Home extends Component {
 				<CategoriesBox category="accessories" box={{ image: "Categories/jewelry.jpg", name: "Accessories" }}></CategoriesBox>
 				<CategoriesBox category="hats" box={{ image: "Categories/hats.jpg", name: "Hats" }}></CategoriesBox>
 				<h4 className="homepageHeader">Brands</h4>
-				<div className="categoriesBoxContainer">
-					<CategoriesBox category="brands/gibson" learnMore={this.showText} box={{ image: "Brand/gibson girls.png", name: "Gibson Girls" }}></CategoriesBox>
-					<CategoriesBox category="brands/ryan" learnMore={this.showText} box={{ image: "Brand/andrew ryan.png", name: "Ryan Boutique" }}></CategoriesBox>
-					<CategoriesBox category="brands/apollo" learnMore={this.showText} box={{ image: "Brand/apollo.png", name: "Apollo" }}></CategoriesBox>
-					<CategoriesBox category="brands/áveline" learnMore={this.showText} box={{ image: "Brand/aveline.png", name: "ÁVELINE'S" }}></CategoriesBox>
+				<div className="brandBoxContainer">
+					<BrandBox category="brands/gibson" learnMore={this.showText} box={{ image: "Brand/gibson girls.png", name: "Gibson Girls" }}></BrandBox>
+					<BrandBox category="brands/ryan" learnMore={this.showText} box={{ image: "Brand/andrew ryan.png", name: "Ryan Boutique" }}></BrandBox>
+					<BrandBox category="brands/apollo" learnMore={this.showText} box={{ image: "Brand/apollo.png", name: "Apollo" }}></BrandBox>
+					<BrandBox category="brands/áveline" learnMore={this.showText} box={{ image: "Brand/aveline.png", name: "ÁVELINE'S" }}></BrandBox>
 				</div>
 				{brandText}
 				<h4 className="homepageHeader">#WelcomeToRapture</h4>
