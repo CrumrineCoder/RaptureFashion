@@ -194,11 +194,12 @@ body, html{
 
 .categoriesBox{
   display: inline-block; 
-  width: 50%;
+  width: 25%; 
 }
 
+
 .categoriesBoxImage{
-  width: 60%;
+  width: 25%;
   height: 50%;
   margin: 0 auto; 
   display: block; 
@@ -210,8 +211,12 @@ body, html{
   font-size: 1.8em;
   margin-top: 10px;
   margin-bottom: 30px;
+  clear: both; 
 }
 
+.categoriesBoxDesc{
+  width: 100%; 
+}
 /* Instagram */
 
 .instagramIcon{

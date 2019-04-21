@@ -27,6 +27,7 @@ class Home extends Component {
 		// Used for when searching and tagging functionality whenever that comes
 		this.state = { filter: "", query: "" };
 		this.changeFilter = this.changeFilter.bind(this);
+		this.showText = this.showText.bind(this); 
 	}
 
 	static propTypes = {
@@ -61,6 +62,10 @@ class Home extends Component {
 		this.setState({
 			filter: filter
 		});
+	}
+
+	showText(event){
+		console.log(event.target.value);
 	}
 
 	render() {
@@ -155,10 +160,11 @@ class Home extends Component {
 				<CategoriesBox category="accessories" box={{ image: "Categories/jewelry.jpg", name: "Accessories" }}></CategoriesBox>
 				<CategoriesBox category="hats" box={{ image: "Categories/hats.jpg", name: "Hats" }}></CategoriesBox>
 				<h4 className="homepageHeader">Brands</h4>
-				<CategoriesBox category="brands/gibson" box={{ image: "Brand/gibson girls.png", name: "Gibson Girls" }}></CategoriesBox>
-				<CategoriesBox category="brands/ryan" box={{ image: "Brand/andrew ryan.png", name: "Ryan Boutique" }}></CategoriesBox>
-				<CategoriesBox category="brands/apollo" box={{ image: "Brand/apollo.png", name: "Apollo" }}></CategoriesBox>
-				<CategoriesBox category="brands/áveline" box={{ image: "Brand/aveline.png", name: "ÁVELINE'S" }}></CategoriesBox>
+				<CategoriesBox category="brands/gibson" learnMore={this.showText} box={{ image: "Brand/gibson girls.png", name: "Gibson Girls" }}></CategoriesBox>
+				<CategoriesBox category="brands/ryan" learnMore={this.showText} box={{ image: "Brand/andrew ryan.png", name: "Ryan Boutique" }}></CategoriesBox>
+				<CategoriesBox category="brands/apollo" learnMore={this.showText} box={{ image: "Brand/apollo.png", name: "Apollo" }}></CategoriesBox>
+				<CategoriesBox category="brands/áveline" learnMore={this.showText} box={{ image: "Brand/aveline.png", name: "ÁVELINE'S" }}></CategoriesBox>
+				
 				<h4 className="homepageHeader">#WelcomeToRapture</h4>
 				<h5>Join the Rapture Community by tweeting #WelcomeToRapture to @RaptureFashion</h5>
 				<Slider className="homepageBestSellersCarousel" {...{
