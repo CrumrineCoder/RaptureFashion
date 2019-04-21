@@ -192,14 +192,24 @@ body, html{
 
 /* Categories Box */
 
+.categoriesBoxContainer{
+  display: flex;
+}
+
 .categoriesBox{
   display: inline-block; 
   width: 25%; 
 }
 
+.categoriesBoxInside{
+  margin: 5px; 
+  padding: 20px; 
+  background: rgb(189, 197, 202);
+  border-radius: 15px; 
+}
 
 .categoriesBoxImage{
-  width: 25%;
+  width: 100%;
   height: 50%;
   margin: 0 auto; 
   display: block; 
