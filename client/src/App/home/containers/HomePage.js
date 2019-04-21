@@ -18,6 +18,7 @@ import LazyLoad from 'react-lazyload';
 import store from '../../store';
 import { Link } from 'react-router-dom';
 import BrandBox from '../components/BrandBox';
+import { Link as SamePageLink} from 'react-scroll';
 
 // Landing page 
 class Home extends Component {
@@ -166,14 +167,23 @@ class Home extends Component {
 					<LazyLoad height={"100%"}>
 						<img className="homepageCarouselImage" src={raptureHomepage} />
 						<h2 className="homepageCarouselTitle">You've never been to Rapture?</h2>
+						<Link to={"/about"} >
+							<button className="btn btn-primary btn-lg homepageCarouselButton">About Us</button>
+						</Link>
 					</LazyLoad>
 					<LazyLoad height={"100%"}>
 						<img className="homepageCarouselImage" src={collectionHomepage} />
 						<h2 className="homepageCarouselTitle">Become the Belle of the Ball</h2>
+						<Link to={"/categories/all"} >
+						<button className="btn btn-primary btn-lg homepageCarouselButton">Browse the Collection</button>
+						</Link>
 					</LazyLoad>
 					<LazyLoad height={"100%"}>
 						<img className="homepageCarouselImage" src={brandsHomepage} />
 						<h2 className="homepageCarouselTitle">Only the Best Fashion Survives in Rapture</h2>
+						<SamePageLink activeClass="active" to="brandHeader" spy={true} smooth={true} duration={500}>
+							<button className="btn btn-primary btn-lg homepageCarouselButton">Meet Our Brands</button>
+						</SamePageLink>
 					</LazyLoad>
 				</Slider>
 				<h4 className="homepageHeader">Rapture's Favorites</h4>
@@ -183,7 +193,7 @@ class Home extends Component {
 				<CategoriesBox category="shoes" box={{ image: "Categories/shoes.jpg", name: "Shoes" }}></CategoriesBox>
 				<CategoriesBox category="accessories" box={{ image: "Categories/jewelry.jpg", name: "Accessories" }}></CategoriesBox>
 				<CategoriesBox category="hats" box={{ image: "Categories/hats.jpg", name: "Hats" }}></CategoriesBox>
-				<h4 className="homepageHeader">Brands</h4>
+				<h4 className="homepageHeader" id="brandHeader">Brands</h4>
 				<div className="brandBoxContainer">
 					<BrandBox category="brands/gibson" learnMore={this.showText} box={{ image: "Brand/gibson girls.png", name: "Gibson Girls" }}></BrandBox>
 					<BrandBox category="brands/ryan" learnMore={this.showText} box={{ image: "Brand/andrew ryan.png", name: "Ryan Boutique" }}></BrandBox>

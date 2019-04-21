@@ -76,6 +76,7 @@ body, html{
 .homepageCarouselImage{
   width: 100%;
   height: 80%;
+  position: relative; 
 }
 
 .homepageCarouselTitle{
@@ -91,6 +92,14 @@ body, html{
     1px -1px 0 #000,
     -1px 1px 0 #000,
      1px 1px 0 #000;
+}
+
+.homepageCarouselButton{
+  position: absolute;
+  bottom: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
 }
 
 .slick-slide{
