@@ -87,19 +87,28 @@ class Home extends Component {
 		}
 
 		let brandText = "";
+		let link = "";
 		if (this.state.brandToLearnMore == "Gibson Girls") {
-			brandText = "Áveline is one of the emerging young designers in Rapture  who came to spotlight before she graduated in 2009 at Contemporary Arts Institute Rapture. That year she became the top young fashion designer at the Fashion Awards Rapture. Áveline plays an important role in the Rapture contemporary fashion scene, she won the Best Fashion Designer Award of Glamour Women of the Year in 2014. She is on the right track to share her powerful and vibrant creations with a wider audience. \n Her independent Rapture based label's vision contains innovative, modern design for a cosmoplitan woman who is self-assured and proud of her individual image; the woman who values the expression of originality in her day-to-day life. The love for contrasts is reflected throughout every of Áveline's work, she experiments a lot with silhouettes, shapes, textures and colours. Inspiration drawn from contemporary art and youth culture is combined with an emphasis on tailoring and the use of custom developed fabrics. This playful and fresh attitude presents the effortless 'power-woman' blend of the 20th and 21st century."
+			brandText = "Áveline is one of the emerging young designers in Rapture  who came to spotlight before she graduated in 2009 at Contemporary Arts Institute Rapture. That year she became the top young fashion designer at the Fashion Awards Rapture. Áveline plays an important role in the Rapture contemporary fashion scene, she won the Best Fashion Designer Award of Glamour Women of the Year in 2014. She is on the right track to share her powerful and vibrant creations with a wider audience. \n Her independent Rapture based label's vision contains innovative, modern design for a cosmoplitan woman who is self-assured and proud of her individual image; the woman who values the expression of originality in her day-to-day life. The love for contrasts is reflected throughout every of Áveline's work, she experiments a lot with silhouettes, shapes, textures and colours. Inspiration drawn from contemporary art and youth culture is combined with an emphasis on tailoring and the use of custom developed fabrics. This playful and fresh attitude presents the effortless 'power-woman' blend of the 20th and 21st century.";
+			link = "gibson";
 		} else if (this.state.brandToLearnMore == "Ryan Boutique") {
 			brandText = "ttttttttttttttttÁveline is one of the emerging young designers in Rapture  who came to spotlight before she graduated in 2009 at Contemporary Arts Institute Rapture. That year she became the top young fashion designer at the Fashion Awards Rapture. Áveline plays an important role in the Rapture contemporary fashion scene, she won the Best Fashion Designer Award of Glamour Women of the Year in 2014. She is on the right track to share her powerful and vibrant creations with a wider audience. \n Her independent Rapture based label's vision contains innovative, modern design for a cosmoplitan woman who is self-assured and proud of her individual image; the woman who values the expression of originality in her day-to-day life. The love for contrasts is reflected throughout every of Áveline's work, she experiments a lot with silhouettes, shapes, textures and colours. Inspiration drawn from contemporary art and youth culture is combined with an emphasis on tailoring and the use of custom developed fabrics. This playful and fresh attitude presents the effortless 'power-woman' blend of the 20th and 21st century."
+			link = "ryan";
 		} else if (this.state.brandToLearnMore == "Apollo") {
 			brandText = "Áveline is one of the emerging young designers in Rapture  who came to spotlight before she graduated in 2009 at Contemporary Arts Institute Rapture. That year she became the top young fashion designer at the Fashion Awards Rapture. Áveline plays an important role in the Rapture contemporary fashion scene, she won the Best Fashion Designer Award of Glamour Women of the Year in 2014. She is on the right track to share her powerful and vibrant creations with a wider audience. \n Her independent Rapture based label's vision contains innovative, modern design for a cosmoplitan woman who is self-assured and proud of her individual image; the woman who values the expression of originality in her day-to-day life. The love for contrasts is reflected throughout every of Áveline's work, she experiments a lot with silhouettes, shapes, textures and colours. Inspiration drawn from contemporary art and youth culture is combined with an emphasis on tailoring and the use of custom developed fabrics. This playful and fresh attitude presents the effortless 'power-woman' blend of the 20th and 21st century."
+			link = "apollo";
 		} else if (this.state.brandToLearnMore == "ÁVELINE'S") {
 			brandText = "Áveline is one of the emerging young designers in Rapture  who came to spotlight before she graduated in 2009 at Contemporary Arts Institute Rapture. That year she became the top young fashion designer at the Fashion Awards Rapture. Áveline plays an important role in the Rapture contemporary fashion scene, she won the Best Fashion Designer Award of Glamour Women of the Year in 2014. She is on the right track to share her powerful and vibrant creations with a wider audience. \n Her independent Rapture based label's vision contains innovative, modern design for a cosmoplitan woman who is self-assured and proud of her individual image; the woman who values the expression of originality in her day-to-day life. The love for contrasts is reflected throughout every of Áveline's work, she experiments a lot with silhouettes, shapes, textures and colours. Inspiration drawn from contemporary art and youth culture is combined with an emphasis on tailoring and the use of custom developed fabrics. This playful and fresh attitude presents the effortless 'power-woman' blend of the 20th and 21st century."
+			link = "áveline";
 		}
 		brandText = brandText.split('\n').map((item, i) => {
 			return <p key={i}>{item}</p>;
 		});
-	
+		if(link != ""){
+		link = (<Link to={"/categories/brands/" +  link } >
+			<button className="btn btn-outline-primary brandBoxButton">Go to Collection</button>
+		</Link>)
+		}
 
 		var settings = {
 			dots: true,
@@ -182,7 +191,9 @@ class Home extends Component {
 					<BrandBox category="brands/áveline" learnMore={this.showText} box={{ image: "Brand/aveline.png", name: "ÁVELINE'S" }}></BrandBox>
 				</div>
 				<div className="brandBoxDesc">
+					<h3>{this.state.brandToLearnMore}</h3>
 					{brandText}
+					{link}
 				</div>
 				<h4 className="homepageHeader">#WelcomeToRapture</h4>
 				<h5>Join the Rapture Community by tweeting #WelcomeToRapture to @RaptureFashion</h5>
