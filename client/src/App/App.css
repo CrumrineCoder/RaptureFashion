@@ -632,6 +632,25 @@ body, html{
   border-radius: 10px;
 }
 
+.vendorBrandContainer {
+  display: flex;
+}
+
+.vendorBrandImage{
+  flex: 2;
+  margin: 10px;
+}
+
+.vendorBrandImage img{
+  width: 100%;
+  vertical-align: top;
+}
+
+.vendorBrandText{
+  flex: 1;
+  margin: 10px;
+}
+
 
 /* Footer */
 
