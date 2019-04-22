@@ -97,29 +97,6 @@ class CategoriesContainer extends Component {
 
         var dresses = [
             {
-                name: "Deco Purple & Black Sequin Veronique Fringe Flapper Dress",
-                brandName: "Gibson Girl",
-                images: [
-                    "Dresses/61626/61626-1_2048x2048.jpg",
-                    "Dresses/61626/61626-2_2048x2048.jpg",
-                    "Dresses/61626/61626-3_2048x2048.jpg",
-                    "Dresses/61626/61626-4_2048x2048.jpg",
-                    "Dresses/61626/61626-5_2048x2048.jpg"
-                ],
-                price: 14.00,
-                color: ["Purple", "Black"],
-                desc: "With a bit of royalty and aristocratic detail, the Veronique Flapper dress is fresh from Unique Vintage in stunning 1920s design. Intricately deco beaded black mesh boasts black iridescent sequins and small black beads wrought in flourishing deco swirls and spirals, while a deep eggplant purple knit lining creates a radiant effect. The sleeveless, v-neck design shows you off with a modest touch, while the curve hugging fit and jagged edge dripping with fringe will turn every head!  \n Available in sizes S-3X while supplies last.",
-                details: [
-                    "Imported",
-                    "Side Zipper",
-                    "Sheer Beaded Mesh Over Knit Lining",
-                    "Some Stretch",
-                    "Length Includes Fringe",
-                    "Model Pictured Wearing Size M; Medium Length 43",
-                    "Model Info: Height: 5’9\” | Waist: 26 | Hips: 36.5 | Bust: 34C"
-                ]
-            },
-            {
                 name: "Navy Hemingway Flapper Dress",
                 brandName: "Ryan Boutique",
                 images: [

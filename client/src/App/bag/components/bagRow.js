@@ -54,7 +54,6 @@ class BagRow extends Component {
         // TO DO: ADD LINK
         //     let price = this.addZeroes(this.props.price);
         //     let calculatedPrice = this.addZeroes((parseInt(this.props.price) * this.props.quantity).toString());
-        console.log("Props", this.props);
         let Color = this.props.line_item.variant.selectedOptions["1"].value.replace(/\//g, '');
         return (
             <div className="bagRow">

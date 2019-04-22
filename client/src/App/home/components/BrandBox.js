@@ -28,7 +28,6 @@ class BrandBox extends Component {
 
     render() {
         // TO DO: ADD LINK
-        console.log("PROPSAROONI", this.props);
 
         return (
             <div className="brandBox" onMouseEnter={this.hoverEnter} onMouseLeave={this.hoverExit}>

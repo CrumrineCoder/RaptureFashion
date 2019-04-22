@@ -66,7 +66,6 @@ class Home extends Component {
 	}
 
 	showText(event) {
-		console.log(event.target.value);
 		this.setState({ brandToLearnMore: event.target.value })
 	}
 
