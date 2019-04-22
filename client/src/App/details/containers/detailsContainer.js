@@ -126,11 +126,17 @@ class DetailsContainer extends Component {
     }
 
     handleOptionChange(target) {
+        console.log("Target", target)
         // Maybe pass this as a props
         const state = store.getState().home.cart; // state from redux store
         let selectedOptions = this.state.selectedOptions;
+        console.log("SelectedOptions", selectedOptions);
         selectedOptions = { ...selectedOptions, ...target }
+        console.log("state", state.products[0]);
+        console.log(state.client.product.helpers)
+        console.log("big state", state); 
         const selectedVariant = state.client.product.helpers.variantForOptions(state.products[0], selectedOptions);
+        console.log("selectedVariant", selectedVariant);
         this.setState({
             selectedVariant: selectedVariant,
             selectedVariantImage: selectedVariant.attrs.image
