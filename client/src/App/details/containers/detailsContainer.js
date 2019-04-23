@@ -126,17 +126,11 @@ class DetailsContainer extends Component {
     }
 
     handleOptionChange(target) {
-        console.log("Target", target)
         // Maybe pass this as a props
         const state = store.getState().home.cart; // state from redux store
         let selectedOptions = this.state.selectedOptions;
-        console.log("SelectedOptions", selectedOptions);
         selectedOptions = { ...selectedOptions, ...target }
-        console.log("state", state.products[0]);
-        console.log(state.client.product.helpers)
-        console.log("big state", state); 
-        const selectedVariant = state.client.product.helpers.variantForOptions(state.products[0], selectedOptions);
-        console.log("selectedVariant", selectedVariant);
+        const selectedVariant = state.client.product.helpers.variantForOptions(this.state.product, selectedOptions);
         this.setState({
             selectedVariant: selectedVariant,
             selectedVariantImage: selectedVariant.attrs.image
@@ -158,15 +152,11 @@ class DetailsContainer extends Component {
 
         let img;
         let rightHand;
-        let variant = "Loading price..."
+        let variant = "Loading price...";
         if (this.state.product) {
             img = (
                 <div className="detailsImageScrollContainer">
-                    <img className="detailsImage" src={this.state.product.images[0].src} />
-                    <img className="detailsImage" src={this.state.product.images[1].src} />
-                    <img className="detailsImage" src={this.state.product.images[2].src} />
-                    <img className="detailsImage" src={this.state.product.images[3].src} />
-                    <img className="detailsImage" src={this.state.product.images[4].src} />
+                    {this.state.product.images.map((img, i) => <img className="detailsImage" src={this.state.product.images[i].src} />)}
                 </div>
             )
             let aOptionNames = [];
