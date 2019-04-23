@@ -139,15 +139,18 @@ class DetailsContainer extends Component {
 
     render() {
         let cart = "";
-
-        if (this.state.sizeSelected) {
-            cart = (
-                <button className="detailsCartButton enabledCartButton" onClick={() => this.addCart(variant.id)}>Add to Cart</button>
-            )
-        } else {
-            cart = (
-                <button className="detailsCartButton disabledCartButton">Select a Size</button>
-            )
+       
+        if (this.state.product) {
+         
+            if (this.state.sizeSelected || this.state.product.options["0"].values.length == 1) {
+                cart = (
+                    <button className="detailsCartButton enabledCartButton" onClick={() => this.addCart(variant.id)}>Add to Cart</button>
+                )
+            } else {
+                cart = (
+                    <button className="detailsCartButton disabledCartButton">Select a Size</button>
+                )
+            }
         }
 
         let img;
@@ -233,10 +236,10 @@ class DetailsContainer extends Component {
                 <div className="detailsRecommendation">
                     <h1>Get the Look</h1>
                     {this.state.product &&
-                         <div>  
+                        <div>
                             <ClothingBox dress={this.state.product}></ClothingBox>
                             <ClothingBox dress={this.state.product}></ClothingBox>
-                            <ClothingBox dress={this.state.product}></ClothingBox> 
+                            <ClothingBox dress={this.state.product}></ClothingBox>
                         </div>
                     }
                 </div>
