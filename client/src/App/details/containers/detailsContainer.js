@@ -105,8 +105,9 @@ class DetailsContainer extends Component {
         const state = store.getState().home.cart; // state from redux store
         const lineItemsToAdd = [{ variantId, quantity: 1 }]
         const checkoutId = state.checkout.id;
+        console.log(state.products); 
         const additionalData = {
-            vendor: state.products["0"].vendor
+            vendor: this.state.product.vendor
         }
         state.client.checkout.addLineItems(checkoutId, lineItemsToAdd).then(res => {
             store.dispatch({ type: 'ADD_VARIANT_TO_CART', payload: { isCartOpen: true, checkout: res, additionalData } });
@@ -165,7 +166,6 @@ class DetailsContainer extends Component {
             let aOptionNames = [];
             variant = this.state.selectedVariant || this.state.product.variants[0];
             let variantSelectors = this.state.product.options.map((option) => {
-                console.log(option);
                 if (option.values.length > 1) {
                     aOptionNames.push(option.name);
                     return (

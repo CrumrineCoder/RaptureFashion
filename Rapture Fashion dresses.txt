@@ -1,32 +1,6 @@
 
         var dresses = [
             {
-                name: "Navy Hemingway Flapper Dress",
-                brandName: "Ryan Boutique",
-                images: [
-                    "Dresses/1606/Unique_Vintage_Navy_Hemingway_Flapper_Dress_6_2048x2048.jpg",
-                    "Dresses/1606/Unique_Vintage_Navy_Hemingway_Flapper_Dress_2_2048x2048.jpg",
-                    "Dresses/1606/Unique_Vintage_Navy_Hemingway_Flapper_Dress_4_2048x2048.jpg",
-                    "Dresses/1606/Unique_Vintage_Navy_Hemingway_Flapper_Dress_2048x2048.jpg",
-                    "Dresses/1606/Unique_Vintage_Navy_Hemingway_Flapper_Dress_3_1024x1024.jpg"
-                ],
-                price: 74.00,
-                color: ["Blue"],
-                desc: "It’s time to go totally Gatsby, darling! With this navy Hemingway flapper dress, you can achieve that perfect 1920s look without all of the effort. This fabulous frock features a slightly fitted shape with a narrow waist, V-neck and loose, knee-length skirt. A slight cowl neck with draping across the neckline and back adds an extra feminine touch to this flapper dress. Panels of matching navy-blue lace are situated between the pleats of the skirt and underneath the draped back, while art deco sequined details line the drop waist and décolletage. There’s even a bit of lace detailing in the center of the neckline to show a bit of skin without revealing too much. \n Create a completely retro look that pairs perfectly with sky-high pumps, a perfectly matte red lip and a matching feather headband with this navy Hemingway flapper dress from Unique Vintage. You’ll look absolutely lovely wearing this stylish flapper dress for all kinds of occasions, whether it’s for a 1920s theme party, a holiday bash or even a very special date night. With just the right hint of sparkle, you’re sure to shine in this art deco stunner. Order yours from Unique Vintage and enjoy free shipping on orders of $150 or more. \n Available in sizes XS-4X while supplies last.",
-                details: [
-                    "Imported",
-                    "Professional spot clean",
-                    "Lightweight chiffon",
-                    "Pullover dress",
-                    "Sequin and bead detailing",
-                    "Chiffon panel hem",
-                    "Subtle lace detail",
-                    "Moderately lined",
-                    "Material does not provide stretch",
-                    "Model Info: Height: 5’8\” | Bust: 34B | Waist: 24 | Hip: 36"
-                ]
-            },
-            {
                 name: "Black & Green Beaded Antoinette Peacock Flapper",
                 brandName: "Apollo",
                 images: [
@@ -490,29 +464,6 @@
                     "Adjustable Lobster Clasp"
                 ]
             },
-            {
-                name: "Metallic Black Sheen Deco Rose Beaded Fringe Shawl",
-                brandName: "Ryan Boutique",
-                images: [
-                    "Accessories/9495/1920s_Style_Metallic_Black_Sheen_Deco_Rose_Beaded_Fringe_Shawl_1_2048x2048.jpg",
-                    "Accessories/9495/1920s_Style_Metallic_Black_Sheen_Deco_Rose_Beaded_Fringe_Shawl_2_2048x2048.jpg",
-                    "Accessories/9495/1920s_Style_Metallic_Black_Sheen_Deco_Rose_Beaded_Fringe_Shawl_3_1024x1024.jpg",
-                    "Accessories/9495/1920s_Style_Metallic_Black_Sheen_Deco_Rose_Beaded_Fringe_Shawl_4_1024x1024.jpg",
-                    "Accessories/9495/1920s_Style_Metallic_Black_Sheen_Deco_Rose_Beaded_Fringe_Shawl_5_1024x1024.jpg"
-                ],
-                price: "58",
-                color: ["Black"],
-                desc: "Elegance to remember! Steeped in deco divinity in a 1920s inspired open silhouette, this stunning shawl is elaborately beaded and sequined with black accents that give off a metallic sheen on a delicate sheer black mesh. With a beaded scalloped edging, dripping with beaded fringe, and gorgeous rose details, it's beaded va-va-voom!",
-                wash: "Hand wash only",
-                fabric: "100% Rayon",
-                details: [
-                    "Beading Detail Throughout",
-                    "Fringe Hem",
-                    "Hook/clasp",
-                    "No Stretch/Sheer Material",
-                    "48\" W / 18\" H (Includes Fringe)"
-                ]
-            }
         ]
         let shoes = [
             {
@@ -583,44 +534,5 @@
                     "Gored Ankle Strap"
                 ]
             },
-            {
-                name: "Black T-Strap Mary Jane Kitten Heels",
-                brandName: "Ryan Boutique",
-                images: [
-                    "Shoes/13239/Black_T-Strap_Mary_Jane_Kitten_Heels__5_2048x2048.jpg",
-                    "Shoes/13239/Black_T-Strap_Mary_Jane_Kitten_Heels__3_1024x1024.jpg",
-                    "Shoes/13239/Black_T-Strap_Mary_Jane_Kitten_Heels__7_1024x1024.jpg",
-                    "Shoes/13239/Black_T-Strap_Mary_Jane_Kitten_Heels__4_1024x1024.jpg",
-                    "Shoes/13239/Black_T-Strap_Mary_Jane_Kitten_Heels__6_1024x1024.jpg"
-                ],
-                price: "58",
-                color: ["Black"],
-                desc: "Combining the charming look of classic Mary Janes with the subtly sexy nature of kitten heels, these black T-strap Mary Jane kitten heels from Unique Vintage are the perfect footwear for your fun formal occasions. These retro-inspired shoes feature low, 3-inch kitten heels that give you a bit of a boost without the discomfort of stilettos or pumps, while their perforated details and stitched panels offer the beloved Mary Jane look. The T-strap on top secures these ladylike shoes against your feet while also adding even more vintage style. Wear them with a favorite little black dress for any special occasion or slip them on to complete a retro-inspired Halloween costume.",
-                tip: "Pair with studded ankle boots for a simple yet rebellious look.",
-                wash: "N/A",
-                fabric: "Man-Made Materials",
-                details: [
-                    "3” Heel"
-                ]
-            },
-            {
-                name: "Black T-Strap Heels",
-                brandName: "Ryan Boutique",
-                images: [
-                    "Shoes/13225/1920s_Style_Black_T-Strap_Heels_11_2048x2048.jpg",
-                    "Shoes/13225/1920s_Style_Black_T-Strap_Heels_10_1024x1024.jpg",
-                    "Shoes/13225/1920s_Style_Black_T-Strap_Heels_9_2048x2048.jpg",
-                    "Shoes/13225/1920s_Style_Black_T-Strap_Heels_13_2048x2048.jpg",
-                    "Shoes/13225/1920s_Style_Black_T-Strap_Heels_8_1024x1024.jpg"
-                ],
-                price: "68",
-                color: ["Black"],
-                desc: "Even if you don’t wear a vintage dress to your upcoming formal occasion, you can still add a hint of retro flair with these vintage-inspired T-strap heels from Unique Vintage. These patent leather beauties feature 4-inch heels with tapered bottoms, a pointed toe and the signature T-strap upper that gives them a true 1920s appeal. Set aside your pumps and slip into these stylish shoes instead to create a ladylike look that perfectly matches the rest of your retro-inspired formal ensemble. ",
-                tip: "Pair with studded ankle boots for a simple yet rebellious look.",
-                wash: "N/A",
-                fabric: "Man-Made Materials",
-                details: [
-                    "3” Heel"
-                ]
-            }
+      
         ]
