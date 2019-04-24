@@ -12,6 +12,7 @@ class BagSubtotal extends Component {
             estimatedShipping: "6.00"
         }
         this.addZeroes = this.addZeroes.bind(this);
+        this.openCheckout = this.openCheckout.bind(this); 
     }
 
     componentWillMount() {
@@ -49,6 +50,14 @@ class BagSubtotal extends Component {
         })
     }
 
+    openCheckout() {
+        window.open(this.props.checkout.webUrl);
+    }
+/*
+    <p>Estimated Shipping: ${this.state.estimatedShipping}</p>
+                    <p>Total: ${this.state.total}</p>
+                     <Link to={"/checkout"}><button>Secure Checkout</button></Link>
+                    */
     render() {
         return (
             <div className="bagSubtotalContainer">
@@ -56,10 +65,8 @@ class BagSubtotal extends Component {
                     <h2 className="bagHeaderTitle">Order Summary</h2>
                 </div>
                 <div className="bagBody">
-                    <p>Subtotal: ${this.props.checkout.subtotalPrice}</p>
-                    <p>Estimated Shipping: ${this.state.estimatedShipping}</p>
-                    <p>Total: ${this.state.total}</p>
-                    <Link to={"/checkout"}><button>Secure Checkout</button></Link>
+                    <p>Estimated total: ${this.props.checkout.subtotalPrice}</p>
+                    <button className="btn btn-primary" onClick={this.openCheckout}> Secure Checkout (testing purposes only) </button>
                 </div>
             </div>
         )

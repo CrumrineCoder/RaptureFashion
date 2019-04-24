@@ -85,7 +85,6 @@ class BagContainer extends Component {
         this.removeLineItemInCart = this.removeLineItemInCart.bind(this);
         this.handleCartClose = this.handleCartClose.bind(this);
         this.handleCartOpen = this.handleCartOpen.bind(this);
-        this.openCheckout = this.openCheckout.bind(this); 
     }
     updateQuantityInCart(lineItemId, quantity) {
         const state = store.getState().home.cart; // state from redux store
@@ -127,11 +126,6 @@ class BagContainer extends Component {
         })
     }
 
-    openCheckout() {
-        const state = store.getState().home.cart; // state from redux store
-        window.open(state.checkout.webUrl);
-    }
-
     render() {
         let pageContent = '';
         const state = store.getState().home.cart; // state from redux store
@@ -157,7 +151,10 @@ class BagContainer extends Component {
                     </div>
                     {pageContent}
                 </div>
-                <button onClick={this.openCheckout}> You're Going to the Danger Zoneeeeeeee </button>
+                <div className="bagWarning">
+                    <h4 className="bagWarningHeader">Note: the Checkout linked by the button would work if I linked a Credit Card to my account, but I don't want people making purchases as this store is for LEARNING and TESTING purposes only.</h4>
+                    <p className="bagWarningSubtext">Contact me at crumrinecoding@gmail.com if you have any questions or need me to cancel and refund an order if you somehow make a payment, which I have no idea how you would do that but please don't try.</p>
+                </div>
                 <BagSubtotal checkout={checkout} clothing={this.state.dresses}></BagSubtotal>
             </div>
         );
