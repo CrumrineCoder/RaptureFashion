@@ -54,14 +54,16 @@ class BagRow extends Component {
         // TO DO: ADD LINK
         //     let price = this.addZeroes(this.props.price);
         //     let calculatedPrice = this.addZeroes((parseInt(this.props.price) * this.props.quantity).toString());
+        //
         let Color = this.props.line_item.variant.selectedOptions["1"].value.replace(/\//g, '');
         console.log("PROPS", this.props); 
+        console.log(this.props.home.cart.additionalData[this.props.line_item.variant.id].vendor);
         return (
             <div className="bagRow">
                 {this.props.line_item.variant.image ? <img className="bagCell bagImg" src={this.props.line_item.variant.image.src} alt={`${this.props.line_item.title} product shot`} /> : null}
                 <div className="bagItem">
                     <h3 className="bagCell">{this.props.line_item.title}</h3>
-                    <h3 className="bagCell">{this.props.home.cart.additionalData.vendor}</h3>
+                    <h3 className="bagCell">{this.props.home.cart.additionalData[this.props.line_item.variant.id].vendor}</h3>
                     <p className="bagSmallText"><b>Color:</b> <ColorBox readOnly={true} Color={Color}></ColorBox></p>
                     <p className="bagSmallText"><b>Size:</b> {this.props.line_item.variant.selectedOptions["0"].value}</p>
                 </div>

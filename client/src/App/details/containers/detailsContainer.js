@@ -110,7 +110,7 @@ class DetailsContainer extends Component {
             vendor: this.state.product.vendor
         }
         state.client.checkout.addLineItems(checkoutId, lineItemsToAdd).then(res => {
-            store.dispatch({ type: 'ADD_VARIANT_TO_CART', payload: { isCartOpen: true, checkout: res, additionalData } });
+            store.dispatch({ type: 'ADD_VARIANT_TO_CART', payload: { isCartOpen: true, checkout: res, additionalData, variantId } });
         });
     }
 

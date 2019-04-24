@@ -3,7 +3,8 @@ const initState = {
     isCartOpen: false,
     checkout: { lineItems: [] },
     products: [],
-    shop: {}
+    shop: {},
+    additionalData: {}
   }
   // actions
   const CLIENT_CREATED = 'CLIENT_CREATED'
@@ -27,7 +28,10 @@ const initState = {
       case SHOP_FOUND:
         return {...state, shop: action.payload}
       case ADD_VARIANT_TO_CART:
-        return {...state, isCartOpen: action.payload.isCartOpen, checkout: action.payload.checkout, additionalData: action.payload.additionalData}
+      
+        var test = action.payload.variantId;
+        var test2 = {[test]: action.payload.additionalData}
+        return {...state, isCartOpen: action.payload.isCartOpen, checkout: action.payload.checkout, additionalData: test2}
       case UPDATE_QUANTITY_IN_CART:
         return {...state, checkout: action.payload.checkout}
       case REMOVE_LINE_ITEM_IN_CART:
