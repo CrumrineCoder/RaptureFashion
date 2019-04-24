@@ -105,7 +105,6 @@ class DetailsContainer extends Component {
         const state = store.getState().home.cart; // state from redux store
         const lineItemsToAdd = [{ variantId, quantity: 1 }]
         const checkoutId = state.checkout.id;
-        console.log(state.products); 
         const additionalData = {
             vendor: this.state.product.vendor
         }

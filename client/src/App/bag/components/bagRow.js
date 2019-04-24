@@ -56,8 +56,6 @@ class BagRow extends Component {
         //     let calculatedPrice = this.addZeroes((parseInt(this.props.price) * this.props.quantity).toString());
         //
         let Color = this.props.line_item.variant.selectedOptions["1"].value.replace(/\//g, '');
-        console.log("PROPS", this.props); 
-        console.log(this.props.home.cart.additionalData[this.props.line_item.variant.id].vendor);
         return (
             <div className="bagRow">
                 {this.props.line_item.variant.image ? <img className="bagCell bagImg" src={this.props.line_item.variant.image.src} alt={`${this.props.line_item.title} product shot`} /> : null}

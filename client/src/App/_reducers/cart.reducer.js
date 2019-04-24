@@ -31,7 +31,7 @@ const initState = {
       
         var test = action.payload.variantId;
         var test2 = {[test]: action.payload.additionalData}
-        return {...state, isCartOpen: action.payload.isCartOpen, checkout: action.payload.checkout, additionalData: test2}
+        return {...state, isCartOpen: action.payload.isCartOpen, checkout: action.payload.checkout, additionalData: Object.assign({...state.additionalData}, test2)}
       case UPDATE_QUANTITY_IN_CART:
         return {...state, checkout: action.payload.checkout}
       case REMOVE_LINE_ITEM_IN_CART:

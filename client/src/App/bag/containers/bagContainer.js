@@ -130,8 +130,6 @@ class BagContainer extends Component {
         let pageContent = '';
         const state = store.getState().home.cart; // state from redux store
         let checkout = state.checkout;
-        console.log("Checkout", checkout); 
-        console.log("PROPS IN THE CONTAINER", this.props); 
         let isCartOpen = state.isCartOpen
         // this.props.cart
         pageContent = (
