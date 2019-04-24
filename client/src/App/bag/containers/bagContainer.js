@@ -85,6 +85,7 @@ class BagContainer extends Component {
         this.removeLineItemInCart = this.removeLineItemInCart.bind(this);
         this.handleCartClose = this.handleCartClose.bind(this);
         this.handleCartOpen = this.handleCartOpen.bind(this);
+        this.openCheckout = this.openCheckout.bind(this); 
     }
     updateQuantityInCart(lineItemId, quantity) {
         const state = store.getState().home.cart; // state from redux store
@@ -126,6 +127,11 @@ class BagContainer extends Component {
         })
     }
 
+    openCheckout() {
+        const state = store.getState().home.cart; // state from redux store
+        window.open(state.checkout.webUrl);
+    }
+
     render() {
         let pageContent = '';
         const state = store.getState().home.cart; // state from redux store
@@ -151,6 +157,7 @@ class BagContainer extends Component {
                     </div>
                     {pageContent}
                 </div>
+                <button onClick={this.openCheckout}> You're Going to the Danger Zoneeeeeeee </button>
                 <BagSubtotal checkout={checkout} clothing={this.state.dresses}></BagSubtotal>
             </div>
         );

@@ -11,7 +11,6 @@ class ColorBox extends Component {
 
     render(){
         let pageContent = "Loading...";
-        console.log(this.props.Color);
         let Class = "ColorBoxFill " + this.props.Color;
         if(this.props.readOnly){
             pageContent = (

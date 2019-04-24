@@ -1,5 +1,8 @@
 # RaptureFashion
 
+https://github.com/Shopify/storefront-api-examples/tree/master/react-js-buy
+https://medium.com/@sirenapparel/adding-shopifys-storefront-api-to-an-existing-react-app-with-react-redux-ea442bd7543
+
 About Us:
 
 Who We Are

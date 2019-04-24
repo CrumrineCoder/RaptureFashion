@@ -50,7 +50,6 @@ class BagSubtotal extends Component {
     }
 
     render() {
-        console.log("BAG SUBTOTAL PROPS", this.props); 
         return (
             <div className="bagSubtotalContainer">
                 <div className="bagHeader">

@@ -140,13 +140,13 @@ class Home extends Component {
 			slider = (<Slider className="homepageBestSellersCarousel differentRightSlick">
 				<div>
 					<ClothingBox dress={state.products['0']}></ClothingBox>
-					<ClothingBox dress={state.products['0']}></ClothingBox>
-					<ClothingBox dress={state.products['0']}></ClothingBox>
+					<ClothingBox dress={state.products['1']}></ClothingBox>
+					<ClothingBox dress={state.products['2']}></ClothingBox>
 				</div>
 				<div>
-					<ClothingBox dress={state.products['0']}></ClothingBox>
-					<ClothingBox dress={state.products['0']}></ClothingBox>
-					<ClothingBox dress={state.products['0']}></ClothingBox>
+					<ClothingBox dress={state.products['3']}></ClothingBox>
+					<ClothingBox dress={state.products['4']}></ClothingBox>
+					<ClothingBox dress={state.products['5']}></ClothingBox>
 				</div>
 				<div>
 					<ClothingBox dress={state.products['0']}></ClothingBox>
