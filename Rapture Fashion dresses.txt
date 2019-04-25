@@ -1,29 +1,6 @@
 
         var dresses = [
             {
-                name: "Black & Green Beaded Antoinette Peacock Flapper",
-                brandName: "Apollo",
-                images: [
-                    "Dresses/53556/Unique_Vintage_1920s_Black_Green_Beaded_Antoinette_Peacock_Flapper_c6a4d060-a7a5-4825-9e4b-4bbe641b95e4_2048x2048.jpg",
-                    "Dresses/53556/Unique_Vintage_1920s_Black_Green_Beaded_Antoinette_Peacock_Flapper_5_1d72e5c4-3365-4fcc-83da-fa85c7f33bb8_2048x2048.jpg",
-                    "Dresses/53556/Unique_Vintage_1920s_Black_Green_Beaded_Antoinette_Peacock_Flapper_6_3a343f09-e1bd-4224-847e-7a4c497698ef_2048x2048.jpg",
-                    "Dresses/53556/Unique_Vintage_1920s_Black_Green_Beaded_Antoinette_Peacock_Flapper_2_f3b364a1-4a7a-4a7a-a1d8-9657de078c3b_2048x2048.jpg",
-                    "Dresses/53556/53556_L_2048x2048.jpg"
-                ],
-                price: 98.00,
-                color: ["Green", "Black"],
-                desc: "Elegantly extravagant, the Antoinette is an exquisite black mesh 1920s flapper dress fresh from Unique Vintage. The ornate peacock motif is complemented by stunning deco sequin feathers. A sleeveless, semi-fitted silhouette is authentic to the roaring twenties. Beautiful green fringe that flows from the scalloped hem adds a lavish touch. Crafted with a side zipper and soft black lining, this lovely black mesh dress is shimmering in black, green, and gold! You got to get it while you can, gals! \n Available in sizes S-4X while supplies last.",
-                details: [
-                    "Imported",
-                    "Spot Clean Only; Do Not Dry Clean",
-                    "Side Zipper/Hook",
-                    "Lined",
-                    "Length Includes Fringe",
-                    "Model Pictured Wearing Size S; Small Length 48",
-                    "Model Info: Height: 5’8\” | Bust: 34B | Waist: 24 | Hip: 36"
-                ]
-            },
-            {
                 name: "Black Iridescent Beaded Zelia Fringe Flapper Dress",
                 brandName: "ÁVELINE'S",
                 images: [
@@ -44,78 +21,6 @@
                     "Material Has Little Stretch",
                     "Model Pictured Wearing Size S; S Length 45",
                     "Model Info: Height: 5’5\” | Waist: 27.5 | Hips: 38 | Bust: 32DD"
-                ]
-            },
-            {
-                name: "Deco Green & Black Sequin Veronique Fringe Flapper Dress",
-                brandName: "ÁVELINE'S",
-                images: [
-                    "Dresses/65421/65421_1_2048x2048.jpg",
-                    "Dresses/65421/65421_2_2048x2048.jpg",
-                    "Dresses/65421/65421_3_2048x2048.jpg",
-                    "Dresses/65421/65421_4_2048x2048.jpg",
-                    "Dresses/65421/65421_5_2048x2048.jpg"
-                ],
-                price: 205.00,
-                color: ["Green", "Black"],
-                desc: "With a bit of shimmer and gleaming detail, the Veronique Flapper dress is fresh from Unique Vintage in gorgeous 1920s design. Intricately deco beaded black mesh boasts black iridescent sequins and small black beads wrought in flourishing deco swirls and spirals, while emerald green knit lining creates a radiant effect. The sleeveless, v-neck design shows you off with a modest touch, while the curve hugging fit and jagged edge dripping with fringe will turn every head! \n Available in sizes S-3X while supplies last.",
-                details: [
-                    "Imported",
-                    "Nylon & Polyester",
-                    "Side Zipper",
-                    "Sheer Beaded Mesh Over Knit Lining",
-                    "Some Stretch",
-                    "Length Includes Fringe",
-                    "Model Pictured Wearing Size S; S Length 44",
-                    "Model Info: Height: 5’8\” | Waist: 26 | Hips: 36 | Bust: 34B"
-                ]
-            },
-            {
-                name: "Black Beaded Deco Angelina Maxi Flapper Dress",
-                brandName: "Apollo",
-                images: [
-                    "Dresses/4002/1920s_Black_Beaded_Deco_Angelina_Maxi_Flapper_Dress_4_2048x2048.jpg",
-                    "Dresses/4002/1920s_Black_Beaded_Deco_Angelina_Maxi_Flapper_Dress_2_1024x1024.jpg",
-                    "Dresses/4002/1920s_Black_Beaded_Deco_Angelina_Maxi_Flapper_Dress_1024x1024.jpg",
-                    "Dresses/4002/1920s_Black_Beaded_Deco_Angelina_Maxi_Flapper_Dress_1_1024x1024.jpg",
-                    "Dresses/4002/1920s_Black_Beaded_Deco_Angelina_Maxi_Flapper_Dress_5_1024x1024.jpg"
-                ],
-                price: 458.00,
-                color: ["Black"],
-                desc: "Let us know when you’ve popped your eyes back in, dear. This gorgeous black flapper dress exudes 1920s and 30s charm, crafted in intricately beaded mesh layered over an included matching slip. With impressive swaths of deco bursts and teardrops, a classic v-neckline and open cap sleeve design, this vintage maxi dress is a bona fide head turner. Prepare for flapper fabulousness! \n Available in sizes 4-12 while supplies last.",
-                details: [
-                    "Imported",
-                    "Polyester 100%",
-                    "Hand Wash Only",
-                    "Pull On",
-                    "Underslip Included",
-                    "Material Has Little Stretch",
-                    "Model Pictured Wearing Size 6",
-                    "Model Info: Height: 5’8\” | Waist: 24 | Hips: 36 | Bust: 34B"
-                ]
-            },
-            {
-                name: "Green & Cream Wilshire Flapper Day Dress",
-                brandName: "Gibson Girl",
-                images: [
-                    "Dresses/64867/64867_1_e2db6a63-d7ff-4f6c-8c93-5da28d85f1e6_2048x2048.jpg",
-                    "Dresses/64867/64867_2_21d97191-6e80-4786-97fa-a3a8a4cc81df_2048x2048.jpg",
-                    "Dresses/64867/64867_3_234936cb-df56-4a99-8d11-44a57affb898_1024x1024.jpg",
-                    "Dresses/64867/64867_L_2048x2048.jpg",
-                    "Dresses/64867/64867_5_8a201854-b3e4-4f63-b247-966f4d57fe21_2048x2048.jpg"
-                ],
-                price: 32.00,
-                color: ["White", "Green"],
-                desc: "We found a reason to smile, dears! Enchanting and elegant, The Wilshire is a graceful 1920s style day dress crafted in an gorgeous green woven blend with stunning ivory cream details. Simplistic short sleeves flutter around the bodice as it makes way for a wide V-neck with lovely ivory flounce and draped faux collar tie. The pointed empire waist tops a courtly seamed and paneled center that descends to a graceful banded drop waist, styled in ivory with horizontal pleats. With an airy asymmetrical hemline, back zipper and hook, the Wilshire is a slice of retro radiance you can't pass up! \n Shown with slip, sold separately. \n Available in sizes XS-4X while supplies last.",
-                details: [
-                    "Imported",
-                    "Polyester 100%",
-                    "Dry Clean Only",
-                    "Back Zipper/Hook",
-                    "Unlined",
-                    "Material Is Semi-Sheer, Slip Sold Separately",
-                    "Model Pictured Wearing Size S; S Length 44",
-                    "Model Info: Height: 5’9\” | Waist: 26 | Hips: 36.5 | Bust: 34C"
                 ]
             },
             {
