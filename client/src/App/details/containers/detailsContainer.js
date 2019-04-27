@@ -139,7 +139,7 @@ class DetailsContainer extends Component {
 
     render() {
         let cart = "";
-       
+    
         if (this.state.product) {
          
             if (this.state.sizeSelected || this.state.product.options["0"].values.length == 1) {

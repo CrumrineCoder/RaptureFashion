@@ -47,12 +47,13 @@ class CategoriesContainer extends Component {
         } */
 
     getFilteredArray(array, key, value) {
-        if (array[0]) {
-            var splitColor = array[0].options[1].values[0].value.split('/');
-        }
+       
+ 
         return array.filter(function (e) {
             switch (key) {
                 case "color":
+                    var splitColor = e.options[1].values[0].value.split('/');
+                    console.log(splitColor);
                     return splitColor.includes(value)
                 case "vendor":
                     return e.vendor == value

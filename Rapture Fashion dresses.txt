@@ -22,31 +22,7 @@
                     "Model Pictured Wearing Size S; S Length 45",
                     "Model Info: Height: 5’5\” | Waist: 27.5 | Hips: 38 | Bust: 32DD"
                 ]
-            },
-            {
-                name: "Antique Ivory & Black Chiffon Cherie Flapper Day Dress",
-                brandName: "Gibson Girl",
-                images: [
-                    "Dresses/43983/s190355_1_db33a2e9-ed68-43ff-9d77-848c19f6e2d4_2048x2048.jpg",
-                    "Dresses/43983/s190355_2_24d18fbb-8d23-45e5-a659-08e008e7807e_2048x2048.jpg",
-                    "Dresses/43983/s190355_3_526eefb2-a66c-4171-bef6-9c9187f97891_1024x1024.jpg",
-                    "Dresses/43983/s190355_4_2dc6fdee-905d-4c17-9d0a-a7520abebb9c_1024x1024.jpg",
-                    "Dresses/43983/43983_1_2048x2048.jpg"
-                ],
-                price: 26.00,
-                color: ["White", "Black"],
-                desc: "Lovely as a summer day, darling! The Cherie Day Flapper from Unique Vintage is cast in a marvelously soft antique ivory chiffon with black contest details throughout. The sweet V-neck is outlined in black and features a beautiful self tie bow in the center while adorable cap sleeves frame your visage. Faux black buttons dot down the center to a striking black banded drop waist with a sweet side bow while seamed darting lends a flirty flair for a trumpet skirt. Faux pockets sit on the hip and the skirt is highlighted by a black banded hem that sways past your knees. Outfitted a side zipper and lined in gorgeous ivory, we’ve fallen in love with Cherie! \n Available in sizes XS-XL while supplies last.",
-                details: [
-                    "Imported",
-                    "Side Zipper, Lined",
-                    "Faux Buttons",
-                    "Faux Pockets",
-                    "Attached Tie",
-                    "Material Has No Stretch",
-                    "Model Pictured Wearing Size S",
-                    "Model Info: Height: 5’8\” | Waist: 24 | Hips: 36 | Bust: 34B"
-                ]
-            },
+            }
             {
                 name: "Burgundy Red Delores Swing Dress with Sleeves",
                 brandName: "Gibson Girl",

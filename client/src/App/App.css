@@ -682,6 +682,11 @@ body, html{
   background-image: linear-gradient(90deg, green 50%, white 50%);
 }
 
+.WhiteBlack{
+  background-color: Black;
+  background-image: linear-gradient(90deg, Black 50%, white 50%);
+}
+
 /* Checkout */
 
 .checkoutShipping{
