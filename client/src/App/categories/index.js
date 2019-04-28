@@ -6,7 +6,7 @@ import CategoriesContainer from './containers/CategoriesContainer';
 class categoriesIndex extends Component {
 	render() {
 		return (
-			<div id="pollIndex">
+			<div id="categoriesIndex">
 				<Container>
 					<CategoriesContainer clothing={this.props.clothing} vendor={this.props.vendor} />
 				</Container>

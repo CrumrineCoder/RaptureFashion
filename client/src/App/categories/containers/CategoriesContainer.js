@@ -797,13 +797,13 @@ class CategoriesContainer extends Component {
                 filteredClothing = this.getFilteredArray(filteredClothing, filter, this.state.filter[filter])
             }
             pageContent = (
-                <ul className="polls">
+                <ul className="clothingContainer">
                     {filteredClothing.map((article, i) => <ClothingBox key={i} dress={article} />)}
                 </ul>
             )
         } else {
             pageContent = (
-                <ul className="polls">
+                <ul className="clothingContainer">
                     {clothing.map((article, i) => <ClothingBox key={i} dress={article} />)}
                 </ul>
             )

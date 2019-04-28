@@ -18,6 +18,10 @@ body, html{
   min-height: 100%;
 }
 
+#root, .App, .wrap, #categoriesIndex, .container, .categoriesContainer{
+  height: 100%;
+}
+
 .wrap{
   margin-bottom: 50px;
 }
@@ -741,7 +745,7 @@ body, html{
 }
 
 .filter{
-  width: 30%;
+  max-width: 200px; 
   float: left; 
 }
 
@@ -754,6 +758,13 @@ body, html{
   border-color: #444;
 }
 
+/* Categories next to Filters */
+
+.clothingContainer{
+  margin: 0px; 
+  padding: 0px; 
+  display: inline; 
+}
 
 /* Checkout */
 
