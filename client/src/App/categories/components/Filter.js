@@ -13,8 +13,9 @@ class Filter extends Component {
                 color: null
             }
         };
+        this.clear = this.clear.bind(this);
     }
-
+/*
     delete(filterToDelete) {
         let filters = Object.assign({}, this.state.filters);
         filters[filterToDelete] = null;
@@ -25,7 +26,12 @@ class Filter extends Component {
             this.props.onChange(this.state.filters);
         });
     }
-
+*/
+    clear(){
+        this.setState({filters: {}}, function () {
+            this.props.onChange(this.state.filters);
+        });
+    }
     changeFilter(key, value) {
         let filters = Object.assign({}, this.state.filters);
         let change = 0;
@@ -72,7 +78,7 @@ class Filter extends Component {
         if (this.state.filters.color != undefined || this.state.filters.vendor != undefined) {
             clear = (
                 <div className="filterClear">
-                    <i onClick={() => this.delete("color")} className="fas fa-times activeFilterDelete"></i> Clear
+                    <i onClick={this.clear} className="fas fa-times activeFilterDelete"></i> Clear
                 </div>
             )
         }
