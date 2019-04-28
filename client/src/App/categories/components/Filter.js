@@ -54,7 +54,7 @@ class Filter extends Component {
 
     isActive(base, selector, type) {
         if(base == "filterSort"){
-            return  base + ' ' + selector + ' ' + ((selector === this.state.filters[type]) ? 'filterSortActive' : 'default');
+            return  base + ' ' + selector + ' ' + ((selector === this.state[type]) ? 'filterSortActive' : 'default');
         }
         return base + ' ' + selector + ' ' + ((selector === this.state.filters[type]) ? 'filterActive' : 'default');
     }
