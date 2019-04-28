@@ -819,6 +819,7 @@ class CategoriesContainer extends Component {
                 })
             }
         }
+
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
             let filteredClothing = clothing;
             var filteredFilter = this.clean(this.state.filter);

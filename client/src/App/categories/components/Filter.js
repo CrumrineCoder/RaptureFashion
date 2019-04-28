@@ -10,9 +10,9 @@ class Filter extends Component {
             amountOfFilters: 0,
             filters: {
                 vendor: null,
-                color: null,
-                sort: null
-            }
+                color: null
+            },
+            sort: null
         };
         this.clear = this.clear.bind(this);
     }
@@ -49,26 +49,10 @@ class Filter extends Component {
     }
 
     changeSort(value){
-        let filters = Object.assign({}, this.state.filters);
-        let change = 0;
-        if (filters["sort"] === null || filters["sort"] === undefined || filters["sort"] === "") {
-            change = 1;
-        }
-        filters["sort"] = value;
-        this.setState({
-            filters,
-            amountOfFilters: this.state.amountOfFilters + change
-        }, function () {
-            this.props.sort(value);
-        });
-     //   this.setState({sort: value}, this.props.sort(value)); 
+        this.setState({sort: value}, this.props.sort(value)); 
     }
 
     isActive(base, selector, type) {
-        console.log(base);
-        console.log(selector);
-        console.log(type);
-        console.log(this.state.filters.sort);
         if(base == "filterSort"){
             return  base + ' ' + selector + ' ' + ((selector === this.state.filters[type]) ? 'filterSortActive' : 'default');
         }
