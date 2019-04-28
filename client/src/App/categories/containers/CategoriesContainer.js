@@ -49,13 +49,10 @@ class CategoriesContainer extends Component {
         } */
 
     getFilteredArray(array, key, value) {
-
-
         return array.filter(function (e) {
             switch (key) {
                 case "color":
                     var splitColor = e.options[1].values[0].value.split('/');
-                    console.log(splitColor);
                     return splitColor.includes(value)
                 case "vendor":
                     return e.vendor == value
@@ -797,6 +794,7 @@ class CategoriesContainer extends Component {
             }
         }
         if (this.state.sort) {
+            console.log(this.state.sort); 
             if (this.state.sort == "sortPriceAsc") {
                 clothing = clothing.sort(function (a, b) {
                     if (a.variants["0"].price < b.variants["0"].price) {
@@ -813,6 +811,27 @@ class CategoriesContainer extends Component {
                         return 1;
                     }
                     if (a.variants["0"].price > b.variants["0"].price) {
+                        return -1;
+                    }
+                    return 0;
+                })
+            } else if(this.state.sort == "sortNameAsc"){
+                clothing = clothing.sort(function (a, b) {
+                    if (a.title < b.title) {
+                        return -1;
+                    }
+                    if (a.title > b.title) {
+                        return 1;
+                    }
+                    return 0;
+                })
+            }
+            else if(this.state.sort == "sortNameDesc"){
+                clothing = clothing.sort(function (a, b) {
+                    if (a.title < b.title) {
+                        return 1;
+                    }
+                    if (a.title > b.title) {
                         return -1;
                     }
                     return 0;
@@ -854,7 +873,6 @@ class CategoriesContainer extends Component {
             <div className="categoriesContainer">
                 {vendorHeader}
                 <Filter clothing={this.props.clothing} onChange={this.handleFilter} sort={this.sort}></Filter>
-                {this.state.sort}
                 {pageContent}
             </div>
         );

@@ -132,6 +132,8 @@ class Filter extends Component {
                 <h5 className="filterSubheader">Sort</h5>
                 <div className={this.isActive('filterSort', "sortPriceAsc", "sort")}  onClick={() => this.changeSort("sortPriceAsc")} > Price Low-High</div>
                 <div className={this.isActive('filterSort', "sortPriceDesc", "sort")}  onClick={() => this.changeSort("sortPriceDesc")} > Price High-Low</div>
+                <div className={this.isActive('filterSort', "sortNameAsc", "sort")}  onClick={() => this.changeSort("sortNameAsc")} >Name A-Z</div>
+                <div className={this.isActive('filterSort', "sortNameDesc", "sort")}  onClick={() => this.changeSort("sortNameDesc")} >Name Z-A</div>
             </div>
         );
 
