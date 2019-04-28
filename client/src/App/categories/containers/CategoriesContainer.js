@@ -807,6 +807,16 @@ class CategoriesContainer extends Component {
                     }
                     return 0;
                 })
+            } else if(this.state.sort == "sortPriceDesc"){
+                clothing = clothing.sort(function (a, b) {
+                    if (a.variants["0"].price < b.variants["0"].price) {
+                        return 1;
+                    }
+                    if (a.variants["0"].price > b.variants["0"].price) {
+                        return -1;
+                    }
+                    return 0;
+                })
             }
         }
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {

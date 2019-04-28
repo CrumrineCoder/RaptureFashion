@@ -775,12 +775,12 @@ body, html{
   top: 1px;
 }
 
-.filterSort.active {
+.filterSortActive {
   color: #333;
   font-weight: 600;
 }
 
-.filterSort.active:after {
+.filterSortActive:after {
   background: #333;
 }
 
