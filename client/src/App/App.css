@@ -733,11 +733,57 @@ body, html{
 
 .filterHeader{
   float: left; 
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 0px;
 }
 
 .filterSubheader{
   clear: both; 
+  font-size: 11px;
+  font-weight: 400;
+  text-transform: uppercase;
+  margin-bottom: 7px;
+  margin-top: 13px;
 }
+
+.filterSort{
+  font-size: 11px;
+  line-height: 1;
+  font-weight: 400;
+  text-transform: uppercase;
+  cursor: pointer;
+  color: #444;
+  margin: 6px 5px 0px 0px;
+  display: block;
+  text-align: left;
+  overflow: visible;
+  position: relative;
+}
+
+.filterSort:after {
+  content: '';
+  display: block;
+  width: 4px;
+  height: 4px;
+  margin: 2px;
+  border-radius: 4px;
+  background: transparent;
+  position: absolute;
+  left: -11px;
+  top: 1px;
+}
+
+.filterSort.active {
+  color: #333;
+  font-weight: 600;
+}
+
+.filterSort.active:after {
+  background: #333;
+}
+
 
 .activeFilterDelete:hover{
   color: red; 
@@ -745,13 +791,20 @@ body, html{
 }
 
 .filter{
-  max-width: 200px; 
-  float: left; 
+  max-width: 200px;
+  float:  left; 
+  margin: 30px;
 }
 
+
 .filterClear{
+  color: #aaa;
+  font-size: 11px;
+  font-weight: 400;
+  margin-top: 1px;
+  margin-top: 1.5px;
   float: right;
-  color: grey; 
+  line-height: 1;
 }
 
 .filterActive{
@@ -761,9 +814,8 @@ body, html{
 /* Categories next to Filters */
 
 .clothingContainer{
-  margin: 0px; 
+  margin: 0px 0px 100px  0px;
   padding: 0px; 
-  display: inline; 
 }
 
 /* Checkout */

@@ -14,6 +14,7 @@ class Filter extends Component {
             }
         };
         this.clear = this.clear.bind(this);
+      
     }
 /*
     delete(filterToDelete) {
@@ -103,9 +104,8 @@ class Filter extends Component {
                             </div>
                     </div>
                 }
-                <h5>Colors</h5>
+                <h5 className="filterSubheader">Colors</h5>
                 <div className="filterRow">
-
                     <label>
                         <div className={this.isActive('filterRadio', "Purple", "color")} type="radio" name="color" value="Purple" checked={this.state.filters.color === "Purple"} filter="color" onClick={() => this.changeFilter("color", "Purple")} />
                     </label>
@@ -122,7 +122,8 @@ class Filter extends Component {
                         <div className={this.isActive('filterRadio', "White", "color")} type="radio" name="color" value="White" checked={this.state.filters.color === "White"} filter="color" onClick={() => this.changeFilter("color", "White")} />
                     </label>
                 </div>
-                Sort:
+                <h5 className="filterSubheader">Sort</h5>
+                <div className="filterSort"  onClick={() => this.props.sort("sortPriceAsc")} > Price Low-High</div>
             </div>
         );
 

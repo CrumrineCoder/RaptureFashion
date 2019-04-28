@@ -21,13 +21,15 @@ class CategoriesContainer extends Component {
         super(props);
         // Used for when searching and tagging functionality whenever that comes
         this.state = {
-            filter: {}
+            filter: {},
+            sort: null
         };
         this.handleFilter = this.handleFilter.bind(this);
         this.getFilteredArray = this.getFilteredArray.bind(this);
         this.arrayContainsAnotherArray = this.arrayContainsAnotherArray.bind(this);
         this.clean = this.clean.bind(this);
         this.addVariantToCart = this.addVariantToCart.bind(this);
+        this.sort = this.sort.bind(this);
     }
 
     componentDidMount() {
@@ -47,8 +49,8 @@ class CategoriesContainer extends Component {
         } */
 
     getFilteredArray(array, key, value) {
-       
- 
+
+
         return array.filter(function (e) {
             switch (key) {
                 case "color":
@@ -89,6 +91,11 @@ class CategoriesContainer extends Component {
         });
     }
 
+    sort(value) {
+        this.setState({
+            sort: value
+        })
+    }
 
     render() {
         var filters = {
@@ -769,15 +776,15 @@ class CategoriesContainer extends Component {
                         });
                         vendorImage = "Brand/aveline.png";
                     }
-               /*     vendorText = vendorText.split('\n').map((item, i) => {
-                        return <p key={i}>{item}</p>;
-                    });
-                    <div class='vendorBrandText'>
-                    <p>{vendorText}</p>
-                </div> */
+                    /*     vendorText = vendorText.split('\n').map((item, i) => {
+                             return <p key={i}>{item}</p>;
+                         });
+                         <div class='vendorBrandText'>
+                         <p>{vendorText}</p>
+                     </div> */
                     // Probably add the history text here too. 
                     vendorHeader = (
-                        <div className="vendorHeader"> 
+                        <div className="vendorHeader">
                             <div class='vendorBrandContainer'>
                                 <div class='vendorBrandImage'>
                                     {<img src={require("../../../assets/" + vendorImage)} />}
@@ -789,7 +796,19 @@ class CategoriesContainer extends Component {
                 }
             }
         }
-
+        if (this.state.sort) {
+            if (this.state.sort == "sortPriceAsc") {
+                clothing = clothing.sort(function (a, b) {
+                    if (a.variants["0"].price < b.variants["0"].price) {
+                        return -1;
+                    }
+                    if (a.variants["0"].price > b.variants["0"].price) {
+                        return 1;
+                    }
+                    return 0;
+                })
+            }
+        }
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
             let filteredClothing = clothing;
             var filteredFilter = this.clean(this.state.filter);
@@ -823,7 +842,8 @@ class CategoriesContainer extends Component {
         return (
             <div className="categoriesContainer">
                 {vendorHeader}
-                <Filter clothing={this.props.clothing} onChange={this.handleFilter}></Filter>
+                <Filter clothing={this.props.clothing} onChange={this.handleFilter} sort={this.sort}></Filter>
+                {this.state.sort}
                 {pageContent}
             </div>
         );
