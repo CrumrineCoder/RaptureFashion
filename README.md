@@ -1,33 +1,17 @@
 # RaptureFashion
 
+
+ABOUT RAPTURE AND WHY YOU SHOULD CARE ABOUT IT
+
+
+
+THE VIRTUES OF OUR PERSONAL CLOTHING LINE
+
+
+--
+
 https://github.com/Shopify/storefront-api-examples/tree/master/react-js-buy
 https://medium.com/@sirenapparel/adding-shopifys-storefront-api-to-an-existing-react-app-with-react-redux-ea442bd7543
-
-About Us:
-
-Who We Are
-
-Our Background  
-
-Retail Experience
-
-The Creative Lab
-
-The Brief
-
-
-Rapture Fashion is proud to be the prime women's ready-to-wear boutique collection in the world's most competitive marketplace in the world's greatest city, and the only one to be approved by the city's creator Andie Ryan. From a city with such bright minds behind the innovations of the Plasmids and gene tonics, underwater architecture, and the Bathysphere, it's no surprise that we have the finest boutique dresses, hats, shoes, and accessories. For many years, only the elite of Rapture could enjoy our fabrics, but with advancements in manufacturing and shipping technology we are proud to say we can bring the only fabrics to be worn by Andie Ryan to the common woman with no decrease in quality. You can be the first in your town to be wearing the finest dresses, and wow the party and such. Rapture pieces are created using the finest fabrics and their manufacturing requires distinct tradtional craftmanship. Our piece has undergone strict quality control. All garmens assembly is done by fairly paid workers. Most items are produced in small batches in the heart of Rapture's Garment District, while others are produced in-house at our new Rapture headquarters on a made-to-order basis to eliminate excess. 
-
-We are passionate about allowing the brighest of minds in Rapture to provide thoughtful and progressive attire and content for the extravagent, explorers, and creators. We are passionate about utilizing our extensive manufacturing abilities to craft aspirational womenswear with luxury influences, inspiring design, functional detailing and attainable pricing. Our brand's culture is centered on propelling creative exploration, so our global stores and digital spaces will always serve as thriving platforms for the Global Creative Class - a diverse group of international individuals whose creative vocations challenge them to constantly be imaginative, independent, confident and adventurous. 
-
-We strongly believe that the Rapture Fashion Creative Lab is the future of fashion incubation. It's a progressive platform for exploring fresh new ideas with emerging independent designers and visionary conceptual thinkers. WE harness our remarkable manufacturing abilities and retail presence to expose these creative indviduals to a rapidly growing international audience. The results are amazing - call it Collaboration 2.0. 
-
-Áveline is one of the emerging young designers in Rapture  who came to spotlight before she graduated in 2009 at Contemporary Arts Institute Rapture. That year she became the top young fashion designer at the Fashion Awards Rapture. Áveline plays an important role in the Rapture contemporary fashion scene, she won the Best Fashion Designer Award of Glamour Women of the Year in 2014. She is on the right track to share her powerful and vibrant creations with a wider audience.
- 
-Her independent Rapture based label's vision contains innovative, modern design for a cosmoplitan woman who is self-assured and proud of her individual image; the woman who values the expression of originality in her day-to-day life. The love for contrasts is reflected throughout every of Áveline's work, she experiments a lot with silhouettes, shapes, textures and colours. Inspiration drawn from contemporary art and youth culture is combined with an emphasis on tailoring and the use of custom developed fabrics. This playful and fresh attitude presents the effortless 'power-woman' blend of the 20th and 21st century.
-
-
-
 
 Maybe the Brand stuff on the home page should expand to explain the brand, with some examples. 
 
@@ -51,6 +35,7 @@ https://www.societestore.com/ (1) <X has been added to your cart, green alert>
 https://www.adisgladis.se/ (2) <add something to cart, the popup shows up>
 https://www.zara.com/us/en/ (3)
 https://bonobos.com/products/blue-jean?color=wallowa%20medium%20wash (4) [Good product page, full length model image that scrolls through images as you scroll]
+http://www.wbyworth.com/behind-our-collection/
 
 https://kith.com/
 https://onsclothing.com/
