@@ -3,7 +3,9 @@
 
 ABOUT RAPTURE AND WHY YOU SHOULD CARE ABOUT IT
 
+Rapture is best summed up in its slogan, "No Gods or Kings. Only Man". Rapture was founded underwater in the North Atlantic sea by the visionary founder Andie Ryan to create a society of paradise where the world's best and brighest can be greanted the freedom of will and choice, unrestrained by government, religion and similar established institutions. Instead of abiding by tradition and moral systems imposed by those institutions, values such as logic and scientific reason guides the inhabitants in each one's pursuit of achievements. 
 
+We've been the most successful brand in the worst's most competitive city for decades, and now that Andie Ryan has opened the embargo with the rest of the world we can bring you the most elite brands in all of fashion. Did I mention we're the only collection to carry Andie Ryan's personal boutique fashion line? 
 
 THE VIRTUES OF OUR PERSONAL CLOTHING LINE
 
