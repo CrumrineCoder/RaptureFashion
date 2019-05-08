@@ -841,6 +841,19 @@ body, html{
   border-radius: 10px;
 }
 
+.aboutPosterImage{
+  width: 30%;
+  margin:  20px;
+}
+
+.aboutPosterRightImage{
+  float: right; 
+}
+
+.aboutPosterLeftImage{
+  float: left; 
+}
+
 /*
 .vendorBrandContainer {
   display: flex;
