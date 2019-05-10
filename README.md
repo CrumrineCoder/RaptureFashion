@@ -1,5 +1,6 @@
 # RaptureFashion
 
+https://www.accessoriesmagazine.com/list-2017-top-100-accessories-brands-players/   
 
 ABOUT RAPTURE AND WHY YOU SHOULD CARE ABOUT IT
 

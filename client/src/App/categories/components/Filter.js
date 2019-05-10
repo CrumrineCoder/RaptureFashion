@@ -97,8 +97,8 @@ class Filter extends Component {
                 <h5 className="filterSubheader">Brands</h5>
                 {this.props.clothing &&
                     <div className="filterRow">
-                        <div className={this.isActive('filterText', "Gibson Girl", "vendor")} type="radio" name="vendor" value="Gibson Girl" checked={this.state.filters.vendor === "Gibson Girl"} filter="vendor" onClick={() => this.changeFilter("vendor", "Gibson Girl")} >
-                            Gibson Girl
+                        <div className={this.isActive('filterText', "Gibson Girls", "vendor")} type="radio" name="vendor" value="Gibson Girls" checked={this.state.filters.vendor === "Gibson Girls"} filter="vendor" onClick={() => this.changeFilter("vendor", "Gibson Girls")} >
+                            Gibson Girls
                             </div>
                             <div className={this.isActive('filterText', "Ryan Boutique", "vendor")} type="radio" name="vendor" value="Ryan Boutique" checked={this.state.filters.vendor === "Ryan Boutique"} filter="vendor" onClick={() => this.changeFilter("vendor", "Ryan Boutique")} >
                             Ryan Boutique

@@ -149,9 +149,9 @@ class Home extends Component {
 					<ClothingBox dress={state.products['5']}></ClothingBox>
 				</div>
 				<div>
-					<ClothingBox dress={state.products['0']}></ClothingBox>
-					<ClothingBox dress={state.products['0']}></ClothingBox>
-					<ClothingBox dress={state.products['0']}></ClothingBox>
+					<ClothingBox dress={state.products['6']}></ClothingBox>
+					<ClothingBox dress={state.products['7']}></ClothingBox>
+					<ClothingBox dress={state.products['8']}></ClothingBox>
 				</div>
 			</Slider>)
 		}

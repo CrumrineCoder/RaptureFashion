@@ -88,7 +88,7 @@ class Header extends Component {
 										Brands
        								</DropdownToggle>
 									<DropdownMenu>
-										<NavLink href="#/categories/brands/gibson">Gibson Girl</NavLink>
+										<NavLink href="#/categories/brands/gibson">Gibson Girls</NavLink>
 										<NavLink href="#/categories/brands/ryan">Ryan Boutique</NavLink>
 										<NavLink href="#/categories/brands/apollo">Apollo</NavLink>
 										<NavLink href="#/categories/brands/áveline">ÁVELINE'S</NavLink>
