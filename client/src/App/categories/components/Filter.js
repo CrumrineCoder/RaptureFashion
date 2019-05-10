@@ -29,8 +29,9 @@ class Filter extends Component {
     }
 */
     clear(){
-        this.setState({filters: {}}, function () {
+        this.setState({filters: {}, sort: null}, function () {
             this.props.onChange(this.state.filters);
+            this.props.sort(null)
         });
     }
     changeFilter(key, value) {
@@ -83,7 +84,7 @@ class Filter extends Component {
         //   {activeFilter}
 
         let clear;
-        if (this.state.filters.color != undefined || this.state.filters.vendor != undefined) {
+        if (this.state.filters.color != undefined || this.state.filters.vendor != undefined || this.state.sort != null) {
             clear = (
                 <div className="filterClear">
                     <i onClick={this.clear} className="fas fa-times activeFilterDelete"></i> Clear

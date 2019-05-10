@@ -89,6 +89,7 @@ class CategoriesContainer extends Component {
     }
 
     sort(value) {
+        console.log("Sort", value)
         this.setState({
             sort: value
         })
@@ -165,6 +166,10 @@ class CategoriesContainer extends Component {
                     )
                 }
             }
+        }
+        if(clothing[0]){
+            console.log(this.state.sort);
+            console.log("Yimeng :)", clothing[0].title);
         }
         if (this.state.sort) {
             if (this.state.sort == "sortPriceAsc") {
