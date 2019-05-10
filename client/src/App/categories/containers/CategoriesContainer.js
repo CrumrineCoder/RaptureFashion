@@ -215,10 +215,11 @@ class CategoriesContainer extends Component {
             let filteredClothing = clothing;
             var filteredFilter = this.clean(this.state.filter);
             // If there's a vendor, don't filter for user selected filters
-            if(this.props.vendor){
-                delete filteredFilter["vendor"]
-            }
+         
             for (var filter in filteredFilter) {
+                if(filter == "vendor" && this.props.vendor){
+                    break
+                }
                 filteredClothing = this.getFilteredArray(filteredClothing, filter, this.state.filter[filter])
             }
             pageContent = (
