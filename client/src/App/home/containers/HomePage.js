@@ -1,14 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import PollLink from '../components/PollLink';
 //import Tags from '../components/Tag';
-import Search from '../components/Search';
-import Form from '../components/Form';
 import ClothingBox from '../components/ClothingBox';
 import CategoriesBox from '../components/CategoriesBox';
 import InstagramBox from '../components/InstagramBox';
-import { pollActions } from '../../_actions/polls.actions.js';
 import { withRouter } from 'react-router-dom';
 import collectionHomepage from '../../../assets/HomepageCarousel/collectionHomepage.jpg';
 import raptureHomepage from '../../../assets/HomepageCarousel/raptureHomepage.jpg';
@@ -37,20 +33,6 @@ class Home extends Component {
 		isFetching: PropTypes.bool.isRequired,
 		lastUpdated: PropTypes.number,
 		dispatch: PropTypes.func.isRequired
-	}
-
-	// Upon first render,  tell the back end to get all polls
-	componentDidMount() {
-		//		this.props.dispatch(pollActions.selectPoll("All"));
-		//		this.props.dispatch(pollActions.fetchVotesIfNeeded("All"));
-	}
-
-	// Upon updating, tell the back end to get all polls (if there's been any change)
-	componentDidUpdate(prevProps) {
-		if (this.props.selectedPoll !== prevProps.selectedPoll) {
-			this.props.dispatch(pollActions.selectPoll("All"));
-			this.props.dispatch(pollActions.fetchVotesIfNeeded("All"));
-		}
 	}
 
 	handleSearchBar = (queryValue) => {

@@ -22,6 +22,9 @@ class BagContainer extends Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            dresses: []
+        }
         // Used for when searching and tagging functionality whenever that comes
         this.removeItem = this.removeItem.bind(this);
         this.changeQuantity = this.changeQuantity.bind(this);

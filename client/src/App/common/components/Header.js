@@ -12,6 +12,7 @@ import {
 	DropdownMenu,
 	DropdownItem
 } from 'reactstrap';
+import { connect } from 'react-redux';
 
 //import PropTypes from 'prop-types';
 
@@ -70,7 +71,6 @@ class Header extends Component {
 									</DropdownMenu>
 								</Dropdown>
 							</NavItem>
-
 							<NavItem>
 								<NavLink href="#/categories/all">All</NavLink>
 							</NavItem>
@@ -100,7 +100,12 @@ class Header extends Component {
 		)
 	}
 }
-
-export default Header;
-
+Header.propTypes = {
+	//	isLoggedIn: PropTypes.bool.isRequired,
+}
+function mapStateToProps(state) {
+	const cartAmount = state.home.cart.checkout.lineItems.length;
+	return { cartAmount };
+}
+export default connect(mapStateToProps)(Header);
 //export default Header;
