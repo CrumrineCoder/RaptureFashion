@@ -103,6 +103,81 @@ class CategoriesContainer extends Component {
         const state = store.getState().home.cart; // state from redux store
         let clothing = state.products;
         
+       
+
+        if (this.props.clothing != "all") {
+            if (state.products["0"]) {
+                if (this.props.clothing) {
+                    if (this.props.clothing == "dresses") {
+                        clothing = state.products.filter(function (a) {
+                            return a.options[2].values["0"].value == "Dress"
+                        });
+                    } else if (this.props.clothing == "accessories") {
+                        clothing = state.products.filter(function (a) {
+                            return a.options[2].values["0"].value == "Accessory"
+                        });
+                    } else if (this.props.clothing == "shoes") {
+                        clothing = state.products.filter(function (a) {
+                            return a.options[2].values["0"].value == "Shoe"
+                        });
+                    } else if (this.props.clothing == "hats") {
+                        clothing = state.products.filter(function (a) {
+                            return a.options[2].values["0"].value == "Hat"
+                        });
+                    }
+                    header = (
+                        <div className="clothingHeader">
+                            <div class='clothingBrandContainer'>
+                                <h3>{this.props.clothing}</h3>
+                            </div>
+                        </div>
+                    )
+                } else if (this.props.vendor) {
+                    let vendorImage;
+                    if (this.props.vendor == "Gibson Girls") {
+                        clothing = state.products.filter(function (a) {
+                            return a.vendor == "Gibson Girls"
+                        });
+                        vendorImage = "Brand/gibson girls.png";
+                    } else if (this.props.vendor == "Ryan Boutique") {
+                        clothing = state.products.filter(function (a) {
+                            return a.vendor == "Ryan Boutique"
+                        });
+                        vendorImage = "Brand/andrew ryan.png";
+                    } else if (this.props.vendor == "Apollo") {
+                        clothing = state.products.filter(function (a) {
+                            return a.vendor == "Apollo"
+                        });
+                        vendorImage = "Brand/apollo.png";
+                    } else if (this.props.vendor == "ÁVELINE'S") {
+                        clothing = state.products.filter(function (a) {
+                            return a.vendor == "ÁVELINE'S"
+                        });
+                        vendorImage = "Brand/aveline.png";
+                    }
+                    header = (
+                        <div className="vendorHeader">
+                            <div class='vendorBrandContainer'>
+                                <div class='vendorBrandImage'>
+                                    {<img src={require("../../../assets/" + vendorImage)} />}
+                                </div>
+                                <h3>{this.props.vendor}</h3>
+                            </div>
+                        </div>
+                    )
+                }
+            }
+        } else{
+            header = (
+                <div className="clothingHeader">
+                    <div class='clothingBrandContainer'>
+                        <h3>All</h3>
+                    </div>
+                </div>
+            )
+        }
+
+       
         if (this.state.sort) {
             if (this.state.sort == "sortPriceAsc") {
                 clothing = clothing.sort(function (a, b) {
@@ -146,88 +221,9 @@ class CategoriesContainer extends Component {
                     return 0;
                 })
             }
-        } else if (!this.props.vendor) {
-            clothing = state.products;
         }
-        if (this.props.clothing != "all") {
-            if (state.products["0"]) {
-                if (this.props.clothing) {
-                    if (this.props.clothing == "dresses") {
-                        clothing = state.products.filter(function (a) {
-                            return a.options[2].values["0"].value == "Dress"
-                        });
-                    } else if (this.props.clothing == "accessories") {
-                        clothing = state.products.filter(function (a) {
-                            return a.options[2].values["0"].value == "Accessory"
-                        });
-                    } else if (this.props.clothing == "shoes") {
-                        clothing = state.products.filter(function (a) {
-                            return a.options[2].values["0"].value == "Shoe"
-                        });
-                    } else if (this.props.clothing == "hats") {
-                        clothing = state.products.filter(function (a) {
-                            return a.options[2].values["0"].value == "Hat"
-                        });
-                    }
-                    header = (
-                        <div className="clothingHeader">
-                            <div class='clothingBrandContainer'>
-                                <h3>{this.props.clothing}</h3>
-                            </div>
-                        </div>
-                    )
-                } else if (this.props.vendor) {
-                    let vendorImage;
-                    let vendorText;
-                    if (this.props.vendor == "Gibson Girls") {
-                        clothing = state.products.filter(function (a) {
-                            return a.vendor == "Gibson Girls"
-                        });
-                        vendorImage = "Brand/gibson girls.png";
-                    } else if (this.props.vendor == "Ryan Boutique") {
-                        clothing = state.products.filter(function (a) {
-                            return a.vendor == "Ryan Boutique"
-                        });
-                        vendorImage = "Brand/andrew ryan.png";
-                    } else if (this.props.vendor == "Apollo") {
-                        clothing = state.products.filter(function (a) {
-                            return a.vendor == "Apollo"
-                        });
-                        vendorImage = "Brand/apollo.png";
-                    } else if (this.props.vendor == "ÁVELINE'S") {
-                        clothing = state.products.filter(function (a) {
-                            return a.vendor == "ÁVELINE'S"
-                        });
-                        vendorImage = "Brand/aveline.png";
-                    }
-                    /*     vendorText = vendorText.split('\n').map((item, i) => {
-                             return <p key={i}>{item}</p>;
-                         });
-                         <div class='vendorBrandText'>
-                         <p>{vendorText}</p>
-                     </div> */
-                    // Probably add the history text here too. 
-                    header = (
-                        <div className="vendorHeader">
-                            <div class='vendorBrandContainer'>
-                                <div class='vendorBrandImage'>
-                                    {<img src={require("../../../assets/" + vendorImage)} />}
-                                </div>
-                                <h3>{this.props.vendor}</h3>
-                            </div>
-                        </div>
-                    )
-                }
-            }
-        } else{
-            header = (
-                <div className="clothingHeader">
-                    <div class='clothingBrandContainer'>
-                        <h3>All</h3>
-                    </div>
-                </div>
-            )
-        }
+
+        
 
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
             let filteredClothing = clothing;
