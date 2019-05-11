@@ -102,6 +102,53 @@ class CategoriesContainer extends Component {
         let header;
         const state = store.getState().home.cart; // state from redux store
         let clothing = state.products;
+        
+        if (this.state.sort) {
+            if (this.state.sort == "sortPriceAsc") {
+                clothing = clothing.sort(function (a, b) {
+                    if (a.variants["0"].price < b.variants["0"].price) {
+                        return -1;
+                    }
+                    if (a.variants["0"].price > b.variants["0"].price) {
+                        return 1;
+                    }
+                    return 0;
+                })
+            } else if (this.state.sort == "sortPriceDesc") {
+                clothing = clothing.sort(function (a, b) {
+                    if (a.variants["0"].price < b.variants["0"].price) {
+                        return 1;
+                    }
+                    if (a.variants["0"].price > b.variants["0"].price) {
+                        return -1;
+                    }
+                    return 0;
+                })
+            } else if (this.state.sort == "sortNameAsc") {
+                clothing = clothing.sort(function (a, b) {
+                    if (a.title < b.title) {
+                        return -1;
+                    }
+                    if (a.title > b.title) {
+                        return 1;
+                    }
+                    return 0;
+                })
+            }
+            else if (this.state.sort == "sortNameDesc") {
+                clothing = clothing.sort(function (a, b) {
+                    if (a.title < b.title) {
+                        return 1;
+                    }
+                    if (a.title > b.title) {
+                        return -1;
+                    }
+                    return 0;
+                })
+            }
+        } else if (!this.props.vendor) {
+            clothing = state.products;
+        }
         if (this.props.clothing != "all") {
             if (state.products["0"]) {
                 if (this.props.clothing) {
@@ -180,53 +227,6 @@ class CategoriesContainer extends Component {
                     </div>
                 </div>
             )
-        }
-
-        if (this.state.sort) {
-            if (this.state.sort == "sortPriceAsc") {
-                clothing = clothing.sort(function (a, b) {
-                    if (a.variants["0"].price < b.variants["0"].price) {
-                        return -1;
-                    }
-                    if (a.variants["0"].price > b.variants["0"].price) {
-                        return 1;
-                    }
-                    return 0;
-                })
-            } else if (this.state.sort == "sortPriceDesc") {
-                clothing = clothing.sort(function (a, b) {
-                    if (a.variants["0"].price < b.variants["0"].price) {
-                        return 1;
-                    }
-                    if (a.variants["0"].price > b.variants["0"].price) {
-                        return -1;
-                    }
-                    return 0;
-                })
-            } else if (this.state.sort == "sortNameAsc") {
-                clothing = clothing.sort(function (a, b) {
-                    if (a.title < b.title) {
-                        return -1;
-                    }
-                    if (a.title > b.title) {
-                        return 1;
-                    }
-                    return 0;
-                })
-            }
-            else if (this.state.sort == "sortNameDesc") {
-                clothing = clothing.sort(function (a, b) {
-                    if (a.title < b.title) {
-                        return 1;
-                    }
-                    if (a.title > b.title) {
-                        return -1;
-                    }
-                    return 0;
-                })
-            }
-        } else if (!this.props.vendor) {
-            clothing = state.products;
         }
 
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
