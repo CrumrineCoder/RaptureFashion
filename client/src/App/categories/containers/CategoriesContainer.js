@@ -210,7 +210,7 @@ class CategoriesContainer extends Component {
                     return 0;
                 })
             }
-        } else{
+        } else if(!this.props.vendor){
             clothing = state.products;
         }
 
@@ -238,7 +238,6 @@ class CategoriesContainer extends Component {
             )
         }
        
-        console.log(this.props); 
         return (
             <div className="categoriesContainer">
                 {vendorHeader}
