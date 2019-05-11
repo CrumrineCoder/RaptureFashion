@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import ColorBox from '../../common/components/ColorBox';
-import { Link } from 'react-router-dom';
 
 class BagSubtotal extends Component {
 

@@ -103,13 +103,7 @@ export default (
     <Route path="/bag" component={Bag} />
     <Route path="/about" component={About} />
     <Route path="/checkout" component={Checkout} />
-    <Route path="/register" component={Register} />
-    <Route path="/login" component={Login} />
     <Route path="/products/:id/" component={ProductDetails} />
-    <Route path="/:id/vote/" component={PollShow} />
-    <PrivateRoute path="/:id/results/" component={Result} />
-    <PrivateRoute path="/profile" component={Profile} />
-    <Route path="/:id/edit/" component={Edit} />
     <Route component={PageNotFound} />
   </Switch>
 );

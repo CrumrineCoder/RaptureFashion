@@ -12,7 +12,6 @@ import {
 	DropdownMenu,
 	DropdownItem
 } from 'reactstrap';
-import { connect } from 'react-redux';
 
 //import PropTypes from 'prop-types';
 
@@ -45,30 +44,6 @@ class Header extends Component {
 	}
 
 	render() {
-		const { isLoggedIn } = this.props
-		let userLinks;
-		//Conditional rendering
-		if (isLoggedIn) {
-			userLinks =
-				<>
-					<NavItem>
-						<NavLink href="#/profile">Profile</NavLink>
-					</NavItem>
-					<NavItem>
-						<NavLink href="#/login">Logout</NavLink>
-					</NavItem>
-				</>
-		} else {
-			userLinks =
-				<>
-					<NavItem>
-						<NavLink href="#/login">Login</NavLink>
-					</NavItem>
-					<NavItem>
-						<NavLink href="#/register">Register</NavLink>
-					</NavItem>
-				</>
-		}
 		return (
 			<header>
 				<Navbar color="faded" light expand="md">
@@ -118,7 +93,6 @@ class Header extends Component {
 									</a>
 								</div>
 							</NavItem>
-							{userLinks}
 						</Nav>
 					</Collapse>
 				</Navbar>
@@ -127,16 +101,6 @@ class Header extends Component {
 	}
 }
 
-Header.propTypes = {
-	//	isLoggedIn: PropTypes.bool.isRequired,
-}
-
-function mapStateToProps(state) {
-	const isLoggedIn = state.home.authenticate.loggedIn;
-	const cartAmount = state.home.cart.checkout.lineItems.length;
-	return { isLoggedIn, cartAmount };
-}
-
-export default connect(mapStateToProps)(Header);
+export default Header;
 
 //export default Header;
