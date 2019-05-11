@@ -95,11 +95,11 @@ class CategoriesContainer extends Component {
     }
 
     render() {
-     
+
         let pageContent = '';
 
 
-        let vendorHeader;
+        let header;
         const state = store.getState().home.cart; // state from redux store
         let clothing = state.products;
         if (this.props.clothing != "all") {
@@ -122,6 +122,13 @@ class CategoriesContainer extends Component {
                             return a.options[2].values["0"].value == "Hat"
                         });
                     }
+                    header = (
+                        <div className="clothingHeader">
+                            <div class='clothingBrandContainer'>
+                                <h3>{this.props.clothing}</h3>
+                            </div>
+                        </div>
+                    )
                 } else if (this.props.vendor) {
                     let vendorImage;
                     let vendorText;
@@ -153,7 +160,7 @@ class CategoriesContainer extends Component {
                          <p>{vendorText}</p>
                      </div> */
                     // Probably add the history text here too. 
-                    vendorHeader = (
+                    header = (
                         <div className="vendorHeader">
                             <div class='vendorBrandContainer'>
                                 <div class='vendorBrandImage'>
@@ -165,6 +172,14 @@ class CategoriesContainer extends Component {
                     )
                 }
             }
+        } else{
+            header = (
+                <div className="clothingHeader">
+                    <div class='clothingBrandContainer'>
+                        <h3>All</h3>
+                    </div>
+                </div>
+            )
         }
 
         if (this.state.sort) {
@@ -178,7 +193,7 @@ class CategoriesContainer extends Component {
                     }
                     return 0;
                 })
-            } else if(this.state.sort == "sortPriceDesc"){
+            } else if (this.state.sort == "sortPriceDesc") {
                 clothing = clothing.sort(function (a, b) {
                     if (a.variants["0"].price < b.variants["0"].price) {
                         return 1;
@@ -188,7 +203,7 @@ class CategoriesContainer extends Component {
                     }
                     return 0;
                 })
-            } else if(this.state.sort == "sortNameAsc"){
+            } else if (this.state.sort == "sortNameAsc") {
                 clothing = clothing.sort(function (a, b) {
                     if (a.title < b.title) {
                         return -1;
@@ -199,7 +214,7 @@ class CategoriesContainer extends Component {
                     return 0;
                 })
             }
-            else if(this.state.sort == "sortNameDesc"){
+            else if (this.state.sort == "sortNameDesc") {
                 clothing = clothing.sort(function (a, b) {
                     if (a.title < b.title) {
                         return 1;
@@ -210,7 +225,7 @@ class CategoriesContainer extends Component {
                     return 0;
                 })
             }
-        } else if(!this.props.vendor){
+        } else if (!this.props.vendor) {
             clothing = state.products;
         }
 
@@ -218,9 +233,9 @@ class CategoriesContainer extends Component {
             let filteredClothing = clothing;
             var filteredFilter = this.clean(this.state.filter);
             // If there's a vendor, don't filter for user selected filters
-         
+
             for (var filter in filteredFilter) {
-                if(filter == "vendor" && this.props.vendor){
+                if (filter == "vendor" && this.props.vendor) {
                     break
                 }
                 filteredClothing = this.getFilteredArray(filteredClothing, filter, this.state.filter[filter])
@@ -237,10 +252,10 @@ class CategoriesContainer extends Component {
                 </ul>
             )
         }
-       
+
         return (
             <div className="categoriesContainer">
-                {vendorHeader}
+                {header}
                 <Filter clothing={this.props.clothing} onChange={this.handleFilter} sort={this.sort}></Filter>
                 {pageContent}
             </div>

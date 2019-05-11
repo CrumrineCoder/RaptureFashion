@@ -875,7 +875,7 @@ body, html{
 }
 */
 
-.vendorBrandContainer{
+.vendorBrandContainer, .clothingBrandContainer{
   text-align: center;
 }
 
@@ -883,7 +883,11 @@ body, html{
   width: 100px; 
 }
 
-.vendorHeader{
+.clothingBrandContainer h3{
+  text-transform: capitalize;
+}
+
+.vendorHeader, .clothingHeader{
   clear: both; 
 }
 
