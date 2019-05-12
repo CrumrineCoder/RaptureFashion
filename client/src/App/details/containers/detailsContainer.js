@@ -220,11 +220,9 @@ class DetailsContainer extends Component {
             relatedProducts = Array.prototype.slice.call(relatedProducts);
             relatedProducts = relatedProducts.map(a => a.innerHTML);
             const state = store.getState().home.cart; // state from redux store
-            console.log(relatedProducts);
             var results = state.products.filter(obj => {
                 return relatedProducts.indexOf(obj.id) != -1
             })
-            console.log(results);
             related = (
                 <div>
                     {results.map((result, i) => <ClothingBox dress={result}></ClothingBox>)}
