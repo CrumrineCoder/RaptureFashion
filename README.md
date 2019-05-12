@@ -126,6 +126,17 @@ E7ECEF
 274C77
 6096BA
 
+black deco purple dress id = Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzI0OTY2OTU0NjgwOTI
+navy dress = Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzI1MjU3Mzg2NjM5OTY
+black feather = Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzI1MjY3NTQ1Mzc1MzI
+heels = Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzI1MjcwMjg5Njk1MzI
+Mary jane heels = Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzI1MjcwNzQ3MTM2NjA
+metallic sheen = Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzI1MjcwNzkyNjg0MTI
+green and black sequin = Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzI1MjgyMTM5OTE0ODQ
+Green and cream = Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzI1Mjk1Mzg3MDM0MjA
+Black and green beaded = Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzI1Mjk1NTc1Nzc3ODg
+black beaded = Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzI1Mjk1NjQ3ODY3NDg
+ivory and black = Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzI1MzAyNzcwOTc1MzI
 
 (( MIght want to work on this in the future: https://css-tricks.com/accessible-simple-responsive-tables/))
 

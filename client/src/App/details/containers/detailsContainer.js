@@ -139,9 +139,9 @@ class DetailsContainer extends Component {
 
     render() {
         let cart = "";
-    
+
         if (this.state.product) {
-         
+
             if (this.state.sizeSelected || this.state.product.options["0"].values.length == 1) {
                 cart = (
                     <button className="detailsCartButton enabledCartButton" onClick={() => this.addCart(variant.id)}>Add to Cart</button>
@@ -155,6 +155,7 @@ class DetailsContainer extends Component {
 
         let img;
         let rightHand;
+        let related;
         let variant = "Loading price...";
         if (this.state.product) {
             img = (
@@ -215,6 +216,20 @@ class DetailsContainer extends Component {
                     </div>
                 </div>
             )
+            let relatedProducts = new DOMParser().parseFromString(this.state.product.descriptionHtml, "text/xml").getElementById("relatedProducts").children;
+            relatedProducts = Array.prototype.slice.call(relatedProducts);
+            relatedProducts = relatedProducts.map(a => a.innerHTML);
+            const state = store.getState().home.cart; // state from redux store
+            console.log(relatedProducts);
+            var results = state.products.filter(obj => {
+                return relatedProducts.indexOf(obj.id) != -1
+            })
+            console.log(results);
+            related = (
+                <div>
+                    {results.map((result, i) => <ClothingBox dress={result}></ClothingBox>)}
+                </div>
+            )
         } else {
             img = (
                 <div className="detailsImageScrollContainer">Loading images..</div>
@@ -225,7 +240,6 @@ class DetailsContainer extends Component {
         }
 
 
-
         return (
             <div>
                 <div className="detailsContainer">
@@ -234,13 +248,7 @@ class DetailsContainer extends Component {
                 </div>
                 <div className="detailsRecommendation">
                     <h1>Get the Look</h1>
-                    {this.state.product &&
-                        <div>
-                            <ClothingBox dress={this.state.product}></ClothingBox>
-                            <ClothingBox dress={this.state.product}></ClothingBox>
-                            <ClothingBox dress={this.state.product}></ClothingBox>
-                        </div>
-                    }
+                    {related}
                 </div>
             </div>
         );
