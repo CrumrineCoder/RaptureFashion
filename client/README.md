@@ -139,17 +139,3 @@ black beaded = Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzI1Mjk1NjQ3ODY3NDg
 ivory and black = Z2lkOi8vc2hvcGlmeS9Qcm9kdWN0LzI1MzAyNzcwOTc1MzI
 
 (( MIght want to work on this in the future: https://css-tricks.com/accessible-simple-responsive-tables/))
-
-
-Process:
-*Figure out design and project goals
-*Research UX fashion case studies
-*Looked through a lot of websites and found focus for which persona and user needs to focus on as well as figured out business restraints and goals
-*Picked out colors and general aesethetic and feel of website
-*Broke down feature list and started work on lo-fi wireframes
-*After making home and product listing/product details and checkout pages, went through and picked out dresses I would want to display for the test site to figure out the Nav, with only a vague sense of it before hand. 
-*Worked on home page until the basics were down 
-*Made the dress listing page with a basic filter
-*Made the dress description page with an example one
-*Pick a size and add to cart with a Redux reducer
-*With an example, work on cart bag page

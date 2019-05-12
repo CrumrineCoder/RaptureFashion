@@ -43,4 +43,4 @@ This project is licensed under the MIT License - see the [LICENSE.md](LICENSE.md
 ## Acknowledgments
 
 * Bioshock for the aesthetic and idea of Rapture. 
-* Most items come from Unique Vintage
+* Most items and pictures come from Unique Vintage and Vintage Dancer
