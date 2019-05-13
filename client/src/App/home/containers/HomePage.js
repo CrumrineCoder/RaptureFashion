@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 //import Tags from '../components/Tag';
 import ClothingBox from '../components/ClothingBox';
@@ -179,15 +178,5 @@ class Home extends Component {
 
 	}
 }
-
-Home.propTypes = {
-	//selectedPoll: PropTypes.string.isRequired,
-	//polls: PropTypes.array.isRequired,
-	isFetching: PropTypes.bool.isRequired,
-	lastUpdated: PropTypes.number,
-	dispatch: PropTypes.func.isRequired
-}
-
-
 
 export default connect((state) => state)(Home);

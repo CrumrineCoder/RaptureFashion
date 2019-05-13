@@ -92,7 +92,7 @@ class CategoriesContainer extends Component {
                     // For the header of this page, we're only showing by what type of clothing they're inherently sorting by
                     header = (
                         <div className="clothingHeader">
-                            <div class='clothingBrandContainer'>
+                            <div className='clothingBrandContainer'>
                                 <h3>{this.props.clothing}</h3>
                             </div>
                         </div>
@@ -126,8 +126,8 @@ class CategoriesContainer extends Component {
                     // For the header of this page, we're showing by what vendor they're inherently sorting by and that vendor's image
                     header = (
                         <div className="vendorHeader">
-                            <div class='vendorBrandContainer'>
-                                <div class='vendorBrandImage'>
+                            <div className='vendorBrandContainer'>
+                                <div className='vendorBrandImage'>
                                     {<img src={require("../../../assets/" + vendorImage)} alt="Brand" />}
                                 </div>
                                 <h3>{this.props.vendor}</h3>
@@ -140,7 +140,7 @@ class CategoriesContainer extends Component {
             // For the header of All, we just tell the user they're seeing all types of clothes
             header = (
                 <div className="clothingHeader">
-                    <div class='clothingBrandContainer'>
+                    <div className='clothingBrandContainer'>
                         <h3>All</h3>
                     </div>
                 </div>

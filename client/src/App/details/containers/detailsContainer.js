@@ -202,7 +202,7 @@ class DetailsContainer extends Component {
             // Generate related products
             related = (
                 <div>
-                    {results.map((result, i) => <ClothingBox dress={result}></ClothingBox>)}
+                    {results.map((result, i) => <ClothingBox key={i} dress={result}></ClothingBox>)}
                 </div>
             )
         } else {
