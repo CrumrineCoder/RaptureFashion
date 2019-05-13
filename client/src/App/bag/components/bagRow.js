@@ -43,13 +43,7 @@ class BagRow extends Component {
         // Return updated or original number.
         return value;
     }
-
-    changeQuantity(num) {
-        this.setState({
-            quantity: this.props.line_item.quantity + num
-        })
-    }
-
+    
     render() {
         // TO DO: ADD LINK
         //     let price = this.addZeroes(this.props.price);
@@ -75,16 +69,6 @@ class BagRow extends Component {
                 </div>
             </div>
         )
-        /* 
-                <div className="bagCell bagQuantity">
-                    <h3 className="bagCell">${price}</h3>
-                    <button className={this.props.quantity > 1 ? 'bagQuantityButton' : 'bagQuantityButton bagQuantityButtonDisabled'} disabled={this.props.quantity <= 1} onClick={() => this.props.changeQuantity(this.props.index, -1)}>-</button>
-                    <input readonly="" type="numeric" className="bagQuantityAmount" value={this.props.quantity}></input>
-                    <button className="bagQuantityButton" onClick={() => this.props.changeQuantity(this.props.index, 1)}>+</button>
-                    <h3 className="bagCell">${calculatedPrice}</h3>
-             
-                </div>
-                */
     }
 }
 

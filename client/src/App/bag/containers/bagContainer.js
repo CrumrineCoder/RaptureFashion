@@ -5,7 +5,7 @@ import BagSubtotal from "../components/bagSubtotal.js"
 import { Link } from 'react-router-dom';
 import store from '../../store';
 
-// Landing page 
+// Cart/Bag page
 class BagContainer extends Component {
 
     constructor(props) {
@@ -14,13 +14,14 @@ class BagContainer extends Component {
             dresses: []
         }
         // Used for when searching and tagging functionality whenever that comes
-        this.removeItem = this.removeItem.bind(this);
-        this.changeQuantity = this.changeQuantity.bind(this);
         this.updateQuantityInCart = this.updateQuantityInCart.bind(this);
         this.removeLineItemInCart = this.removeLineItemInCart.bind(this);
+        /*   
         this.handleCartClose = this.handleCartClose.bind(this);
         this.handleCartOpen = this.handleCartOpen.bind(this);
+        */
     }
+    // Change the quantity of the item in the cart (can never go below 1 with this)
     updateQuantityInCart(lineItemId, quantity) {
         const state = store.getState().home.cart; // state from redux store
         const checkoutId = state.checkout.id
@@ -29,6 +30,7 @@ class BagContainer extends Component {
             store.dispatch({ type: 'UPDATE_QUANTITY_IN_CART', payload: { checkout: res } });
         });
     }
+    // Functionality for trash icon to remove item in cart
     removeLineItemInCart(lineItemId) {
         const state = store.getState().home.cart; // state from redux store
         const checkoutId = state.checkout.id
@@ -36,40 +38,34 @@ class BagContainer extends Component {
             store.dispatch({ type: 'REMOVE_LINE_ITEM_IN_CART', payload: { checkout: res } });
         });
     }
+    /*
     handleCartClose() {
         store.dispatch({ type: 'CLOSE_CART' });
     }
     handleCartOpen() {
         store.dispatch({ type: 'OPEN_CART' });
     }
-
-    removeItem(itemName) {
-        let filteredClothes = this.state.dresses.filter(function (obj) {
-            return obj.name !== itemName;
-        });
-        //   let filteredClothes = this.state.dresses.splice(index-1, 1)
-        this.setState({
-            dresses: filteredClothes
-        })
-    }
-
-    changeQuantity(index, num) {
-        let clonedItems = this.state.dresses;
-        clonedItems[index].quantity += num;
-        this.setState({
-            dresses: clonedItems
-        })
-    }
+    */
 
     render() {
         let pageContent = '';
         const state = store.getState().home.cart; // state from redux store
         let checkout = state.checkout;
-        let isCartOpen = state.isCartOpen
-        // this.props.cart
+        // Generate rows of items for cart
         pageContent = (
             <ul className="bagRows">
-                {checkout.lineItems.map((line_item, i) => <BagRow changeQuantity={this.changeQuantity} product={state.products[i]} checkout={checkout} isCartOpen={isCartOpen} state={state} removeItem={this.removeItem} key={i} index={i} line_item={line_item} updateQuantityInCart={this.updateQuantityInCart} removeLineItemInCart={this.removeLineItemInCart}> </BagRow>)}
+                {checkout.lineItems.map((line_item, i) => 
+                <BagRow
+                     product={state.products[i]} 
+                     checkout={checkout} 
+                     state={state} 
+                     key={i} 
+                     index={i}
+                     line_item={line_item} 
+                     updateQuantityInCart={this.updateQuantityInCart} 
+                     removeLineItemInCart={this.removeLineItemInCart}> 
+                </BagRow>
+                )}
             </ul>
         )
 
