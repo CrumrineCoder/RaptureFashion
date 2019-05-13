@@ -1,18 +1,8 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ClothingBox from '../../home/components/ClothingBox';
 import Filter from "../components/Filter";
 import store from '../../store';
-import Products from '../../shopify/Products'
-/*
-import ClothingBox from '../components/ClothingBox';
-import CategoriesBox from '../components/CategoriesBox';
-import InstagramBox from '../components/InstagramBox';
-import { pollActions } from '../../_actions/polls.actions.js';
-import { withRouter } from 'react-router-dom';
-*/
-
 
 // Landing page 
 class CategoriesContainer extends Component {
@@ -55,9 +45,9 @@ class CategoriesContainer extends Component {
                     var splitColor = e.options[1].values[0].value.split('/');
                     return splitColor.includes(value)
                 case "vendor":
-                    return e.vendor == value
+                    return e.vendor === value
                 default:
-                    return e[key] == value;
+                    return e[key] === value;
             }
         });
     }
@@ -105,24 +95,24 @@ class CategoriesContainer extends Component {
         
        
 
-        if (this.props.clothing != "all") {
+        if (this.props.clothing !== "all") {
             if (state.products["0"]) {
                 if (this.props.clothing) {
-                    if (this.props.clothing == "dresses") {
+                    if (this.props.clothing === "dresses") {
                         clothing = state.products.filter(function (a) {
-                            return a.options[2].values["0"].value == "Dress"
+                            return a.options[2].values["0"].value === "Dress"
                         });
-                    } else if (this.props.clothing == "accessories") {
+                    } else if (this.props.clothing === "accessories") {
                         clothing = state.products.filter(function (a) {
-                            return a.options[2].values["0"].value == "Accessory"
+                            return a.options[2].values["0"].value === "Accessory"
                         });
-                    } else if (this.props.clothing == "shoes") {
+                    } else if (this.props.clothing === "shoes") {
                         clothing = state.products.filter(function (a) {
-                            return a.options[2].values["0"].value == "Shoe"
+                            return a.options[2].values["0"].value === "Shoe"
                         });
-                    } else if (this.props.clothing == "hats") {
+                    } else if (this.props.clothing === "hats") {
                         clothing = state.products.filter(function (a) {
-                            return a.options[2].values["0"].value == "Hat"
+                            return a.options[2].values["0"].value === "Hat"
                         });
                     }
                     header = (
@@ -134,24 +124,24 @@ class CategoriesContainer extends Component {
                     )
                 } else if (this.props.vendor) {
                     let vendorImage;
-                    if (this.props.vendor == "Gibson Girls") {
+                    if (this.props.vendor === "Gibson Girls") {
                         clothing = state.products.filter(function (a) {
-                            return a.vendor == "Gibson Girls"
+                            return a.vendor === "Gibson Girls"
                         });
                         vendorImage = "Brand/gibson girls.png";
-                    } else if (this.props.vendor == "Ryan Boutique") {
+                    } else if (this.props.vendor === "Ryan Boutique") {
                         clothing = state.products.filter(function (a) {
-                            return a.vendor == "Ryan Boutique"
+                            return a.vendor === "Ryan Boutique"
                         });
                         vendorImage = "Brand/andrew ryan.png";
-                    } else if (this.props.vendor == "Apollo") {
+                    } else if (this.props.vendor === "Apollo") {
                         clothing = state.products.filter(function (a) {
-                            return a.vendor == "Apollo"
+                            return a.vendor === "Apollo"
                         });
                         vendorImage = "Brand/apollo.png";
-                    } else if (this.props.vendor == "ÁVELINE'S") {
+                    } else if (this.props.vendor === "ÁVELINE'S") {
                         clothing = state.products.filter(function (a) {
-                            return a.vendor == "ÁVELINE'S"
+                            return a.vendor === "ÁVELINE'S"
                         });
                         vendorImage = "Brand/aveline.png";
                     }
@@ -159,7 +149,7 @@ class CategoriesContainer extends Component {
                         <div className="vendorHeader">
                             <div class='vendorBrandContainer'>
                                 <div class='vendorBrandImage'>
-                                    {<img src={require("../../../assets/" + vendorImage)} />}
+                                    {<img src={require("../../../assets/" + vendorImage)} alt="Brand"/>}
                                 </div>
                                 <h3>{this.props.vendor}</h3>
                             </div>
@@ -179,7 +169,7 @@ class CategoriesContainer extends Component {
 
        
         if (this.state.sort) {
-            if (this.state.sort == "sortPriceAsc") {
+            if (this.state.sort === "sortPriceAsc") {
                 clothing = clothing.sort(function (a, b) {
                     if (a.variants["0"].price < b.variants["0"].price) {
                         return -1;
@@ -189,7 +179,7 @@ class CategoriesContainer extends Component {
                     }
                     return 0;
                 })
-            } else if (this.state.sort == "sortPriceDesc") {
+            } else if (this.state.sort === "sortPriceDesc") {
                 clothing = clothing.sort(function (a, b) {
                     if (a.variants["0"].price < b.variants["0"].price) {
                         return 1;
@@ -199,7 +189,7 @@ class CategoriesContainer extends Component {
                     }
                     return 0;
                 })
-            } else if (this.state.sort == "sortNameAsc") {
+            } else if (this.state.sort === "sortNameAsc") {
                 clothing = clothing.sort(function (a, b) {
                     if (a.title < b.title) {
                         return -1;
@@ -210,7 +200,7 @@ class CategoriesContainer extends Component {
                     return 0;
                 })
             }
-            else if (this.state.sort == "sortNameDesc") {
+            else if (this.state.sort === "sortNameDesc") {
                 clothing = clothing.sort(function (a, b) {
                     if (a.title < b.title) {
                         return 1;
@@ -231,7 +221,7 @@ class CategoriesContainer extends Component {
             // If there's a vendor, don't filter for user selected filters
 
             for (var filter in filteredFilter) {
-                if (filter == "vendor" && this.props.vendor) {
+                if (filter === "vendor" && this.props.vendor) {
                     break
                 }
                 filteredClothing = this.getFilteredArray(filteredClothing, filter, this.state.filter[filter])

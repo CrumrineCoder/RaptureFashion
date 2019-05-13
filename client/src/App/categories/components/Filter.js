@@ -54,7 +54,7 @@ class Filter extends Component {
     }
 
     isActive(base, selector, type) {
-        if(base == "filterSort"){
+        if(base === "filterSort"){
             return  base + ' ' + selector + ' ' + ((selector === this.state[type]) ? 'filterSortActive' : 'default');
         }
         return base + ' ' + selector + ' ' + ((selector === this.state.filters[type]) ? 'filterActive' : 'default');
@@ -67,14 +67,14 @@ class Filter extends Component {
                 <h3>Active Filters</h3>
             )
         }
-        if (this.state.filters.vendor != undefined) {
+        if (this.state.filters.vendor !== undefined) {
             activeFilter.push(
                 <div>
                     <i onClick={() => this.delete("vendor")} className="fas fa-times activeFilterDelete"></i> Brand: {this.state.filters.vendor}
                 </div>
             )
         }
-        if (this.state.filters.color != undefined) {
+        if (this.state.filters.color !== undefined) {
             activeFilter.push(
                 <div>
                     <i onClick={() => this.delete("color")} className="fas fa-times activeFilterDelete"></i> Color: {this.state.filters.color}
@@ -84,7 +84,7 @@ class Filter extends Component {
         //   {activeFilter}
 
         let clear;
-        if (this.state.filters.color != undefined || this.state.filters.vendor != undefined || this.state.sort != null) {
+        if (this.state.filters.color !== undefined || this.state.filters.vendor !== undefined || this.state.sort !== null) {
             clear = (
                 <div className="filterClear">
                     <i onClick={this.clear} className="fas fa-times activeFilterDelete"></i> Clear

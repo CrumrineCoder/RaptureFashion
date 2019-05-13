@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 import ClothingBox from '../components/ClothingBox';
 import CategoriesBox from '../components/CategoriesBox';
 import InstagramBox from '../components/InstagramBox';
-import { withRouter } from 'react-router-dom';
 import collectionHomepage from '../../../assets/HomepageCarousel/collectionHomepage.jpg';
 import raptureHomepage from '../../../assets/HomepageCarousel/raptureHomepage.jpg';
 import brandsHomepage from '../../../assets/HomepageCarousel/brandHomepage.png';
@@ -14,7 +13,7 @@ import LazyLoad from 'react-lazyload';
 import store from '../../store';
 import { Link } from 'react-router-dom';
 import BrandBox from '../components/BrandBox';
-import { Link as SamePageLink} from 'react-scroll';
+import { Link as SamePageLink } from 'react-scroll';
 
 // Landing page 
 class Home extends Component {
@@ -25,14 +24,6 @@ class Home extends Component {
 		this.state = { filter: "", query: "", brandToLearnMore: "" };
 		this.changeFilter = this.changeFilter.bind(this);
 		this.showText = this.showText.bind(this);
-	}
-
-	static propTypes = {
-		//	selectedPoll: PropTypes.string.isRequired,
-		//	polls: PropTypes.array.isRequired,
-		isFetching: PropTypes.bool.isRequired,
-		lastUpdated: PropTypes.number,
-		dispatch: PropTypes.func.isRequired
 	}
 
 	handleSearchBar = (queryValue) => {
@@ -52,44 +43,30 @@ class Home extends Component {
 	}
 
 	render() {
-		let { polls } = this.props;
-		let pageContent = '';
-
-		if (this.state.filter !== '') {
-			polls = polls.filter((i) => i.tag === this.state.filter);
-		}
-
-		function find(items, text) {
-			text = text.split(' ');
-			return items.filter(function (item) {
-				return text.every(function (el) {
-					return (item.question.toLowerCase().indexOf(el.toLowerCase()) > -1);
-				});
-			});
-		}
-
 		let brandText = "";
 		let link = "";
-		if (this.state.brandToLearnMore == "Gibson Girls") {
+		if (this.state.brandToLearnMore === "Gibson Girls") {
 			brandText = "Effortless style, authenticity and easy-going living are at the heart of the brand’s philosophy. These positive values shine through at every level, from the laid-back tailoring to the made-to-last quality, use of natural materials and responsible production. Gibson Girls' aspiration is to be the best casual fashion brand with an outstanding price-value proposition: Capturing market trends and newness in color, quality fabrics and shapes, and expressing them in the effortless, relaxed and comfortable Gibson Girl style. For every garment, Esprit pays maximum attention to fabric selection, fitting and perfect quality. The company's “esprit de corps” reflects a positive and caring attitude towards life that celebrates real people and togetherness according to the brand promise: “We want to make you feel good to look good”.";
 			link = "gibson";
-		} else if (this.state.brandToLearnMore == "Ryan Boutique") {
+		} else if (this.state.brandToLearnMore === "Ryan Boutique") {
 			brandText = "Started in 1968 by Andie Ryan in Rapture and considered one of the biggest fashion jewelry manufactures in the USA. For nearly 50 years, Ryan Boutique has drawn on a wealth of designs discovered in many unique, unexpected places. From the vaults of rich European capitals to the antique laden attics of old American estates, we’ve created modern replicas of the most beautiful, exquisite vintage jewelry ever made. Currently, the company has six fashion jewelry brands under its signature brand name. The Ryan Boutique brand has sought to provide exceptional value to the fashion savvy consumer who is dedicated to building her vintage jewelry collection with unique accessories. The jewelry in the Ryan Boutique collections are designed to respect the details of period pieces while offering fresh design interpretations to fit today’s styles and fashions. \n For those who love all things vintage...Ryan Boutique is for the chic fashionista on the hunt for affordable antique and vintage inspired jewelry and accessories. Our designers take cues from all your favorite eras and fuse them with the latest trends. Take a peek through our site and you'll find styles that are simple and charming, elegant and classy, bold and dramatic or quirky and unique in the form of necklaces, bracelets, earrings, brooches, rings, hair accessories, custom photo jewelry, key rings and more. Whether you're a regular shopper looking for some lovely earrings (yes, we have clip-on too), a movie wardrobe designer looking for set costume jewelry, or a bride who wants some sparkling shimmer on your white, we really have something for everyone."
 			link = "ryan";
-		} else if (this.state.brandToLearnMore == "Apollo") {
+		} else if (this.state.brandToLearnMore === "Apollo") {
 			brandText = "Born in 2007, Apollo is a fast growing women's multi-channel fashion brand. Apollo aims to produce beautiful clothing collections appealing to both mother and daughter. Bringing something fresh and new to the high street and fashion e-tailing, Apollo aspires to deliver what every woman's wardrobe needs - from well produced staples, through to limited edition and trend-led fashion pieces. \n Apollo has become well known for its signature prints and is constantly looking to find new, innovative and easy-to-wear prints from all over the world. We pride ourselves on delivering high quality clothing at an affordable price. \n We aim to provide an exciting clothing collection alongside an excellent shopping experience for all our customers, whether they're shopping with us online, in-store or at one of our concessions."
 			link = "apollo";
-		} else if (this.state.brandToLearnMore == "ÁVELINE'S") {
+		} else if (this.state.brandToLearnMore === "ÁVELINE'S") {
 			brandText = "Áveline is one of the emerging young designers in Rapture  who came to spotlight before she graduated in 2009 at Contemporary Arts Institute Rapture. That year she became the top young fashion designer at the Fashion Awards Rapture. Áveline plays an important role in the Rapture contemporary fashion scene, she won the Best Fashion Designer Award of Glamour Women of the Year in 2014. She is on the right track to share her powerful and vibrant creations with a wider audience. \n Her independent Rapture based label's vision contains innovative, modern design for a cosmoplitan woman who is self-assured and proud of her individual image; the woman who values the expression of originality in her day-to-day life. The love for contrasts is reflected throughout every of Áveline's work, she experiments a lot with silhouettes, shapes, textures and colours. Inspiration drawn from contemporary art and youth culture is combined with an emphasis on tailoring and the use of custom developed fabrics. This playful and fresh attitude presents the effortless 'power-woman' blend of the 20th and 21st century."
 			link = "áveline";
 		}
 		brandText = brandText.split('\n').map((item, i) => {
 			return <p key={i}>{item}</p>;
 		});
-		if(link != ""){
-		link = (<Link to={"/categories/brands/" +  link } >
-			<button className="btn btn-outline-primary brandBoxButton">Go to Collection</button>
-		</Link>)
+		if (link !== "") {
+			link = (
+				<Link to={"/categories/brands/" + link} >
+					<button className="btn btn-outline-primary brandBoxButton">Go to Collection</button>
+				</Link>
+			)
 		}
 
 		var settings = {
@@ -102,18 +79,6 @@ class Home extends Component {
 			autoplay: true,
 			autoplaySpeed: 5000
 		};
-		var dress = {
-			name: "Unique Vintage Black Iridescent Beaded Zelia Fringe Flapper Dress",
-			brandName: "Aveline's",
-			images: [
-				"Dresses/74683/74683_1_2048x2048.jpg",
-				"Dresses/74683/74683_2_2048x2048.jpg",
-				"Dresses/74683/74683_3_1024x1024.jpg",
-				"Dresses/74683/74683_4_1024x1024.jpg",
-				"Dresses/74683/74683_5_2048x2048.jpg"
-			],
-			price: 98.00
-		}
 		const state = store.getState().home.cart;
 		let slider = (
 			<div>Images are loading</div>
@@ -146,21 +111,21 @@ class Home extends Component {
 			<div className="pollsContainer">
 				<Slider className="homepageCarousel" {...settings}>
 					<LazyLoad height={"100%"}>
-						<img className="homepageCarouselImage" src={raptureHomepage} />
+						<img className="homepageCarouselImage" src={raptureHomepage} alt="Party"/>
 						<h2 className="homepageCarouselTitle">You've never been to Rapture?</h2>
 						<Link to={"/about"} >
 							<button className="btn btn-primary btn-lg homepageCarouselButton">About Us</button>
 						</Link>
 					</LazyLoad>
 					<LazyLoad height={"100%"}>
-						<img className="homepageCarouselImage" src={collectionHomepage} />
+						<img className="homepageCarouselImage" src={collectionHomepage} alt="Outside party"/>
 						<h2 className="homepageCarouselTitle">Become the Belle of the Ball</h2>
 						<Link to={"/categories/all"} >
-						<button className="btn btn-primary btn-lg homepageCarouselButton">Browse the Collection</button>
+							<button className="btn btn-primary btn-lg homepageCarouselButton">Browse the Collection</button>
 						</Link>
 					</LazyLoad>
 					<LazyLoad height={"100%"}>
-						<img className="homepageCarouselImage" src={brandsHomepage} />
+						<img className="homepageCarouselImage" src={brandsHomepage} alt="Brands"/>
 						<h2 className="homepageCarouselTitle">Only the Best Fashion Survives in Rapture</h2>
 						<SamePageLink activeClass="active" to="brandHeader" spy={true} smooth={true} duration={500}>
 							<button className="btn btn-primary btn-lg homepageCarouselButton">Meet Our Brands</button>

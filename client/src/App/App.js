@@ -1,13 +1,11 @@
 import React, { Component } from 'react';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
-import { Provider } from 'react-redux';
 import { ConnectedRouter } from 'react-router-redux';
-import store, { history } from './store';
+import { history } from './store';
 import routes from './routes';
 import Header from './common/components/Header'
 import Footer from './common/components/Footer'
-import Cart from './shopify/Cart';
 import { connect } from 'react-redux';
 
 class App extends Component {

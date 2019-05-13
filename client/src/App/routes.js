@@ -1,6 +1,5 @@
 import React from "react";
-import { Route, Switch, Redirect, withRouter } from "react-router";
-import { connect } from 'react-redux';
+import { Route, Switch } from "react-router";
 //, Redirect
 //import { withRouter } from 'react-router-dom';
 //import axios from "axios";

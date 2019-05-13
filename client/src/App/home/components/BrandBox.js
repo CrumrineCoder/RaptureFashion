@@ -32,7 +32,7 @@ class BrandBox extends Component {
         return (
             <div className="brandBox" onMouseEnter={this.hoverEnter} onMouseLeave={this.hoverExit}>
                 <div className="brandBoxInside">
-                    <img className="brandBoxImage rounded" src={require("../../../assets/" + this.state.box.image)} />
+                    <img className="brandBoxImage rounded" src={require("../../../assets/" + this.state.box.image)} alt="Brand"/>
                     {this.state.hover && 
                         <div>    
                             <p className="brandBoxTag">{this.state.box.name}</p>

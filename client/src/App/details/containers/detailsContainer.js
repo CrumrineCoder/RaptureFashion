@@ -1,19 +1,9 @@
 import React, { Component } from 'react';
-import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import ClothingBox from '../../home/components/ClothingBox';
-import { cartActions } from '../../_actions/cart.actions.js';
 import store from '../../store';
 import VariantSelector from '../../shopify/VariantSelector';
 const ONE_SIZE_FITS_MOST = "One Size Fits Most";
-/*
-import ClothingBox from '../components/ClothingBox';
-import CategoriesBox from '../components/CategoriesBox';
-import InstagramBox from '../components/InstagramBox';
-import { pollActions } from '../../_actions/polls.actions.js';
-import { withRouter } from 'react-router-dom';
-*/
-
 
 // Landing page 
 class DetailsContainer extends Component {
@@ -22,40 +12,7 @@ class DetailsContainer extends Component {
         super(props);
         // Used for when searching and tagging functionality whenever that comes
         this.state = {
-            sizeSelected: false,
-            size: "",
-            dress: {
-                name: "Deco Purple & Black Sequin Veronique Fringe Flapper Dress",
-                brandName: "Gibson Girl",
-                images: [
-                    "Dresses/61626/61626-1_2048x2048.jpg",
-                    "Dresses/61626/61626-2_2048x2048.jpg",
-                    "Dresses/61626/61626-3_2048x2048.jpg",
-                    "Dresses/61626/61626-4_1024x1024.jpg",
-                    "Dresses/61626/61626-5_2048x2048.jpg"
-                ],
-                price: "14",
-                color: ["Purple", "Black"],
-                desc: "With a bit of royalty and aristocratic detail, the Veronique Flapper dress is fresh from Unique Vintage in stunning 1920s design. Intricately deco beaded black mesh boasts black iridescent sequins and small black beads wrought in flourishing deco swirls and spirals, while a deep eggplant purple knit lining creates a radiant effect. The sleeveless, v-neck design shows you off with a modest touch, while the curve hugging fit and jagged edge dripping with fringe will turn every head!  \n Available in sizes S-3X while supplies last.",
-                tip: "Pair with studded ankle boots for a simple yet rebellious look.",
-                wash: "Made from authentic indigo dyes, so color transfer may occur. Wash inside out cold with like colors. Tumble dry low.",
-                fabric: "Sheer beaded mesh over knit lining | 99% Polyester",
-                details: [
-                    "Side Zipper",
-                    "Some Stretch",
-                    "Length Includes Fringe",
-                    "Model Pictured Wearing Size M; Medium Length 43",
-                    "Model Info: Height: 5’9\” | Waist: 26 | Hips: 36.5 | Bust: 34C"
-                ],
-                sizes: [
-                    "2",
-                    "4",
-                    "6",
-                    "8",
-                    "10",
-                    "12"
-                ]
-            }
+            sizeSelected: false
         };
         this.addCart = this.addCart.bind(this);
         this.handleOptionChange = this.handleOptionChange.bind(this);
@@ -142,7 +99,7 @@ class DetailsContainer extends Component {
 
         if (this.state.product) {
 
-            if (this.state.sizeSelected || this.state.product.options["0"].values.length == 1) {
+            if (this.state.sizeSelected || this.state.product.options["0"].values.length === 1) {
                 cart = (
                     <button className="detailsCartButton enabledCartButton" onClick={() => this.addCart(variant.id)}>Add to Cart</button>
                 )
@@ -160,26 +117,30 @@ class DetailsContainer extends Component {
         if (this.state.product) {
             img = (
                 <div className="detailsImageScrollContainer">
-                    {this.state.product.images.map((img, i) => <img className="detailsImage" src={this.state.product.images[i].src} />)}
+                    {this.state.product.images.map((img, i) => <img className="detailsImage" src={this.state.product.images[i].src} alt="Model" />)}
                 </div>
             )
             let aOptionNames = [];
             variant = this.state.selectedVariant || this.state.product.variants[0];
-            let variantSelectors = this.state.product.options.map((option) => {
-                if (option.values.length > 1) {
-                    aOptionNames.push(option.name);
-                    return (
-                        <VariantSelector
-                            handleOptionChange={this.handleOptionChange}
-                            key={option.id.toString()}
-                            option={option}
-                            changeProperty={this.changeSize}
-                            currentProperty={this.state.Size}
-                            propertyName={option.name}
-                        />
-                    );
-                }
-            });
+            let variantSelectors;
+            if (this.state.product) {
+                // eslint-disable-next-line array-callback-return
+                variantSelectors = this.state.product.options.map((option) => {
+                    if (option.values.length > 1) {
+                        aOptionNames.push(option.name);
+                        return (
+                            <VariantSelector
+                                handleOptionChange={this.handleOptionChange}
+                                key={option.id.toString()}
+                                option={option}
+                                changeProperty={this.changeSize}
+                                currentProperty={this.state.Size}
+                                propertyName={option.name}
+                            />
+                        );
+                    }
+                });
+            }
             // If there's no variant selectors, then just use one size fits most
             let bShowOneSizeFitsMost = (variantSelectors.length === 1 && aOptionNames[0] === "Title");
             let desc = new DOMParser().parseFromString(this.state.product.descriptionHtml, "text/xml").getElementById("horn").children;
@@ -199,11 +160,11 @@ class DetailsContainer extends Component {
                     <p className="detailsDescriptionText">{desc[0]}</p>
                     <p className="detailsTipText"><b>Style Tip:</b> {desc[1]}</p>
                     <div className="detailsDescContainer">
-                        <img className="detailsDescImage" id="hangerImage" src={require("../../../assets/Icons/hanger.png")} />
+                        <img className="detailsDescImage" id="hangerImage" src={require("../../../assets/Icons/hanger.png")} alt="Hanger" />
                         <p className="detailsDescText">{desc[2]}</p>
                     </div>
                     <div className="detailsDescContainer">
-                        <img className="detailsDescImage" src={require("../../../assets/Icons/fabric.png")} />
+                        <img className="detailsDescImage" src={require("../../../assets/Icons/fabric.png")} alt="Fabric" />
                         <p className="detailsDescText">{desc[3]}</p>
                     </div>
                     <div className="detailsDescContainer">
@@ -221,7 +182,7 @@ class DetailsContainer extends Component {
             relatedProducts = relatedProducts.map(a => a.innerHTML);
             const state = store.getState().home.cart; // state from redux store
             var results = state.products.filter(obj => {
-                return relatedProducts.indexOf(obj.id) != -1
+                return relatedProducts.indexOf(obj.id) !== -1
             })
             related = (
                 <div>

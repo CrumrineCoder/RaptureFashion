@@ -34,7 +34,7 @@ class BagSubtotal extends Component {
         // Split the input string into two arrays containing integers/decimals
         var res = num.split(".");
         // If there is no decimal point or only one decimal place found.
-        if (res.length == 1 || res[1].length < 3) {
+        if (res.length === 1 || res[1].length < 3) {
             // Set the number to two decimal places
             value = value.toFixed(2);
         }

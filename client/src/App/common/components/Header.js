@@ -9,8 +9,7 @@ import {
 	NavLink,
 	Dropdown,
 	DropdownToggle,
-	DropdownMenu,
-	DropdownItem
+	DropdownMenu
 } from 'reactstrap';
 import { connect } from 'react-redux';
 
@@ -100,9 +99,7 @@ class Header extends Component {
 		)
 	}
 }
-Header.propTypes = {
-	//	isLoggedIn: PropTypes.bool.isRequired,
-}
+
 function mapStateToProps(state) {
 	const cartAmount = state.home.cart.checkout.lineItems.length;
 	return { cartAmount };

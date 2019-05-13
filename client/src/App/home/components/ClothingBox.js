@@ -20,23 +20,13 @@ class ClothingBox extends Component {
     }
 
     render() {
-
-        //    console.log(require("../../../assets/" + this.state.dress.images[1]));
-        // TO DO: ADD LINK
-
-        // Image
-        // Price
-        // Name
-        // Brand Name
-        // ID
-        // Size
-        
         let variant = this.state.selectedVariant || this.state.dress.variants[0];
         let img;
-        if (this.state.dress.images.length == 1) {
+        if (this.state.dress.images.length === 1) {
             img = (
                 <img className="clothingBoxImage rounded"
                     src={this.state.dress.images[0].src}
+                    alt="Clothing"
                 />
             )
         } else {
@@ -45,6 +35,7 @@ class ClothingBox extends Component {
                     src={this.state.dress.images[0].src}
                     onMouseOver={e => (e.currentTarget.src = this.state.dress.images[1].src)}
                     onMouseOut={e => (e.currentTarget.src = this.state.dress.images[0].src)}
+                    alt="Clothing"
                 />
             )
         }

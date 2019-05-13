@@ -13,34 +13,34 @@ class InstagramBox extends Component {
         this.hidePoup = this.hidePoup.bind(this);
     }
 
-    componentWillMount(){
-        this.setState({ 
+    componentWillMount() {
+        this.setState({
             user: this.props.user
-         });
+        });
     }
 
-    showPopup(){
+    showPopup() {
         this.setState({
             popup: true
         })
     }
 
-    hidePoup(){
+    hidePoup() {
         this.setState({
             popup: false
         })
     }
 
-    render(){
+    render() {
         // TO DO: ADD LINK
         // onMouseEnter={() => this.showPopup()}  onMouseLeave={() => this.hidePoup()}
-        return(
-            <div className="instagramBox"  onMouseEnter={() => this.showPopup()}  onMouseLeave={() => this.hidePoup()}>
-                <img className="instagramBoxImage" src={require("../../../assets/Instagram/"+this.state.user.image)} />
+        return (
+            <div className="instagramBox" onMouseEnter={() => this.showPopup()} onMouseLeave={() => this.hidePoup()}>
+                <img className="instagramBoxImage" src={require("../../../assets/Instagram/" + this.state.user.image)} alt="Person wearing dress"/>
                 <div className="instagramBoxPopup" style={{ display: this.state.popup ? 'block' : 'none' }}>
-                   <a target="_blank" href={"https://twitter.com/"+this.state.user.handle} className="instagramBoxLink"><p className="instagramBoxHandle">@{this.state.user.handle}</p></a> 
+                    <a rel="noopener noreferrer" target="_blank" href={"https://twitter.com/" + this.state.user.handle} className="instagramBoxLink"><p className="instagramBoxHandle">@{this.state.user.handle}</p></a>
                     <p className="instagramBoxLikes"><i className="fas fa-heart instagramIcon"></i> {this.state.user.likes}</p>
-                </div>    
+                </div>
             </div>
         )
     }
