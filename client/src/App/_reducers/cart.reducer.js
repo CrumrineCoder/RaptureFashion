@@ -18,7 +18,6 @@ const initState = {
   const CLOSE_CART = 'CLOSE_CART'
   // reducers
   export default (state = initState, action) => {
-  
     switch (action.type) {
       case CLIENT_CREATED:
         return {...state, client: action.payload}

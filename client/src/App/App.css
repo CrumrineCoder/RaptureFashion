@@ -818,6 +818,12 @@ body, html{
   padding: 0px; 
 }
 
+.clothingDismisser{
+  font-style: italic;
+  text-align: center; 
+  margin-top: 100px;
+}
+
 /* Checkout */
 
 .checkoutShipping{
