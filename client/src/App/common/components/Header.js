@@ -47,7 +47,7 @@ class Header extends Component {
 		return (
 			<header>
 				<Navbar color="faded" light expand="md">
-					<NavbarBrand href="/">Rapture Fashion</NavbarBrand>
+					<NavbarBrand href="/" id="raptureFashionHeaderLeft">Rapture Fashion</NavbarBrand>
 					<NavbarToggler onClick={this.toggle} />
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="ml-auto" navbar>
@@ -59,14 +59,14 @@ class Header extends Component {
 							</NavItem>
 							<NavItem>
 								<Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
-									<DropdownToggle caret>
+									<DropdownToggle id="raptureFashionHeaderDropdownToggle" caret>
 										Brands
        								</DropdownToggle>
-									<DropdownMenu>
-										<NavLink href="#/categories/brands/gibson">Gibson Girls</NavLink>
-										<NavLink href="#/categories/brands/ryan">Ryan Boutique</NavLink>
-										<NavLink href="#/categories/brands/apollo">Apollo</NavLink>
-										<NavLink href="#/categories/brands/áveline">ÁVELINE'S</NavLink>
+									<DropdownMenu id="raptureFashionHeaderDropdownMenu">
+										<NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/brands/gibson">Gibson Girls</NavLink>
+										<NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/brands/ryan">Ryan Boutique</NavLink>
+										<NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/brands/apollo">Apollo</NavLink>
+										<NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/brands/áveline">ÁVELINE'S</NavLink>
 									</DropdownMenu>
 								</Dropdown>
 							</NavItem>

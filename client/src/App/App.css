@@ -7,6 +7,30 @@
   src: url("../assets/font/NaiveDecoSans.otf") format("opentype");
 }
 
+@font-face {
+  font-family: Metropolis;
+  font-weight: bold;
+  src: url("../assets/font/metropolis.woff");
+}
+
+@font-face{
+  font-family: Metropolis2;
+  font-weight: bold;
+  src: url("../assets/font/Metropolis.ttf");
+}
+
+@font-face{
+  font-family: Broadway;
+  font-weight: bold;
+  src: url("../assets/font/broadway regular.ttf");
+}
+
+@font-face{
+  font-family: Proxima Nova;
+  font-weight: bold;
+  src: url("../assets/font/Proxima Nova.otf");
+}
+
 /* Helpers */
 
 .rounded{
@@ -14,7 +38,8 @@
 }
 
 body, html{
-  font-family: "Naive" !important;
+  font-family: "Proxima Nova" !important;
+  letter-spacing: 1px;
   background: #0F2B36 !important;
   color: rgb(153, 225, 233) !important;
   word-wrap: break-word;
@@ -34,9 +59,31 @@ body, html{
 
 /* Nav */
 
-nav{
-  background: #218F7D;
-  color: rgb(153, 225, 233);
+nav, nav *{
+  background: rgb(18, 80, 70);
+  color: rgb(153, 225, 233) !important;
+}
+
+#raptureFashionHeaderLeft{
+
+  font-size: 30px;
+}
+
+#raptureFashionHeaderDropdownToggle{
+  background: rgb(12, 51, 44);
+  border-color: rgb(7, 31, 26);
+}
+
+#raptureFashionHeaderDropdownToggle:focus{
+  box-shadow: 0 0 0 0.2rem rgb(7, 31, 26);
+}
+
+#raptureFashionHeaderDropdownMenu{
+  background: rgb(12, 51, 44);
+}
+
+.raptureFashionHeaderDropdownItem:hover{
+  background: rgb(7, 31, 26);
 }
 
 .cartWrapper{
