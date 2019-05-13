@@ -12,6 +12,8 @@ This is a boutique fashion website that uses Shopify's Storefront API with React
 * Fix Lint Errors
 * Login and Register, and then wishlists and profiles
 * Size Chart (dynamic)
+* Responsive
+* Art Deco art style (lots of work here)
 
 ## Completed Job Stories
 

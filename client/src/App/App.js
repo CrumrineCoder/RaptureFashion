@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
-import './App.css';
 import 'bootstrap/dist/css/bootstrap.css';
+
+import './App.css';
 import { ConnectedRouter } from 'react-router-redux';
 import { history } from './store';
 import routes from './routes';

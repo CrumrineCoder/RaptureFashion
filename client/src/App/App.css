@@ -1,6 +1,12 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
+@font-face {
+  font-family: Naive;
+  font-weight: bold;
+  src: url("../assets/font/NaiveDecoSans.otf") format("opentype");
+}
+
 /* Helpers */
 
 .rounded{
@@ -8,9 +14,9 @@
 }
 
 body, html{
-  font-family: "Century Gothic" !important;
-  background: #E7ECEF !important;
-  color: #000403 !important;
+  font-family: "Naive" !important;
+  background: #0F2B36 !important;
+  color: rgb(153, 225, 233) !important;
   word-wrap: break-word;
   height: 100%;
   margin: 0;
@@ -27,6 +33,11 @@ body, html{
 }
 
 /* Nav */
+
+nav{
+  background: #218F7D;
+  color: rgb(153, 225, 233);
+}
 
 .cartWrapper{
   display: inline-block;
@@ -903,7 +914,7 @@ footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-  background: #E7ECEF;
+  background: #218F7D;
   
   padding: 5px 0;
   height: 30px; 
