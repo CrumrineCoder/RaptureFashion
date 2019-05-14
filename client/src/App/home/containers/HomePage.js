@@ -84,17 +84,17 @@ class Home extends Component {
 		)
 		if (state.products["0"]) {
 			slider = (<Slider className="homepageBestSellersCarousel differentRightSlick">
-				<div>
+				<div className="clothingBoxContainer">
 					<ClothingBox dress={state.products['0']}></ClothingBox>
 					<ClothingBox dress={state.products['1']}></ClothingBox>
 					<ClothingBox dress={state.products['2']}></ClothingBox>
 				</div>
-				<div>
+				<div className="clothingBoxContainer">
 					<ClothingBox dress={state.products['3']}></ClothingBox>
 					<ClothingBox dress={state.products['4']}></ClothingBox>
 					<ClothingBox dress={state.products['5']}></ClothingBox>
 				</div>
-				<div>
+				<div className="clothingBoxContainer">
 					<ClothingBox dress={state.products['6']}></ClothingBox>
 					<ClothingBox dress={state.products['7']}></ClothingBox>
 					<ClothingBox dress={state.products['8']}></ClothingBox>
@@ -110,25 +110,31 @@ class Home extends Component {
 			<div className="pollsContainer">
 				<Slider className="homepageCarousel" {...settings}>
 					<LazyLoad height={"100%"}>
-						<img className="homepageCarouselImage" src={raptureHomepage} alt="Party"/>
-						<h2 className="homepageCarouselTitle">You've never been to Rapture?</h2>
-						<Link to={"/about"} >
-							<button className="btn btn-primary btn-lg homepageCarouselButton">About Us</button>
-						</Link>
+						<img className="homepageCarouselImage" src={raptureHomepage} alt="Party" />
+						<div className="homepageCarouselInfo">
+							<h2 className="homepageCarouselTitle">You've never been to Rapture?</h2>
+							<Link to={"/about"} >
+								<button className="btn btn-primary btn-lg homepageCarouselButton">About Us</button>
+							</Link>
+						</div>
 					</LazyLoad>
 					<LazyLoad height={"100%"}>
-						<img className="homepageCarouselImage" src={collectionHomepage} alt="Outside party"/>
-						<h2 className="homepageCarouselTitle">Become the Belle of the Ball</h2>
-						<Link to={"/categories/all"} >
-							<button className="btn btn-primary btn-lg homepageCarouselButton">Browse the Collection</button>
-						</Link>
+						<img className="homepageCarouselImage" src={collectionHomepage} alt="Outside party" />
+						<div className="homepageCarouselInfo">
+							<h2 className="homepageCarouselTitle">Become the Belle of the Ball</h2>
+							<Link to={"/categories/all"} >
+								<button className="btn btn-primary btn-lg homepageCarouselButton">Browse the Collection</button>
+							</Link>
+						</div>
 					</LazyLoad>
 					<LazyLoad height={"100%"}>
-						<img className="homepageCarouselImage" src={brandsHomepage} alt="Brands"/>
-						<h2 className="homepageCarouselTitle">Only the Best Fashion Survives in Rapture</h2>
-						<SamePageLink activeClass="active" to="brandHeader" spy={true} smooth={true} duration={500}>
-							<button className="btn btn-primary btn-lg homepageCarouselButton">Meet Our Brands</button>
-						</SamePageLink>
+						<img className="homepageCarouselImage" src={brandsHomepage} alt="Brands" />
+						<div className="homepageCarouselInfo">
+							<h2 className="homepageCarouselTitle">Only the Best Fashion Survives in Rapture</h2>
+							<SamePageLink activeClass="active" to="brandHeader" spy={true} smooth={true} duration={500}>
+								<button className="btn btn-primary btn-lg homepageCarouselButton">Meet Our Brands</button>
+							</SamePageLink>
+						</div>
 					</LazyLoad>
 				</Slider>
 				<h4 className="homepageHeader">Rapture's Favorites</h4>
