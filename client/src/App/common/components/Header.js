@@ -47,7 +47,10 @@ class Header extends Component {
 		return (
 			<header>
 				<Navbar color="faded" light expand="md">
-					<NavbarBrand href="/" id="raptureFashionHeaderLeft">Rapture Fashion</NavbarBrand>
+					<NavbarBrand href="/" id="raptureFashionHeaderLeft">
+						<i className="raptureFashionHeaderLogo" src="../../../assets/Icons/rapture.png"></i>
+						<span className="raptureFashionHeaderTitle">Rapture Fashion</span>
+					</NavbarBrand>
 					<NavbarToggler onClick={this.toggle} />
 					<Collapse isOpen={this.state.isOpen} navbar>
 						<Nav className="ml-auto" navbar>
@@ -91,7 +94,7 @@ class Header extends Component {
 										<i className="fas fa-briefcase cartLink2 raptureFashionHeaderDropdownMenuLink">
 											<span className="cartQuantity2">{this.props.cartAmount}</span>
 										</i>
-									</Link>
+							</Link>
 								</div>
 							</NavItem>
 						</Nav>

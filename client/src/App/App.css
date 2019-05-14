@@ -64,6 +64,26 @@ nav, nav *{
   color: rgb(153, 225, 233) !important;
 }
 
+.raptureFashionHeaderLogo{
+  width: 52px !important;
+  height: 52px !important;
+  background-image: url("../assets/Icons/rapture.png");
+  background-position: center center;
+  background-size: 52px;
+  background-repeat: no-repeat;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 15px;
+  bottom: -5px;
+  position: relative;
+}
+
+.raptureFashionHeaderTitle{
+  bottom: 10px;
+  position: relative;
+}
+
 #raptureFashionHeaderLeft{
 
   font-size: 30px;
