@@ -110,6 +110,15 @@ class Home extends Component {
 			<div className="pollsContainer">
 				<Slider className="homepageCarousel" {...settings}>
 					<LazyLoad height={"100%"}>
+						<img className="homepageCarouselImage" src={brandsHomepage} alt="Brands" />
+						<div className="homepageCarouselInfo">
+							<h2 className="homepageCarouselTitle">Only the Best Fashion Survives in Rapture</h2>
+							<SamePageLink activeClass="active" to="brandHeader" spy={true} smooth={true} duration={500}>
+								<button className="btn btn-primary btn-lg homepageCarouselButton">Meet Our Brands</button>
+							</SamePageLink>
+						</div>
+					</LazyLoad>
+					<LazyLoad height={"100%"}>
 						<img className="homepageCarouselImage" src={raptureHomepage} alt="Party" />
 						<div className="homepageCarouselInfo">
 							<h2 className="homepageCarouselTitle">You've never been to Rapture?</h2>
@@ -125,15 +134,6 @@ class Home extends Component {
 							<Link to={"/categories/all"} >
 								<button className="btn btn-primary btn-lg homepageCarouselButton">Browse the Collection</button>
 							</Link>
-						</div>
-					</LazyLoad>
-					<LazyLoad height={"100%"}>
-						<img className="homepageCarouselImage" src={brandsHomepage} alt="Brands" />
-						<div className="homepageCarouselInfo">
-							<h2 className="homepageCarouselTitle">Only the Best Fashion Survives in Rapture</h2>
-							<SamePageLink activeClass="active" to="brandHeader" spy={true} smooth={true} duration={500}>
-								<button className="btn btn-primary btn-lg homepageCarouselButton">Meet Our Brands</button>
-							</SamePageLink>
 						</div>
 					</LazyLoad>
 				</Slider>

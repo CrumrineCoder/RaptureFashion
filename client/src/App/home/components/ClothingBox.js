@@ -43,12 +43,17 @@ class ClothingBox extends Component {
             <div className="clothingBox">
                 <Link to={"/products/" + this.state.dress.id}>
                     {img}
-                    <p className="clothingBoxTitle clothingBoxDesc">{this.state.dress.title}</p>
-                    <p className="clothingBoxSubTitle clothingBoxDesc">{this.state.dress.vendor}</p>
-                    <p className="clothingBoxPrice clothingBoxDesc">${variant.price}</p>
+                    <div className="clothingBoxFooter">
+                        {this.state.dress.title}
+                    </div>
                 </Link>
             </div>
         )
+        /* 
+                <p className="clothingBoxTitle clothingBoxDesc">{this.state.dress.title}</p>
+                    <p className="clothingBoxSubTitle clothingBoxDesc">{this.state.dress.vendor}</p>
+                    <p className="clothingBoxPrice clothingBoxDesc">${variant.price}</p>
+                    */
     }
 }
 

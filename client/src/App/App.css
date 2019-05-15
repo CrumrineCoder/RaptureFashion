@@ -257,14 +257,18 @@ nav, nav *{
 
 .slick-prev:before, .slick-next:before{
   font-size: 32px;
+  z-index:3;
 }
 
 .slick-prev, .slick-next {
-  z-index: 2; 
+  z-index: 1; 
+  height: 300px;
+  width: 50px;
+  background: #70A7AD; 
 }
 
 .slick-prev{
-  left: -40px;
+  left: -36px;
 }
 
 .slick-next{
@@ -272,7 +276,7 @@ nav, nav *{
 }
 
 .differentRightSlick .slick-next{
-  right: -15px;
+  right: -27px;
 }
 
 .homepageBestSellersCarousel .slick-prev:before, .homepageBestSellersCarousel .slick-next:before{
@@ -315,6 +319,18 @@ nav, nav *{
   display: inline-block;
   background: white; 
   border: 3px solid #FFB619;
+}
+
+.clothingBoxFooter{
+  background: rgb(6, 13, 14);
+  text-align: center; 
+  color: white !important; 
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.clothingBox a{
+  text-decoration-color: #FFB619 !important;
 }
 
 .clothingBoxTitle{
