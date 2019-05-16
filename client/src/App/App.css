@@ -258,17 +258,25 @@ nav, nav *{
 .slick-prev:before, .slick-next:before{
   font-size: 32px;
   z-index:3;
+ 
+  padding: 100px;
+ 
 }
 
 .slick-prev, .slick-next {
   z-index: 1; 
   height: 300px;
   width: 50px;
-  background: #70A7AD; 
+  background: #70A7AD !important; 
 }
 
 .slick-prev{
-  left: -36px;
+  left: -55px;
+  border: 2px solid #FFB619;
+}
+
+.slick-prev{
+
 }
 
 .slick-next{
@@ -276,9 +284,25 @@ nav, nav *{
 }
 
 .differentRightSlick .slick-next{
-  right: -27px;
+  right: -32px;
 }
 
+.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus{
+
+}
+/*
+.leftSlider{
+  z-index: 1; 
+  height: 300px;
+  width: 50px;
+  background: #70A7AD; 
+  float: left; 
+}
+
+.slick-prev, .slick-next{
+  display: none !important; 
+}
+*/
 .homepageBestSellersCarousel .slick-prev:before, .homepageBestSellersCarousel .slick-next:before{
   color: #70A7AD;
 }

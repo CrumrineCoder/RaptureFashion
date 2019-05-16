@@ -105,6 +105,7 @@ class Home extends Component {
 			{state.products.map((article, i) => <ClothingBox key={i} dress={article} />)}
 		</ul>
 		*/
+		//	<div className="leftSlider"></div>
 
 		return (
 			<div className="pollsContainer">
@@ -138,7 +139,9 @@ class Home extends Component {
 					</LazyLoad>
 				</Slider>
 				<h4 className="homepageHeader">Rapture's Favorites</h4>
+			
 				{slider}
+			
 				<h4 className="homepageHeader">Categories</h4>
 				<CategoriesBox category="dresses" box={{ image: "Categories/dresses.jpg", name: "Dresses" }}></CategoriesBox>
 				<CategoriesBox category="shoes" box={{ image: "Categories/shoes.jpg", name: "Shoes" }}></CategoriesBox>
