@@ -371,6 +371,7 @@ nav, nav *{
 
 .clothingBox{
   vertical-align: top; 
+  margin-bottom: 15px;
 }
 
 /* Categories Box */
@@ -965,9 +966,14 @@ nav, nav *{
 }
 
 .filter{
-  max-width: 200px;
-  float:  left; 
   margin: 30px;
+  padding: 20px; 
+  background: rgb(55, 154, 194) !important;
+  display: flex;
+}
+
+.filterSection{
+  flex: 1;
 }
 
 
