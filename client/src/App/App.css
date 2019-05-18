@@ -250,67 +250,49 @@ nav, nav *{
   margin-right: -50vw;
   height: 80%;
 }
-
-.slick-slider{
-  height: 80%;
-}
-
-.slick-prev:before, .slick-next:before{
-  font-size: 32px;
-  z-index:3;
- 
-  padding: 100px;
- 
-}
-
+  
 .slick-prev, .slick-next {
-  z-index: 1; 
-  height: 300px;
-  width: 50px;
-  background: #70A7AD !important; 
-}
-
-.slick-prev{
-  left: -40px;
-  border: 2px solid #FFB619;
-}
-
-.slick-prev{
-
-}
-
-.slick-slider{
-  background: rgb(37, 107, 134) !important; 
-  padding: 20px; 
-}
-
-.slick-next{
-  right: -20px;
-}
-
-.differentRightSlick .slick-next{
-  right: -32px;
-}
-
-.slick-prev:hover, .slick-prev:focus, .slick-next:hover, .slick-next:focus{
-
-}
-/*
-.leftSlider{
-  z-index: 1; 
-  height: 300px;
-  width: 50px;
-  background: #70A7AD; 
-  float: left; 
-}
-
-.slick-prev, .slick-next{
   display: none !important; 
 }
-*/
-.homepageBestSellersCarousel .slick-prev:before, .homepageBestSellersCarousel .slick-next:before{
-  color: #70A7AD;
+
+.sliderContainer{
+  background: rgb(37, 107, 134) !important; 
+  padding: 40px; 
+  position: relative; 
 }
+
+.sliderButton{
+  position: absolute;
+  top: 0;
+  background: rgb(10, 46, 40); 
+  height: 100%;
+  width: 30px;
+  border: 2px solid rgb(177, 126, 16);
+  cursor: pointer; 
+}
+
+.prevSliderButton{
+  left: 0;
+}
+
+.nextSliderButton{
+  right: 0; 
+}
+
+.sliderIcon{
+  color: rgb(177, 126, 16);
+  top: 50%;
+  position: absolute; 
+}
+
+.prevSliderIcon{
+  left: 8px;
+}
+
+.nextSliderIcon{
+  left: 8px;
+}
+
 
 .slick-dots li button:before {
   font-size: 18px; 

@@ -23,6 +23,15 @@ class Home extends Component {
 		this.state = { filter: "", query: "", brandToLearnMore: "" };
 		this.changeFilter = this.changeFilter.bind(this);
 		this.showText = this.showText.bind(this);
+		this.next = this.next.bind(this);
+		this.previous = this.previous.bind(this);
+	}
+
+	next() {
+		this.slider.slickNext();
+	}
+	previous() {
+		this.slider.slickPrev();
 	}
 
 	handleSearchBar = (queryValue) => {
@@ -83,7 +92,7 @@ class Home extends Component {
 			<div>Images are loading</div>
 		)
 		if (state.products["0"]) {
-			slider = (<Slider className="homepageBestSellersCarousel differentRightSlick">
+			slider = (<Slider ref={c => (this.slider = c)} className="homepageBestSellersCarousel differentRightSlick">
 				<div className="clothingBoxContainer">
 					<ClothingBox dress={state.products['0']}></ClothingBox>
 					<ClothingBox dress={state.products['1']}></ClothingBox>
@@ -139,14 +148,20 @@ class Home extends Component {
 					</LazyLoad>
 				</Slider>
 				<h4 className="homepageHeader">Rapture's Favorites</h4>
-			
-				{slider}
-			
+				<div className="sliderContainer">
+					{slider}
+					<div className="sliderButton prevSliderButton" onClick={this.previous}>
+						<i class="fas fa-chevron-left sliderIcon prevSliderIcon" ></i>
+					</div>
+					<div className="sliderButton nextSliderButton" onClick={this.next}>
+						<i class="fas fa-chevron-right sliderIcon nextSliderIcon"></i>
+					</div>
+				</div>
 				<h4 className="homepageHeader">Categories</h4>
-				<CategoriesBox category="dresses" box={{ image: "Categories/dresses.jpg", name: "Dresses" }}></CategoriesBox>
-				<CategoriesBox category="shoes" box={{ image: "Categories/shoes.jpg", name: "Shoes" }}></CategoriesBox>
-				<CategoriesBox category="accessories" box={{ image: "Categories/jewelry.jpg", name: "Accessories" }}></CategoriesBox>
-				<CategoriesBox category="hats" box={{ image: "Categories/hats.jpg", name: "Hats" }}></CategoriesBox>
+				<CategoriesBox category="dresses" box={{ image: "Categories/dressArtDeco.jpg", name: "Dresses" }}></CategoriesBox>
+				<CategoriesBox category="shoes" box={{ image: "Categories/shoesArtDeco.png", name: "Shoes" }}></CategoriesBox>
+				<CategoriesBox category="accessories" box={{ image: "Categories/jewelryArtDeco.png", name: "Accessories" }}></CategoriesBox>
+				<CategoriesBox category="hats" box={{ image: "Categories/hatsArtDeco.png", name: "Hats" }}></CategoriesBox>
 				<h4 className="homepageHeader" id="brandHeader">Brands</h4>
 				<div className="brandBoxContainer">
 					<BrandBox category="brands/gibson" learnMore={this.showText} box={{ image: "Brand/gibson girls.png", name: "Gibson Girls" }}></BrandBox>
