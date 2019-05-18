@@ -18,7 +18,7 @@ class CategoriesBox extends Component {
     render() {
         // TO DO: ADD LINK
         return (
-            <Link className="categoriesBox" to={"/categories/"+this.props.category} >
+            <Link className="categoriesBox yellowText yellowLink" to={"/categories/"+this.props.category} >
                 <div>
                     <img className="categoriesBoxImage rounded" src={require("../../../assets/" + this.state.box.image)} alt="Category"/>
                     <p className="categoriesBoxTag">{this.state.box.name}</p>

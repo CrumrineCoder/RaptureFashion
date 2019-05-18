@@ -27,6 +27,10 @@ class Home extends Component {
 		this.previous = this.previous.bind(this);
 	}
 
+	componentDidMount(){
+		this.showText("Gibson Girls");
+	}
+
 	next() {
 		this.slider.slickNext();
 	}
@@ -46,8 +50,8 @@ class Home extends Component {
 		});
 	}
 
-	showText(event) {
-		this.setState({ brandToLearnMore: event.target.value })
+	showText(name) {
+		this.setState({ brandToLearnMore: name })
 	}
 
 	render() {
@@ -72,7 +76,7 @@ class Home extends Component {
 		if (link !== "") {
 			link = (
 				<Link to={"/categories/brands/" + link} >
-					<button className="btn btn-outline-primary brandBoxButton">Go to Collection</button>
+					<button className="btn btn-outline-primary brandBoxButton yellowButton">Go to Collection</button>
 				</Link>
 			)
 		}
@@ -124,7 +128,7 @@ class Home extends Component {
 						<div className="homepageCarouselInfo">
 							<h2 className="homepageCarouselTitle">Only the Best Fashion Survives in Rapture</h2>
 							<SamePageLink activeClass="active" to="brandHeader" spy={true} smooth={true} duration={500}>
-								<button className="btn btn-primary btn-lg homepageCarouselButton">Meet Our Brands</button>
+								<button className="btn btn-primary btn-lg yellowButton">Meet Our Brands</button>
 							</SamePageLink>
 						</div>
 					</LazyLoad>
@@ -178,7 +182,7 @@ class Home extends Component {
 				<h5>Join the Rapture Community by tweeting #WelcomeToRapture to @RaptureFashion</h5>
 				<Slider className="homepageBestSellersCarousel" {...{
 					infinite: true,
-					speed: 500,
+					speed: 200,
 					slidesToShow: 1,
 					slidesToScroll: 1,
 					autoplay: true,

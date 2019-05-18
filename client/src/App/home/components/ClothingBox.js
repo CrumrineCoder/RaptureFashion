@@ -41,7 +41,7 @@ class ClothingBox extends Component {
         }
         return (
             <div className="clothingBox">
-                <Link to={"/products/" + this.state.dress.id}>
+                <Link to={"/products/" + this.state.dress.id} className="yellowLink">
                     {img}
                     <div className="clothingBoxFooter">
                         {this.state.dress.title}

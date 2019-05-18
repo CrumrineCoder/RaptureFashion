@@ -212,25 +212,25 @@ nav, nav *{
      1px 1px 0 #000;
 }
 
-.homepageCarouselButton{
+.yellowButton{
  margin-top: 10px;
  background: rgb(6, 13, 14);
  border: 3px solid #FFB619;
  color: #FFB619 !important; 
 }
 
-.homepageCarouselButton:hover{
+.yellowButton:hover{
   background: #FFB619;
   color: rgb(6, 13, 14) !important;
   border: 3px solid #FFB619;
 }
 
-.homepageCarouselButton:focus{
+.yellowButton:focus{
   outline: none;
   box-shadow: 0 0 0 0.2rem #FFB619;
 }
 
-.homepageCarouselButton:active{
+.yellowButton:active{
   outline: none;
   box-shadow: 0 0 0 0.2rem #FFB619 !important;
   background: #FFB619  !important;
@@ -340,8 +340,12 @@ nav, nav *{
   font-weight: bold;
 }
 
-.clothingBox a{
+.yellowLink{
   text-decoration-color: #FFB619 !important;
+}
+
+.yellowText{
+  color: #FFB619 !important; 
 }
 
 .clothingBoxTitle{
@@ -405,9 +409,7 @@ nav, nav *{
 
 .brandBoxInside{
   margin: 5px; 
-  padding: 20px; 
-  background: rgb(189, 197, 202);
-  border-radius: 15px; 
+  background: #FFB619 !important;
 }
 
 .brandBoxImage{
@@ -416,6 +418,12 @@ nav, nav *{
   margin: 0 auto; 
   display: block; 
   overflow: hidden;
+  cursor: pointer;
+  border: 3px solid #FFB619;
+}
+
+.brandBoxImage:hover{
+  opacity: .5;
 }
 
 .brandBoxTag{
