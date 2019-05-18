@@ -271,12 +271,17 @@ nav, nav *{
 }
 
 .slick-prev{
-  left: -55px;
+  left: -40px;
   border: 2px solid #FFB619;
 }
 
 .slick-prev{
 
+}
+
+.slick-slider{
+  background: rgb(37, 107, 134) !important; 
+  padding: 20px; 
 }
 
 .slick-next{
