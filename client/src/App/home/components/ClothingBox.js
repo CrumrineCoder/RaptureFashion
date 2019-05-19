@@ -20,7 +20,7 @@ class ClothingBox extends Component {
     }
 
     render() {
-        let variant = this.state.selectedVariant || this.state.dress.variants[0];
+      //  let variant = this.state.selectedVariant || this.state.dress.variants[0];
         let img;
         if (this.state.dress.images.length === 1) {
             img = (

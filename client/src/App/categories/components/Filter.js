@@ -84,7 +84,7 @@ class Filter extends Component {
         //   {activeFilter}
 
         let clear;
-        if (this.state.filters.color !== undefined || this.state.filters.vendor !== undefined || this.state.sort !== null) {
+        if ((this.state.filters.color !== null  &&  this.state.filters.color !== undefined) || (this.state.filters.vendor !== null  &&  this.state.filters.vendor !== undefined)|| this.state.sort !== null) {
             clear = (
                 <div className="filterClear">
                     <i onClick={this.clear} className="fas fa-times activeFilterDelete"></i> Clear

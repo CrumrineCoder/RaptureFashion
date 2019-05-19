@@ -586,23 +586,30 @@ nav, nav *{
   margin: 30px auto;
   padding: 10px; 
   width: 100%;
-  background: #0F2B36;
-  color: white; 
   text-transform: uppercase;
   font-weight: bold; 
   letter-spacing: 1px;
+  /*
   border: none; 
+  background: #0F2B36;
+  color: white; 
+  */
 }
 
 .disabledCartButton{
   cursor: not-allowed;
+  background: rgb(17, 30, 28); 
+  border: 2px solid rgb(180, 148, 79);
+  color: rgb(180, 148, 79) !important;
+  /*
   background: rgb(143, 166, 168);
   color: rgb(61, 81, 83);
+  */
 }
 
 .enabledCartButton:hover{
   cursor: pointer;
-  background: rgb(7, 20, 26);
+/*  background: rgb(7, 20, 26); */
 }
 
 .detailsDescriptionText, .detailsTipText{
@@ -1093,6 +1100,7 @@ nav, nav *{
 
 .vendorHeader, .clothingHeader{
   clear: both; 
+  margin-top: 30px;
 }
 
 /* Footer */
