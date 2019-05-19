@@ -27,11 +27,12 @@ class BrandBox extends Component {
     }
 
     render() {
+        console.log(this.props.brandToCompare == this.props.box.name)
         // TO DO: ADD LINK
         return (
             <div className="brandBox" onMouseEnter={this.hoverEnter} onMouseLeave={this.hoverExit}>
                 <div className="brandBoxInside">
-                    <img className="brandBoxImage rounded" onClick={() => this.props.learnMore(this.props.box.name)} src={require("../../../assets/" + this.state.box.image)} alt="Brand"/>
+                    <img className={this.props.brandToCompare == this.props.box.name ? "brandBoxImage brandBoxImageActive" : "brandBoxImage"} onClick={() => this.props.learnMore(this.props.box.name)} src={require("../../../assets/" + this.state.box.image)} alt="Brand"/>
                 </div>
             </div>
         )

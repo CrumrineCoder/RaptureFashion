@@ -420,11 +420,16 @@ nav, nav *{
   display: block; 
   overflow: hidden;
   cursor: pointer;
-  border: 3px solid #FFB619;
+  border: 3px solid  rgb(177, 126, 16);
 }
 
-.brandBoxImage:hover{
+.brandBoxImage:hover:not(.brandBoxImageActive){
   opacity: .5;
+}
+
+.brandBoxImageActive{
+  opacity: .5;
+  border-color: #FFB619;
 }
 
 .brandBoxTag{

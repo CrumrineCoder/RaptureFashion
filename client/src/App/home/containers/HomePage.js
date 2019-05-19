@@ -137,7 +137,7 @@ class Home extends Component {
 						<div className="homepageCarouselInfo">
 							<h2 className="homepageCarouselTitle">You've never been to Rapture?</h2>
 							<Link to={"/about"} >
-								<button className="btn btn-primary btn-lg homepageCarouselButton">About Us</button>
+								<button className="btn btn-primary btn-lg yellowButton">About Us</button>
 							</Link>
 						</div>
 					</LazyLoad>
@@ -146,7 +146,7 @@ class Home extends Component {
 						<div className="homepageCarouselInfo">
 							<h2 className="homepageCarouselTitle">Become the Belle of the Ball</h2>
 							<Link to={"/categories/all"} >
-								<button className="btn btn-primary btn-lg homepageCarouselButton">Browse the Collection</button>
+								<button className="btn btn-primary btn-lg yellowButton">Browse the Collection</button>
 							</Link>
 						</div>
 					</LazyLoad>
@@ -168,10 +168,10 @@ class Home extends Component {
 				<CategoriesBox category="hats" box={{ image: "Categories/hatsArtDeco.png", name: "Hats" }}></CategoriesBox>
 				<h4 className="homepageHeader" id="brandHeader">Brands</h4>
 				<div className="brandBoxContainer">
-					<BrandBox category="brands/gibson" learnMore={this.showText} box={{ image: "Brand/gibson girls.png", name: "Gibson Girls" }}></BrandBox>
-					<BrandBox category="brands/ryan" learnMore={this.showText} box={{ image: "Brand/andrew ryan.png", name: "Ryan Boutique" }}></BrandBox>
-					<BrandBox category="brands/apollo" learnMore={this.showText} box={{ image: "Brand/apollo.png", name: "Apollo" }}></BrandBox>
-					<BrandBox category="brands/áveline" learnMore={this.showText} box={{ image: "Brand/aveline.png", name: "ÁVELINE'S" }}></BrandBox>
+					<BrandBox category="brands/gibson" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/gibson girls.png", name: "Gibson Girls" }}></BrandBox>
+					<BrandBox category="brands/ryan" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/andrew ryan.png", name: "Ryan Boutique" }}></BrandBox>
+					<BrandBox category="brands/apollo" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/apollo.png", name: "Apollo" }}></BrandBox>
+					<BrandBox category="brands/áveline" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/aveline.png", name: "ÁVELINE'S" }}></BrandBox>
 				</div>
 				<div className="brandBoxDesc">
 					<h3>{this.state.brandToLearnMore}</h3>
