@@ -860,6 +860,11 @@ nav, nav *{
   background-image: linear-gradient(90deg, Black 50%, white 50%);
 }
 
+.clothingBrandContainerCategoryHeader{
+  font-size: 30px;
+  margin-top: 10px;
+}
+
 /* Filters */
 
 .filterRadio:after{
@@ -896,7 +901,7 @@ nav, nav *{
   font-weight: 400;
   text-transform: uppercase;
   cursor: pointer;
-  color: #444;
+  color: rgb(230, 230, 230);
   border-radius: 4px;
   border: solid #dfdfdf 1px;
   margin: 0px 5px 3px 0px;
@@ -907,20 +912,20 @@ nav, nav *{
 }
 
 .filterHeader{
-  float: left; 
-  font-size: 12px;
+  font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 0px;
+  display: inline-block;
 }
 
 .filterSubheader{
-  clear: both; 
   font-size: 11px;
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 7px;
   margin-top: 13px;
+  text-align: center;
 }
 
 .filterSort{
@@ -929,7 +934,7 @@ nav, nav *{
   font-weight: 400;
   text-transform: uppercase;
   cursor: pointer;
-  color: #444;
+  color: rgb(238, 238, 238);
   margin: 6px 5px 0px 0px;
   display: block;
   text-align: left;
@@ -951,12 +956,12 @@ nav, nav *{
 }
 
 .filterSortActive {
-  color: #333;
+  color: #ffb619;
   font-weight: 600;
 }
 
 .filterSortActive:after {
-  background: #333;
+  background: #ffb619;
 }
 
 
@@ -968,7 +973,9 @@ nav, nav *{
 .filter{
   margin: 30px;
   padding: 20px; 
-  background: rgb(55, 154, 194) !important;
+}
+
+.filterSectionContainer{
   display: flex;
 }
 
@@ -976,19 +983,25 @@ nav, nav *{
   flex: 1;
 }
 
+.filterHeaderSection{
+  margin: 0 auto;
+  text-align: center; 
+}
+
 
 .filterClear{
+  display: inline-block;
   color: #aaa;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 400;
-  margin-top: 1px;
-  margin-top: 1.5px;
-  float: right;
+  padding-left: 10px;
   line-height: 1;
 }
 
+
 .filterActive{
-  border-color: #444;
+  border-color: #FFB619;
+  color: #FFb619 !important;
 }
 
 /* Categories next to Filters */
