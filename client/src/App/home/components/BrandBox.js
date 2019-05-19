@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Link } from 'react-router-dom';
 
 class BrandBox extends Component {
 
@@ -28,20 +27,10 @@ class BrandBox extends Component {
 
     render() {
         // TO DO: ADD LINK
-
         return (
             <div className="brandBox" onMouseEnter={this.hoverEnter} onMouseLeave={this.hoverExit}>
                 <div className="brandBoxInside">
-                    <img className="brandBoxImage rounded" src={require("../../../assets/" + this.state.box.image)} alt="Brand"/>
-                    {this.state.hover && 
-                        <div>    
-                            <p className="brandBoxTag">{this.state.box.name}</p>
-                            <button className="btn btn-info brandBoxButton" value={this.props.box.name} onClick={this.props.learnMore}>Learn More</button>
-                            <Link to={"/categories/" + this.props.category} >
-                                <button className="btn btn-outline-primary brandBoxButton">Go to Collection</button>
-                            </Link>
-                        </div>
-                    }
+                    <img className={this.props.brandToCompare === this.props.box.name ? "brandBoxImage brandBoxImageActive" : "brandBoxImage"} onClick={() => this.props.learnMore(this.props.box.name)} src={require("../../../assets/" + this.state.box.image)} alt="Brand"/>
                 </div>
             </div>
         )

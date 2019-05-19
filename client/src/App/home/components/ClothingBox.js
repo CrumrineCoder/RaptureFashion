@@ -20,7 +20,7 @@ class ClothingBox extends Component {
     }
 
     render() {
-        let variant = this.state.selectedVariant || this.state.dress.variants[0];
+      //  let variant = this.state.selectedVariant || this.state.dress.variants[0];
         let img;
         if (this.state.dress.images.length === 1) {
             img = (
@@ -41,14 +41,19 @@ class ClothingBox extends Component {
         }
         return (
             <div className="clothingBox">
-                <Link to={"/products/" + this.state.dress.id}>
+                <Link to={"/products/" + this.state.dress.id} className="yellowLink">
                     {img}
-                    <p className="clothingBoxTitle clothingBoxDesc">{this.state.dress.title}</p>
-                    <p className="clothingBoxSubTitle clothingBoxDesc">{this.state.dress.vendor}</p>
-                    <p className="clothingBoxPrice clothingBoxDesc">${variant.price}</p>
+                    <div className="clothingBoxFooter">
+                        {this.state.dress.title}
+                    </div>
                 </Link>
             </div>
         )
+        /* 
+                <p className="clothingBoxTitle clothingBoxDesc">{this.state.dress.title}</p>
+                    <p className="clothingBoxSubTitle clothingBoxDesc">{this.state.dress.vendor}</p>
+                    <p className="clothingBoxPrice clothingBoxDesc">${variant.price}</p>
+                    */
     }
 }
 

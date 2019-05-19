@@ -23,6 +23,19 @@ class Home extends Component {
 		this.state = { filter: "", query: "", brandToLearnMore: "" };
 		this.changeFilter = this.changeFilter.bind(this);
 		this.showText = this.showText.bind(this);
+		this.next = this.next.bind(this);
+		this.previous = this.previous.bind(this);
+	}
+
+	componentDidMount(){
+		this.showText("Gibson Girls");
+	}
+
+	next() {
+		this.slider.slickNext();
+	}
+	previous() {
+		this.slider.slickPrev();
 	}
 
 	handleSearchBar = (queryValue) => {
@@ -37,8 +50,8 @@ class Home extends Component {
 		});
 	}
 
-	showText(event) {
-		this.setState({ brandToLearnMore: event.target.value })
+	showText(name) {
+		this.setState({ brandToLearnMore: name })
 	}
 
 	render() {
@@ -63,7 +76,7 @@ class Home extends Component {
 		if (link !== "") {
 			link = (
 				<Link to={"/categories/brands/" + link} >
-					<button className="btn btn-outline-primary brandBoxButton">Go to Collection</button>
+					<button className="btn btn-outline-primary brandBoxButton yellowButton">Go to Collection</button>
 				</Link>
 			)
 		}
@@ -83,18 +96,18 @@ class Home extends Component {
 			<div>Images are loading</div>
 		)
 		if (state.products["0"]) {
-			slider = (<Slider className="homepageBestSellersCarousel differentRightSlick">
-				<div>
+			slider = (<Slider ref={c => (this.slider = c)} className="homepageBestSellersCarousel differentRightSlick">
+				<div className="clothingBoxContainer">
 					<ClothingBox dress={state.products['0']}></ClothingBox>
 					<ClothingBox dress={state.products['1']}></ClothingBox>
 					<ClothingBox dress={state.products['2']}></ClothingBox>
 				</div>
-				<div>
+				<div className="clothingBoxContainer">
 					<ClothingBox dress={state.products['3']}></ClothingBox>
 					<ClothingBox dress={state.products['4']}></ClothingBox>
 					<ClothingBox dress={state.products['5']}></ClothingBox>
 				</div>
-				<div>
+				<div className="clothingBoxContainer">
 					<ClothingBox dress={state.products['6']}></ClothingBox>
 					<ClothingBox dress={state.products['7']}></ClothingBox>
 					<ClothingBox dress={state.products['8']}></ClothingBox>
@@ -105,45 +118,60 @@ class Home extends Component {
 			{state.products.map((article, i) => <ClothingBox key={i} dress={article} />)}
 		</ul>
 		*/
+		//	<div className="leftSlider"></div>
 
 		return (
 			<div className="pollsContainer">
 				<Slider className="homepageCarousel" {...settings}>
 					<LazyLoad height={"100%"}>
-						<img className="homepageCarouselImage" src={raptureHomepage} alt="Party"/>
-						<h2 className="homepageCarouselTitle">You've never been to Rapture?</h2>
-						<Link to={"/about"} >
-							<button className="btn btn-primary btn-lg homepageCarouselButton">About Us</button>
-						</Link>
+						<img className="homepageCarouselImage" src={brandsHomepage} alt="Brands" />
+						<div className="homepageCarouselInfo">
+							<h2 className="homepageCarouselTitle">Only the Best Fashion Survives in Rapture</h2>
+							<SamePageLink activeClass="active" to="brandHeader" spy={true} smooth={true} duration={500}>
+								<button className="btn btn-primary btn-lg yellowButton">Meet Our Brands</button>
+							</SamePageLink>
+						</div>
 					</LazyLoad>
 					<LazyLoad height={"100%"}>
-						<img className="homepageCarouselImage" src={collectionHomepage} alt="Outside party"/>
-						<h2 className="homepageCarouselTitle">Become the Belle of the Ball</h2>
-						<Link to={"/categories/all"} >
-							<button className="btn btn-primary btn-lg homepageCarouselButton">Browse the Collection</button>
-						</Link>
+						<img className="homepageCarouselImage" src={raptureHomepage} alt="Party" />
+						<div className="homepageCarouselInfo">
+							<h2 className="homepageCarouselTitle">You've never been to Rapture?</h2>
+							<Link to={"/about"} >
+								<button className="btn btn-primary btn-lg yellowButton">About Us</button>
+							</Link>
+						</div>
 					</LazyLoad>
 					<LazyLoad height={"100%"}>
-						<img className="homepageCarouselImage" src={brandsHomepage} alt="Brands"/>
-						<h2 className="homepageCarouselTitle">Only the Best Fashion Survives in Rapture</h2>
-						<SamePageLink activeClass="active" to="brandHeader" spy={true} smooth={true} duration={500}>
-							<button className="btn btn-primary btn-lg homepageCarouselButton">Meet Our Brands</button>
-						</SamePageLink>
+						<img className="homepageCarouselImage" src={collectionHomepage} alt="Outside party" />
+						<div className="homepageCarouselInfo">
+							<h2 className="homepageCarouselTitle">Become the Belle of the Ball</h2>
+							<Link to={"/categories/all"} >
+								<button className="btn btn-primary btn-lg yellowButton">Browse the Collection</button>
+							</Link>
+						</div>
 					</LazyLoad>
 				</Slider>
 				<h4 className="homepageHeader">Rapture's Favorites</h4>
-				{slider}
+				<div className="sliderContainer">
+					{slider}
+					<div className="sliderButton prevSliderButton" onClick={this.previous}>
+						<i class="fas fa-chevron-left sliderIcon prevSliderIcon" ></i>
+					</div>
+					<div className="sliderButton nextSliderButton" onClick={this.next}>
+						<i class="fas fa-chevron-right sliderIcon nextSliderIcon"></i>
+					</div>
+				</div>
 				<h4 className="homepageHeader">Categories</h4>
-				<CategoriesBox category="dresses" box={{ image: "Categories/dresses.jpg", name: "Dresses" }}></CategoriesBox>
-				<CategoriesBox category="shoes" box={{ image: "Categories/shoes.jpg", name: "Shoes" }}></CategoriesBox>
-				<CategoriesBox category="accessories" box={{ image: "Categories/jewelry.jpg", name: "Accessories" }}></CategoriesBox>
-				<CategoriesBox category="hats" box={{ image: "Categories/hats.jpg", name: "Hats" }}></CategoriesBox>
+				<CategoriesBox category="dresses" box={{ image: "Categories/dressArtDeco.jpg", name: "Dresses" }}></CategoriesBox>
+				<CategoriesBox category="shoes" box={{ image: "Categories/shoesArtDeco.png", name: "Shoes" }}></CategoriesBox>
+				<CategoriesBox category="accessories" box={{ image: "Categories/jewelryArtDeco.png", name: "Accessories" }}></CategoriesBox>
+				<CategoriesBox category="hats" box={{ image: "Categories/hatsArtDeco.png", name: "Hats" }}></CategoriesBox>
 				<h4 className="homepageHeader" id="brandHeader">Brands</h4>
 				<div className="brandBoxContainer">
-					<BrandBox category="brands/gibson" learnMore={this.showText} box={{ image: "Brand/gibson girls.png", name: "Gibson Girls" }}></BrandBox>
-					<BrandBox category="brands/ryan" learnMore={this.showText} box={{ image: "Brand/andrew ryan.png", name: "Ryan Boutique" }}></BrandBox>
-					<BrandBox category="brands/apollo" learnMore={this.showText} box={{ image: "Brand/apollo.png", name: "Apollo" }}></BrandBox>
-					<BrandBox category="brands/áveline" learnMore={this.showText} box={{ image: "Brand/aveline.png", name: "ÁVELINE'S" }}></BrandBox>
+					<BrandBox category="brands/gibson" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/gibson girls.png", name: "Gibson Girls" }}></BrandBox>
+					<BrandBox category="brands/ryan" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/andrew ryan.png", name: "Ryan Boutique" }}></BrandBox>
+					<BrandBox category="brands/apollo" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/apollo.png", name: "Apollo" }}></BrandBox>
+					<BrandBox category="brands/áveline" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/aveline.png", name: "ÁVELINE'S" }}></BrandBox>
 				</div>
 				<div className="brandBoxDesc">
 					<h3>{this.state.brandToLearnMore}</h3>
@@ -154,7 +182,7 @@ class Home extends Component {
 				<h5>Join the Rapture Community by tweeting #WelcomeToRapture to @RaptureFashion</h5>
 				<Slider className="homepageBestSellersCarousel" {...{
 					infinite: true,
-					speed: 500,
+					speed: 200,
 					slidesToShow: 1,
 					slidesToScroll: 1,
 					autoplay: true,

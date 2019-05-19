@@ -1,6 +1,36 @@
 @import "~slick-carousel/slick/slick.css";
 @import "~slick-carousel/slick/slick-theme.css";
 
+@font-face {
+  font-family: Naive;
+  font-weight: bold;
+  src: url("../assets/font/NaiveDecoSans.otf") format("opentype");
+}
+
+@font-face {
+  font-family: Metropolis;
+  font-weight: bold;
+  src: url("../assets/font/metropolis.woff");
+}
+
+@font-face{
+  font-family: Metropolis2;
+  font-weight: bold;
+  src: url("../assets/font/Metropolis.ttf");
+}
+
+@font-face{
+  font-family: Broadway;
+  font-weight: bold;
+  src: url("../assets/font/broadway regular.ttf");
+}
+
+@font-face{
+  font-family: Proxima Nova;
+  font-weight: bold;
+  src: url("../assets/font/Proxima Nova.otf");
+}
+
 /* Helpers */
 
 .rounded{
@@ -8,9 +38,10 @@
 }
 
 body, html{
-  font-family: "Century Gothic" !important;
-  background: #E7ECEF !important;
-  color: #000403 !important;
+  font-family: "Proxima Nova" !important;
+  letter-spacing: 1px;
+  background: #0F2B36 !important;
+  color: rgb(153, 225, 233) !important;
   word-wrap: break-word;
   height: 100%;
   margin: 0;
@@ -28,10 +59,76 @@ body, html{
 
 /* Nav */
 
+nav, nav *{
+  background: rgb(18, 80, 70);
+  color: rgb(153, 225, 233) !important;
+}
+
+.raptureFashionHeaderLogo{
+  width: 52px !important;
+  height: 52px !important;
+  background-image: url("../assets/Icons/rapture.png");
+  background-position: center center;
+  background-size: 52px;
+  background-repeat: no-repeat;
+  text-align: center;
+  display: inline-block;
+  cursor: pointer;
+  margin-right: 15px;
+  bottom: -5px;
+  position: relative;
+}
+
+.raptureFashionHeaderTitle{
+  bottom: 10px;
+  position: relative;
+}
+
+#raptureFashionHeaderLeft{
+
+  font-size: 30px;
+}
+
+#raptureFashionHeaderDropdownToggle{
+  background: rgb(12, 51, 44);
+  border-color: rgb(7, 31, 26);
+}
+
+#raptureFashionHeaderDropdownToggle:hover{
+  background: rgb(7, 31, 26) !important;
+}
+
+#raptureFashionHeaderDropdownToggle:focus{
+  box-shadow: 0 0 0 0.2rem rgb(7, 31, 26);
+}
+
+#raptureFashionHeaderDropdownMenu{
+  background: rgb(12, 51, 44);
+}
+
+.raptureFashionHeaderDropdownItem:hover{
+  background: rgb(7, 31, 26);
+}
+
+.raptureFashionHeaderDropdownMenuLink{
+  cursor: pointer;
+}
+
+.raptureFashionHeaderDropdownMenuLink:hover{
+  color: #FFB619 !important;
+}
+
 .cartWrapper{
   display: inline-block;
-  top: 14px;
+  top: 11px;
   right: 18px;
+  position: absolute;
+}
+
+.cartWrapper2{
+  display: inline-block;
+  top: 10px;
+  right: 5px;
   position: absolute;
 }
 
@@ -43,13 +140,18 @@ body, html{
 .cartLink{
   width: 24px !important;
   height: 24px !important;
-  background-image: url("https://cdn.shopify.com/s/files/1/2640/7518/t/3/assets/uv-bag.png?6511260562977628196");
+  background-image: url("../assets/Icons//shoppingBag.png");
   background-position: center center;
   background-size: 24px;
   background-repeat: no-repeat;
   text-align: center;
   display: block;
   cursor: pointer;
+}
+
+.cartLink2{
+  font-size: 24px;
+  margin-left: 10px;
 }
 
 .cartQuantity{
@@ -59,10 +161,23 @@ body, html{
   /* font-size: 0.66em; */
   /* line-height: 1; */
   font-weight: bold;
-  background: red;
+  background: #FFB619;
+  color: rgb(7, 31, 26) !important;
   font-size: 12px;
   border-radius: 3px;
   color: white;
+  padding: 3px;
+}
+
+.cartQuantity2{
+  position: relative;
+  top: -12px;
+  right: -3px;
+  font-weight: bold;
+  background: #FFB619;
+  color: rgb(7, 31, 26) !important;
+  font-size: 12px;
+  border-radius: 3px;
   padding: 3px;
 }
 
@@ -83,11 +198,14 @@ body, html{
   position: relative; 
 }
 
-.homepageCarouselTitle{
+.homepageCarouselInfo{
   position: absolute;
   bottom: 50%;
   text-align: center;
   width: 100%;
+}
+
+.homepageCarouselTitle{
   font-size: 45px; 
   font-family: Broadway;
   color: white;
@@ -98,12 +216,29 @@ body, html{
      1px 1px 0 #000;
 }
 
-.homepageCarouselButton{
-  position: absolute;
-  bottom: 40%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
+.yellowButton{
+ margin-top: 10px;
+ background: rgb(6, 13, 14);
+ border: 3px solid #FFB619;
+ color: #FFB619 !important; 
+}
+
+.yellowButton:hover{
+  background: #FFB619;
+  color: rgb(6, 13, 14) !important;
+  border: 3px solid #FFB619;
+}
+
+.yellowButton:focus{
+  outline: none;
+  box-shadow: 0 0 0 0.2rem #FFB619;
+}
+
+.yellowButton:active{
+  outline: none;
+  box-shadow: 0 0 0 0.2rem #FFB619 !important;
+  background: #FFB619  !important;
+  border: 3px solid #FFB619 !important;
 }
 
 .slick-slide{
@@ -119,34 +254,49 @@ body, html{
   margin-right: -50vw;
   height: 80%;
 }
-
-.slick-slider{
-  height: 80%;
-}
-
-.slick-prev:before, .slick-next:before{
-  font-size: 32px;
-}
-
+  
 .slick-prev, .slick-next {
-  z-index: 2; 
+  display: none !important; 
 }
 
-.slick-prev{
-  left: -40px;
+.sliderContainer{
+  background: rgb(37, 107, 134) !important; 
+  padding: 40px; 
+  position: relative; 
 }
 
-.slick-next{
-  right: -20px;
+.sliderButton{
+  position: absolute;
+  top: 0;
+  background: rgb(10, 46, 40); 
+  height: 100%;
+  width: 30px;
+  border: 2px solid rgb(177, 126, 16);
+  cursor: pointer; 
 }
 
-.differentRightSlick .slick-next{
-  right: 10px;
+.prevSliderButton{
+  left: 0;
 }
 
-.homepageBestSellersCarousel .slick-prev:before, .homepageBestSellersCarousel .slick-next:before{
-  color: #70A7AD;
+.nextSliderButton{
+  right: 0; 
 }
+
+.sliderIcon{
+  color: rgb(177, 126, 16);
+  top: 50%;
+  position: absolute; 
+}
+
+.prevSliderIcon{
+  left: 8px;
+}
+
+.nextSliderIcon{
+  left: 8px;
+}
+
 
 .slick-dots li button:before {
   font-size: 18px; 
@@ -172,6 +322,36 @@ body, html{
 
 /* Clothing Box */
 
+.clothingBoxContainer{
+  margin: 0 auto;
+  display: block;
+}
+
+.clothingBox{
+  width: 30%;
+  margin-left: 1.5%;
+  margin-right: 1.5%;
+  display: inline-block;
+  background: white; 
+  border: 3px solid #FFB619;
+}
+
+.clothingBoxFooter{
+  background: rgb(6, 13, 14);
+  text-align: center; 
+  color: white !important; 
+  font-size: 1.2em;
+  font-weight: bold;
+}
+
+.yellowLink{
+  text-decoration-color: #FFB619 !important;
+}
+
+.yellowText{
+  color: #FFB619 !important; 
+}
+
 .clothingBoxTitle{
   font-size: 0.85em;
   font-weight: bold; 
@@ -189,18 +369,13 @@ body, html{
   margin: 5px;
 }
 
-.clothingBox{
-  width: 30%;
-  margin-right: 3%;
-  display: inline-block;
-}
-
 .clothingBoxImage{
   width: 100%;
 }
 
 .clothingBox{
   vertical-align: top; 
+  margin-bottom: 15px;
 }
 
 /* Categories Box */
@@ -239,9 +414,7 @@ body, html{
 
 .brandBoxInside{
   margin: 5px; 
-  padding: 20px; 
-  background: rgb(189, 197, 202);
-  border-radius: 15px; 
+  background: #FFB619 !important;
 }
 
 .brandBoxImage{
@@ -250,6 +423,17 @@ body, html{
   margin: 0 auto; 
   display: block; 
   overflow: hidden;
+  cursor: pointer;
+  border: 3px solid  rgb(177, 126, 16);
+}
+
+.brandBoxImage:hover:not(.brandBoxImageActive){
+  opacity: .5;
+}
+
+.brandBoxImageActive{
+  opacity: .5;
+  border-color: #FFB619;
 }
 
 .brandBoxTag{
@@ -381,48 +565,56 @@ body, html{
   width: 50px;
   height: 50px;
   background: none;
-  border: 1px solid #000403;
+  border: 1px solid rgb(180, 148, 79);;
+  color: rgb(180, 148, 79);
   border-radius: 25px;
   margin-right: 5px;
 }
 
 .detailsSizeBoxListButton:focus{
   outline: none;
-  box-shadow: 0 0 10px 3px #000403;
+  box-shadow: 0 0 10px 3px #FFB619;
 }
 
 .detailsSizeBoxListButton:hover{
-  color: white;
-  background: #000403; 
+  color: rgb(7, 31, 26) ;
+  background: #FFB619; 
   cursor: pointer; 
 }
 
 .detailsSizeBoxListButtonActive{
-  color: white;
-  background: #000403; 
+  color: rgb(7, 31, 26);
+  background: #FFB619; 
 }
 
 .detailsCartButton{
   margin: 30px auto;
   padding: 10px; 
   width: 100%;
-  background: #0F2B36;
-  color: white; 
   text-transform: uppercase;
   font-weight: bold; 
   letter-spacing: 1px;
+  /*
   border: none; 
+  background: #0F2B36;
+  color: white; 
+  */
 }
 
 .disabledCartButton{
   cursor: not-allowed;
+  background: rgb(17, 30, 28); 
+  border: 2px solid rgb(180, 148, 79);
+  color: rgb(180, 148, 79) !important;
+  /*
   background: rgb(143, 166, 168);
   color: rgb(61, 81, 83);
+  */
 }
 
 .enabledCartButton:hover{
   cursor: pointer;
-  background: rgb(7, 20, 26);
+/*  background: rgb(7, 20, 26); */
 }
 
 .detailsDescriptionText, .detailsTipText{
@@ -436,7 +628,7 @@ body, html{
 }
 
 .detailsDescImage{
-  width: 23px;
+  width: 26px;
   height: 20px;
 }
 
@@ -476,7 +668,8 @@ body, html{
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background: rgb(218, 218, 218);
+  background: rgb(7, 31, 26);
+  color: rgb(153, 225, 233) !important;
   border-radius: 20px;
   padding: 10px;
   margin-bottom: 10px;
@@ -530,8 +723,9 @@ body, html{
   height: 36px;
   text-align: center;
   border: 0;
-  border-top: 1px solid #000403;
-  border-bottom: 1px solid #000403;
+  border-top: 1px solid rgb(153, 225, 233);
+  border-bottom: 1px solid rgb(153, 225, 233);
+  color: rgb(153, 225, 233);
   background-color: transparent;
   cursor: not-allowed;
 }
@@ -540,7 +734,8 @@ body, html{
   width: 36px;
   height: 36px;
   background-color: transparent;
-  border: 1px solid #000403;
+  border: 1px solid rgb(153, 225, 233);
+  color: rgb(153, 225, 233);
   cursor: pointer;
   flex-basis: 36px;
   flex-grow: 0;
@@ -582,7 +777,8 @@ body, html{
 .bagBody{
   background: white;
   padding: 10px;
-  border-radius: 0px 0px 10px 10px
+  border-radius: 0px 0px 10px 10px;
+  color: rgb(7, 31, 26);
 }
 
 .bagSubtotalContainer{
@@ -597,6 +793,7 @@ body, html{
 .bagContHeader{
   text-align: center; 
   display: inline-block;
+  color: rgb(7, 31, 26);
 }
 
 .bagItemHeader{
@@ -685,6 +882,11 @@ body, html{
   background-image: linear-gradient(90deg, Black 50%, white 50%);
 }
 
+.clothingBrandContainerCategoryHeader{
+  font-size: 30px;
+  margin-top: 10px;
+}
+
 /* Filters */
 
 .filterRadio:after{
@@ -721,7 +923,7 @@ body, html{
   font-weight: 400;
   text-transform: uppercase;
   cursor: pointer;
-  color: #444;
+  color: rgb(230, 230, 230);
   border-radius: 4px;
   border: solid #dfdfdf 1px;
   margin: 0px 5px 3px 0px;
@@ -732,20 +934,20 @@ body, html{
 }
 
 .filterHeader{
-  float: left; 
-  font-size: 12px;
+  font-size: 20px;
   font-weight: 700;
   text-transform: uppercase;
   margin-bottom: 0px;
+  display: inline-block;
 }
 
 .filterSubheader{
-  clear: both; 
   font-size: 11px;
   font-weight: 400;
   text-transform: uppercase;
   margin-bottom: 7px;
   margin-top: 13px;
+  text-align: center;
 }
 
 .filterSort{
@@ -754,7 +956,7 @@ body, html{
   font-weight: 400;
   text-transform: uppercase;
   cursor: pointer;
-  color: #444;
+  color: rgb(238, 238, 238);
   margin: 6px 5px 0px 0px;
   display: block;
   text-align: left;
@@ -776,12 +978,12 @@ body, html{
 }
 
 .filterSortActive {
-  color: #333;
+  color: #ffb619;
   font-weight: 600;
 }
 
 .filterSortActive:after {
-  background: #333;
+  background: #ffb619;
 }
 
 
@@ -791,24 +993,37 @@ body, html{
 }
 
 .filter{
-  max-width: 200px;
-  float:  left; 
   margin: 30px;
+  padding: 20px; 
+}
+
+.filterSectionContainer{
+  display: flex;
+}
+
+.filterSection{
+  flex: 1;
+}
+
+.filterHeaderSection{
+  margin: 0 auto;
+  text-align: center; 
 }
 
 
 .filterClear{
+  display: inline-block;
   color: #aaa;
-  font-size: 11px;
+  font-size: 16px;
   font-weight: 400;
-  margin-top: 1px;
-  margin-top: 1.5px;
-  float: right;
+  padding-left: 10px;
   line-height: 1;
 }
 
+
 .filterActive{
-  border-color: #444;
+  border-color: #FFB619;
+  color: #FFb619 !important;
 }
 
 /* Categories next to Filters */
@@ -895,6 +1110,7 @@ body, html{
 
 .vendorHeader, .clothingHeader{
   clear: both; 
+  margin-top: 30px;
 }
 
 /* Footer */
@@ -903,7 +1119,7 @@ footer {
 	position: fixed;
 	bottom: 0;
 	width: 100%;
-  background: #E7ECEF;
+  background: #218F7D;
   
   padding: 5px 0;
   height: 30px; 

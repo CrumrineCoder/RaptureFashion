@@ -105,7 +105,7 @@ class DetailsContainer extends Component {
             // If we have a size selected or there is only one size, show the cart button
             if (this.state.sizeSelected || this.state.product.options["0"].values.length === 1) {
                 cart = (
-                    <button className="detailsCartButton enabledCartButton" onClick={() => this.addCart(variant.id)}>Add to Cart</button>
+                    <button className="detailsCartButton enabledCartButton yellowButton" onClick={() => this.addCart(variant.id)}>Add to Cart</button>
                 )
             } // Tell the user to select a size if they've not already
             else {

@@ -93,7 +93,7 @@ class CategoriesContainer extends Component {
                     header = (
                         <div className="clothingHeader">
                             <div className='clothingBrandContainer'>
-                                <h3>{this.props.clothing}</h3>
+                                <h3 className="clothingBrandContainerCategoryHeader">{this.props.clothing}</h3>
                             </div>
                         </div>
                     )
@@ -130,7 +130,7 @@ class CategoriesContainer extends Component {
                                 <div className='vendorBrandImage'>
                                     {<img src={require("../../../assets/" + vendorImage)} alt="Brand" />}
                                 </div>
-                                <h3>{this.props.vendor}</h3>
+                                <h3 className="clothingBrandContainerCategoryHeader">{this.props.vendor}</h3>
                             </div>
                         </div>
                     )
@@ -141,7 +141,7 @@ class CategoriesContainer extends Component {
             header = (
                 <div className="clothingHeader">
                     <div className='clothingBrandContainer'>
-                        <h3>All</h3>
+                        <h3 className="clothingBrandContainerCategoryHeader">All</h3>
                     </div>
                 </div>
             )
