@@ -64,7 +64,7 @@ class BagSubtotal extends Component {
                 </div>
                 <div className="bagBody">
                     <p>Estimated total: ${this.props.checkout.subtotalPrice}</p>
-                    <button className="btn btn-primary" onClick={this.openCheckout}> Secure Checkout (testing purposes only) </button>
+                    <button className="btn btn-primary yellowButton" onClick={this.openCheckout}> Secure Checkout (testing purposes only) </button>
                 </div>
             </div>
         )

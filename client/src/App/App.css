@@ -110,8 +110,12 @@ nav, nav *{
   background: rgb(7, 31, 26);
 }
 
+.raptureFashionHeaderDropdownMenuLink{
+  cursor: pointer;
+}
+
 .raptureFashionHeaderDropdownMenuLink:hover{
-  color: rgb(7, 31, 26) !important;
+  color: #FFB619 !important;
 }
 
 .cartWrapper{
@@ -561,25 +565,26 @@ nav, nav *{
   width: 50px;
   height: 50px;
   background: none;
-  border: 1px solid #000403;
+  border: 1px solid rgb(180, 148, 79);;
+  color: rgb(180, 148, 79);
   border-radius: 25px;
   margin-right: 5px;
 }
 
 .detailsSizeBoxListButton:focus{
   outline: none;
-  box-shadow: 0 0 10px 3px #000403;
+  box-shadow: 0 0 10px 3px #FFB619;
 }
 
 .detailsSizeBoxListButton:hover{
-  color: white;
-  background: #000403; 
+  color: rgb(7, 31, 26) ;
+  background: #FFB619; 
   cursor: pointer; 
 }
 
 .detailsSizeBoxListButtonActive{
-  color: white;
-  background: #000403; 
+  color: rgb(7, 31, 26);
+  background: #FFB619; 
 }
 
 .detailsCartButton{
@@ -663,7 +668,8 @@ nav, nav *{
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  background: rgb(218, 218, 218);
+  background: rgb(7, 31, 26);
+  color: rgb(153, 225, 233) !important;
   border-radius: 20px;
   padding: 10px;
   margin-bottom: 10px;
@@ -717,8 +723,9 @@ nav, nav *{
   height: 36px;
   text-align: center;
   border: 0;
-  border-top: 1px solid #000403;
-  border-bottom: 1px solid #000403;
+  border-top: 1px solid rgb(153, 225, 233);
+  border-bottom: 1px solid rgb(153, 225, 233);
+  color: rgb(153, 225, 233);
   background-color: transparent;
   cursor: not-allowed;
 }
@@ -727,7 +734,8 @@ nav, nav *{
   width: 36px;
   height: 36px;
   background-color: transparent;
-  border: 1px solid #000403;
+  border: 1px solid rgb(153, 225, 233);
+  color: rgb(153, 225, 233);
   cursor: pointer;
   flex-basis: 36px;
   flex-grow: 0;
@@ -769,7 +777,8 @@ nav, nav *{
 .bagBody{
   background: white;
   padding: 10px;
-  border-radius: 0px 0px 10px 10px
+  border-radius: 0px 0px 10px 10px;
+  color: rgb(7, 31, 26);
 }
 
 .bagSubtotalContainer{
@@ -784,6 +793,7 @@ nav, nav *{
 .bagContHeader{
   text-align: center; 
   display: inline-block;
+  color: rgb(7, 31, 26);
 }
 
 .bagItemHeader{
