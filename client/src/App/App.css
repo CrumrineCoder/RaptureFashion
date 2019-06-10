@@ -68,6 +68,7 @@ body, html{
 nav, nav *{
   background: rgb(18, 80, 70);
   color: rgb(153, 225, 233) !important;
+  font-family: "Anna";
 }
 
 .raptureFashionHeaderLogo{
@@ -420,6 +421,7 @@ nav, nav *{
   font-size: 1.8em;
   margin-top: 10px;
   margin-bottom: 30px;
+  font-family: "Anna"
 }
 
 /* Brand  Box */
@@ -450,7 +452,9 @@ nav, nav *{
   display: block; 
   overflow: hidden;
   cursor: pointer;
-  border: 3px solid  rgb(177, 126, 16);
+  border: 5px solid  rgb(177, 126, 16);
+  border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  border-image-slice: 1;
 }
 
 .brandBoxImage:hover:not(.brandBoxImageActive){
