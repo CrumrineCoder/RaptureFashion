@@ -184,13 +184,19 @@ nav, nav *{
 /* Homepage */
 
 .homepageHeader{
-  border-bottom: 2px solid #000403;
-  margin-top: 75px;
-  margin-bottom: 45px;
-  padding-bottom: 5px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  background: #000403;
+  padding: 15px;
 }
 
 /* Slider */ 
+
+.bestSellerContainer{
+  margin-top: 100px;
+}
 
 .homepageCarouselImage{
   width: 100%;
@@ -263,6 +269,8 @@ nav, nav *{
   background: rgb(37, 107, 134) !important; 
   padding: 40px; 
   position: relative; 
+  margin-top: 100px;
+  margin-bottom: 20px;
 }
 
 .sliderButton{
@@ -380,6 +388,10 @@ nav, nav *{
 
 /* Categories Box */
 
+.categoriesBoxContainer{
+  margin-top: 100px;
+}
+
 
 .categoriesBox{
   display: inline-block; 
@@ -405,6 +417,7 @@ nav, nav *{
 
 .brandBoxContainer{
   display: flex;
+  margin-top: 100px;
 }
 
 .brandBox{

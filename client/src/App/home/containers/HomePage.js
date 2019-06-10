@@ -27,7 +27,7 @@ class Home extends Component {
 		this.previous = this.previous.bind(this);
 	}
 
-	componentDidMount(){
+	componentDidMount() {
 		this.showText("Gibson Girls");
 	}
 
@@ -127,8 +127,8 @@ class Home extends Component {
 						<img className="homepageCarouselImage" src={brandsHomepage} alt="Brands" />
 						<div className="homepageCarouselInfo">
 							<h2 className="homepageCarouselTitle">Only the Best Fashion Survives in Rapture</h2>
-							<SamePageLink activeClass="active" to="brandHeader" spy={true} smooth={true} duration={500}>
-								<button className="btn btn-primary btn-lg yellowButton">Meet Our Brands</button>
+							<SamePageLink activeClass="active" to="favoritesHeader" spy={true} smooth={true} duration={500}>
+								<button className="btn btn-primary btn-lg yellowButton">See Our Favorites</button>
 							</SamePageLink>
 						</div>
 					</LazyLoad>
@@ -151,7 +151,7 @@ class Home extends Component {
 						</div>
 					</LazyLoad>
 				</Slider>
-				<h4 className="homepageHeader">Rapture's Favorites</h4>
+				<h4 id="favoritesHeader" className="homepageHeader">Rapture's Favorites</h4>
 				<div className="sliderContainer">
 					{slider}
 					<div className="sliderButton prevSliderButton" onClick={this.previous}>
@@ -161,11 +161,6 @@ class Home extends Component {
 						<i class="fas fa-chevron-right sliderIcon nextSliderIcon"></i>
 					</div>
 				</div>
-				<h4 className="homepageHeader">Categories</h4>
-				<CategoriesBox category="dresses" box={{ image: "Categories/dressArtDeco.jpg", name: "Dresses" }}></CategoriesBox>
-				<CategoriesBox category="shoes" box={{ image: "Categories/shoesArtDeco.png", name: "Shoes" }}></CategoriesBox>
-				<CategoriesBox category="accessories" box={{ image: "Categories/jewelryArtDeco.png", name: "Accessories" }}></CategoriesBox>
-				<CategoriesBox category="hats" box={{ image: "Categories/hatsArtDeco.png", name: "Hats" }}></CategoriesBox>
 				<h4 className="homepageHeader" id="brandHeader">Brands</h4>
 				<div className="brandBoxContainer">
 					<BrandBox category="brands/gibson" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/gibson girls.png", name: "Gibson Girls" }}></BrandBox>
@@ -178,29 +173,39 @@ class Home extends Component {
 					{brandText}
 					{link}
 				</div>
-				<h4 className="homepageHeader">#WelcomeToRapture</h4>
-				<h5>Join the Rapture Community by tweeting #WelcomeToRapture to @RaptureFashion</h5>
-				<Slider className="homepageBestSellersCarousel" {...{
-					infinite: true,
-					speed: 200,
-					slidesToShow: 1,
-					slidesToScroll: 1,
-					autoplay: true,
-					swipeToSlide: false,
-					autoplaySpeed: 5000
-				}}>
-					<div>
-						<InstagramBox user={{ image: "t0231laura1.jpg", handle: "ThedevilAbove", likes: 5511 }}></InstagramBox>
-						<InstagramBox user={{ image: "t6573caroline.jpg", handle: "KiwiWillow", likes: 2554 }}></InstagramBox>
-						<InstagramBox user={{ image: "z5941web1.jpg", handle: "Mementos", likes: 7999 }}></InstagramBox>
+				<h4 className="homepageHeader">Categories</h4>
+				<div className="categoriesBoxContainer">
+					<CategoriesBox category="dresses" box={{ image: "Categories/dressArtDeco.jpg", name: "Dresses" }}></CategoriesBox>
+					<CategoriesBox category="shoes" box={{ image: "Categories/shoesArtDeco.png", name: "Shoes" }}></CategoriesBox>
+					<CategoriesBox category="accessories" box={{ image: "Categories/jewelryArtDeco.png", name: "Accessories" }}></CategoriesBox>
+					<CategoriesBox category="hats" box={{ image: "Categories/hatsArtDeco.png", name: "Hats" }}></CategoriesBox>
+				</div>
 
-					</div>
-					<div>
-						<InstagramBox user={{ image: "z4090chloe1.jpg", handle: "GottaTao", likes: 1015 }}></InstagramBox>
-						<InstagramBox user={{ image: "z4090chloe2.jpg", handle: "VintageCrawler", likes: 14356 }}></InstagramBox>
-						<InstagramBox user={{ image: "t9037jennifer1.jpg", handle: "Avertermo", likes: 2287 }}></InstagramBox>
-					</div>
-				</Slider>
+				<h4 className="homepageHeader">#WelcomeToRapture</h4>
+				<div className="bestSellerContainer">
+					<h5>Join the Rapture Community by tweeting #WelcomeToRapture to @RaptureFashion</h5>
+					<Slider className="homepageBestSellersCarousel" {...{
+						infinite: true,
+						speed: 200,
+						slidesToShow: 1,
+						slidesToScroll: 1,
+						autoplay: true,
+						swipeToSlide: false,
+						autoplaySpeed: 5000
+					}}>
+						<div>
+							<InstagramBox user={{ image: "t0231laura1.jpg", handle: "ThedevilAbove", likes: 5511 }}></InstagramBox>
+							<InstagramBox user={{ image: "t6573caroline.jpg", handle: "KiwiWillow", likes: 2554 }}></InstagramBox>
+							<InstagramBox user={{ image: "z5941web1.jpg", handle: "Mementos", likes: 7999 }}></InstagramBox>
+
+						</div>
+						<div>
+							<InstagramBox user={{ image: "z4090chloe1.jpg", handle: "GottaTao", likes: 1015 }}></InstagramBox>
+							<InstagramBox user={{ image: "z4090chloe2.jpg", handle: "VintageCrawler", likes: 14356 }}></InstagramBox>
+							<InstagramBox user={{ image: "t9037jennifer1.jpg", handle: "Avertermo", likes: 2287 }}></InstagramBox>
+						</div>
+					</Slider>
+				</div>
 			</div>
 		);
 
