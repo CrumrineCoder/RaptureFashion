@@ -31,6 +31,12 @@
   src: url("../assets/font/Proxima Nova.otf");
 }
 
+@font-face{
+  font-family: Anna;
+  font-weight: bold;
+  src: url("../assets/font/Anna\ ITC\ TT.ttf");
+}
+
 /* Helpers */
 
 .rounded{
@@ -190,12 +196,15 @@ nav, nav *{
   text-align: center;
   background: #000403;
   padding: 15px;
+  font-family: "Anna";
+  font-size: 50px;
+  letter-spacing: 20px;
 }
 
 /* Slider */ 
 
 .bestSellerContainer{
-  margin-top: 100px;
+  margin-top: 160px;
 }
 
 .homepageCarouselImage{
@@ -269,8 +278,8 @@ nav, nav *{
   background: rgb(37, 107, 134) !important; 
   padding: 40px; 
   position: relative; 
-  margin-top: 100px;
-  margin-bottom: 20px;
+  margin-top: 130px;
+  margin-bottom: 40px;
 }
 
 .sliderButton{
@@ -389,7 +398,7 @@ nav, nav *{
 /* Categories Box */
 
 .categoriesBoxContainer{
-  margin-top: 100px;
+  margin-top: 160px;
 }
 
 
@@ -415,9 +424,13 @@ nav, nav *{
 
 /* Brand  Box */
 
+.brandContainer{
+  margin-top: 160px;
+  margin-bottom: 30px;
+}
+
 .brandBoxContainer{
   display: flex;
-  margin-top: 100px;
 }
 
 .brandBox{

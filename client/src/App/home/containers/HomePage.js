@@ -162,16 +162,18 @@ class Home extends Component {
 					</div>
 				</div>
 				<h4 className="homepageHeader" id="brandHeader">Brands</h4>
-				<div className="brandBoxContainer">
-					<BrandBox category="brands/gibson" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/gibson girls.png", name: "Gibson Girls" }}></BrandBox>
-					<BrandBox category="brands/ryan" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/andrew ryan.png", name: "Ryan Boutique" }}></BrandBox>
-					<BrandBox category="brands/apollo" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/apollo.png", name: "Apollo" }}></BrandBox>
-					<BrandBox category="brands/áveline" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/aveline.png", name: "ÁVELINE'S" }}></BrandBox>
-				</div>
-				<div className="brandBoxDesc">
-					<h3>{this.state.brandToLearnMore}</h3>
-					{brandText}
-					{link}
+				<div className="brandContainer">
+					<div className="brandBoxContainer">
+						<BrandBox category="brands/gibson" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/gibson girls.png", name: "Gibson Girls" }}></BrandBox>
+						<BrandBox category="brands/ryan" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/andrew ryan.png", name: "Ryan Boutique" }}></BrandBox>
+						<BrandBox category="brands/apollo" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/apollo.png", name: "Apollo" }}></BrandBox>
+						<BrandBox category="brands/áveline" brandToCompare={this.state.brandToLearnMore} learnMore={this.showText} box={{ image: "Brand/aveline.png", name: "ÁVELINE'S" }}></BrandBox>
+					</div>
+					<div className="brandBoxDesc">
+						<h3>{this.state.brandToLearnMore}</h3>
+						{brandText}
+						{link}
+					</div>
 				</div>
 				<h4 className="homepageHeader">Categories</h4>
 				<div className="categoriesBoxContainer">
