@@ -236,6 +236,8 @@ nav, nav *{
  margin-top: 10px;
  background: rgb(6, 13, 14);
  border: 3px solid #FFB619;
+ border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  border-image-slice: 1;
  color: #FFB619 !important; 
 }
 
@@ -243,11 +245,16 @@ nav, nav *{
   background: #FFB619;
   color: rgb(6, 13, 14) !important;
   border: 3px solid #FFB619;
+  border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  border-image-slice: 1;
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) !important;
 }
 
 .yellowButton:focus{
   outline: none;
   box-shadow: 0 0 0 0.2rem #FFB619;
+  border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  border-image-slice: 1;
 }
 
 .yellowButton:active{
@@ -255,6 +262,9 @@ nav, nav *{
   box-shadow: 0 0 0 0.2rem #FFB619 !important;
   background: #FFB619  !important;
   border: 3px solid #FFB619 !important;
+  border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  border-image-slice: 1;
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) !important;
 }
 
 .slick-slide{
@@ -291,6 +301,8 @@ nav, nav *{
   width: 30px;
   border: 2px solid rgb(177, 126, 16);
   cursor: pointer; 
+  border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) !important;
+  border-image-slice: 1;
 }
 
 .prevSliderButton{
@@ -352,6 +364,8 @@ nav, nav *{
   display: inline-block;
   background: white; 
   border: 3px solid #FFB619;
+  border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  border-image-slice: 1;
 }
 
 .clothingBoxFooter{
