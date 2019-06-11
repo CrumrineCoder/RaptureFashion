@@ -242,9 +242,11 @@ nav, nav *{
 }
 
 .yellowButton:hover{
+  /*  border: 3px solid #FFB619;
   background: #FFB619;
+  */
   color: rgb(6, 13, 14) !important;
-  border: 3px solid #FFB619;
+
   border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
   border-image-slice: 1;
   background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) !important;
@@ -252,16 +254,20 @@ nav, nav *{
 
 .yellowButton:focus{
   outline: none;
-  box-shadow: 0 0 0 0.2rem #FFB619;
+/*  box-shadow: 0 0 0 0.2rem #FFB619 !important; */
+box-shadow: 0 0 0 .2rem #BF953F !important;
   border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
   border-image-slice: 1;
 }
 
 .yellowButton:active{
   outline: none;
-  box-shadow: 0 0 0 0.2rem #FFB619 !important;
+  color: rgb(6, 13, 14) !important;
+/*  box-shadow: 0 0 0 0.2rem #FFB619 !important;
   background: #FFB619  !important;
-  border: 3px solid #FFB619 !important;
+  border: 3px solid #FFB619 !important; */
+box-shadow: 0 0 0 .2rem #BF953F;
+
   border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
   border-image-slice: 1;
   background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) !important;
@@ -366,6 +372,7 @@ nav, nav *{
   border: 3px solid #FFB619;
   border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
   border-image-slice: 1;
+  border-width: 5px;
 }
 
 .clothingBoxFooter{
