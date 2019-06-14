@@ -29,15 +29,20 @@ class SubHeader extends Component {
             isOpen: false,
             brandDropdownOpen: false, 
             clothingDropdownOpen: false,
-            brand: 'Brand',
-            clothing: 'Clothing'
+            brand: '',
+            clothing: ''
             //		isLoggedIn: typeof localStorage["user"] !== 'undefined'
         };
     }
+    componentDidMount(){
+        this.setState({
+            brand: 'Brand',
+            clothing: 'Clothing'
+        })
+    }
 
     componentDidUpdate(){
-        console.log(this.props.location);
-      //  this.props.history.push('/foo');
+       this.props.history.push('/clothing/brand=' + this.state.brand + "&&clothing=" + this.state.clothing);
     }
 
     // Toggle the collapsed navbar
@@ -88,10 +93,10 @@ class SubHeader extends Component {
                                         Clothing
        								</DropdownToggle>
                                     <DropdownMenu id="raptureFashionHeaderDropdownMenu">
-                                        <NavLink className="raptureFashionHeaderDropdownItem" onClick = {() => this.toggleDropdown("clothing")} href="#/categories/dresses">Dresses</NavLink>
-                                        <NavLink className="raptureFashionHeaderDropdownItem" onClick = {() => this.toggleDropdown("clothing")} href="#/categories/shoes">Shoes</NavLink>
-                                        <NavLink className="raptureFashionHeaderDropdownItem" onClick = {() => this.toggleDropdown("clothing")} href="#/categories/accessories">Accessories</NavLink>
-                                        <NavLink className="raptureFashionHeaderDropdownItem" onClick = {() => this.toggleDropdown("clothing")} href="#/categories/hats">Hats</NavLink>
+                                        <DropdownItem className="raptureFashionHeaderDropdownItem "onClick = {() => this.select("clothing", "dresses")}>Dresses</DropdownItem>
+                                        <DropdownItem className="raptureFashionHeaderDropdownItem" onClick = {() => this.select("clothing", "shoes")}>Shoes</DropdownItem>
+                                        <DropdownItem className="raptureFashionHeaderDropdownItem" onClick = {() => this.select("clothing", "accessories")}>Accessories</DropdownItem>
+                                        <DropdownItem className="raptureFashionHeaderDropdownItem" onClick = {() => this.select("clothing", "hats")}>Hats</DropdownItem>
                                     </DropdownMenu>
                                 </Dropdown>
                             </NavItem>
