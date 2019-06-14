@@ -125,6 +125,22 @@ nav, nav *{
   color: #FFB619 !important;
 }
 
+.centerFlex{
+  align-items: center;
+  justify-content: center;
+}
+
+.centerFlex .ml-auto{
+  margin-left: 0px !important;
+}
+
+.subHeader{
+  position: absolute;
+  top: 91px;
+  left: 0px;
+  width: 100%;
+}
+
 .cartWrapper{
   display: inline-block;
   top: 11px;
@@ -1160,7 +1176,7 @@ box-shadow: 0 0 0 .2rem #BF953F;
 
 .vendorHeader, .clothingHeader{
   clear: both; 
-  margin-top: 30px;
+  margin-top: 121px;
 }
 
 /* Footer */

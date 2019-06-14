@@ -46,8 +46,8 @@ class SubHeader extends Component {
     render() {
         return (
             <header>
-                <Navbar color="faded" light expand="md">
-                    <Collapse isOpen={this.state.isOpen} navbar>
+                <Navbar color="faded" light expand="md" className="subHeader">
+                    <Collapse isOpen={this.state.isOpen} navbar className="centerFlex">
                         <Nav className="ml-auto" navbar>
                             <NavItem>
                                 <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
