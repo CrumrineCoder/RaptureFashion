@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ClothingBox from '../../home/components/ClothingBox';
 import Filter from "../components/Filter";
 import store from '../../store';
+import SubHeader from "../../common/components/SubHeader";
 
 // For the Brand, All, and Clothing pages
 class CategoriesContainer extends Component {
@@ -237,6 +238,7 @@ class CategoriesContainer extends Component {
 
         return (
             <div className="categoriesContainer">
+                <SubHeader></SubHeader>
                 {header}
                 <Filter clothing={this.props.clothing} onChange={this.handleFilter} sort={this.sort}></Filter>
                 {pageContent}
