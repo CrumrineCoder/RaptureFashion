@@ -25,7 +25,8 @@ class SubHeader extends Component {
         this.toggleDropdown = this.toggleDropdown.bind(this);
         this.state = {
             isOpen: false,
-            dropdownOpen: false
+            brandDropdownOpen: false, 
+            clothingDropdownOpen: false
             //		isLoggedIn: typeof localStorage["user"] !== 'undefined'
         };
     }
@@ -37,10 +38,12 @@ class SubHeader extends Component {
         });
     }
 
-    toggleDropdown() {
-        this.setState(prevState => ({
-            dropdownOpen: !prevState.dropdownOpen
-        }));
+    toggleDropdown(value) {
+        if(value == "clothing"){
+            this.setState({brandDropdownOpen: false, clothingDropdownOpen: !this.state.clothingDropdownOpen})
+        } else if (value == "brand"){
+            this.setState({brandDropdownOpen: !this.state.brandDropdownOpen, clothingDropdownOpen: false})
+        }
     }
 
     render() {
@@ -53,28 +56,28 @@ class SubHeader extends Component {
                                 <NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/categories/all">All</NavLink>
                             </NavItem>
                             <NavItem>
-                                <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
+                                <Dropdown isOpen={this.state.brandDropdownOpen} toggle={() => this.toggleDropdown("brand")}>
                                     <DropdownToggle id="raptureFashionHeaderDropdownToggle" caret>
                                         Brands
        								</DropdownToggle>
                                     <DropdownMenu id="raptureFashionHeaderDropdownMenu">
-                                        <NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/brands/gibson">Gibson Girls</NavLink>
-                                        <NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/brands/ryan">Ryan Boutique</NavLink>
-                                        <NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/brands/apollo">Apollo</NavLink>
-                                        <NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/brands/áveline">ÁVELINE'S</NavLink>
+                                        <NavLink className="raptureFashionHeaderDropdownItem" onClick = {() => this.toggleDropdown("brand")} href="#/categories/brands/gibson">Gibson Girls</NavLink>
+                                        <NavLink className="raptureFashionHeaderDropdownItem" onClick = {() => this.toggleDropdown("brand")} href="#/categories/brands/ryan">Ryan Boutique</NavLink>
+                                        <NavLink className="raptureFashionHeaderDropdownItem" onClick = {() => this.toggleDropdown("brand")} href="#/categories/brands/apollo">Apollo</NavLink>
+                                        <NavLink className="raptureFashionHeaderDropdownItem" onClick = {() => this.toggleDropdown("brand")} href="#/categories/brands/áveline">ÁVELINE'S</NavLink>
                                     </DropdownMenu>
                                 </Dropdown>
                             </NavItem>
                             <NavItem>
-                                <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
+                                <Dropdown isOpen={this.state.clothingDropdownOpen} toggle={() => this.toggleDropdown("clothing")}>
                                     <DropdownToggle id="raptureFashionHeaderDropdownToggle" caret>
                                         Clothing
        								</DropdownToggle>
                                     <DropdownMenu id="raptureFashionHeaderDropdownMenu">
-                                        <NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/dresses">Dresses</NavLink>
-                                        <NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/shoes">Shoes</NavLink>
-                                        <NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/accessories">Accessories</NavLink>
-                                        <NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/hats">Hats</NavLink>
+                                        <NavLink className="raptureFashionHeaderDropdownItem" onClick = {() => this.toggleDropdown("clothing")} href="#/categories/dresses">Dresses</NavLink>
+                                        <NavLink className="raptureFashionHeaderDropdownItem" onClick = {() => this.toggleDropdown("clothing")} href="#/categories/shoes">Shoes</NavLink>
+                                        <NavLink className="raptureFashionHeaderDropdownItem" onClick = {() => this.toggleDropdown("clothing")} href="#/categories/accessories">Accessories</NavLink>
+                                        <NavLink className="raptureFashionHeaderDropdownItem" onClick = {() => this.toggleDropdown("clothing")} href="#/categories/hats">Hats</NavLink>
                                     </DropdownMenu>
                                 </Dropdown>
                             </NavItem>
