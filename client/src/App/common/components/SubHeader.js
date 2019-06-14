@@ -12,7 +12,7 @@ import {
     DropdownMenu
 } from 'reactstrap';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 //import PropTypes from 'prop-types';
 
 // Header hosts navigation info at the top of the screen. It appears on all pages.
@@ -29,6 +29,10 @@ class SubHeader extends Component {
             clothingDropdownOpen: false
             //		isLoggedIn: typeof localStorage["user"] !== 'undefined'
         };
+    }
+
+    componentDidUpdate(){
+        this.props.history.push('/foo')
     }
 
     // Toggle the collapsed navbar
@@ -96,5 +100,5 @@ function mapStateToProps(state) {
     const cartAmount = state.home.cart.checkout.lineItems.length;
     return { cartAmount };
 }
-export default connect(mapStateToProps)(SubHeader);
+export default connect(mapStateToProps)(withRouter(SubHeader));
 //export default Header;
