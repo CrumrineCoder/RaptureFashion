@@ -9,7 +9,8 @@ import {
     NavLink,
     Dropdown,
     DropdownToggle,
-    DropdownMenu
+    DropdownMenu,
+    DropdownItem 
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -23,16 +24,20 @@ class SubHeader extends Component {
         super(props);
         this.toggle = this.toggle.bind(this);
         this.toggleDropdown = this.toggleDropdown.bind(this);
+        this.select = this.select.bind(this);
         this.state = {
             isOpen: false,
             brandDropdownOpen: false, 
-            clothingDropdownOpen: false
+            clothingDropdownOpen: false,
+            brand: 'Brand',
+            clothing: 'Clothing'
             //		isLoggedIn: typeof localStorage["user"] !== 'undefined'
         };
     }
 
     componentDidUpdate(){
-        this.props.history.push('/foo')
+        console.log(this.props.location);
+      //  this.props.history.push('/foo');
     }
 
     // Toggle the collapsed navbar
@@ -50,6 +55,11 @@ class SubHeader extends Component {
         }
     }
 
+    select(type, item){
+        this.toggleDropdown(type);
+        this.setState({[type]: item})
+    }
+
     render() {
         return (
             <header>
@@ -62,13 +72,13 @@ class SubHeader extends Component {
                             <NavItem>
                                 <Dropdown isOpen={this.state.brandDropdownOpen} toggle={() => this.toggleDropdown("brand")}>
                                     <DropdownToggle id="raptureFashionHeaderDropdownToggle" caret>
-                                        Brands
+                                        {this.state.brand}
        								</DropdownToggle>
                                     <DropdownMenu id="raptureFashionHeaderDropdownMenu">
-                                        <NavLink className="raptureFashionHeaderDropdownItem" onClick = {() => this.toggleDropdown("brand")} href="#/categories/brands/gibson">Gibson Girls</NavLink>
-                                        <NavLink className="raptureFashionHeaderDropdownItem" onClick = {() => this.toggleDropdown("brand")} href="#/categories/brands/ryan">Ryan Boutique</NavLink>
-                                        <NavLink className="raptureFashionHeaderDropdownItem" onClick = {() => this.toggleDropdown("brand")} href="#/categories/brands/apollo">Apollo</NavLink>
-                                        <NavLink className="raptureFashionHeaderDropdownItem" onClick = {() => this.toggleDropdown("brand")} href="#/categories/brands/áveline">ÁVELINE'S</NavLink>
+                                        <DropdownItem  active className="raptureFashionHeaderDropdownItem" onClick = {() => this.select("brand", "gibson")}>Gibson Girls</DropdownItem >
+                                        <DropdownItem  className="raptureFashionHeaderDropdownItem" onClick = {() => this.select("brand", "ryan")}>Ryan Boutique</DropdownItem >
+                                        <DropdownItem  className="raptureFashionHeaderDropdownItem" onClick = {() => this.select("brand", "apollo")}>Apollo</DropdownItem >
+                                        <DropdownItem  className="raptureFashionHeaderDropdownItem" onClick = {() => this.select("brand", "áveline")}>ÁVELINE'S</DropdownItem >
                                     </DropdownMenu>
                                 </Dropdown>
                             </NavItem>

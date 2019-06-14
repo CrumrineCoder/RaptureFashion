@@ -61,7 +61,7 @@ class Header extends Component {
 								<NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/about">About</NavLink>
 							</NavItem>
 							<NavItem>
-								<NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/categories/all">Clothing</NavLink>
+								<NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/clothing/">Clothing</NavLink>
 							</NavItem>
 							<NavItem className="cartRelativeItemWrapper">
 								<div className="cartWrapper2">

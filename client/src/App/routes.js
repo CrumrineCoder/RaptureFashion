@@ -21,7 +21,7 @@ export default (
     <Route path="/categories/brands/ryan"   render={(props) => <Dress {...props} vendor={"Ryan Boutique"} />}/>
     <Route path="/categories/brands/apollo"   render={(props) => <Dress {...props} vendor={"Apollo"} />}/>
     <Route path="/categories/brands/áveline"   render={(props) => <Dress {...props} vendor={"ÁVELINE'S"} />}/>
-    <Route path="/categories/all"  render={(props) => <Dress {...props} clothing={"all"} />}/>
+    <Route path="/clothing/"  render={(props) => <Dress {...props} clothing={"all"} />}/>
     <Route path="/categories/dresses"   render={(props) => <Dress {...props} clothing={"dresses"} />}/>
     <Route path="/categories/accessories"   render={(props) => <Dress {...props} clothing={"accessories"} />}/>
     <Route path="/categories/shoes"   render={(props) => <Dress {...props} clothing={"shoes"} />}/>
