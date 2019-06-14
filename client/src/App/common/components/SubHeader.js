@@ -50,6 +50,9 @@ class SubHeader extends Component {
                     <Collapse isOpen={this.state.isOpen} navbar className="centerFlex">
                         <Nav className="ml-auto" navbar>
                             <NavItem>
+                                <NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/categories/all">All</NavLink>
+                            </NavItem>
+                            <NavItem>
                                 <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
                                     <DropdownToggle id="raptureFashionHeaderDropdownToggle" caret>
                                         Brands
@@ -63,19 +66,17 @@ class SubHeader extends Component {
                                 </Dropdown>
                             </NavItem>
                             <NavItem>
-                                <NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/categories/all">All</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/categories/dresses">Dresses</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/categories/shoes">Shoes</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/categories/accessories">Accessories</NavLink>
-                            </NavItem>
-                            <NavItem>
-                                <NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/categories/hats">Hats</NavLink>
+                                <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
+                                    <DropdownToggle id="raptureFashionHeaderDropdownToggle" caret>
+                                        Clothing
+       								</DropdownToggle>
+                                    <DropdownMenu id="raptureFashionHeaderDropdownMenu">
+                                        <NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/dresses">Dresses</NavLink>
+                                        <NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/shoes">Shoes</NavLink>
+                                        <NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/accessories">Accessories</NavLink>
+                                        <NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/hats">Hats</NavLink>
+                                    </DropdownMenu>
+                                </Dropdown>
                             </NavItem>
                         </Nav>
                     </Collapse>
