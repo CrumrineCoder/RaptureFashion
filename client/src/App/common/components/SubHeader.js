@@ -10,7 +10,7 @@ import {
     Dropdown,
     DropdownToggle,
     DropdownMenu,
-    DropdownItem 
+    DropdownItem
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { withRouter } from 'react-router-dom';
@@ -25,33 +25,34 @@ class SubHeader extends Component {
         this.toggle = this.toggle.bind(this);
         this.toggleDropdown = this.toggleDropdown.bind(this);
         this.select = this.select.bind(this);
+        this.reset = this.reset.bind(this);
         this.state = {
             isOpen: false,
-            brandDropdownOpen: false, 
+            brandDropdownOpen: false,
             clothingDropdownOpen: false,
             brand: '',
             clothing: ''
             //		isLoggedIn: typeof localStorage["user"] !== 'undefined'
         };
     }
-    componentDidMount(){
+    componentDidMount() {
         this.setState({
             brand: 'Brand',
             clothing: 'Clothing'
         })
     }
 
-    componentDidUpdate(){
-        let brand = this.state.brand; 
-        let clothing = this.state.clothing; 
-        if(this.state.brand == "Brand"){
-            brand="default";
+    componentDidUpdate() {
+        let brand = this.state.brand;
+        let clothing = this.state.clothing;
+        if (this.state.brand == "Brand") {
+            brand = "all";
         }
-        if(this.state.clothing == "Clothing"){
-            clothing="default"
+        if (this.state.clothing == "Clothing") {
+            clothing = "all"
         }
-       this.props.history.push('/clothing/brand=' + brand + "&&clothing=" + clothing);
-       this.props.updateContainer(brand, clothing)
+        this.props.history.push('/clothing/brand=' + brand + "&&clothing=" + clothing);
+        this.props.updateContainer(brand, clothing);
     }
 
     // Toggle the collapsed navbar
@@ -62,16 +63,23 @@ class SubHeader extends Component {
     }
 
     toggleDropdown(value) {
-        if(value == "clothing"){
-            this.setState({brandDropdownOpen: false, clothingDropdownOpen: !this.state.clothingDropdownOpen})
-        } else if (value == "brand"){
-            this.setState({brandDropdownOpen: !this.state.brandDropdownOpen, clothingDropdownOpen: false})
+        if (value == "clothing") {
+            this.setState({ brandDropdownOpen: false, clothingDropdownOpen: !this.state.clothingDropdownOpen })
+        } else if (value == "brand") {
+            this.setState({ brandDropdownOpen: !this.state.brandDropdownOpen, clothingDropdownOpen: false })
         }
     }
 
-    select(type, item){
+    select(type, item) {
         this.toggleDropdown(type);
-        this.setState({[type]: item})
+        this.setState({ [type]: item })
+    }
+
+    reset() {
+        let brand = "all";
+        let clothing = "all"
+        this.props.history.push('/clothing/brand=' + brand + "&&clothing=" + clothing);
+        this.props.updateContainer(brand, clothing);
     }
 
     render() {
@@ -81,18 +89,18 @@ class SubHeader extends Component {
                     <Collapse isOpen={this.state.isOpen} navbar className="centerFlex">
                         <Nav className="ml-auto" navbar>
                             <NavItem>
-                                <NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/categories/all">All</NavLink>
+                                <NavLink className="raptureFashionHeaderDropdownMenuLink" onClick={() => this.reset()}>All</NavLink>
                             </NavItem>
                             <NavItem>
                                 <Dropdown isOpen={this.state.brandDropdownOpen} toggle={() => this.toggleDropdown("brand")}>
                                     <DropdownToggle id="raptureFashionHeaderDropdownToggle" caret>
                                         {this.state.brand}
-       								</DropdownToggle>
+                                    </DropdownToggle>
                                     <DropdownMenu id="raptureFashionHeaderDropdownMenu">
-                                        <DropdownItem  active={this.state.brand == "gibson"} className="raptureFashionHeaderDropdownItem" onClick = {() => this.select("brand", "gibson")}>Gibson Girls</DropdownItem >
-                                        <DropdownItem  active={this.state.brand == "ryan"} className="raptureFashionHeaderDropdownItem" onClick = {() => this.select("brand", "ryan")}>Ryan Boutique</DropdownItem >
-                                        <DropdownItem  active={this.state.brand == "apollo"} className="raptureFashionHeaderDropdownItem" onClick = {() => this.select("brand", "apollo")}>Apollo</DropdownItem >
-                                        <DropdownItem  active={this.state.brand == "áveline"} className="raptureFashionHeaderDropdownItem" onClick = {() => this.select("brand", "áveline")}>ÁVELINE'S</DropdownItem >
+                                        <DropdownItem active={this.state.brand == "gibson"} className="raptureFashionHeaderDropdownItem" onClick={() => this.select("brand", "Gibson Girls")}>Gibson Girls</DropdownItem >
+                                        <DropdownItem active={this.state.brand == "ryan"} className="raptureFashionHeaderDropdownItem" onClick={() => this.select("brand", "Ryan Boutique")}>Ryan Boutique</DropdownItem >
+                                        <DropdownItem active={this.state.brand == "apollo"} className="raptureFashionHeaderDropdownItem" onClick={() => this.select("brand", "Apollo")}>Apollo</DropdownItem >
+                                        <DropdownItem active={this.state.brand == "áveline"} className="raptureFashionHeaderDropdownItem" onClick={() => this.select("brand", "ÁVELINE's")}>ÁVELINE'S</DropdownItem >
                                     </DropdownMenu>
                                 </Dropdown>
                             </NavItem>
@@ -100,12 +108,12 @@ class SubHeader extends Component {
                                 <Dropdown isOpen={this.state.clothingDropdownOpen} toggle={() => this.toggleDropdown("clothing")}>
                                     <DropdownToggle id="raptureFashionHeaderDropdownToggle" caret>
                                         {this.state.clothing}
-       								</DropdownToggle>
+                                    </DropdownToggle>
                                     <DropdownMenu id="raptureFashionHeaderDropdownMenu">
-                                        <DropdownItem active={this.state.clothing == "dresses"} className="raptureFashionHeaderDropdownItem "onClick = {() => this.select("clothing", "dresses")}>Dresses</DropdownItem>
-                                        <DropdownItem active={this.state.clothing == "shoes"} className="raptureFashionHeaderDropdownItem" onClick = {() => this.select("clothing", "shoes")}>Shoes</DropdownItem>
-                                        <DropdownItem active={this.state.clothing == "accessories"} className="raptureFashionHeaderDropdownItem" onClick = {() => this.select("clothing", "accessories")}>Accessories</DropdownItem>
-                                        <DropdownItem active={this.state.clothing == "hats"} className="raptureFashionHeaderDropdownItem" onClick = {() => this.select("clothing", "hats")}>Hats</DropdownItem>
+                                        <DropdownItem active={this.state.clothing == "dresses"} className="raptureFashionHeaderDropdownItem " onClick={() => this.select("clothing", "Dresses")}>Dresses</DropdownItem>
+                                        <DropdownItem active={this.state.clothing == "shoes"} className="raptureFashionHeaderDropdownItem" onClick={() => this.select("clothing", "Shoes")}>Shoes</DropdownItem>
+                                        <DropdownItem active={this.state.clothing == "accessories"} className="raptureFashionHeaderDropdownItem" onClick={() => this.select("clothing", "Accessories")}>Accessories</DropdownItem>
+                                        <DropdownItem active={this.state.clothing == "hats"} className="raptureFashionHeaderDropdownItem" onClick={() => this.select("clothing", "Hats")}>Hats</DropdownItem>
                                     </DropdownMenu>
                                 </Dropdown>
                             </NavItem>

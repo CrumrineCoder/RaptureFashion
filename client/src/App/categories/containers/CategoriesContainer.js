@@ -13,7 +13,7 @@ class CategoriesContainer extends Component {
         // Filter variables
         this.state = {
             filter: {},
-            sort: null, 
+            sort: null,
             vendor: "",
             clothing: ""
         };
@@ -24,8 +24,8 @@ class CategoriesContainer extends Component {
         this.updateFromSubheader = this.updateFromSubheader.bind(this);
     }
 
-    updateFromSubheader(vendor, clothing){
-        this.setState({vendor, clothing});
+    updateFromSubheader(vendor, clothing) {
+        this.setState({ vendor, clothing });
     }
 
     // Change the container's state to match its child
@@ -74,68 +74,48 @@ class CategoriesContainer extends Component {
         const state = store.getState().home.cart; // state from redux store
         let clothing = state.products;
         // If we're not including All clothes
-        if (this.props.clothing !== "fasfasba") {
-            console.log("CONFIRM ONE")
-            // If the products are loaded
-            if (state.products["0"]) {
-                console.log("CONFIRM TWO");
-                // If we're sorting by clothing
-           
-                    // Based on the type of clothing, filter the clothing array by its type (set in Shopify)
-                    if (this.state.clothing === "dresses") {
-                        clothing = state.products.filter(function (a) {
-                            return a.options[2].values["0"].value === "Dress"
-                        });
-                    } else if (this.state.clothing === "accessories") {
-                        clothing = state.products.filter(function (a) {
-                            return a.options[2].values["0"].value === "Accessory"
-                        });
-                    } else if (this.state.clothing === "shoes") {
-                        clothing = state.products.filter(function (a) {
-                            return a.options[2].values["0"].value === "Shoe"
-                        });
-                    } else if (this.state.clothing === "hats") {
-                        clothing = state.products.filter(function (a) {
-                            return a.options[2].values["0"].value === "Hat"
-                        });
-                    }
-            
-              
-                    let vendorImage;
-                    // Based on the vendor, filter the clothing array by its vendor (set in Shopify)
-                    if (this.state.vendor === "Gibson Girls") {
-                        clothing = state.products.filter(function (a) {
-                            return a.vendor === "Gibson Girls"
-                        });
-                        vendorImage = "Brand/gibson girls.png";
-                    } else if (this.state.vendor === "ryan") {
-                        console.log("test");
-                        clothing = state.products.filter(function (a) {
-                            return a.vendor === "Ryan Boutique"
-                        });
-                        vendorImage = "Brand/andrew ryan.png";
-                    } else if (this.state.vendor === "Apollo") {
-                        clothing = state.products.filter(function (a) {
-                            return a.vendor === "Apollo"
-                        });
-                        vendorImage = "Brand/apollo.png";
-                    } else if (this.state.vendor === "ÁVELINE'S") {
-                        clothing = state.products.filter(function (a) {
-                            return a.vendor === "ÁVELINE'S"
-                        });
-                        vendorImage = "Brand/aveline.png";
-                    }
-                  
+        // If the products are loaded
+        if (state.products["0"]) {
+            console.log("CONFIRM ONE");
+            // If we're sorting by clothing
+
+            // Based on the type of clothing, filter the clothing array by its type (set in Shopify)
+            if (this.state.clothing === "Dresses") {
+                clothing = state.products.filter(function (a) {
+                    return a.options[2].values["0"].value === "Dress"
+                });
+            } else if (this.state.clothing === "Accessories") {
+                clothing = state.products.filter(function (a) {
+                    return a.options[2].values["0"].value === "Accessory"
+                });
+            } else if (this.state.clothing === "Shoes") {
+                clothing = state.products.filter(function (a) {
+                    return a.options[2].values["0"].value === "Shoe"
+                });
+            } else if (this.state.clothing === "Hats") {
+                clothing = state.products.filter(function (a) {
+                    return a.options[2].values["0"].value === "Hat"
+                });
             }
-        } else {
-            // For the header of All, we just tell the user they're seeing all types of clothes
-            header = (
-                <div className="clothingHeader">
-                    <div className='clothingBrandContainer'>
-                        <h3 className="clothingBrandContainerCategoryHeader">All</h3>
-                    </div>
-                </div>
-            )
+
+            // Based on the vendor, filter the clothing array by its vendor (set in Shopify)
+            if (this.state.vendor === "Gibson Girls") {
+                clothing = clothing.filter(function (a) {
+                    return a.vendor === "Gibson Girls"
+                });
+            } else if (this.state.vendor === "Ryan Boutique") {
+                clothing = clothing.filter(function (a) {
+                    return a.vendor === "Ryan Boutique"
+                });
+            } else if (this.state.vendor === "Apollo") {
+                clothing = clothing.filter(function (a) {
+                    return a.vendor === "Apollo"
+                });
+            } else if (this.state.vendor === "ÁVELINE'S") {
+                clothing = clothing.filter(function (a) {
+                    return a.vendor === "ÁVELINE'S"
+                });
+            }
         }
 
         // If we're  sorting
