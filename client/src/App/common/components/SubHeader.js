@@ -76,12 +76,10 @@ class SubHeader extends Component {
     }
 
     reset() {
-        let brand = "all";
-        let clothing = "all"
-        this.props.history.push('/clothing/brand=' + brand + "&&clothing=" + clothing);
-        this.props.updateContainer(brand, clothing);
+        window.location.reload()
+        this.props.history.push('/clothing/brand=all&&clothing=all');
     }
-
+// <NavLink className="raptureFashionHeaderDropdownMenuLink" onClick={() => this.reset()}>All</NavLink>
     render() {
         return (
             <header>
