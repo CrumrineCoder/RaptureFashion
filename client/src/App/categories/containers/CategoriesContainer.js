@@ -167,11 +167,15 @@ class CategoriesContainer extends Component {
                 })
             }
         }
-
+        console.log(Object.entries(this.state.filter).length === 0);
+        console.log(this.state.filter.constructor === Object);
+        console.log("clothing", clothing); 
         // If we have filters
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
+            console.log("we're in");
             // Clone the copies object
             let filteredClothing = clothing;
+            console.log("filteredClothing " + filteredClothing);
             // Clean it
             var filteredFilter = this.clean(this.state.filter);
             // For each filter
@@ -183,6 +187,8 @@ class CategoriesContainer extends Component {
                 // Further filter the collection each time
                 filteredClothing = this.getFilteredArray(filteredClothing, filter, this.state.filter[filter])
             }
+
+            console.log(filteredClothing);
             // If there are still clothing items remaining after the filters
             if (filteredClothing.length) {
                 // Return a clothing box for each item still remaining in the filtered Array
@@ -198,6 +204,11 @@ class CategoriesContainer extends Component {
                 )
             }
         } // User is not filtering the clothing 
+        else if(clothing.length == 0){
+            pageContent = (
+                <p className="clothingDismisser">There are no items to show for these filters.</p>
+            )
+        }
         else {
             pageContent = (
                 <ul className="clothingContainer">
