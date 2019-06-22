@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import ClothingBox from '../../home/components/ClothingBox';
 import Filter from "../components/Filter";
 import store from '../../store';
-import SubHeader from "../../common/components/SubHeader";
+//import SubHeader from "../../common/components/SubHeader";
 
 // For the Brand, All, and Clothing pages
 class CategoriesContainer extends Component {
@@ -13,21 +13,21 @@ class CategoriesContainer extends Component {
         // Filter variables
         this.state = {
             filter: {},
-            sort: null,
+            sort: null/*,
             vendor: "",
-            clothing: ""
+            clothing: ""*/
         };
         this.handleFilter = this.handleFilter.bind(this);
         this.sort = this.sort.bind(this);
         this.getFilteredArray = this.getFilteredArray.bind(this);
         this.clean = this.clean.bind(this);
-        this.updateFromSubheader = this.updateFromSubheader.bind(this);
+    //    this.updateFromSubheader = this.updateFromSubheader.bind(this);
     }
-
+    /*
     updateFromSubheader(vendor, clothing) {
         this.setState({ vendor, clothing });
     }
-
+    */
     // Change the container's state to match its child
     handleFilter(filter) {
         this.setState({
@@ -52,6 +52,7 @@ class CategoriesContainer extends Component {
                     return splitColor.includes(value)
                 case "vendor":
                     return e.vendor === value
+                    
                 default:
                     return e[key] === value;
             }
@@ -69,49 +70,51 @@ class CategoriesContainer extends Component {
     }
 
     render() {
+        console.log(this.state.filter);
         let pageContent = '';
         let header;
         const state = store.getState().home.cart; // state from redux store
         let clothing = state.products;
         // If we're not including All clothes
+
         // If the products are loaded
         if (state.products["0"]) {
             console.log("CONFIRM ONE");
             // If we're sorting by clothing
 
             // Based on the type of clothing, filter the clothing array by its type (set in Shopify)
-            if (this.state.clothing === "Dresses") {
+            if (this.state.filter.clothing === "Dresses") {
                 clothing = state.products.filter(function (a) {
                     return a.options[2].values["0"].value === "Dress"
                 });
-            } else if (this.state.clothing === "Accessories") {
+            } else if (this.state.filter.clothing === "Accessories") {
                 clothing = state.products.filter(function (a) {
                     return a.options[2].values["0"].value === "Accessory"
                 });
-            } else if (this.state.clothing === "Shoes") {
+            } else if (this.state.filter.clothing === "Shoes") {
                 clothing = state.products.filter(function (a) {
                     return a.options[2].values["0"].value === "Shoe"
                 });
-            } else if (this.state.clothing === "Hats") {
+            } else if (this.state.filter.clothing === "Hats") {
                 clothing = state.products.filter(function (a) {
                     return a.options[2].values["0"].value === "Hat"
                 });
             }
 
             // Based on the vendor, filter the clothing array by its vendor (set in Shopify)
-            if (this.state.vendor === "Gibson Girls") {
+            if (this.state.filter.vendor === "Gibson Girls") {
                 clothing = clothing.filter(function (a) {
                     return a.vendor === "Gibson Girls"
                 });
-            } else if (this.state.vendor === "Ryan Boutique") {
+            } else if (this.state.filter.vendor === "Ryan Boutique") {
                 clothing = clothing.filter(function (a) {
                     return a.vendor === "Ryan Boutique"
                 });
-            } else if (this.state.vendor === "Apollo") {
+            } else if (this.state.filter.vendor === "Apollo") {
                 clothing = clothing.filter(function (a) {
                     return a.vendor === "Apollo"
                 });
-            } else if (this.state.vendor === "ÁVELINE'S") {
+            } else if (this.state.filter.vendor === "ÁVELINE'S") {
                 clothing = clothing.filter(function (a) {
                     return a.vendor === "ÁVELINE'S"
                 });
@@ -175,15 +178,20 @@ class CategoriesContainer extends Component {
             console.log("we're in");
             // Clone the copies object
             let filteredClothing = clothing;
-            console.log("filteredClothing " + filteredClothing);
+            console.log("filteredClothing ", filteredClothing);
             // Clean it
             var filteredFilter = this.clean(this.state.filter);
             // For each filter
+            console.log(filteredFilter);
             for (var filter in filteredFilter) {
                 // If there's a vendor, don't filter for brand filters
                 if (filter === "vendor" && this.props.vendor) {
                     break
+                } else if(filter === "clothing" && this.props.clothing){
+                    break;
                 }
+                console.log(filter);
+                console.log(this.state.filter[filter]);
                 // Further filter the collection each time
                 filteredClothing = this.getFilteredArray(filteredClothing, filter, this.state.filter[filter])
             }
@@ -219,7 +227,6 @@ class CategoriesContainer extends Component {
 
         return (
             <div className="categoriesContainer">
-                <SubHeader updateContainer={this.updateFromSubheader}></SubHeader>
                 {header}
                 <Filter clothing={this.props.clothing} onChange={this.handleFilter} sort={this.sort}></Filter>
                 {pageContent}

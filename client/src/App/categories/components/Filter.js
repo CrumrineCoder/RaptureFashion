@@ -84,39 +84,24 @@ class Filter extends Component {
         //   {activeFilter}
 
         let clear;
-        if ((this.state.filters.color !== null  &&  this.state.filters.color !== undefined) || (this.state.filters.vendor !== null  &&  this.state.filters.vendor !== undefined)|| this.state.sort !== null) {
+        if ((this.state.filters.color !== null && this.state.filters.color !== undefined) || (this.state.filters.vendor !== null && this.state.filters.vendor !== undefined) || this.state.sort !== null) {
             clear = (
                 <div className="filterClear">
                     <i onClick={this.clear} className="fas fa-times activeFilterDelete"></i> Clear
                 </div>
             )
         }
-        return (
-            <div className="filter">
-                <div className="filterHeaderSection">
+        /*
+         <div className="filterHeaderSection">
                     <h4 className="filterHeader">Filters</h4>
                     {clear}
                 </div>
+                */
+        /*
+                    */
+        return (
+            <div className="filter">
                 <div className="filterSectionContainer">
-                    <div className="filterSection">
-                        <h5 className="filterSubheader">Brands</h5>
-                        {this.props.clothing &&
-                            <div className="filterRow">
-                                <div className={this.isActive('filterText', "Gibson Girls", "vendor")} type="radio" name="vendor" value="Gibson Girls" checked={this.state.filters.vendor === "Gibson Girls"} filter="vendor" onClick={() => this.changeFilter("vendor", "Gibson Girls")} >
-                                    Gibson Girls
-                            </div>
-                                <div className={this.isActive('filterText', "Ryan Boutique", "vendor")} type="radio" name="vendor" value="Ryan Boutique" checked={this.state.filters.vendor === "Ryan Boutique"} filter="vendor" onClick={() => this.changeFilter("vendor", "Ryan Boutique")} >
-                                    Ryan Boutique
-                            </div>
-                                <div className={this.isActive('filterText', "Apollo", "vendor")} type="radio" name="vendor" value="Apollo" checked={this.state.filters.vendor === "Apollo"} filter="vendor" onClick={() => this.changeFilter("vendor", "Apollo")} >
-                                    Apollo
-                            </div>
-                                <div className={this.isActive('filterText', "ÁVELINE'S", "vendor")} type="radio" name="vendor" value="ÁVELINE'S" checked={this.state.filters.vendor === "ÁVELINE'S"} filter="vendor" onClick={() => this.changeFilter("vendor", "ÁVELINE'S")} >
-                                    ÁVELINE'S
-                            </div>
-                            </div>
-                        }
-                    </div>
                     <div className="filterSection">
                         <h5 className="filterSubheader">Colors</h5>
                         <div className="filterRow">
@@ -138,11 +123,55 @@ class Filter extends Component {
                         </div>
                     </div>
                     <div className="filterSection">
+                        <h5 className="filterSubheader">Brands</h5>
+                        {this.props.clothing &&
+                            <div className="filterRow">
+                                <div className={this.isActive('filterText', "Gibson Girls", "vendor")} type="radio" name="vendor" value="Gibson Girls" checked={this.state.filters.vendor === "Gibson Girls"} filter="vendor" onClick={() => this.changeFilter("vendor", "Gibson Girls")} >
+                                    Gibson Girls
+                            </div>
+                                <div className={this.isActive('filterText', "Ryan Boutique", "vendor")} type="radio" name="vendor" value="Ryan Boutique" checked={this.state.filters.vendor === "Ryan Boutique"} filter="vendor" onClick={() => this.changeFilter("vendor", "Ryan Boutique")} >
+                                    Ryan Boutique
+                            </div>
+                                <div className={this.isActive('filterText', "Apollo", "vendor")} type="radio" name="vendor" value="Apollo" checked={this.state.filters.vendor === "Apollo"} filter="vendor" onClick={() => this.changeFilter("vendor", "Apollo")} >
+                                    Apollo
+                            </div>
+                                <div className={this.isActive('filterText', "ÁVELINE'S", "vendor")} type="radio" name="vendor" value="ÁVELINE'S" checked={this.state.filters.vendor === "ÁVELINE'S"} filter="vendor" onClick={() => this.changeFilter("vendor", "ÁVELINE'S")} >
+                                    ÁVELINE'S
+                            </div>
+                            </div>
+                        }
+                    </div>
+                    <div className="filterSection">
+                        <h5 className="filterSubheader">Clothing</h5>
+                        {this.props.clothing &&
+                            <div className="filterRow">
+                                <div className={this.isActive('filterText', "Dresses", "clothing")} type="radio" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Dresses"} filter="vendor" onClick={() => this.changeFilter("clothing", "Dresses")} >
+                                    Dresses
+                            </div>
+
+                                <div className={this.isActive('filterText', "Shoes", "clothing")} type="radio" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Shoes"} filter="vendor" onClick={() => this.changeFilter("clothing", "Shoes")} >
+                                    Shoes
+                            </div>
+
+                                <div className={this.isActive('filterText', "Accessories", "clothing")} type="radio" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Accessories"} filter="vendor" onClick={() => this.changeFilter("clothing", "Accessories")} >
+                                    Accessories
+                            </div>
+
+                                <div className={this.isActive('filterText', "Hats", "clothing")} type="radio" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Hats"} filter="vendor" onClick={() => this.changeFilter("clothing", "Hats")} >
+                                    Hats
+                            </div>
+                            </div>
+                        }
+                    </div>
+
+                    <div className="filterSection">
                         <h5 className="filterSubheader">Sort</h5>
-                        <div className={this.isActive('filterSort', "sortPriceAsc", "sort")} onClick={() => this.changeSort("sortPriceAsc")} > Price Low-High</div>
-                        <div className={this.isActive('filterSort', "sortPriceDesc", "sort")} onClick={() => this.changeSort("sortPriceDesc")} > Price High-Low</div>
-                        <div className={this.isActive('filterSort', "sortNameAsc", "sort")} onClick={() => this.changeSort("sortNameAsc")} >Name A-Z</div>
-                        <div className={this.isActive('filterSort', "sortNameDesc", "sort")} onClick={() => this.changeSort("sortNameDesc")} >Name Z-A</div>
+                        <div className="filterRow">
+                            <div className={this.isActive('filterSort', "sortPriceAsc", "sort")} onClick={() => this.changeSort("sortPriceAsc")} > Price Low-High</div>
+                            <div className={this.isActive('filterSort', "sortPriceDesc", "sort")} onClick={() => this.changeSort("sortPriceDesc")} > Price High-Low</div>
+                            <div className={this.isActive('filterSort', "sortNameAsc", "sort")} onClick={() => this.changeSort("sortNameAsc")} >Name A-Z</div>
+                            <div className={this.isActive('filterSort', "sortNameDesc", "sort")} onClick={() => this.changeSort("sortNameDesc")} >Name Z-A</div>
+                        </div>
                     </div>
                 </div>
             </div>

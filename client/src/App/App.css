@@ -991,6 +991,7 @@ box-shadow: 0 0 0 .2rem #BF953F;
 
 .filterRow{
   display: block;
+  text-align: center; 
 }
 
 .filterText{
@@ -1035,7 +1036,7 @@ box-shadow: 0 0 0 .2rem #BF953F;
   color: rgb(238, 238, 238);
   margin: 6px 5px 0px 0px;
   display: block;
-  text-align: left;
+ /* text-align: left; */
   overflow: visible;
   position: relative;
 }
