@@ -12,7 +12,11 @@ class CategoriesContainer extends Component {
         super(props);
         // Filter variables
         this.state = {
-            filter: {},
+            filter: {
+                vendor: ["Gibson Girls", "Ryan Boutique", "Apollo", "ÁVELINE's"],
+                color: ["Purple","Black", "Blue", "Green", "White"],
+                clothing: ["Dresses", "Shoes", "Accessories", "Hats"]
+            },
             sort: null/*,
             vendor: "",
             clothing: ""*/
@@ -44,6 +48,9 @@ class CategoriesContainer extends Component {
 
     // Filter an array of products
     getFilteredArray(array, key, value) {
+        console.log(array);
+        console.log(key);
+        console.log(value);
         return array.filter(function (e) {
             // Depending on what tag we're filtering by, we check the value in a different place
             switch (key) {
@@ -51,10 +58,10 @@ class CategoriesContainer extends Component {
                     var splitColor = e.options[1].values[0].value.split('/');
                     return splitColor.includes(value)
                 case "vendor":
-                    return e.vendor === value
-                    
+                    return e.vendor.includes(value)
+
                 default:
-                    return e[key] === value;
+                    return e[key].includes(value);
             }
         });
     }
@@ -79,23 +86,22 @@ class CategoriesContainer extends Component {
 
         // If the products are loaded
         if (state.products["0"]) {
-            console.log("CONFIRM ONE");
             // If we're sorting by clothing
-
+            console.log(this.state.filter.clothing.includes("Dresses"))
             // Based on the type of clothing, filter the clothing array by its type (set in Shopify)
-            if (this.state.filter.clothing === "Dresses") {
+            if (this.state.filter.clothing.includes("Dresses")) {
                 clothing = state.products.filter(function (a) {
                     return a.options[2].values["0"].value === "Dress"
                 });
-            } else if (this.state.filter.clothing === "Accessories") {
+            } else if (this.state.filter.clothing.includes("Accessories")) {
                 clothing = state.products.filter(function (a) {
                     return a.options[2].values["0"].value === "Accessory"
                 });
-            } else if (this.state.filter.clothing === "Shoes") {
+            } else if (this.state.filter.clothing.includes("Shoes")) {
                 clothing = state.products.filter(function (a) {
                     return a.options[2].values["0"].value === "Shoe"
                 });
-            } else if (this.state.filter.clothing === "Hats") {
+            } else if (this.state.filter.clothing.includes("Hats")) {
                 clothing = state.products.filter(function (a) {
                     return a.options[2].values["0"].value === "Hat"
                 });

@@ -9,8 +9,9 @@ class Filter extends Component {
         this.state = {
             amountOfFilters: 0,
             filters: {
-                vendor: null,
-                color: null
+                vendor: ["Gibson Girls", "Ryan Boutique", "Apollo", "ÁVELINE's"],
+                color: ["Purple","Black", "Blue", "Green", "White"],
+                clothing: ["Dresses", "Shoes", "Accessories", "Hats"]
             },
             sort: null
         };
@@ -35,12 +36,15 @@ class Filter extends Component {
         });
     }
     changeFilter(key, value) {
+        // Get previous filters
         let filters = Object.assign({}, this.state.filters);
         let change = 0;
         if (filters[key] === null || filters[key] === undefined || filters[key] === "") {
             change = 1;
         }
-        filters[key] = value;
+        // Add filter to the key array
+        filters[key].push(value);
+        // Set the state with the new filters and send them up to the container
         this.setState({
             filters,
             amountOfFilters: this.state.amountOfFilters + change
@@ -145,19 +149,19 @@ class Filter extends Component {
                         <h5 className="filterSubheader">Clothing</h5>
                         {this.props.clothing &&
                             <div className="filterRow">
-                                <div className={this.isActive('filterText', "Dresses", "clothing")} type="radio" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Dresses"} filter="vendor" onClick={() => this.changeFilter("clothing", "Dresses")} >
+                                <div className={this.isActive('filterText', "Dresses", "clothing")} type="checkbox" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Dresses"} filter="vendor" onClick={() => this.changeFilter("clothing", "Dresses")} >
                                     Dresses
                             </div>
 
-                                <div className={this.isActive('filterText', "Shoes", "clothing")} type="radio" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Shoes"} filter="vendor" onClick={() => this.changeFilter("clothing", "Shoes")} >
+                                <div className={this.isActive('filterText', "Shoes", "clothing")} type="checkbox" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Shoes"} filter="vendor" onClick={() => this.changeFilter("clothing", "Shoes")} >
                                     Shoes
                             </div>
 
-                                <div className={this.isActive('filterText', "Accessories", "clothing")} type="radio" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Accessories"} filter="vendor" onClick={() => this.changeFilter("clothing", "Accessories")} >
+                                <div className={this.isActive('filterText', "Accessories", "clothing")} type="checkbox" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Accessories"} filter="vendor" onClick={() => this.changeFilter("clothing", "Accessories")} >
                                     Accessories
                             </div>
 
-                                <div className={this.isActive('filterText', "Hats", "clothing")} type="radio" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Hats"} filter="vendor" onClick={() => this.changeFilter("clothing", "Hats")} >
+                                <div className={this.isActive('filterText', "Hats", "clothing")} type="checkbox" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Hats"} filter="vendor" onClick={() => this.changeFilter("clothing", "Hats")} >
                                     Hats
                             </div>
                             </div>
