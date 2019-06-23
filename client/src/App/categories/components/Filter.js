@@ -9,7 +9,7 @@ class Filter extends Component {
         this.state = {
             amountOfFilters: 0,
             filters: {
-                vendor: ["Gibson Girls", "Ryan Boutique", "Apollo", "ÁVELINE's"],
+                vendor: ["Gibson Girls", "Ryan Boutique", "Apollo", "ÁVELINE'S"],
                 color: ["Purple","Black", "Blue", "Green", "White"],
                 clothing: ["Dresses", "Shoes", "Accessories", "Hats"]
             },
@@ -58,10 +58,14 @@ class Filter extends Component {
     }
 
     isActive(base, selector, type) {
+        console.log("Base", base);
+        console.log("Selector", selector);
+        console.log("Type", type);
+        console.log("TypeStuff", this.state.filters[type]);
         if (base === "filterSort") {
-            return base + ' ' + selector + ' ' + ((selector === this.state[type]) ? 'filterSortActive' : 'default');
+            return base + ' ' + selector + ' ' + ((this.state[type] === (selector)) ? 'filterSortActive' : 'default');
         }
-        return base + ' ' + selector + ' ' + ((selector === this.state.filters[type]) ? 'filterActive' : 'default');
+        return base + ' ' + selector + ' ' + ((this.state.filters[type].includes(selector)) ? 'filterActive' : 'default');
     }
 
     render() {
@@ -110,19 +114,19 @@ class Filter extends Component {
                         <h5 className="filterSubheader">Colors</h5>
                         <div className="filterRow">
                             <label>
-                                <div className={this.isActive('filterRadio', "Purple", "color")} type="radio" name="color" value="Purple" checked={this.state.filters.color === "Purple"} filter="color" onClick={() => this.changeFilter("color", "Purple")} />
+                                <div checked={this.state.filters.color.includes('Purple')} className={this.isActive('filterRadio', "Purple", "color")} type="checkbox" name="color" value="Purple" checked={this.state.filters.color === "Purple"} filter="color" onClick={() => this.changeFilter("color", "Purple")} />
                             </label>
                             <label>
-                                <div className={this.isActive('filterRadio', "Black", "color")} type="radio" name="color" value="Black" checked={this.state.filters.color === "Black"} filter="color" onClick={() => this.changeFilter("color", "Black")} />
+                                <div className={this.isActive('filterRadio', "Black", "color")} type="checkbox" name="color" value="Black" checked={this.state.filters.color === "Black"} filter="color" onClick={() => this.changeFilter("color", "Black")} />
                             </label>
                             <label>
-                                <div className={this.isActive('filterRadio', "Blue", "color")} type="radio" name="color" value="Blue" checked={this.state.filters.color === "Blue"} filter="color" onClick={() => this.changeFilter("color", "Blue")} />
+                                <div className={this.isActive('filterRadio', "Blue", "color")} type="checkbox" name="color" value="Blue" checked={this.state.filters.color === "Blue"} filter="color" onClick={() => this.changeFilter("color", "Blue")} />
                             </label>
                             <label>
-                                <div className={this.isActive('filterRadio', "Green", "color")} type="radio" name="color" value="Green" checked={this.state.filters.color === "Green"} filter="color" onClick={() => this.changeFilter("color", "Green")} />
+                                <div className={this.isActive('filterRadio', "Green", "color")} type="checkbox" name="color" value="Green" checked={this.state.filters.color === "Green"} filter="color" onClick={() => this.changeFilter("color", "Green")} />
                             </label>
                             <label>
-                                <div className={this.isActive('filterRadio', "White", "color")} type="radio" name="color" value="White" checked={this.state.filters.color === "White"} filter="color" onClick={() => this.changeFilter("color", "White")} />
+                                <div className={this.isActive('filterRadio', "White", "color")} type="checkbox" name="color" value="White" checked={this.state.filters.color === "White"} filter="color" onClick={() => this.changeFilter("color", "White")} />
                             </label>
                         </div>
                     </div>
