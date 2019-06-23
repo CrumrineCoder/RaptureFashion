@@ -42,8 +42,14 @@ class Filter extends Component {
         if (filters[key] === null || filters[key] === undefined || filters[key] === "") {
             change = 1;
         }
+        console.log("indexof", filters[key].indexOf)
+        if(filters[key].indexOf(value) == -1){
+            filters[key].push(value);
+        } else{
+            filters[key].splice(filters[key].indexOf, 1)
+        }
         // Add filter to the key array
-        filters[key].push(value);
+     
         // Set the state with the new filters and send them up to the container
         this.setState({
             filters,
