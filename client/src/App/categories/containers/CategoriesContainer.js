@@ -151,6 +151,9 @@ class CategoriesContainer extends Component {
                 console.log("Filter clothing in shopify", item.options[2].values["0"].value);
                 console.log("Vendor?", filters['vendor'].includes(item.vendor));
                 console.log("Clothing?", filters['clothing'].includes(item.options[2].values["0"].value));
+                var splitColor = item.options[1].values[0].value.split('/');
+         // && splitColor.every(elem => value.indexOf(elem) > -1)
+                //return value.includes(splitColor)
                 return filters['vendor'].includes(item.vendor) && filters['clothing'].includes(item.options[2].values["0"].value)
             });
         }
@@ -218,7 +221,7 @@ class CategoriesContainer extends Component {
             var filteredFilter = this.clean(this.state.filter);
             // For each filter
             console.log("filtered filter after clean", filteredFilter);
-            /*
+            
             for (var filter in filteredFilter) {
                 // If there's a vendor, don't filter for brand filters
                 if (filter === "vendor" && this.props.vendor) {
@@ -231,7 +234,7 @@ class CategoriesContainer extends Component {
                 // Further filter the collection each time
                 filteredClothing = this.getFilteredArray(filteredClothing, filter, this.state.filter[filter])
             }
-            */
+            
             console.log("filtered clothing after array", filteredClothing);
             // If there are still clothing items remaining after the filters
             if (filteredClothing.length) {
