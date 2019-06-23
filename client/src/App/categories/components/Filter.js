@@ -42,11 +42,13 @@ class Filter extends Component {
         if (filters[key] === null || filters[key] === undefined || filters[key] === "") {
             change = 1;
         }
-        console.log("indexof", filters[key].indexOf)
+        console.log("indexof", filters[key].indexOf(value));
+        console.log("filters", filters[key]);
+        console.log("vlaues", value); 
         if(filters[key].indexOf(value) == -1){
             filters[key].push(value);
         } else{
-            filters[key].splice(filters[key].indexOf, 1)
+            filters[key].splice(filters[key].indexOf(value), 1)
         }
         // Add filter to the key array
      
@@ -123,16 +125,16 @@ class Filter extends Component {
                                 <div checked={this.state.filters.color.includes('Purple')} className={this.isActive('filterRadio', "Purple", "color")} type="checkbox" name="color" value="Purple" checked={this.state.filters.color === "Purple"} filter="color" onClick={() => this.changeFilter("color", "Purple")} />
                             </label>
                             <label>
-                                <div className={this.isActive('filterRadio', "Black", "color")} type="checkbox" name="color" value="Black" checked={this.state.filters.color === "Black"} filter="color" onClick={() => this.changeFilter("color", "Black")} />
+                                <div className={this.isActive('filterRadio', "Black", "color")} type="radio" name="color" value="Black" checked={this.state.filters.color === "Black"} filter="color" onClick={() => this.changeFilter("color", "Black")} />
                             </label>
                             <label>
-                                <div className={this.isActive('filterRadio', "Blue", "color")} type="checkbox" name="color" value="Blue" checked={this.state.filters.color === "Blue"} filter="color" onClick={() => this.changeFilter("color", "Blue")} />
+                                <div className={this.isActive('filterRadio', "Blue", "color")} type="checradiokbox" name="color" value="Blue" checked={this.state.filters.color === "Blue"} filter="color" onClick={() => this.changeFilter("color", "Blue")} />
                             </label>
                             <label>
-                                <div className={this.isActive('filterRadio', "Green", "color")} type="checkbox" name="color" value="Green" checked={this.state.filters.color === "Green"} filter="color" onClick={() => this.changeFilter("color", "Green")} />
+                                <div className={this.isActive('filterRadio', "Green", "color")} type="radio" name="color" value="Green" checked={this.state.filters.color === "Green"} filter="color" onClick={() => this.changeFilter("color", "Green")} />
                             </label>
                             <label>
-                                <div className={this.isActive('filterRadio', "White", "color")} type="checkbox" name="color" value="White" checked={this.state.filters.color === "White"} filter="color" onClick={() => this.changeFilter("color", "White")} />
+                                <div className={this.isActive('filterRadio', "White", "color")} type="radio" name="color" value="White" checked={this.state.filters.color === "White"} filter="color" onClick={() => this.changeFilter("color", "White")} />
                             </label>
                         </div>
                     </div>
@@ -159,19 +161,19 @@ class Filter extends Component {
                         <h5 className="filterSubheader">Clothing</h5>
                         {this.props.clothing &&
                             <div className="filterRow">
-                                <div className={this.isActive('filterText', "Dress", "clothing")} type="checkbox" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Dress"} filter="vendor" onClick={() => this.changeFilter("clothing", "Dresses")} >
+                                <div className={this.isActive('filterText', "Dress", "clothing")} type="radio" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Dress"} filter="vendor" onClick={() => this.changeFilter("clothing", "Dress")} >
                                     Dresses
                             </div>
 
-                                <div className={this.isActive('filterText', "Shoe", "clothing")} type="checkbox" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Shoe"} filter="vendor" onClick={() => this.changeFilter("clothing", "Shoes")} >
+                                <div className={this.isActive('filterText', "Shoe", "clothing")} type="radio" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Shoe"} filter="vendor" onClick={() => this.changeFilter("clothing", "Shoe")} >
                                     Shoes
                             </div>
 
-                                <div className={this.isActive('filterText', "Accessory", "clothing")} type="checkbox" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Accessory"} filter="vendor" onClick={() => this.changeFilter("clothing", "Accessories")} >
+                                <div className={this.isActive('filterText', "Accessory", "clothing")} type="radio" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Accessory"} filter="vendor" onClick={() => this.changeFilter("clothing", "Accessory")} >
                                     Accessories
                             </div>
 
-                                <div className={this.isActive('filterText', "Hat", "clothing")} type="checkbox" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Hat"} filter="vendor" onClick={() => this.changeFilter("clothing", "Hats")} >
+                                <div className={this.isActive('filterText', "Hat", "clothing")} type="radio" name="vendor" value="Gibson Girls" checked={this.state.filters.clothing === "Hat"} filter="vendor" onClick={() => this.changeFilter("clothing", "Hat")} >
                                     Hats
                             </div>
                             </div>
