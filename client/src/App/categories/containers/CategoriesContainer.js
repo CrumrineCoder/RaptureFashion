@@ -14,7 +14,7 @@ class CategoriesContainer extends Component {
         this.state = {
             filter: {
                 vendor: ["Gibson Girls", "Ryan Boutique", "Apollo", "ÁVELINE'S"],
-                color: ["Purple","Black", "Blue", "Green", "White"],
+                color: ["Purple","Black", "Blue", "Green", "White", "Gold"],
                 clothing: ["Dress", "Shoe", "Accessory", "Hat"]
             },
             sort: null/*,
@@ -138,10 +138,11 @@ class CategoriesContainer extends Component {
         let header;
         const state = store.getState().home.cart; // state from redux store
         let clothing = state.products;
-        console.log("Clothing before purge", clothing);
+   
         // If we're not including All clothes
         // If the products are loaded
         if (state.products["0"]) {
+            console.log("Clothing before purge", clothing);
             for(var i=0; i<clothing.length; i++){
             
             }

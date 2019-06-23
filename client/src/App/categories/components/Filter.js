@@ -10,7 +10,7 @@ class Filter extends Component {
             amountOfFilters: 0,
             filters: {
                 vendor: ["Gibson Girls", "Ryan Boutique", "Apollo", "ÁVELINE'S"],
-                color: ["Purple","Black", "Blue", "Green", "White"],
+                color: ["Purple","Black", "Blue", "Green", "White", "Gold"],
                 clothing: ["Dress", "Shoe", "Accessory", "Hat"]
             },
             sort: null
@@ -135,6 +135,9 @@ class Filter extends Component {
                             </label>
                             <label>
                                 <div className={this.isActive('filterRadio', "White", "color")} type="radio" name="color" value="White" checked={this.state.filters.color === "White"} filter="color" onClick={() => this.changeFilter("color", "White")} />
+                            </label>
+                            <label>
+                                <div className={this.isActive('filterRadio', "Gold", "color")} type="radio" name="color" value="Gold" checked={this.state.filters.color === "Gold"} filter="color" onClick={() => this.changeFilter("color", "Gold")} />
                             </label>
                         </div>
                     </div>
