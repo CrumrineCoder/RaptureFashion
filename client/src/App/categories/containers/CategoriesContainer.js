@@ -14,7 +14,7 @@ class CategoriesContainer extends Component {
         this.state = {
             filter: {
                 vendor: ["Gibson Girls", "Ryan Boutique", "Apollo", "ÁVELINE's"],
-                color: ["Purple","Black", "Blue", "Green", "White"],
+                color: ["Purple", "Black", "Blue", "Green", "White"],
                 clothing: ["Dresses", "Shoes", "Accessories", "Hats"]
             },
             sort: null/*,
@@ -25,7 +25,7 @@ class CategoriesContainer extends Component {
         this.sort = this.sort.bind(this);
         this.getFilteredArray = this.getFilteredArray.bind(this);
         this.clean = this.clean.bind(this);
-    //    this.updateFromSubheader = this.updateFromSubheader.bind(this);
+        //    this.updateFromSubheader = this.updateFromSubheader.bind(this);
     }
     /*
     updateFromSubheader(vendor, clothing) {
@@ -48,20 +48,32 @@ class CategoriesContainer extends Component {
 
     // Filter an array of products
     getFilteredArray(array, key, value) {
-        console.log(array);
-        console.log(key);
-        console.log(value);
+        console.log("Get filtered array array", array);
+        console.log("Get filtered array key", key);
+        console.log("Get filtered array value", value);
         return array.filter(function (e) {
+            console.log("e", e)
             // Depending on what tag we're filtering by, we check the value in a different place
             switch (key) {
                 case "color":
                     var splitColor = e.options[1].values[0].value.split('/');
-                    return splitColor.includes(value)
+                    console.log("include " + value)
+                    console.log("split color", splitColor)
+                    console.log("Does it include?" + value.includes(splitColor))
+                    console.log(splitColor.every(elem => value.indexOf(elem) > -1));
+                    //return value.includes(splitColor)
+                    return splitColor.every(elem => value.indexOf(elem) > -1);
                 case "vendor":
-                    return e.vendor.includes(value)
+                    console.log("include " + value)
+                    console.log("split color", e.vendor)
+                    console.log("Does it include?" + value.includes(e.vendor))
+                    return value.includes(e.vendor)
 
                 default:
-                    return e[key].includes(value);
+                    console.log("include " + value)
+                    console.log("split color", e[key])
+                    console.log("Does it include?" + value.includes(e[key]))
+                    return value.includes(e[key])
             }
         });
     }
@@ -77,7 +89,7 @@ class CategoriesContainer extends Component {
     }
 
     render() {
-        console.log(this.state.filter);
+        console.log("Render filter", this.state.filter);
         let pageContent = '';
         let header;
         const state = store.getState().home.cart; // state from redux store
@@ -87,7 +99,7 @@ class CategoriesContainer extends Component {
         // If the products are loaded
         if (state.products["0"]) {
             // If we're sorting by clothing
-            console.log(this.state.filter.clothing.includes("Dresses"))
+            console.log("Does the filter includes dresses", this.state.filter.clothing.includes("Dresses"))
             // Based on the type of clothing, filter the clothing array by its type (set in Shopify)
             if (this.state.filter.clothing.includes("Dresses")) {
                 clothing = state.products.filter(function (a) {
@@ -176,9 +188,9 @@ class CategoriesContainer extends Component {
                 })
             }
         }
-        console.log(Object.entries(this.state.filter).length === 0);
-        console.log(this.state.filter.constructor === Object);
-        console.log("clothing", clothing); 
+        console.log("Are there no filters", Object.entries(this.state.filter).length === 0);
+        console.log("is the filter an object", this.state.filter.constructor === Object);
+        console.log("clothing", clothing);
         // If we have filters
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
             console.log("we're in");
@@ -188,21 +200,21 @@ class CategoriesContainer extends Component {
             // Clean it
             var filteredFilter = this.clean(this.state.filter);
             // For each filter
-            console.log(filteredFilter);
+            console.log("filtered filter after clean", filteredFilter);
             for (var filter in filteredFilter) {
                 // If there's a vendor, don't filter for brand filters
                 if (filter === "vendor" && this.props.vendor) {
                     break
-                } else if(filter === "clothing" && this.props.clothing){
+                } else if (filter === "clothing" && this.props.clothing) {
                     break;
                 }
-                console.log(filter);
-                console.log(this.state.filter[filter]);
+                console.log("filter", filter);
+                console.log("filter in state", this.state.filter[filter]);
                 // Further filter the collection each time
                 filteredClothing = this.getFilteredArray(filteredClothing, filter, this.state.filter[filter])
             }
 
-            console.log(filteredClothing);
+            console.log("filtered clothing after array", filteredClothing);
             // If there are still clothing items remaining after the filters
             if (filteredClothing.length) {
                 // Return a clothing box for each item still remaining in the filtered Array
@@ -218,7 +230,7 @@ class CategoriesContainer extends Component {
                 )
             }
         } // User is not filtering the clothing 
-        else if(clothing.length == 0){
+        else if (clothing.length == 0) {
             pageContent = (
                 <p className="clothingDismisser">There are no items to show for these filters.</p>
             )
