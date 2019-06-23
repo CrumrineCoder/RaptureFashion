@@ -13,9 +13,9 @@ class CategoriesContainer extends Component {
         // Filter variables
         this.state = {
             filter: {
-                vendor: ["Gibson Girls", "Ryan Boutique", "Apollo", "ÁVELINE's"],
-                color: ["Purple", "Black", "Blue", "Green", "White"],
-                clothing: ["Dresses", "Shoes", "Accessories", "Hats"]
+                vendor: ["Gibson Girls", "Ryan Boutique", "Apollo", "ÁVELINE'S"],
+                color: ["Purple","Black", "Blue", "Green", "White"],
+                clothing: ["Dress", "Shoe", "Accessory", "Hat"]
             },
             sort: null/*,
             vendor: "",
@@ -88,17 +88,8 @@ class CategoriesContainer extends Component {
         return obj;
     }
 
-    render() {
-        console.log("Render filter", this.state.filter);
-        let pageContent = '';
-        let header;
-        const state = store.getState().home.cart; // state from redux store
-        let clothing = state.products;
-        // If we're not including All clothes
-
-        // If the products are loaded
-        if (state.products["0"]) {
-            // If we're sorting by clothing
+    /*
+        // If we're sorting by clothing
             console.log("Does the filter includes dresses", this.state.filter.clothing.includes("Dresses"))
             // Based on the type of clothing, filter the clothing array by its type (set in Shopify)
             if (this.state.filter.clothing.includes("Dresses")) {
@@ -137,7 +128,33 @@ class CategoriesContainer extends Component {
                     return a.vendor === "ÁVELINE'S"
                 });
             }
+
+            */
+
+    render() {
+        let filters = this.state.filter;
+        console.log("Render filter", this.state.filter);
+        let pageContent = '';
+        let header;
+        const state = store.getState().home.cart; // state from redux store
+        let clothing = state.products;
+        console.log("Clothing before purge", clothing);
+        // If we're not including All clothes
+        // If the products are loaded
+        if (state.products["0"]) {
+            for(var i=0; i<clothing.length; i++){
+            
+            }
+            clothing = clothing.filter(function(item){
+                console.log("Filter filters", filters);
+                console.log("Filter vendor", item.vendor);
+                console.log("Filter clothing in shopify", item.options[2].values["0"].value);
+                console.log("Vendor?", filters['vendor'].includes(item.vendor));
+                console.log("Clothing?", filters['clothing'].includes(item.options[2].values["0"].value));
+                return filters['vendor'].includes(item.vendor) && filters['clothing'].includes(item.options[2].values["0"].value)
+            });
         }
+        console.log("Clothing after purge", clothing);
 
         // If we're  sorting
         if (this.state.sort) {
@@ -201,6 +218,7 @@ class CategoriesContainer extends Component {
             var filteredFilter = this.clean(this.state.filter);
             // For each filter
             console.log("filtered filter after clean", filteredFilter);
+            /*
             for (var filter in filteredFilter) {
                 // If there's a vendor, don't filter for brand filters
                 if (filter === "vendor" && this.props.vendor) {
@@ -213,7 +231,7 @@ class CategoriesContainer extends Component {
                 // Further filter the collection each time
                 filteredClothing = this.getFilteredArray(filteredClothing, filter, this.state.filter[filter])
             }
-
+            */
             console.log("filtered clothing after array", filteredClothing);
             // If there are still clothing items remaining after the filters
             if (filteredClothing.length) {
