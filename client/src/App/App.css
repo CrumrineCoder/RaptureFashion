@@ -1029,6 +1029,7 @@ box-shadow: 0 0 0 .2rem #BF953F;
   margin-bottom: 7px;
   margin-top: 13px;
   text-align: center;
+  flex: 1 0 100%;
 }
 
 .filterSort{
@@ -1084,6 +1085,10 @@ box-shadow: 0 0 0 .2rem #BF953F;
 
 .filterSection{
   flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .filterHeaderSection{
