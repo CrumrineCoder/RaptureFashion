@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-
+import BagWarning from "./bagWarning.js"
 class BagSubtotal extends Component {
 
     constructor(props) {
@@ -7,10 +7,12 @@ class BagSubtotal extends Component {
         // initial state stores the questions, an array of answers the user will input, options the user will make true or false, linked represents if the user will be linked, and submitted checks if the poll has been submitted yet. 
         this.state = {
             subTotal: "0",
-            estimatedShipping: "6.00"
+            estimatedShipping: "6.00",
+            modalOpen: true
         }
         this.addZeroes = this.addZeroes.bind(this);
         this.openCheckout = this.openCheckout.bind(this); 
+        this.toggleModal = this.toggleModal.bind(this);
     }
 
     componentWillMount() {
@@ -27,6 +29,12 @@ class BagSubtotal extends Component {
             total: total
         })
     }
+
+    toggleModal(){
+        this.setState({
+          modalOpen: !this.state.modalOpen
+        })
+      }
 
     addZeroes(num) {
         // Convert input string to a number and store as a variable.
@@ -49,7 +57,7 @@ class BagSubtotal extends Component {
     }
 
     openCheckout() {
-        window.open(this.props.checkout.webUrl);
+    //    window.open(this.props.checkout.webUrl);
     }
 /*
     <p>Estimated Shipping: ${this.state.estimatedShipping}</p>
@@ -58,15 +66,18 @@ class BagSubtotal extends Component {
                     */
     render() {
         return (
+            <>
+            <BagWarning modalOpen={this.state.modalOpen} toggleModal={this.toggleModal}/>
             <div className="bagSubtotalContainer">
                 <div className="bagHeader">
                     <h2 className="bagHeaderTitle">Order Summary</h2>
                 </div>
                 <div className="bagBody">
                     <p>Estimated total: ${this.props.checkout.subtotalPrice}</p>
-                    <button className="btn btn-primary yellowButton" onClick={this.openCheckout}> Secure Checkout (testing purposes only) </button>
+                    <button className="btn btn-primary yellowButton" onClick={this.toggleModal}> Secure Checkout (testing purposes only) </button>
                 </div>
             </div>
+            </>
         )
     }
 }

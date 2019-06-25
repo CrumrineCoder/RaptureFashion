@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import BagRow from "../components/bagRow.js";
 import BagSubtotal from "../components/bagSubtotal.js"
-import BagWarning from "../components/bagWarning.js"
 import { Link } from 'react-router-dom';
 import store from '../../store';
 
@@ -85,9 +84,6 @@ class BagContainer extends Component {
                     {pageContent}
                 </div>
               
-
-                <BagWarning
-                />
                 <BagSubtotal checkout={checkout} clothing={this.state.dresses}></BagSubtotal>
             </div>
         );

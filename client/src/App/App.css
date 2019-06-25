@@ -906,6 +906,11 @@ box-shadow: 0 0 0 .2rem #BF953F;
   z-index: 5; 
   overflow: hidden; 
   padding: 25px; 
+  display: none;
+}
+
+.openModal{
+  display: block; 
 }
 
 /* Color Buttons */

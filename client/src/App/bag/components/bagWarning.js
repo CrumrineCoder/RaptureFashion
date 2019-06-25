@@ -5,14 +5,27 @@ class BagWarnning extends Component {
 
   constructor(props) {
     super(props);
+    this.state = {
+    
+    }
+   
   }
 
+  
+
   render() {
-    document.body.style.overflow = "hidden";
+    if (this.props.modalOpen) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "scroll";
+    }
+
     return (
-      <div className="bagWarning">
-        <h4 className="bagWarningHeader">Note: the Checkout linked by the button would work if I linked a Credit Card to my account, but I don't want people making purchases as this store is for LEARNING and TESTING purposes only.</h4>
-        <p className="bagWarningSubtext">Contact me at crumrinecoding@gmail.com if you have any questions or need me to cancel and refund an order if you somehow make a payment, which I have no idea how you would do that but please don't try.</p>
+      <div className={this.props.modalOpen ? "bagWarning openModal" : "bagWarning"}>
+        <h4 className="bagWarningHeader">Checkout Redirect</h4>
+        <button onClick={this.props.toggleModal}>Close Out</button>
+        <p>I have disabled payment as this store is for learning and testing only. If you somehow manage to spend money, contact me at crumrinecoding@gmail.com. Please don't try to break this more than I have.</p>
+        <button>I understand</button>
       </div>
     );
   }
