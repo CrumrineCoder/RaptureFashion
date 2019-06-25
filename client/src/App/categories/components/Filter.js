@@ -8,15 +8,10 @@ class Filter extends Component {
         // Used for when searching and tagging functionality whenever that comes
         this.state = {
             amountOfFilters: 0,
-            filters: {
-                vendor: ["Gibson Girls", "Ryan Boutique", "Apollo", "ÁVELINE'S"],
-                color: ["Purple","Black", "Blue", "Green", "White", "Gold"],
-                clothing: ["Dress", "Shoe", "Accessory", "Hat"]
-            },
-            sort: null
         };
         this.clear = this.clear.bind(this);
     }
+ 
     /*
         delete(filterToDelete) {
             let filters = Object.assign({}, this.state.filters);
@@ -37,7 +32,7 @@ class Filter extends Component {
     }
     changeFilter(key, value) {
         // Get previous filters
-        let filters = Object.assign({}, this.state.filters);
+        let filters = Object.assign({}, this.props.filters);
       //  let change = 0;
        // if (filters[key] === null || filters[key] === undefined || filters[key] === "") {
      //       change = 1;
