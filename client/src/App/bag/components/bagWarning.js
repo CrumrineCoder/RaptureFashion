@@ -5,13 +5,13 @@ class BagWarnning extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {
-
-    }
-
+    this.openCheckout = this.openCheckout.bind(this); 
   }
 
-
+  openCheckout() {
+    window.open(this.props.productLink);
+    this.props.toggleModal();
+  }
 
   render() {
     if (this.props.modalOpen) {
@@ -22,7 +22,7 @@ class BagWarnning extends Component {
 
     return (
       <>
-      <div className={this.props.modalOpen ? "bagDarkness openModal" : "bagDarkness"}></div>
+      <div className={this.props.modalOpen ? "bagDarkness openModal" : "bagDarkness"} onClick={this.props.toggleModal}></div>
       <div className={this.props.modalOpen ? "bagWarning openModal" : "bagWarning"}>
         <div className="bagWarningHeader">
           <p className="bagWarningHeaderTitle">Checkout Redirect</p>
@@ -30,7 +30,7 @@ class BagWarnning extends Component {
         </div>
         <div className="bagWarningBody">
           <p className="bagWarningBodyText">I have disabled payment as this store is for learning and testing only. If you somehow manage to spend money, contact me at crumrinecoding@gmail.com. Please don't try to break this more than I have.</p>
-          <button className="btn btn-primary yellowButton">I understand</button>
+          <button className="btn btn-primary yellowButton" onClick={this.openCheckout}> I understand</button>
         </div>
       </div>
       </>

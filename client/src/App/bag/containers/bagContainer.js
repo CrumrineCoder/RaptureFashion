@@ -73,7 +73,7 @@ class BagContainer extends Component {
         return (
             <div className="">
                 <div className="bagHeader">
-                    <Link className="bagHeaderLink" to={"/"}><i className="fas fa-arrow-left"></i> Continue Shopping</Link>
+                    <Link className="bagHeaderLink" to={"/clothing"}><i className="fas fa-arrow-left"></i> Continue Shopping</Link>
                     <h2 className="bagHeaderTitle">Your Shopping Bag </h2>
                 </div>
                 <div className="bagBody">

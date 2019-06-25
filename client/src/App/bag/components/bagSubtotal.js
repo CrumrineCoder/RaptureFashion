@@ -8,7 +8,7 @@ class BagSubtotal extends Component {
         this.state = {
             subTotal: "0",
             estimatedShipping: "6.00",
-            modalOpen: true
+            modalOpen: false
         }
         this.addZeroes = this.addZeroes.bind(this);
         this.openCheckout = this.openCheckout.bind(this); 
@@ -67,7 +67,7 @@ class BagSubtotal extends Component {
     render() {
         return (
             <>
-            <BagWarning modalOpen={this.state.modalOpen} toggleModal={this.toggleModal}/>
+            <BagWarning productLink={this.props.checkout.webUrl} modalOpen={this.state.modalOpen} toggleModal={this.toggleModal}/>
             <div className="bagSubtotalContainer">
                 <div className="bagHeader">
                     <h2 className="bagHeaderTitle">Order Summary</h2>
