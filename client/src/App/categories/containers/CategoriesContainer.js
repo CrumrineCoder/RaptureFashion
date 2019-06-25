@@ -27,6 +27,17 @@ class CategoriesContainer extends Component {
         this.clean = this.clean.bind(this);
         //    this.updateFromSubheader = this.updateFromSubheader.bind(this);
     }
+
+    componentWillMount(){
+        if(this.props.router.location.state){
+            if(this.props.router.location.state.brand){
+                this.setState({vendor: [this.props.router.location.state.brand]})
+            } else if(this.props.router.location.state.clothing){
+                this.setState({clothing: [this.props.router.location.state.clothing]})
+            }
+        }
+        console.log(this.props.router.location.state);
+    }
     /*
     updateFromSubheader(vendor, clothing) {
         this.setState({ vendor, clothing });
@@ -48,31 +59,17 @@ class CategoriesContainer extends Component {
 
     // Filter an array of products
     getFilteredArray(array, key, value) {
-        console.log("Get filtered array array", array);
-        console.log("Get filtered array key", key);
-        console.log("Get filtered array value", value);
         return array.filter(function (e) {
-            console.log("e", e)
             // Depending on what tag we're filtering by, we check the value in a different place
             switch (key) {
                 case "color":
                     var splitColor = e.options[1].values[0].value.split('/');
-                    console.log("include " + value)
-                    console.log("split color", splitColor)
-                    console.log("Does it include?" + value.includes(splitColor))
-                    console.log(splitColor.every(elem => value.indexOf(elem) > -1));
                     //return value.includes(splitColor)
                     return splitColor.every(elem => value.indexOf(elem) > -1);
                 case "vendor":
-                    console.log("include " + value)
-                    console.log("split color", e.vendor)
-                    console.log("Does it include?" + value.includes(e.vendor))
                     return value.includes(e.vendor)
 
                 default:
-                    console.log("include " + value)
-                    console.log("split color", e[key])
-                    console.log("Does it include?" + value.includes(e[key]))
                     return value.includes(e[key])
             }
         });
@@ -133,7 +130,6 @@ class CategoriesContainer extends Component {
 
     render() {
         let filters = this.state.filter;
-        console.log("Render filter", this.state.filter);
         let pageContent = '';
         let header;
         const state = store.getState().home.cart; // state from redux store
@@ -142,23 +138,16 @@ class CategoriesContainer extends Component {
         // If we're not including All clothes
         // If the products are loaded
         if (state.products["0"]) {
-            console.log("Clothing before purge", clothing);
             for(var i=0; i<clothing.length; i++){
             
             }
             clothing = clothing.filter(function(item){
-                console.log("Filter filters", filters);
-                console.log("Filter vendor", item.vendor);
-                console.log("Filter clothing in shopify", item.options[2].values["0"].value);
-                console.log("Vendor?", filters['vendor'].includes(item.vendor));
-                console.log("Clothing?", filters['clothing'].includes(item.options[2].values["0"].value));
-                var splitColor = item.options[1].values[0].value.split('/');
+         //       var splitColor = item.options[1].values[0].value.split('/');
          // && splitColor.every(elem => value.indexOf(elem) > -1)
                 //return value.includes(splitColor)
                 return filters['vendor'].includes(item.vendor) && filters['clothing'].includes(item.options[2].values["0"].value)
             });
         }
-        console.log("Clothing after purge", clothing);
 
         // If we're  sorting
         if (this.state.sort) {
@@ -209,19 +198,17 @@ class CategoriesContainer extends Component {
                 })
             }
         }
-        console.log("Are there no filters", Object.entries(this.state.filter).length === 0);
-        console.log("is the filter an object", this.state.filter.constructor === Object);
-        console.log("clothing", clothing);
+      
         // If we have filters
         if (!(Object.entries(this.state.filter).length === 0 && this.state.filter.constructor === Object)) {
-            console.log("we're in");
+        
             // Clone the copies object
             let filteredClothing = clothing;
-            console.log("filteredClothing ", filteredClothing);
+        
             // Clean it
             var filteredFilter = this.clean(this.state.filter);
             // For each filter
-            console.log("filtered filter after clean", filteredFilter);
+       
             
             for (var filter in filteredFilter) {
                 // If there's a vendor, don't filter for brand filters
@@ -230,13 +217,11 @@ class CategoriesContainer extends Component {
                 } else if (filter === "clothing" && this.props.clothing) {
                     break;
                 }
-                console.log("filter", filter);
-                console.log("filter in state", this.state.filter[filter]);
+       
                 // Further filter the collection each time
                 filteredClothing = this.getFilteredArray(filteredClothing, filter, this.state.filter[filter])
             }
             
-            console.log("filtered clothing after array", filteredClothing);
             // If there are still clothing items remaining after the filters
             if (filteredClothing.length) {
                 // Return a clothing box for each item still remaining in the filtered Array
@@ -268,7 +253,7 @@ class CategoriesContainer extends Component {
         return (
             <div className="categoriesContainer">
                 {header}
-                <Filter clothing={this.props.clothing} onChange={this.handleFilter} sort={this.sort}></Filter>
+                <Filter clothing={this.props.clothing} onChange={this.handleFilter} filters={this.state.filter} sort={this.state.sort} sortFunction={this.sort}></Filter>
                 {pageContent}
             </div>
         );

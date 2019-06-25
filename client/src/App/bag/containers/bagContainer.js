@@ -69,7 +69,6 @@ class BagContainer extends Component {
                 )}
             </ul>
         )
-        let modalClose = () => this.setState({ modalShow: false });
         return (
             <div className="">
                 <div className="bagHeader">
