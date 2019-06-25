@@ -53,6 +53,7 @@ body, html{
   margin: 0;
   padding: 0;
   min-height: 100%;
+  overflow-x: hidden;
 }
 
 #root, .App, .wrap, #categoriesIndex, .container, .categoriesContainer{
@@ -894,9 +895,17 @@ box-shadow: 0 0 0 .2rem #BF953F;
 }
 
 .bagWarning{
-  float: left; 
+ /* float: left; 
   width: 50%; 
-  padding: 10px; 
+  padding: 10px; */ 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(12, 51, 44);
+  z-index: 5; 
+  overflow: hidden; 
+  padding: 25px; 
 }
 
 /* Color Buttons */
