@@ -30,13 +30,15 @@ class CategoriesContainer extends Component {
 
     componentWillMount(){
         if(this.props.router.location.state){
+            let filter = Object.assign({}, this.state.filter);
             if(this.props.router.location.state.brand){
-                this.setState({vendor: [this.props.router.location.state.brand]})
+                filter.vendor = [this.props.router.location.state.brand]
+                this.setState({filter})
             } else if(this.props.router.location.state.clothing){
-                this.setState({clothing: [this.props.router.location.state.clothing]})
+                filter.clothing = [this.props.router.location.state.clothing]
+                this.setState({filter})
             }
         }
-        console.log(this.props.router.location.state);
     }
     /*
     updateFromSubheader(vendor, clothing) {
@@ -138,9 +140,6 @@ class CategoriesContainer extends Component {
         // If we're not including All clothes
         // If the products are loaded
         if (state.products["0"]) {
-            for(var i=0; i<clothing.length; i++){
-            
-            }
             clothing = clothing.filter(function(item){
          //       var splitColor = item.options[1].values[0].value.split('/');
          // && splitColor.every(elem => value.indexOf(elem) > -1)
