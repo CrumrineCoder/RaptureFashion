@@ -61,32 +61,7 @@ class Header extends Component {
 								<NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/about">About</NavLink>
 							</NavItem>
 							<NavItem>
-								<Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggleDropdown}>
-									<DropdownToggle id="raptureFashionHeaderDropdownToggle" caret>
-										Brands
-       								</DropdownToggle>
-									<DropdownMenu id="raptureFashionHeaderDropdownMenu">
-										<NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/brands/gibson">Gibson Girls</NavLink>
-										<NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/brands/ryan">Ryan Boutique</NavLink>
-										<NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/brands/apollo">Apollo</NavLink>
-										<NavLink className="raptureFashionHeaderDropdownItem" href="#/categories/brands/áveline">ÁVELINE'S</NavLink>
-									</DropdownMenu>
-								</Dropdown>
-							</NavItem>
-							<NavItem>
-								<NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/categories/all">All</NavLink>
-							</NavItem>
-							<NavItem>
-								<NavLink className="raptureFashionHeaderDropdownMenuLink"href="#/categories/dresses">Dresses</NavLink>
-							</NavItem>
-							<NavItem>
-								<NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/categories/shoes">Shoes</NavLink>
-							</NavItem>
-							<NavItem>
-								<NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/categories/accessories">Accessories</NavLink>
-							</NavItem>
-							<NavItem>
-								<NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/categories/hats">Hats</NavLink>
+								<NavLink className="raptureFashionHeaderDropdownMenuLink" href="#/clothing/">Clothing</NavLink>
 							</NavItem>
 							<NavItem className="cartRelativeItemWrapper">
 								<div className="cartWrapper2">

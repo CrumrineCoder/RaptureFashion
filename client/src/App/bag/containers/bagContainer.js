@@ -11,7 +11,8 @@ class BagContainer extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            dresses: []
+            dresses: [],
+            modalShow: false
         }
         // Used for when searching and tagging functionality whenever that comes
         this.updateQuantityInCart = this.updateQuantityInCart.bind(this);
@@ -68,11 +69,10 @@ class BagContainer extends Component {
                 )}
             </ul>
         )
-
         return (
             <div className="">
                 <div className="bagHeader">
-                    <Link className="bagHeaderLink" to={"/"}><i className="fas fa-arrow-left"></i> Continue Shopping</Link>
+                    <Link className="bagHeaderLink" to={"/clothing"}><i className="fas fa-arrow-left"></i> Continue Shopping</Link>
                     <h2 className="bagHeaderTitle">Your Shopping Bag </h2>
                 </div>
                 <div className="bagBody">
@@ -82,10 +82,7 @@ class BagContainer extends Component {
                     </div>
                     {pageContent}
                 </div>
-                <div className="bagWarning">
-                    <h4 className="bagWarningHeader">Note: the Checkout linked by the button would work if I linked a Credit Card to my account, but I don't want people making purchases as this store is for LEARNING and TESTING purposes only.</h4>
-                    <p className="bagWarningSubtext">Contact me at crumrinecoding@gmail.com if you have any questions or need me to cancel and refund an order if you somehow make a payment, which I have no idea how you would do that but please don't try.</p>
-                </div>
+              
                 <BagSubtotal checkout={checkout} clothing={this.state.dresses}></BagSubtotal>
             </div>
         );

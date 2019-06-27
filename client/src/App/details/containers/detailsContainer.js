@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import ClothingBox from '../../home/components/ClothingBox';
 import store from '../../store';
 import VariantSelector from '../../shopify/VariantSelector';
+
 const ONE_SIZE_FITS_MOST = "One Size Fits Most";
 
 // One product details page
@@ -18,8 +19,10 @@ class DetailsContainer extends Component {
         this.handleOptionChange = this.handleOptionChange.bind(this);
         this.changeSize = this.changeSize.bind(this);
     }
+   
     // Add cart, product, and options from product to the state on load   
     componentWillMount() {
+      
         const state = store.getState().home.cart; // state from redux store
         const products = state.products;
         // Find the specific product we're looking at
@@ -39,6 +42,7 @@ class DetailsContainer extends Component {
     }
     // Repeat the above whenever we receive props
     componentWillReceiveProps(nextProps) {
+        window.scrollTo(0, 0)
         const state = store.getState().home.cart; // state from redux store
         const products = state.products;
         let product = products.find(obj => {

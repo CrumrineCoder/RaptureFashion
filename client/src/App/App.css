@@ -31,6 +31,12 @@
   src: url("../assets/font/Proxima Nova.otf");
 }
 
+@font-face{
+  font-family: Anna;
+  font-weight: bold;
+  src: url("../assets/font/Anna\ ITC\ TT.ttf");
+}
+
 /* Helpers */
 
 .rounded{
@@ -57,11 +63,14 @@ body, html{
   margin-bottom: 50px;
 }
 
+
+
 /* Nav */
 
 nav, nav *{
   background: rgb(18, 80, 70);
   color: rgb(153, 225, 233) !important;
+  font-family: "Anna";
 }
 
 .raptureFashionHeaderLogo{
@@ -116,6 +125,31 @@ nav, nav *{
 
 .raptureFashionHeaderDropdownMenuLink:hover{
   color: #FFB619 !important;
+}
+
+.dropdown-item.active{
+  background: #FFB619 !important;
+  color: black !important;
+}
+
+.nav-item, .dropdown-item, .dropdown-toggle{
+  font-size: 1.2rem;
+}
+
+.centerFlex{
+  align-items: center;
+  justify-content: center;
+}
+
+.centerFlex .ml-auto{
+  margin-left: 0px !important;
+}
+
+.subHeader{
+  position: absolute;
+  top: 70px;
+  left: 0px;
+  width: 100%;
 }
 
 .cartWrapper{
@@ -184,13 +218,22 @@ nav, nav *{
 /* Homepage */
 
 .homepageHeader{
-  border-bottom: 2px solid #000403;
-  margin-top: 75px;
-  margin-bottom: 45px;
-  padding-bottom: 5px;
+  width: 100%;
+  position: absolute;
+  left: 0;
+  text-align: center;
+  background: #000403;
+  padding: 15px;
+  font-family: "Anna";
+  font-size: 50px;
+  letter-spacing: 20px;
 }
 
 /* Slider */ 
+
+.bestSellerContainer{
+  margin-top: 160px;
+}
 
 .homepageCarouselImage{
   width: 100%;
@@ -220,25 +263,41 @@ nav, nav *{
  margin-top: 10px;
  background: rgb(6, 13, 14);
  border: 3px solid #FFB619;
+ border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  border-image-slice: 1;
  color: #FFB619 !important; 
 }
 
 .yellowButton:hover{
+  /*  border: 3px solid #FFB619;
   background: #FFB619;
+  */
   color: rgb(6, 13, 14) !important;
-  border: 3px solid #FFB619;
+
+  border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  border-image-slice: 1;
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) !important;
 }
 
 .yellowButton:focus{
   outline: none;
-  box-shadow: 0 0 0 0.2rem #FFB619;
+/*  box-shadow: 0 0 0 0.2rem #FFB619 !important; */
+box-shadow: 0 0 0 .2rem #BF953F !important;
+  border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  border-image-slice: 1;
 }
 
 .yellowButton:active{
   outline: none;
-  box-shadow: 0 0 0 0.2rem #FFB619 !important;
+  color: rgb(6, 13, 14) !important;
+/*  box-shadow: 0 0 0 0.2rem #FFB619 !important;
   background: #FFB619  !important;
-  border: 3px solid #FFB619 !important;
+  border: 3px solid #FFB619 !important; */
+box-shadow: 0 0 0 .2rem #BF953F;
+
+  border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  border-image-slice: 1;
+  background: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) !important;
 }
 
 .slick-slide{
@@ -263,6 +322,8 @@ nav, nav *{
   background: rgb(37, 107, 134) !important; 
   padding: 40px; 
   position: relative; 
+  margin-top: 130px;
+  margin-bottom: 40px;
 }
 
 .sliderButton{
@@ -273,6 +334,8 @@ nav, nav *{
   width: 30px;
   border: 2px solid rgb(177, 126, 16);
   cursor: pointer; 
+  border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C) !important;
+  border-image-slice: 1;
 }
 
 .prevSliderButton{
@@ -334,6 +397,8 @@ nav, nav *{
   display: inline-block;
   background: white; 
   border: 3px solid #FFB619;
+  border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+   border-image-slice: 1;
 }
 
 .clothingBoxFooter{
@@ -380,6 +445,10 @@ nav, nav *{
 
 /* Categories Box */
 
+.categoriesBoxContainer{
+  margin-top: 160px;
+}
+
 
 .categoriesBox{
   display: inline-block; 
@@ -399,9 +468,15 @@ nav, nav *{
   font-size: 1.8em;
   margin-top: 10px;
   margin-bottom: 30px;
+  font-family: "Anna"
 }
 
 /* Brand  Box */
+
+.brandContainer{
+  margin-top: 160px;
+  margin-bottom: 30px;
+}
 
 .brandBoxContainer{
   display: flex;
@@ -424,7 +499,9 @@ nav, nav *{
   display: block; 
   overflow: hidden;
   cursor: pointer;
-  border: 3px solid  rgb(177, 126, 16);
+  border: 5px solid  rgb(177, 126, 16);
+  border-image-source: linear-gradient(to right, #BF953F, #FCF6BA, #B38728, #FBF5B7, #AA771C);
+  border-image-slice: 1;
 }
 
 .brandBoxImage:hover:not(.brandBoxImageActive){
@@ -817,10 +894,63 @@ nav, nav *{
   cursor: pointer; 
 }
 
+.bagDarkness{
+  background: black;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0; 
+  z-index: 4;  
+  opacity: .8;
+  display: none; 
+}
+
 .bagWarning{
-  float: left; 
+ /* float: left; 
   width: 50%; 
-  padding: 10px; 
+  padding: 10px; */ 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background: rgb(18, 80, 70);
+  z-index: 5; 
+  overflow: hidden; 
+  display: none;
+  border-radius: 10px;
+}
+
+.bagWarningHeader{
+  background: rgb(12, 51, 44);
+  text-align: center; 
+  padding: 15px;
+}
+
+.bagWarningHeaderTitle{
+  display: inline;
+}
+
+.bagWarningHeaderExit{
+  float: right; 
+  display: inline-block;
+  cursor: pointer; 
+  font-size: 20px;
+  color: rgb(110, 159, 165) !important;
+  padding-top: 3px;
+}
+
+.bagWarningHeaderExit:hover{
+  color: rgb(153, 225, 233) !important;
+}
+
+.bagWarningBody{
+  padding: 15px; 
+  text-align: center; 
+}
+
+.openModal{
+  display: block; 
 }
 
 /* Color Buttons */
@@ -855,6 +985,10 @@ nav, nav *{
 
 .White, .White:after{
   background: white;
+}
+
+.Gold, .Gold:after{
+  background: gold; 
 }
 
 .BlackPurple{
@@ -915,6 +1049,7 @@ nav, nav *{
 
 .filterRow{
   display: block;
+  text-align: center; 
 }
 
 .filterText{
@@ -948,6 +1083,7 @@ nav, nav *{
   margin-bottom: 7px;
   margin-top: 13px;
   text-align: center;
+  flex: 1 0 100%;
 }
 
 .filterSort{
@@ -959,7 +1095,7 @@ nav, nav *{
   color: rgb(238, 238, 238);
   margin: 6px 5px 0px 0px;
   display: block;
-  text-align: left;
+ /* text-align: left; */
   overflow: visible;
   position: relative;
 }
@@ -993,7 +1129,7 @@ nav, nav *{
 }
 
 .filter{
-  margin: 30px;
+  margin: 70px 30px 30px 30px;
   padding: 20px; 
 }
 
@@ -1003,6 +1139,10 @@ nav, nav *{
 
 .filterSection{
   flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
 }
 
 .filterHeaderSection{
@@ -1109,7 +1249,11 @@ nav, nav *{
 
 .vendorHeader, .clothingHeader{
   clear: both; 
-  margin-top: 30px;
+  margin-top: 121px;
+}
+
+.dropdown{
+  margin-left: 10px;
 }
 
 /* Footer */
@@ -1134,7 +1278,7 @@ footer {
 }
 
 .footerLink:hover{
-  color: #007bff; 
+  color: #FFB619 !important;
   cursor: pointer; 
 }
 
