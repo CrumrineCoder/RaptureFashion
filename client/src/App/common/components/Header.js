@@ -13,6 +13,7 @@ import {
 } from 'reactstrap';
 import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
+import classnames from "classnames";
 //import PropTypes from 'prop-types';
 
 // Header hosts navigation info at the top of the screen. It appears on all pages.
@@ -25,7 +26,9 @@ class Header extends Component {
 		this.toggleDropdown = this.toggleDropdown.bind(this);
 		this.state = {
 			isOpen: false,
-			dropdownOpen: false
+			dropdownOpen: false,
+			prevScrollpos: window.pageYOffset,
+			visible: true
 			//		isLoggedIn: typeof localStorage["user"] !== 'undefined'
 		};
 	}
@@ -43,10 +46,35 @@ class Header extends Component {
 		}));
 	}
 
+	  // Adds an event listener when the component is mount.
+	  componentDidMount() {
+		window.addEventListener("scroll", this.handleScroll);
+	  }
+	
+	  // Remove the event listener when the component is unmount.
+	  componentWillUnmount() {
+		window.removeEventListener("scroll", this.handleScroll);
+	  }
+	
+	  // Hide or show the menu.
+	  handleScroll = () => {
+		const { prevScrollpos } = this.state;
+	
+		const currentScrollPos = window.pageYOffset;
+		const visible = prevScrollpos > currentScrollPos;
+	
+		this.setState({
+		  prevScrollpos: currentScrollPos,
+		  visible
+		});
+	  };
+
 	render() {
 		return (
-			<header>
-				<Navbar color="faded" light expand="md">
+			<header >
+				<Navbar className={classnames("navbar", {
+				"navbar--hidden": !this.state.visible
+			  })} color="faded" light expand="md">
 					<NavbarBrand href="/" id="raptureFashionHeaderLeft">
 						<i className="raptureFashionHeaderLogo" src="../../../assets/Icons/rapture.png"></i>
 						<span className="raptureFashionHeaderTitle">Rapture Fashion</span>

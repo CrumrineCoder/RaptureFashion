@@ -73,6 +73,19 @@ nav, nav *{
   font-family: "Anna";
 }
 
+.navbar {
+  width: 100%;
+  position: fixed;
+  top: 0;
+  left: 0; 
+  transition: top 0.6s;
+  z-index:  100; 
+}
+
+.navbar--hidden {
+  top: -100px;
+}
+
 .raptureFashionHeaderLogo{
   width: 52px !important;
   height: 52px !important;
