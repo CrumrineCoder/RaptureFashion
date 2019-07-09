@@ -58,11 +58,11 @@ class BagRow extends Component {
                     <div className="bagSmallText"><b>Size:</b> {this.props.line_item.variant.selectedOptions["0"].value}</div>
                 </div>
                 <div className="bagCell bagQuantity">
-                    <h3 className="bagCell">$ {parseInt(this.props.line_item.variant.price).toFixed(2)}</h3>
+                    <h3 className="bagCell"><p className="hide">Price </p>$ {parseInt(this.props.line_item.variant.price).toFixed(2)}</h3>
                     <button className={ this.props.line_item.quantity > 1 ? 'bagQuantityButton' : 'bagQuantityButton bagQuantityButtonDisabled'} disabled={ this.props.line_item.quantity  <= 1} onClick={() => this.props.updateQuantityInCart(this.props.line_item.id, this.props.line_item.quantity -1 )}>-</button>
                     <input readOnly={true} type="numeric" className="bagQuantityAmount" value={this.props.line_item.quantity }></input>
                     <button className="bagQuantityButton" onClick={() => this.props.updateQuantityInCart(this.props.line_item.id, this.props.line_item.quantity + 1)}>+</button>
-                    <h3 className="bagCell">$ {(this.props.line_item.quantity * this.props.line_item.variant.price).toFixed(2)}</h3>
+                    <h3 className="bagCell"><p className="hide">Subtotal </p>$ {(this.props.line_item.quantity * this.props.line_item.variant.price).toFixed(2)}</h3>
                     <i onClick={()=> this.props.removeLineItemInCart(this.props.line_item.id)} className="fas fa-trash bagCell bagRowDelete"></i>
                 </div>
             </div>

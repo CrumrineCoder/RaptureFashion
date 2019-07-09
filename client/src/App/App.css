@@ -62,7 +62,9 @@ body, html{
 .wrap, #bagIndex{
   margin-bottom: 50px;
 }
-
+#bagIndex{
+  margin-top: 100px;
+}
 
 
 /* Nav */
@@ -1298,4 +1300,113 @@ footer {
 .footerLink i{
   margin-right: 30px; 
   font-size: 20px;
+}
+
+.hide{
+  display: none; 
+}
+
+@media (max-width: 500px) {  
+  .homepageHeader{
+    font-size: 30px; 
+  }
+
+  .homepageCarousel{
+    padding-top: 80px;
+  }
+
+  .homepageCarouselTitle{
+    display: none; 
+  }
+
+  .clothingBox{
+    width: 95%;
+  }
+
+  .instagramBox{
+    width: 100%;
+  }
+
+  .raptureFashionHeaderLogo{
+    width: 40px !important;
+    height: 40px !important; 
+    background-size: 40px; 
+  }
+
+  .raptureFashionHeaderTitle{
+    font-size: 26px;
+    bottom: 5px; 
+  }
+
+  .cartWrapper2{
+    position: relative; 
+    top: 0px;
+    right: 0px;
+  }
+
+  .cartRelativeItemWrapper{
+    width: 100%;
+  }
+
+  .filterSection, .filterSectionContainer{
+    display: block;
+  }
+
+  .bagSubtotalContainer{
+    width: auto; 
+    float: none; 
+    min-width: auto; 
+  }
+
+  .detailsContainer{
+    display: block; 
+    margin-top: 100px; 
+  }
+
+  .detailsImageScrollContainer{
+    top: 0px;
+    width: auto; 
+    margin: 0px; 
+  }
+
+  .detailsImage{
+    width: 100%; 
+  }
+
+  .detailsImage + .detailsImage{
+    display: none; 
+  }
+
+  .detailsRightHandInfo{
+    position: relative; 
+    right: 0px; 
+    width: auto; 
+    top: 0px;
+  }
+
+  .bagImg, .bagItem, .bagCell{
+    width: 100%;
+  }
+
+  .bagSmallText{
+    text-align: center; 
+  }
+
+  .bagQuantity{
+    min-width: auto; 
+    display: block; 
+  }
+
+  .bagRowDelete{
+    position: relative; 
+    margin-top: 20px;
+  }
+
+  .hide{
+    display: inline;
+  }
+
+  #footerCredit{
+    display: none; 
+  }
 }
