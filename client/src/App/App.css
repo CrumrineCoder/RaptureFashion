@@ -611,6 +611,7 @@ box-shadow: 0 0 0 .2rem #BF953F;
   flex: 1;
   flex-direction: row;
   align-items: flex-start;
+  margin-top: 100px;
 }
 
 .detailsImage{
